@@ -8,6 +8,13 @@ import { intelligenceRouter } from "./routes/intelligence";
 import { dealRoomRouter } from "./routes/deal-room";
 import { marketRouter } from "./routes/market";
 
+const apiRouter = new Hono()
+  .route("/health", healthRouter)
+  .route("/geo", geoRouter)
+  .route("/intelligence", intelligenceRouter)
+  .route("/deal-room", dealRoomRouter)
+  .route("/market", marketRouter);
+
 export const app = new Hono()
   .use("*", logger())
   .use("*", prettyJSON())
@@ -22,11 +29,8 @@ export const app = new Hono()
       credentials: true,
     })
   )
-  .route("/health", healthRouter)
-  .route("/geo", geoRouter)
-  .route("/intelligence", intelligenceRouter)
-  .route("/deal-room", dealRoomRouter)
-  .route("/market", marketRouter);
+  .route("/", apiRouter)
+  .route("/api", apiRouter);
 
-export type AppType = typeof app;
+export type AppType = typeof apiRouter;
 export default app;
