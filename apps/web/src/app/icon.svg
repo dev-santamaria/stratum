@@ -1,0 +1,43 @@
+<svg width="64" height="64" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="stratumFaviconGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stopColor="#0B132B" />
+      <stop offset="100%" stopColor="#1E56FF" />
+    </linearGradient>
+    <linearGradient id="stratumFaviconGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stopColor="#1E56FF" />
+      <stop offset="100%" stopColor="#06B6D4" />
+    </linearGradient>
+    <linearGradient id="stratumFaviconGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stopColor="#0EA5E9" />
+      <stop offset="100%" stopColor="#10B981" />
+    </linearGradient>
+  </defs>
+
+  {/* Background Rounded Squircle */}
+  <rect width="100" height="100" rx="22" fill="#090D15" />
+  <rect width="98" height="98" x="1" y="1" rx="21" stroke="#1E56FF" strokeOpacity="0.3" strokeWidth="1.5" />
+
+  {/* Stratum Layer 1 (Bottom foundation: Ground-truth Research) */}
+  <path
+    d="M 18 68 L 52 84 L 84 69 L 50 53 Z"
+    fill="url(#stratumFaviconGrad1)"
+  />
+
+  {/* Stratum Layer 2 (Middle layer: Proprietary Intelligence Graph) */}
+  <path
+    d="M 18 47 L 52 63 L 84 48 L 50 32 Z"
+    fill="url(#stratumFaviconGrad2)"
+    opacity="0.95"
+  />
+
+  {/* Stratum Layer 3 (Top apex: B2B Intermediation & Deal Room) */}
+  <path
+    d="M 18 26 L 52 42 L 84 27 L 50 11 Z"
+    fill="url(#stratumFaviconGrad3)"
+  />
+
+  {/* Precision focal beacon node at apex */}
+  <circle cx="84" cy="27" r="4" fill="#FFFFFF" />
+  <circle cx="84" cy="27" r="7" stroke="#10B981" strokeWidth="2" opacity="0.9" />
+</svg>
