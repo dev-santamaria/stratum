@@ -1,43 +1,17 @@
 <svg width="64" height="64" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <linearGradient id="stratumFaviconGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stopColor="#0B132B" />
-      <stop offset="100%" stopColor="#1E56FF" />
-    </linearGradient>
-    <linearGradient id="stratumFaviconGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stopColor="#1E56FF" />
-      <stop offset="100%" stopColor="#06B6D4" />
-    </linearGradient>
-    <linearGradient id="stratumFaviconGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stopColor="#0EA5E9" />
-      <stop offset="100%" stopColor="#10B981" />
-    </linearGradient>
-  </defs>
+  {/* Dark Institutional Squircle */}
+  <rect width="100" height="100" rx="22" fill="#0A0F1D" />
+  <rect width="98" height="98" x="1" y="1" rx="21" stroke="#2563EB" strokeOpacity="0.4" strokeWidth="1.5" />
 
-  {/* Background Rounded Squircle */}
-  <rect width="100" height="100" rx="22" fill="#090D15" />
-  <rect width="98" height="98" x="1" y="1" rx="21" stroke="#1E56FF" strokeOpacity="0.3" strokeWidth="1.5" />
+  {/* Tier 1: Apex Strategic Layer */}
+  <path d="M 36 24 H 82 L 76 36 H 30 L 36 24 Z" fill="#60A5FA" />
 
-  {/* Stratum Layer 1 (Bottom foundation: Ground-truth Research) */}
-  <path
-    d="M 18 68 L 52 84 L 84 69 L 50 53 Z"
-    fill="url(#stratumFaviconGrad1)"
-  />
+  {/* Tier 2: Analytical Synthesis Layer */}
+  <path d="M 22 44 H 82 L 76 56 H 16 L 22 44 Z" fill="#2563EB" />
 
-  {/* Stratum Layer 2 (Middle layer: Proprietary Intelligence Graph) */}
-  <path
-    d="M 18 47 L 52 63 L 84 48 L 50 32 Z"
-    fill="url(#stratumFaviconGrad2)"
-    opacity="0.95"
-  />
+  {/* Tier 3: Bedrock Empirical Ground Layer */}
+  <path d="M 8 64 H 82 L 76 76 H 2 L 8 64 Z" fill="#FFFFFF" />
 
-  {/* Stratum Layer 3 (Top apex: B2B Intermediation & Deal Room) */}
-  <path
-    d="M 18 26 L 52 42 L 84 27 L 50 11 Z"
-    fill="url(#stratumFaviconGrad3)"
-  />
-
-  {/* Precision focal beacon node at apex */}
-  <circle cx="84" cy="27" r="4" fill="#FFFFFF" />
-  <circle cx="84" cy="27" r="7" stroke="#10B981" strokeWidth="2" opacity="0.9" />
+  {/* Precision Calibration Datum Line */}
+  <line x1="88" y1="22" x2="88" y2="78" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" stroke-dasharray="2 4" opacity="0.8" />
 </svg>

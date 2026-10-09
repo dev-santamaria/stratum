@@ -19,6 +19,7 @@ import {
   Sparkles,
   Layers,
   PhoneCall,
+  BarChart3,
 } from "lucide-react";
 import {
   DropdownMenu,
@@ -116,6 +117,23 @@ export function Navbar() {
                       <div className="text-xs font-bold text-foreground">Market Insights</div>
                       <div className="text-[11px] text-muted-foreground leading-snug">
                         Executive briefing notes, telemetry & consumer pulse
+                      </div>
+                    </div>
+                  </Link>
+                </DropdownMenuItem>
+
+                <DropdownMenuItem asChild className="cursor-pointer p-2 rounded-xl focus:bg-muted/80">
+                  <Link href="/insights#published-surveys" className="flex items-start gap-3 w-full">
+                    <div className="size-8 rounded-lg bg-primary/10 text-primary flex items-center justify-center shrink-0 mt-0.5">
+                      <BarChart3 className="size-4" />
+                    </div>
+                    <div className="space-y-0.5">
+                      <div className="text-xs font-bold text-foreground flex items-center gap-1.5">
+                        <span>Published Surveys</span>
+                        <span className="text-[9px] px-1.5 py-0.2 rounded bg-primary/10 text-primary font-mono font-bold">5 SAMPLES</span>
+                      </div>
+                      <div className="text-[11px] text-muted-foreground leading-snug">
+                        Interactive empirical survey results, bar charts &amp; line graphs
                       </div>
                     </div>
                   </Link>
@@ -304,6 +322,14 @@ export function Navbar() {
               >
                 <TrendingUp className="size-3.5 text-emerald-500" />
                 <span>Market Insights</span>
+              </Link>
+              <Link
+                href="/insights#published-surveys"
+                onClick={() => setMobileMenuOpen(false)}
+                className="flex items-center gap-2.5 py-1.5 px-3 rounded-lg text-xs font-medium text-muted-foreground hover:text-foreground hover:bg-muted/40"
+              >
+                <BarChart3 className="size-3.5 text-primary" />
+                <span>Published Research Surveys</span>
               </Link>
               <Link
                 href="/blogs"

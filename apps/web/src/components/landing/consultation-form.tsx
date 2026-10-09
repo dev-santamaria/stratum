@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { CheckCircle2, Shield, Send, Building2, User, Mail, FileText } from "lucide-react";
+import { CheckCircle2, Shield, Send, Building2, User, Mail, FileText, Layers, Clock, Lock } from "lucide-react";
 import { ModernSelect, ModernSelectOption } from "../ui/modern-select";
 
 const MARKET_OPTIONS: ModernSelectOption[] = [
@@ -63,9 +63,17 @@ const MARKET_OPTIONS: ModernSelectOption[] = [
   },
 ];
 
+const MANDATE_TYPES = [
+  { id: "FIELD_RESEARCH", label: "Field Survey / Kiosk Census" },
+  { id: "BRAND_TRACKING", label: "Longitudinal Brand Tracker" },
+  { id: "DEAL_ROOM", label: "B2B Deal Room / Sourcing" },
+  { id: "STRATEGIC_ADVISORY", label: "Executive Scoping Brief" },
+];
+
 export function ConsultationForm() {
   const [submitted, setSubmitted] = useState(false);
   const [role, setRole] = useState<string>("ENTERPRISE_BRAND");
+  const [mandateType, setMandateType] = useState<string>("FIELD_RESEARCH");
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -81,21 +89,42 @@ export function ConsultationForm() {
 
   if (submitted) {
     return (
-      <div className="p-8 rounded-2xl border border-emerald-500/30 bg-emerald-50/40 dark:bg-emerald-950/20 text-center space-y-4 animate-in fade-in">
-        <div className="size-12 rounded-full bg-emerald-100 text-emerald-600 dark:bg-emerald-900/60 dark:text-emerald-400 mx-auto flex items-center justify-center">
+      <div className="p-8 rounded-lg border border-border/80 bg-card text-center space-y-4 animate-in fade-in">
+        <div className="size-12 rounded-full bg-emerald-50 text-emerald-600 dark:bg-emerald-950/60 dark:text-emerald-400 mx-auto flex items-center justify-center border border-emerald-200 dark:border-emerald-800">
           <CheckCircle2 className="size-6" />
         </div>
-        <h4 className="text-xl font-bold text-foreground">
-          Consultation Request Dispatched
-        </h4>
+        <div className="space-y-1">
+          <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-emerald-600 dark:text-emerald-400">
+            INTAKE MEMO REGISTERED
+          </span>
+          <h4 className="text-lg font-bold text-foreground">
+            Consultation Briefing Dispatched
+          </h4>
+        </div>
         <p className="text-xs sm:text-sm text-muted-foreground max-w-md mx-auto leading-relaxed">
-          A STRATUM regional market director will review your brief and contact you within 6 business hours with relevant sector telemetry and preliminary scoping.
+          Your commercial brief has been routed to our regional sector directors in Nairobi. A tailored scoping memo, sample power calculation, and bilateral NDA protocol will be issued within 6 business hours.
         </p>
+
+        <div className="p-3 rounded-md bg-muted/40 border border-border/60 text-left font-mono text-[11px] space-y-1 max-w-md mx-auto">
+          <div className="flex justify-between text-muted-foreground">
+            <span>INTAKE DOSSIER ID:</span>
+            <span className="font-bold text-foreground">STR-BRIEF-2026-X09</span>
+          </div>
+          <div className="flex justify-between text-muted-foreground">
+            <span>PRIMARY DESK:</span>
+            <span className="font-bold text-foreground">Nairobi Operations Command</span>
+          </div>
+          <div className="flex justify-between text-muted-foreground">
+            <span>RESPONSE WINDOW:</span>
+            <span className="font-bold text-emerald-600 dark:text-emerald-400">&lt; 6 Business Hours</span>
+          </div>
+        </div>
+
         <button
           type="button"
           suppressHydrationWarning
           onClick={() => setSubmitted(false)}
-          className="text-xs font-semibold text-primary underline hover:text-primary/80 pt-2"
+          className="text-xs font-semibold text-primary underline hover:text-primary/80 pt-2 cursor-pointer"
         >
           Submit another inquiry
         </button>
@@ -107,23 +136,24 @@ export function ConsultationForm() {
     <form onSubmit={handleSubmit} className="space-y-4" suppressHydrationWarning>
       {/* Persona Selector Tabs */}
       <div className="space-y-1.5">
-        <label className="text-[11px] font-bold text-muted-foreground uppercase tracking-wider">
-          I am reaching out as:
+        <label className="text-[11px] font-mono font-bold text-muted-foreground uppercase tracking-wider flex items-center gap-1.5">
+          <User className="size-3 text-primary" />
+          <span>I AM REPRESENTING:</span>
         </label>
         <div className="grid grid-cols-3 gap-2">
           {[
-            { id: "ENTERPRISE_BRAND", label: "Brand / FMCG" },
-            { id: "INVESTOR", label: "Investor / Fund" },
-            { id: "DISTRIBUTOR", label: "Local Distributor" },
+            { id: "ENTERPRISE_BRAND", label: "Enterprise / Brand" },
+            { id: "INVESTOR", label: "Institutional Fund / PE" },
+            { id: "DISTRIBUTOR", label: "Trade / Distributor" },
           ].map((item) => (
             <button
               type="button"
               suppressHydrationWarning
               key={item.id}
               onClick={() => setRole(item.id)}
-              className={`py-2 px-2 text-xs font-semibold rounded-lg border text-center transition-all ${
+              className={`py-2 px-2 text-xs font-semibold rounded-md border text-center transition-all cursor-pointer ${
                 role === item.id
-                  ? "bg-primary text-primary-foreground border-primary shadow-sm"
+                  ? "bg-card border-primary text-foreground shadow-xs ring-1 ring-primary/20"
                   : "bg-background text-muted-foreground border-border hover:border-foreground/30 hover:bg-muted/40"
               }`}
             >
@@ -133,7 +163,32 @@ export function ConsultationForm() {
         </div>
       </div>
 
-      {/* Name & Email Row */}
+      {/* Operational Mandate Type Selector */}
+      <div className="space-y-1.5">
+        <label className="text-[11px] font-mono font-bold text-muted-foreground uppercase tracking-wider flex items-center gap-1.5">
+          <Layers className="size-3 text-primary" />
+          <span>PRIMARY OPERATIONAL MANDATE:</span>
+        </label>
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-1.5">
+          {MANDATE_TYPES.map((m) => (
+            <button
+              type="button"
+              suppressHydrationWarning
+              key={m.id}
+              onClick={() => setMandateType(m.id)}
+              className={`py-1.5 px-2 text-[11px] font-medium rounded-md border text-center transition-all cursor-pointer truncate ${
+                mandateType === m.id
+                  ? "bg-primary/10 border-primary/60 text-primary font-bold"
+                  : "bg-background text-muted-foreground border-border/80 hover:bg-muted/40"
+              }`}
+            >
+              {m.label}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {/* Name & Corporate Email Row */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
         <div className="space-y-1">
           <label className="text-xs font-medium text-foreground flex items-center gap-1.5">
@@ -146,7 +201,7 @@ export function ConsultationForm() {
             placeholder="e.g. Sarah Adebayo"
             value={formData.name}
             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-            className="w-full px-3.5 py-2.5 rounded-lg border border-border bg-background text-xs text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary/60 transition-all"
+            className="w-full px-3.5 py-2.5 rounded-md border border-border bg-background text-xs text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary transition-all"
           />
         </div>
         <div className="space-y-1">
@@ -160,12 +215,12 @@ export function ConsultationForm() {
             placeholder="e.g. s.adebayo@multinational.com"
             value={formData.email}
             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-            className="w-full px-3.5 py-2.5 rounded-lg border border-border bg-background text-xs text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary/60 transition-all"
+            className="w-full px-3.5 py-2.5 rounded-md border border-border bg-background text-xs text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary transition-all"
           />
         </div>
       </div>
 
-      {/* Company & Modern Target Market Select Row */}
+      {/* Company & Target Market Row */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
         <div className="space-y-1">
           <label className="text-xs font-medium text-foreground flex items-center gap-1.5">
@@ -175,10 +230,10 @@ export function ConsultationForm() {
             required
             suppressHydrationWarning
             type="text"
-            placeholder="e.g. Diageo / Unilever / Growth Fund"
+            placeholder="e.g. Diageo / Unilever / Capital Fund"
             value={formData.company}
             onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-            className="w-full px-3.5 py-2.5 rounded-lg border border-border bg-background text-xs text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary/60 transition-all"
+            className="w-full px-3.5 py-2.5 rounded-md border border-border bg-background text-xs text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary transition-all"
           />
         </div>
 
@@ -186,7 +241,6 @@ export function ConsultationForm() {
           <label className="text-xs font-medium text-foreground">
             Primary Target Market *
           </label>
-          {/* Custom Modern Select replacing native dropdown */}
           <ModernSelect
             options={MARKET_OPTIONS}
             value={formData.targetMarket}
@@ -203,10 +257,10 @@ export function ConsultationForm() {
         <textarea
           suppressHydrationWarning
           rows={3}
-          placeholder="Briefly describe what you are looking to understand, validate, or execute (e.g. concept testing, market entry, distributor matchmaking, deal room access)..."
+          placeholder="Briefly describe your geographic scope, research questions, or commercial objective (e.g. informal retail pricing elasticity, distributor warehouse verification, Asia factory sourcing)..."
           value={formData.message}
           onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-          className="w-full px-3.5 py-2.5 rounded-lg border border-border bg-background text-xs text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary/60 transition-all resize-none"
+          className="w-full px-3.5 py-2.5 rounded-md border border-border bg-background text-xs text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary transition-all resize-none"
         />
       </div>
 
@@ -214,18 +268,21 @@ export function ConsultationForm() {
       <button
         type="submit"
         suppressHydrationWarning
-        className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-lg bg-primary text-primary-foreground font-bold text-xs uppercase tracking-wider hover:bg-primary/90 transition-all shadow-md active:scale-[0.99]"
+        className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-md bg-primary text-primary-foreground font-bold text-xs uppercase tracking-wider hover:bg-primary/90 transition-all shadow-sm active:scale-[0.99] cursor-pointer"
       >
         <Send className="size-3.5" />
-        Talk to Stratum — Request Executive Briefing
+        <span>Dispatch Briefing to Sector Directors</span>
       </button>
 
-      <div className="flex items-center justify-between text-[11px] text-muted-foreground pt-1">
+      <div className="flex flex-col sm:flex-row items-center justify-between text-[11px] text-muted-foreground pt-1 gap-1">
         <span className="flex items-center gap-1">
           <Shield className="size-3 text-emerald-500" />
-          Strict Commercial Confidentiality & Mutual NDA
+          Strict Bilateral Mutual NDA &amp; Data Security Protected
         </span>
-        <span className="font-mono text-[10px]">Avg response: &lt; 6 hrs</span>
+        <span className="font-mono text-[10px] text-foreground font-medium flex items-center gap-1">
+          <Clock className="size-2.5 text-primary" />
+          SLA: &lt; 6 Business Hours
+        </span>
       </div>
     </form>
   );

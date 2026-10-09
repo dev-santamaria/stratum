@@ -192,57 +192,71 @@ export function Footer() {
           </div>
         </div>
 
-        {/* 2. Global Operating Hubs & International Corridors */}
-        <div className="mt-10 pt-6 border-t border-border/60">
+        {/* 2. Corporate Head Office & Active Commercial Corridors */}
+        <div className="mt-10 pt-6 border-t border-border/60 space-y-3">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-[11px] font-mono">
+            <span className="font-bold text-foreground uppercase tracking-wider flex items-center gap-1.5">
+              <span className="size-2 rounded-full bg-emerald-500 animate-pulse" />
+              Corporate Head Office &amp; Active Fieldwork Corridors
+            </span>
+            <span className="text-muted-foreground">
+              All regional corridors centrally directed via East Africa Headquarters (Nairobi)
+            </span>
+          </div>
+
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 text-[11px] text-muted-foreground">
-            {/* East Africa Hub: Kenya */}
-            <div className="space-y-0.5">
+            {/* Corporate Head Office: East Africa (Nairobi, Kenya) */}
+            <div className="space-y-0.5 p-2.5 rounded-lg bg-primary/5 border border-primary/25">
               <span className="font-bold text-foreground flex items-center gap-1">
-                <MapPin className="size-3 text-primary" /> Nairobi Hub
+                <MapPin className="size-3 text-primary" /> East Africa (HQ)
               </span>
-              <p>Westlands, Nairobi, Kenya</p>
-              <span className="text-[10px] font-mono text-primary font-semibold">East Africa Telemetry</span>
+              <p className="text-foreground font-medium">Head Office &amp; Operations Command</p>
+              <span className="text-[10px] font-mono text-primary font-bold block">Nairobi, Kenya</span>
             </div>
 
-            <div className="space-y-0.5">
+            {/* West Africa */}
+            <div className="space-y-0.5 p-2.5 rounded-lg bg-card border border-border/60">
               <span className="font-bold text-foreground flex items-center gap-1">
-                <MapPin className="size-3 text-blue-500" /> Lagos Hub
+                <Globe2 className="size-3 text-blue-500" /> West Africa
               </span>
-              <p>Victoria Island, Lagos, Nigeria</p>
-              <span className="text-[10px] font-mono text-muted-foreground">West Africa Commercial Center</span>
+              <p>Fieldwork &amp; Consumer Panels</p>
+              <span className="text-[10px] font-mono text-muted-foreground block">ECOWAS Trade Corridor</span>
             </div>
 
-            <div className="space-y-0.5">
+            {/* Southern Africa */}
+            <div className="space-y-0.5 p-2.5 rounded-lg bg-card border border-border/60">
               <span className="font-bold text-foreground flex items-center gap-1">
-                <MapPin className="size-3 text-emerald-500" /> Johannesburg Hub
+                <Globe2 className="size-3 text-emerald-500" /> Southern Africa
               </span>
-              <p>Sandton, Johannesburg, South Africa</p>
-              <span className="text-[10px] font-mono text-muted-foreground">Southern Africa Trade Center</span>
+              <p>Regional Fieldwork Network</p>
+              <span className="text-[10px] font-mono text-muted-foreground block">Industrial &amp; Retail Panels</span>
             </div>
 
-            <div className="space-y-0.5">
+            {/* North Africa */}
+            <div className="space-y-0.5 p-2.5 rounded-lg bg-card border border-border/60">
               <span className="font-bold text-foreground flex items-center gap-1">
-                <MapPin className="size-3 text-amber-500" /> Cairo Hub
+                <Globe2 className="size-3 text-amber-500" /> North Africa
               </span>
-              <p>New Cairo, Cairo, Egypt</p>
-              <span className="text-[10px] font-mono text-muted-foreground">North Africa & Middle East</span>
+              <p>Cross-Border Telemetry</p>
+              <span className="text-[10px] font-mono text-muted-foreground block">Maghreb Sourcing Corridor</span>
             </div>
 
-            <div className="space-y-0.5">
+            {/* Europe */}
+            <div className="space-y-0.5 p-2.5 rounded-lg bg-card border border-border/60">
               <span className="font-bold text-foreground flex items-center gap-1">
-                <MapPin className="size-3 text-indigo-500" /> London Capital Desk
+                <Globe2 className="size-3 text-indigo-500" /> Europe
               </span>
-              <p>Mayfair, London, United Kingdom</p>
-              <span className="text-[10px] font-mono text-muted-foreground">European & PE Advisory</span>
+              <p>Institutional Advisory Desk</p>
+              <span className="text-[10px] font-mono text-muted-foreground block">Capital Markets Gateway</span>
             </div>
 
-            {/* Asia Corridor: China & India */}
-            <div className="space-y-0.5">
+            {/* Asia: China & India */}
+            <div className="space-y-0.5 p-2.5 rounded-lg bg-card border border-border/60">
               <span className="font-bold text-foreground flex items-center gap-1">
-                <Globe2 className="size-3 text-cyan-500" /> Asia Trade Desk
+                <Globe2 className="size-3 text-cyan-500" /> Asia (China &amp; India)
               </span>
-              <p>Shanghai & Mumbai Corridors</p>
-              <span className="text-[10px] font-mono text-muted-foreground">China & India B2B Intermediation</span>
+              <p>Bilateral Trade Corridors</p>
+              <span className="text-[10px] font-mono text-muted-foreground block">Direct Factory Sourcing</span>
             </div>
           </div>
         </div>

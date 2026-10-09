@@ -150,7 +150,7 @@ export default function PrivacyPage() {
               <div className="font-mono text-xs text-foreground space-y-1 bg-muted/40 p-3 rounded-lg border border-border/60">
                 <div>Email: <a href="mailto:privacy@stratumresearchltd.com" className="text-primary hover:underline">privacy@stratumresearchltd.com</a></div>
                 <div>Attention: Lead Data Protection Officer & Corporate Counsel</div>
-                <div>Jurisdiction: Lagos • Nairobi • Johannesburg • London</div>
+                <div>Corporate Headquarters: Nairobi, Kenya • Pan-African &amp; International Corridors</div>
               </div>
             </section>
           </div>

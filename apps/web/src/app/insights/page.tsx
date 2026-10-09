@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { Navbar } from "@/components/landing/navbar";
 import { Footer } from "@/components/landing/footer";
+import { ResearchStudioWrapper } from "@/components/research/research-studio-wrapper";
 import {
   FileText,
   TrendingUp,
@@ -12,6 +13,7 @@ import {
   Calendar,
   Layers,
   ArrowUpRight,
+  BarChart3,
 } from "lucide-react";
 
 export const metadata = {
@@ -141,12 +143,19 @@ export default function InsightsPage() {
 
             <div className="flex flex-wrap items-center gap-3 pt-2">
               <Link
-                href="/reports"
+                href="#published-surveys"
                 className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-primary text-primary-foreground font-bold text-xs uppercase tracking-wider shadow-sm hover:bg-primary/90 transition-all"
+              >
+                <BarChart3 className="size-3.5" />
+                Explore Published Surveys
+                <ArrowRight className="size-3" />
+              </Link>
+              <Link
+                href="/reports"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-border bg-card text-foreground font-semibold text-xs hover:bg-muted/60 transition-all shadow-xs"
               >
                 <FileText className="size-3.5" />
                 Browse Full Research Reports
-                <ArrowRight className="size-3" />
               </Link>
               <Link
                 href="/blogs"
@@ -162,7 +171,11 @@ export default function InsightsPage() {
 
       {/* Main Categories Section */}
       <main className="py-12 sm:py-16 border-b border-border/60">
-        <div className="mx-auto w-full max-w-[1536px] px-4 sm:px-6 lg:px-8 xl:px-10 space-y-12">
+        <div className="mx-auto w-full max-w-[1536px] px-4 sm:px-6 lg:px-8 xl:px-10 space-y-16">
+          {/* Prominent Featured Column: Our Market Research Insights */}
+          <section className="scroll-mt-24">
+            <ResearchStudioWrapper />
+          </section>
           {INSIGHT_CATEGORIES.map((cat) => {
             const Icon = cat.icon;
             return (
