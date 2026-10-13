@@ -2,34 +2,28 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Navbar } from "@/components/landing/navbar";
-import { RegionalCoverageConsole } from "@/components/landing/regional-coverage-console";
 import { Footer } from "@/components/landing/footer";
 import { MobilePwaBar } from "@/components/navigation/mobile-pwa-bar";
 import {
   ArrowRight,
-  BarChart3,
-  CheckCircle2,
-  Database,
-  Globe2,
-  Handshake,
-  Layers,
-  Lock,
-  MapPin,
-  PhoneCall,
-  Search,
-  ShieldCheck,
-  TrendingUp,
-  Users2,
-  Target,
-  FlaskConical,
-  Activity,
-  FileText,
-  Clock,
   Compass,
-  BookOpen,
-  ChevronRight,
-  Download,
+  TrendingUp,
+  Search,
+  Handshake,
+  Globe2,
+  Network,
+  CheckCircle2,
+  XCircle,
+  Users2,
   Building2,
+  Cpu,
+  Lock,
+  FileText,
+  BarChart3,
+  Sparkles,
+  ShieldCheck,
+  ChevronRight,
+  Target,
 } from "lucide-react";
 
 export default function Home() {
@@ -38,101 +32,119 @@ export default function Home() {
       {/* Global Navigation Header */}
       <Navbar />
 
-      {/* CHAPTER 1: THE EXECUTIVE MISSION & INSTITUTIONAL TICKER */}
-      <section className="relative pt-8 pb-12 sm:pt-12 sm:pb-16 border-b border-border/70 bg-background">
+      {/* CHAPTER 1: HERO & POSITIONING (EXACT CLIENT COPY FROM IMAGES 1 & 2) */}
+      <section className="relative pt-8 pb-12 sm:pt-12 sm:pb-16 border-b border-border/70 bg-background overflow-hidden">
         <div className="mx-auto w-full max-w-[1536px] px-4 sm:px-6 lg:px-8 xl:px-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-            {/* Left Column (7 cols): Editorial Thesis */}
-            <div className="lg:col-span-7 space-y-5">
-              {/* Institutional Taxonomy Kicker */}
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md border border-border/80 bg-muted/40 text-[11px] font-mono font-semibold text-muted-foreground">
-                <span className="size-1.5 rounded-full bg-primary" />
-                <span className="text-foreground font-bold tracking-wide">STRATUM MARKET INTELLIGENCE</span>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-center">
+            {/* Left Column (7 cols): Editorial Thesis & Positioning */}
+            <div className="lg:col-span-7 space-y-4">
+              {/* Header Badge (Image 2 Exact Copy) */}
+              <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-md border border-border/80 bg-muted/40 text-[11px] font-mono font-semibold text-muted-foreground">
+                <Globe2 className="size-3.5 text-primary shrink-0" />
+                <span className="text-foreground font-bold tracking-wide">STRATUM RESEARCH LTD</span>
                 <span className="text-border">•</span>
-                <span>PAN-AFRICA, CHINA &amp; INDIA CORRIDORS</span>
+                <span className="text-primary font-bold">MARKET INTELLIGENCE &bull; STRATEGY &bull; INTERMEDIATION</span>
               </div>
 
-              {/* Restrained, Editorial Headline (No Shouting, No Rainbow Gradients) */}
-              <h1 className="text-2xl sm:text-3xl lg:text-[32px] font-bold text-foreground tracking-tight leading-[1.25] max-w-3xl">
-                Bridging Investment Gaps Through Intelligence, Insight &amp; Intermediation
+              {/* Main Headline (Refined Standard Size) */}
+              <h1 className="text-2xl sm:text-3xl lg:text-[34px] font-extrabold text-foreground tracking-tight leading-tight max-w-2xl">
+                See the Opportunity. Understand the Market. Make the Connection.
               </h1>
 
-              {/* Editorial Summary */}
-              <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed max-w-2xl font-normal">
-                Stratum is a global market intelligence and business intermediation firm helping businesses, investors, brands, and entrepreneurs make informed decisions in complex and emerging markets.
-              </p>
-              <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed max-w-2xl font-normal">
-                Through first-hand consumer feedback, rigorous field research, proprietary datasets, and strategic B2B connections, we turn raw market signals into actionable intelligence and commercial opportunities.
-              </p>
+              {/* Recommended Positioning Tagline (Image 1 Exact Copy) */}
+              <div className="text-xs sm:text-sm font-semibold text-primary tracking-normal border-l-2 border-primary pl-3 py-0.5">
+                Bridging Investment Gaps Through Intelligence, Insight &amp; Intermediation
+              </div>
 
-              {/* Institutional Action Group */}
-              <div className="flex flex-wrap items-center gap-3 pt-1">
+              {/* Lead Paragraphs (Image 2 Exact Copy) */}
+              <div className="space-y-2.5 max-w-xl text-xs sm:text-sm text-muted-foreground leading-relaxed font-normal">
+                <p>
+                  Stratum Research Ltd empowers businesses, investors and strategic partners with the intelligence, research and market connections needed to navigate complex markets and unlock commercial opportunities.
+                </p>
+                <p>
+                  From market understanding to opportunity identification and strategic partnerships, we help turn informed decisions into actionable business possibilities.
+                </p>
+              </div>
+
+              {/* Primary Buttons (Image 2 Exact Copy with Bug-Free Arrow Icon) */}
+              <div className="flex flex-wrap items-center gap-3.5 pt-2">
                 <Link
-                  href="/solutions"
-                  className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-md bg-primary text-primary-foreground font-bold text-xs uppercase tracking-wider shadow-sm hover:bg-primary/90 transition-all active:scale-[0.99]"
+                  href="/services"
+                  className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-primary text-primary-foreground font-bold text-xs uppercase tracking-wider shadow-sm hover:bg-primary/90 transition-all active:scale-[0.99] cursor-pointer"
                 >
-                  Explore Our Solutions
+                  <span>Explore Our Services</span>
                   <ArrowRight className="size-3.5" />
                 </Link>
+
                 <Link
-                  href="/contact"
-                  className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-md border border-border/80 bg-card hover:bg-muted/60 text-foreground font-semibold text-xs transition-all shadow-xs"
+                  href="/contact?cta=EXPLORE_INVESTMENT"
+                  className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg border border-border/80 bg-card hover:bg-muted/70 text-foreground font-semibold text-xs transition-all shadow-2xs group cursor-pointer"
                 >
-                  Inquire on Research Scope
-                </Link>
-                <Link
-                  href="/why-stratum"
-                  className="inline-flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-md text-primary hover:bg-primary/5 font-semibold text-xs transition-colors"
-                >
-                  Institutional Standards <ChevronRight className="size-3" />
+                  <span>Discuss an Opportunity</span>
+                  <ArrowRight className="size-3.5 -rotate-45 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 text-primary" />
                 </Link>
               </div>
 
-              {/* Gartner-Style Operational Telemetry Ticker */}
-              <div className="pt-4 grid grid-cols-2 sm:grid-cols-4 gap-4 border-t border-border/60 max-w-2xl">
-                <div className="space-y-0.5">
-                  <span className="text-lg sm:text-xl font-bold font-mono text-foreground">14,200+</span>
-                  <p className="text-[11px] text-muted-foreground font-medium">Audited Retail Kiosks</p>
-                </div>
-                <div className="space-y-0.5">
-                  <span className="text-lg sm:text-xl font-bold font-mono text-foreground">190,000+</span>
-                  <p className="text-[11px] text-muted-foreground font-medium">Verified Panelists</p>
-                </div>
-                <div className="space-y-0.5">
-                  <span className="text-lg sm:text-xl font-bold font-mono text-foreground">620+</span>
-                  <p className="text-[11px] text-muted-foreground font-medium">Asian Manufacturers</p>
-                </div>
-                <div className="space-y-0.5">
-                  <span className="text-lg sm:text-xl font-bold font-mono text-foreground">$185M+</span>
-                  <p className="text-[11px] text-muted-foreground font-medium">B2B Deal Pipeline</p>
+              {/* Innovative Triad Continuum (Replaces the static 4 text boxes) */}
+              <div className="pt-6 border-t border-border/60 max-w-2xl">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                  <div className="p-3.5 rounded-xl border border-border/70 bg-card/60 hover:border-primary/50 hover:bg-card hover:shadow-2xs transition-all space-y-1">
+                    <div className="flex items-center gap-1.5 text-xs font-bold text-foreground">
+                      <Compass className="size-3.5 text-primary" />
+                      <span>01 / Understand</span>
+                    </div>
+                    <p className="text-[11px] text-muted-foreground leading-snug">
+                      Primary ground-truth data in traditional trade and consumer households.
+                    </p>
+                  </div>
+
+                  <div className="p-3.5 rounded-xl border border-border/70 bg-card/60 hover:border-emerald-500/50 hover:bg-card hover:shadow-2xs transition-all space-y-1">
+                    <div className="flex items-center gap-1.5 text-xs font-bold text-foreground">
+                      <TrendingUp className="size-3.5 text-emerald-500" />
+                      <span>02 / Identify</span>
+                    </div>
+                    <p className="text-[11px] text-muted-foreground leading-snug">
+                      Subnational price elasticity curves and commercial whitespace mapping.
+                    </p>
+                  </div>
+
+                  <div className="p-3.5 rounded-xl border border-border/70 bg-card/60 hover:border-amber-500/50 hover:bg-card hover:shadow-2xs transition-all space-y-1">
+                    <div className="flex items-center gap-1.5 text-xs font-bold text-foreground">
+                      <Handshake className="size-3.5 text-amber-500" />
+                      <span>03 / Connect</span>
+                    </div>
+                    <p className="text-[11px] text-muted-foreground leading-snug">
+                      Direct bilateral factory vetting and Tier-1 distributor connections.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
 
-            {/* Right Column (5 cols): Verified Ground Imagery with Restrained Caption */}
+            {/* Right Column (5 cols): Verified Ground Research Imagery */}
             <div className="lg:col-span-5">
-              <div className="relative rounded-xl overflow-hidden border border-border/80 shadow-md bg-card aspect-[4/5] sm:aspect-[4/3] lg:aspect-auto lg:h-[420px] group">
+              <div className="relative rounded-2xl overflow-hidden border border-border/80 shadow-md bg-card aspect-[4/5] sm:aspect-[4/3] lg:aspect-auto lg:h-[460px] group">
                 <Image
                   src="/images/landing-kiosk.jpg"
-                  alt="Ground-truth consumer research and retail market verification across emerging markets"
+                  alt="Stratum Research fieldwork in traditional trade and emerging markets"
                   fill
                   priority
                   className="object-cover transition-transform duration-700 group-hover:scale-102"
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 40vw"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
 
-                {/* Restrained Telemetry Banner */}
-                <div className="absolute bottom-3 inset-x-3 sm:bottom-4 sm:inset-x-4 p-3 rounded-lg bg-background/95 dark:bg-background/90 backdrop-blur-md border border-border/80 shadow-md text-foreground space-y-1">
+                {/* Ground Truth Caption */}
+                <div className="absolute bottom-4 inset-x-4 p-4 rounded-xl bg-background/95 dark:bg-background/90 backdrop-blur-md border border-border/80 shadow-md text-foreground space-y-1.5">
                   <div className="flex items-center justify-between text-[11px] font-mono">
                     <span className="text-primary font-bold flex items-center gap-1.5">
                       <span className="size-1.5 rounded-full bg-emerald-500" />
-                      OPERATIONAL COMMAND
+                      PRIMARY FIELD TELEMETRY
                     </span>
-                    <span className="text-muted-foreground font-medium">East Africa Nerve Center: Nairobi</span>
+                    <span className="text-muted-foreground">Emerging Markets Practice</span>
                   </div>
                   <p className="text-xs text-muted-foreground leading-snug">
-                    Field-level consumer audits and bilateral supplier verifications across Africa, China, and India.
+                    Ground-level consumer insight, retail audits, and commercial partner verification across African and emerging trade corridors.
                   </p>
                 </div>
               </div>
@@ -141,874 +153,659 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CHAPTER 2: GARTNER-STYLE LEAD EXECUTIVE DOSSIER & FIELD TELEMETRY */}
-      <section id="briefings" className="py-12 sm:py-16 border-b border-border/70 bg-muted/15 scroll-mt-20">
-        <div className="mx-auto w-full max-w-[1536px] px-4 sm:px-6 lg:px-8 xl:px-10 space-y-8">
-          {/* Section Header */}
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-border/60 pb-4">
-            <div className="space-y-1">
-              <div className="text-[11px] font-mono font-bold tracking-wider text-primary uppercase">
-                EXECUTIVE RESEARCH DOSSIERS &amp; FIELD TELEMETRY
-              </div>
-              <h2 className="text-xl sm:text-2xl font-bold text-foreground tracking-tight">
-                Featured Market Intelligence Briefings
-              </h2>
+      {/* CHAPTER 2: STRATUM IDENTITY & DIFFERENTIATION (CLIENT MANDATE) */}
+      <section className="py-14 sm:py-18 border-b border-border/70 bg-muted/15">
+        <div className="mx-auto w-full max-w-[1536px] px-4 sm:px-6 lg:px-8 xl:px-10 space-y-10">
+          <div className="max-w-3xl space-y-2">
+            <div className="inline-flex items-center gap-2 px-2.5 py-0.5 rounded bg-primary/10 text-primary font-mono text-[11px] font-bold tracking-wider uppercase">
+              DISTINCT INSTITUTIONAL IDENTITY
             </div>
-            <div className="flex items-center gap-3 shrink-0">
-              <Link
-                href="/reports"
-                className="inline-flex items-center gap-1.5 text-xs font-semibold text-primary hover:underline"
-              >
-                <span>View Full Reports Directory</span>
-                <ArrowRight className="size-3.5" />
-              </Link>
-            </div>
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight">
+              A Clear Identity Distinguishing Stratum in Emerging Markets
+            </h2>
+            <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
+              Traditional research agencies drop static surveys on desks without execution capability. General consultancies deliver broad theoretical slide decks without primary ground truth. Stratum combines primary research, strategic intelligence, and direct business intermediation into one unified execution model.
+            </p>
           </div>
 
-          {/* Balanced 4-Dossier Grid: Equal-Height & Perfectly Leveled Left and Right Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 items-stretch">
-            {/* Dossier 01 */}
-            <article className="p-6 sm:p-7 rounded-xl border border-border/80 bg-card hover:border-primary/50 transition-all shadow-xs flex flex-col justify-between space-y-5 group">
-              <div className="space-y-4">
-                <div className="flex flex-wrap items-center justify-between gap-2 text-xs font-mono">
-                  <span className="px-2.5 py-0.5 rounded bg-primary/10 text-primary font-bold text-[10px] tracking-wide">
-                    INFORMAL RETAIL &bull; PAN-AFRICA
-                  </span>
-                  <span className="text-muted-foreground text-[11px]">DOSSIER 01 &bull; Q3 2026</span>
+          {/* 3-Column Differentiation Matrix */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
+            {/* Column 1: Traditional Research Agencies */}
+            <div className="p-6 rounded-2xl border border-border/80 bg-card space-y-4 flex flex-col justify-between">
+              <div className="space-y-3">
+                <div className="flex items-center justify-between text-xs font-mono">
+                  <span className="text-muted-foreground font-bold">LEGACY RESEARCH</span>
+                  <XCircle className="size-4 text-amber-500" />
                 </div>
-
-                <div className="space-y-2">
-                  <h3 className="text-base sm:text-lg font-bold text-foreground leading-snug group-hover:text-primary transition-colors">
-                    The 84% Reality: Mapping Informal Kiosk Retail Volume Across Sub-Saharan Africa
-                  </h3>
-                  <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-                    Multinational brands concentrate 80% of trade marketing on formal supermarkets, yet 84% of actual household transaction volume flows through unmapped neighborhood dukas, spaza shops, and open-air street stalls.
-                  </p>
-                </div>
-
-                {/* Tabular Telemetry Callouts */}
-                <div className="grid grid-cols-3 gap-2 py-3 border-y border-border/60 font-mono text-center sm:text-left">
-                  <div className="space-y-0.5">
-                    <span className="text-lg sm:text-xl font-black text-foreground">84%</span>
-                    <p className="text-[10px] text-muted-foreground uppercase leading-tight">Informal Share</p>
-                  </div>
-                  <div className="space-y-0.5">
-                    <span className="text-lg sm:text-xl font-black text-foreground">38%</span>
-                    <p className="text-[10px] text-muted-foreground uppercase leading-tight">Port-Inland Gap</p>
-                  </div>
-                  <div className="space-y-0.5">
-                    <span className="text-lg sm:text-xl font-black text-foreground">14,200</span>
-                    <p className="text-[10px] text-muted-foreground uppercase leading-tight">Audited Outlets</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="space-y-3 pt-2">
-                <div className="text-[11px] text-muted-foreground">
-                  <span className="font-semibold text-foreground">Methodology:</span> GPS-verified double-blind retail audits across Kenya, Nigeria &amp; South Africa.
-                </div>
-                <div className="flex items-center justify-between gap-3 pt-2 border-t border-border/50">
-                  <span className="text-[10px] font-mono text-emerald-600 dark:text-emerald-400 font-bold flex items-center gap-1">
-                    <span className="size-1.5 rounded-full bg-emerald-500" /> Ground Verified
-                  </span>
-                  <Link
-                    href="/reports"
-                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-primary text-primary-foreground font-semibold text-xs hover:bg-primary/90 transition-all shrink-0"
-                  >
-                    <FileText className="size-3.5" />
-                    <span>Access Executive Dossier</span>
-                  </Link>
-                </div>
-              </div>
-            </article>
-
-            {/* Dossier 02 */}
-            <article className="p-6 sm:p-7 rounded-xl border border-border/80 bg-card hover:border-primary/50 transition-all shadow-xs flex flex-col justify-between space-y-5 group">
-              <div className="space-y-4">
-                <div className="flex flex-wrap items-center justify-between gap-2 text-xs font-mono">
-                  <span className="px-2.5 py-0.5 rounded bg-primary/10 text-primary font-bold text-[10px] tracking-wide">
-                    FINANCIAL TELEMETRY &bull; EAST AFRICA
-                  </span>
-                  <span className="text-muted-foreground text-[11px]">DOSSIER 02 &bull; Q3 2026</span>
-                </div>
-
-                <div className="space-y-2">
-                  <h3 className="text-base sm:text-lg font-bold text-foreground leading-snug group-hover:text-primary transition-colors">
-                    East Africa Mobile Money &amp; Consumer Purchasing Telemetry Index
-                  </h3>
-                  <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-                    High-frequency longitudinal transaction telemetry tracking daily household wallet liquidity, digital credit cycles, and staple food price adjustments ahead of lagging official inflation statistics.
-                  </p>
-                </div>
-
-                {/* Tabular Telemetry Callouts */}
-                <div className="grid grid-cols-3 gap-2 py-3 border-y border-border/60 font-mono text-center sm:text-left">
-                  <div className="space-y-0.5">
-                    <span className="text-lg sm:text-xl font-black text-foreground">56,000+</span>
-                    <p className="text-[10px] text-muted-foreground uppercase leading-tight">Daily Panelists</p>
-                  </div>
-                  <div className="space-y-0.5">
-                    <span className="text-lg sm:text-xl font-black text-foreground">3.2x</span>
-                    <p className="text-[10px] text-muted-foreground uppercase leading-tight">Velocity Ratio</p>
-                  </div>
-                  <div className="space-y-0.5">
-                    <span className="text-lg sm:text-xl font-black text-foreground">94.8%</span>
-                    <p className="text-[10px] text-muted-foreground uppercase leading-tight">M-Pesa / Mobile</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="space-y-3 pt-2">
-                <div className="text-[11px] text-muted-foreground">
-                  <span className="font-semibold text-foreground">Methodology:</span> Continuous anonymized transaction panels across Kenya, Tanzania, Uganda &amp; Rwanda.
-                </div>
-                <div className="flex items-center justify-between gap-3 pt-2 border-t border-border/50">
-                  <span className="text-[10px] font-mono text-emerald-600 dark:text-emerald-400 font-bold flex items-center gap-1">
-                    <span className="size-1.5 rounded-full bg-emerald-500" /> Live Ingestion
-                  </span>
-                  <Link
-                    href="/reports"
-                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-primary text-primary-foreground font-semibold text-xs hover:bg-primary/90 transition-all shrink-0"
-                  >
-                    <FileText className="size-3.5" />
-                    <span>Access Executive Dossier</span>
-                  </Link>
-                </div>
-              </div>
-            </article>
-
-            {/* Dossier 03: Featured E-Waste Research */}
-            <article className="p-6 sm:p-7 rounded-xl border border-border/80 bg-card hover:border-primary/50 transition-all shadow-xs flex flex-col justify-between space-y-5 group">
-              <div className="space-y-4">
-                <div className="flex flex-wrap items-center justify-between gap-2 text-xs font-mono">
-                  <span className="px-2.5 py-0.5 rounded bg-amber-500/10 text-amber-600 dark:text-amber-400 font-bold text-[10px] tracking-wide">
-                    CIRCULAR ECONOMY &bull; PAN-AFRICA
-                  </span>
-                  <span className="text-muted-foreground text-[11px]">DOSSIER 03 &bull; Q3 2026</span>
-                </div>
-
-                <div className="space-y-2">
-                  <h3 className="text-base sm:text-lg font-bold text-foreground leading-snug group-hover:text-primary transition-colors">
-                    The E-Waste Deficit: Electronics Lifecycle &amp; Battery Disposal Across African Megacities
-                  </h3>
-                  <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-                    Despite surging consumer electronics adoption, 57% of urban consumers score their e-waste literacy at 4 or below out of 10. While informal repairers handle 84% of maintenance, 89% report zero access to authorized commercial drop-off centers.
-                  </p>
-                </div>
-
-                {/* Tabular Telemetry Callouts */}
-                <div className="grid grid-cols-3 gap-2 py-3 border-y border-border/60 font-mono text-center sm:text-left">
-                  <div className="space-y-0.5">
-                    <span className="text-lg sm:text-xl font-black text-foreground">57%</span>
-                    <p className="text-[10px] text-muted-foreground uppercase leading-tight">Literacy Deficit</p>
-                  </div>
-                  <div className="space-y-0.5">
-                    <span className="text-lg sm:text-xl font-black text-foreground">4,850</span>
-                    <p className="text-[10px] text-muted-foreground uppercase leading-tight">Audited Panelists</p>
-                  </div>
-                  <div className="space-y-0.5">
-                    <span className="text-lg sm:text-xl font-black text-foreground">89%</span>
-                    <p className="text-[10px] text-muted-foreground uppercase leading-tight">Lack Drop-Off Hubs</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="space-y-3 pt-2">
-                <div className="text-[11px] text-muted-foreground">
-                  <span className="font-semibold text-foreground">Methodology:</span> Field intercepts across primary electronics hubs (Computer Village, Alaba, Luthuli Ave, CBDs).
-                </div>
-                <div className="flex items-center justify-between gap-3 pt-2 border-t border-border/50">
-                  <span className="text-[10px] font-mono text-emerald-600 dark:text-emerald-400 font-bold flex items-center gap-1">
-                    <span className="size-1.5 rounded-full bg-emerald-500" /> Ground Audited
-                  </span>
-                  <Link
-                    href="/insights#survey-ewaste-africa"
-                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-primary text-primary-foreground font-semibold text-xs hover:bg-primary/90 transition-all shrink-0"
-                  >
-                    <FileText className="size-3.5" />
-                    <span>Access Executive Dossier</span>
-                  </Link>
-                </div>
-              </div>
-            </article>
-
-            {/* Dossier 04 */}
-            <article className="p-6 sm:p-7 rounded-xl border border-border/80 bg-card hover:border-primary/50 transition-all shadow-xs flex flex-col justify-between space-y-5 group">
-              <div className="space-y-4">
-                <div className="flex flex-wrap items-center justify-between gap-2 text-xs font-mono">
-                  <span className="px-2.5 py-0.5 rounded bg-primary/10 text-primary font-bold text-[10px] tracking-wide">
-                    HEALTHCARE &bull; INDIA-AFRICA
-                  </span>
-                  <span className="text-muted-foreground text-[11px]">DOSSIER 04 &bull; Q3 2026</span>
-                </div>
-
-                <div className="space-y-2">
-                  <h3 className="text-base sm:text-lg font-bold text-foreground leading-snug group-hover:text-primary transition-colors">
-                    India-Africa Pharmaceutical Distribution &amp; Cold-Chain Integrity
-                  </h3>
-                  <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-                    Active pharmaceutical ingredient (API) supply verification and last-mile temperature logging from Mumbai and Gujarat production corridors into East and West African distributor networks.
-                  </p>
-                </div>
-
-                {/* Tabular Telemetry Callouts */}
-                <div className="grid grid-cols-3 gap-2 py-3 border-y border-border/60 font-mono text-center sm:text-left">
-                  <div className="space-y-0.5">
-                    <span className="text-lg sm:text-xl font-black text-foreground">280+</span>
-                    <p className="text-[10px] text-muted-foreground uppercase leading-tight">Pharma Importers</p>
-                  </div>
-                  <div className="space-y-0.5">
-                    <span className="text-lg sm:text-xl font-black text-foreground">99.2%</span>
-                    <p className="text-[10px] text-muted-foreground uppercase leading-tight">API Compliance</p>
-                  </div>
-                  <div className="space-y-0.5">
-                    <span className="text-lg sm:text-xl font-black text-foreground">100%</span>
-                    <p className="text-[10px] text-muted-foreground uppercase leading-tight">Cold-Chain Logged</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="space-y-3 pt-2">
-                <div className="text-[11px] text-muted-foreground">
-                  <span className="font-semibold text-foreground">Methodology:</span> Cold-chain IoT logger calibration, regulatory license audits &amp; pharmacy panel sweeps.
-                </div>
-                <div className="flex items-center justify-between gap-3 pt-2 border-t border-border/50">
-                  <span className="text-[10px] font-mono text-emerald-600 dark:text-emerald-400 font-bold flex items-center gap-1">
-                    <span className="size-1.5 rounded-full bg-emerald-500" /> IoT Calibrated
-                  </span>
-                  <Link
-                    href="/reports"
-                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-primary text-primary-foreground font-semibold text-xs hover:bg-primary/90 transition-all shrink-0"
-                  >
-                    <FileText className="size-3.5" />
-                    <span>Access Executive Dossier</span>
-                  </Link>
-                </div>
-              </div>
-            </article>
-          </div>
-
-          {/* Symmetrical Telemetry & Research Studio Gateway Ribbon */}
-          <div className="p-4 sm:p-5 rounded-xl border border-border/80 bg-card shadow-xs flex flex-col md:flex-row md:items-center justify-between gap-4">
-            <div className="flex flex-wrap items-center gap-3 sm:gap-6 text-xs font-mono text-muted-foreground">
-              <div className="flex items-center gap-2 font-bold text-foreground">
-                <span className="size-2 rounded-full bg-emerald-500 animate-pulse" />
-                <span>Pan-African Telemetry Footprint:</span>
-              </div>
-              <span>14,200+ Retail Outlets</span>
-              <span className="hidden sm:inline">&bull;</span>
-              <span>56,000+ Panelists</span>
-              <span className="hidden sm:inline">&bull;</span>
-              <span>4,850+ E-Waste Audits</span>
-              <span className="hidden sm:inline">&bull;</span>
-              <span>280+ Importers</span>
-            </div>
-            <Link
-              href="/insights#published-surveys"
-              className="inline-flex items-center gap-1.5 text-xs font-bold text-primary hover:underline shrink-0"
-            >
-              <span>Explore 5 Published Empirical Studies in Research Studio</span>
-              <ArrowRight className="size-3.5" />
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* CHAPTER 3: STRATEGIC CAPABILITIES MATRIX (GARTNER SOLUTIONS FRAMEWORK) */}
-      <section id="capabilities" className="py-12 sm:py-16 border-b border-border/70 bg-background scroll-mt-20">
-        <div className="mx-auto w-full max-w-[1536px] px-4 sm:px-6 lg:px-8 xl:px-10 space-y-8">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-border/60 pb-4">
-            <div className="space-y-1">
-              <div className="text-[11px] font-mono font-bold tracking-wider text-primary uppercase">
-                02 // CAPABILITIES MATRIX &amp; AUDITED STANDARDS
-              </div>
-              <h2 className="text-xl sm:text-2xl font-bold text-foreground tracking-tight">
-                Four Methodological Pillars Engineered for Emerging Markets
-              </h2>
-            </div>
-            <Link
-              href="/solutions"
-              className="inline-flex items-center gap-1.5 text-xs font-semibold text-primary hover:underline shrink-0"
-            >
-              <span>Explore Detailed Solutions Portfolio</span>
-              <ArrowRight className="size-3.5" />
-            </Link>
-          </div>
-
-          {/* High-End Executive Capability Matrix (4 Quadrants) */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
-            {/* Pillar 01 */}
-            <div className="p-6 rounded-xl border border-border/80 bg-card hover:border-primary/50 transition-all shadow-xs flex flex-col justify-between space-y-5 group">
-              <div className="space-y-4">
-                {/* Header & Icon */}
-                <div className="flex items-center justify-between">
-                  <span className="px-2.5 py-1 rounded bg-primary/10 text-primary font-mono text-[10px] font-bold tracking-wider">
-                    PILLAR 01 // SCOPING &amp; ENTRY
-                  </span>
-                  <div className="p-2 rounded-lg bg-muted/60 border border-border/60 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
-                    <Compass className="size-4" />
-                  </div>
-                </div>
-
-                <div className="space-y-1">
-                  <h3 className="text-base font-bold text-foreground leading-snug group-hover:text-primary transition-colors">
-                    Market Opportunity Intelligence
-                  </h3>
-                  <p className="text-xs font-medium text-muted-foreground">
-                    Pre-Capital Feasibility &amp; Subnational Market Sizing
-                  </p>
-                </div>
-
-                {/* Problem & Field Solution Blocks */}
-                <div className="space-y-3 text-xs border-t border-border/60 pt-3">
-                  <div className="space-y-1">
-                    <span className="text-[10px] font-mono uppercase font-bold text-muted-foreground">The Market Blindspot:</span>
-                    <p className="text-[11px] text-muted-foreground leading-relaxed">
-                      Official census data masks informal distribution channels and subnational purchasing power concentration.
-                    </p>
-                  </div>
-
-                  <div className="space-y-1">
-                    <span className="text-[10px] font-mono uppercase font-bold text-foreground">Fieldwork Methodology:</span>
-                    <p className="text-[11px] text-muted-foreground leading-relaxed">
-                      GPS-mapped retail censuses, double-blind competitor pricing scans, and econometrically modeled household disposable income.
-                    </p>
-                  </div>
-                </div>
-
-                {/* Structured Deliverables */}
-                <div className="space-y-1.5 border-t border-border/60 pt-3">
-                  <span className="text-[10px] font-mono uppercase font-bold text-muted-foreground">Primary Deliverables:</span>
-                  <ul className="space-y-1 text-xs">
-                    <li className="flex items-center gap-1.5 text-foreground font-medium text-[11px]">
-                      <CheckCircle2 className="size-3 text-primary shrink-0" />
-                      <span>Addressable Market Sizing (TAM/SAM)</span>
-                    </li>
-                    <li className="flex items-center gap-1.5 text-foreground font-medium text-[11px]">
-                      <CheckCircle2 className="size-3 text-primary shrink-0" />
-                      <span>Competitor Unit Velocity Map</span>
-                    </li>
-                    <li className="flex items-center gap-1.5 text-foreground font-medium text-[11px]">
-                      <CheckCircle2 className="size-3 text-primary shrink-0" />
-                      <span>Capital Allocation Risk Matrix</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-
-              {/* Footer Audit Standards & Action */}
-              <div className="space-y-2.5 pt-3 border-t border-border/60">
-                <div className="flex items-center justify-between text-[10px] font-mono text-muted-foreground">
-                  <span>Standard: ESOMAR &bull; GPS Audited</span>
-                  <span className="text-primary font-bold">95% CI</span>
-                </div>
-                <Link
-                  href="/solutions"
-                  className="w-full inline-flex items-center justify-between px-3 py-1.5 rounded-md bg-muted/40 hover:bg-primary/10 text-foreground hover:text-primary text-xs font-semibold transition-all border border-border/50"
-                >
-                  <span>Explore Methodology</span>
-                  <ChevronRight className="size-3.5" />
-                </Link>
-              </div>
-            </div>
-
-            {/* Pillar 02 */}
-            <div className="p-6 rounded-xl border border-border/80 bg-card hover:border-primary/50 transition-all shadow-xs flex flex-col justify-between space-y-5 group">
-              <div className="space-y-4">
-                {/* Header & Icon */}
-                <div className="flex items-center justify-between">
-                  <span className="px-2.5 py-1 rounded bg-primary/10 text-primary font-mono text-[10px] font-bold tracking-wider">
-                    PILLAR 02 // BEHAVIORAL PANELS
-                  </span>
-                  <div className="p-2 rounded-lg bg-muted/60 border border-border/60 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
-                    <Users2 className="size-4" />
-                  </div>
-                </div>
-
-                <div className="space-y-1">
-                  <h3 className="text-base font-bold text-foreground leading-snug group-hover:text-primary transition-colors">
-                    Consumer Telemetry &amp; Panels
-                  </h3>
-                  <p className="text-xs font-medium text-muted-foreground">
-                    Longitudinal Behavioral Tracking &amp; Wallet Share
-                  </p>
-                </div>
-
-                {/* Problem & Field Solution Blocks */}
-                <div className="space-y-3 text-xs border-t border-border/60 pt-3">
-                  <div className="space-y-1">
-                    <span className="text-[10px] font-mono uppercase font-bold text-muted-foreground">The Market Blindspot:</span>
-                    <p className="text-[11px] text-muted-foreground leading-relaxed">
-                      Infrequent focus groups fail to capture rapid wallet adjustments triggered by currency fluctuations and inflation spikes.
-                    </p>
-                  </div>
-
-                  <div className="space-y-1">
-                    <span className="text-[10px] font-mono uppercase font-bold text-foreground">Fieldwork Methodology:</span>
-                    <p className="text-[11px] text-muted-foreground leading-relaxed">
-                      56,000+ longitudinal mobile money panel, continuous daily household spend telemetry, and rapid-fire vernacular intercepts.
-                    </p>
-                  </div>
-                </div>
-
-                {/* Structured Deliverables */}
-                <div className="space-y-1.5 border-t border-border/60 pt-3">
-                  <span className="text-[10px] font-mono uppercase font-bold text-muted-foreground">Primary Deliverables:</span>
-                  <ul className="space-y-1 text-xs">
-                    <li className="flex items-center gap-1.5 text-foreground font-medium text-[11px]">
-                      <CheckCircle2 className="size-3 text-primary shrink-0" />
-                      <span>Daily Household Wallet Share Index</span>
-                    </li>
-                    <li className="flex items-center gap-1.5 text-foreground font-medium text-[11px]">
-                      <CheckCircle2 className="size-3 text-primary shrink-0" />
-                      <span>Brand Switching &amp; Churn Predictors</span>
-                    </li>
-                    <li className="flex items-center gap-1.5 text-foreground font-medium text-[11px]">
-                      <CheckCircle2 className="size-3 text-primary shrink-0" />
-                      <span>Subnational Price Elasticity Curves</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-
-              {/* Footer Audit Standards & Action */}
-              <div className="space-y-2.5 pt-3 border-t border-border/60">
-                <div className="flex items-center justify-between text-[10px] font-mono text-muted-foreground">
-                  <span>Standard: KDPA &bull; GDPR &bull; Live Feed</span>
-                  <span className="text-primary font-bold">Continuous</span>
-                </div>
-                <Link
-                  href="/solutions"
-                  className="w-full inline-flex items-center justify-between px-3 py-1.5 rounded-md bg-muted/40 hover:bg-primary/10 text-foreground hover:text-primary text-xs font-semibold transition-all border border-border/50"
-                >
-                  <span>Explore Panels</span>
-                  <ChevronRight className="size-3.5" />
-                </Link>
-              </div>
-            </div>
-
-            {/* Pillar 03 */}
-            <div className="p-6 rounded-xl border border-border/80 bg-card hover:border-primary/50 transition-all shadow-xs flex flex-col justify-between space-y-5 group">
-              <div className="space-y-4">
-                {/* Header & Icon */}
-                <div className="flex items-center justify-between">
-                  <span className="px-2.5 py-1 rounded bg-primary/10 text-primary font-mono text-[10px] font-bold tracking-wider">
-                    PILLAR 03 // FORMULATION &amp; SENSORY
-                  </span>
-                  <div className="p-2 rounded-lg bg-muted/60 border border-border/60 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
-                    <FlaskConical className="size-4" />
-                  </div>
-                </div>
-
-                <div className="space-y-1">
-                  <h3 className="text-base font-bold text-foreground leading-snug group-hover:text-primary transition-colors">
-                    Product &amp; Sensory Validation
-                  </h3>
-                  <p className="text-xs font-medium text-muted-foreground">
-                    Sensory Trials, Packaging Ergonomics &amp; SKU Sizing
-                  </p>
-                </div>
-
-                {/* Problem & Field Solution Blocks */}
-                <div className="space-y-3 text-xs border-t border-border/60 pt-3">
-                  <div className="space-y-1">
-                    <span className="text-[10px] font-mono uppercase font-bold text-muted-foreground">The Market Blindspot:</span>
-                    <p className="text-[11px] text-muted-foreground leading-relaxed">
-                      Imported formulations and standardized Western pack sizes fail when misaligned with vernacular tastes and single-coin price points.
-                    </p>
-                  </div>
-
-                  <div className="space-y-1">
-                    <span className="text-[10px] font-mono uppercase font-bold text-foreground">Fieldwork Methodology:</span>
-                    <p className="text-[11px] text-muted-foreground leading-relaxed">
-                      Controlled central-location sensory testing (CLT), double-blind taste panels, packaging durability trials, and localized pricing tiers.
-                    </p>
-                  </div>
-                </div>
-
-                {/* Structured Deliverables */}
-                <div className="space-y-1.5 border-t border-border/60 pt-3">
-                  <span className="text-[10px] font-mono uppercase font-bold text-muted-foreground">Primary Deliverables:</span>
-                  <ul className="space-y-1 text-xs">
-                    <li className="flex items-center gap-1.5 text-foreground font-medium text-[11px]">
-                      <CheckCircle2 className="size-3 text-primary shrink-0" />
-                      <span>Sensory Preference Index &amp; Formula Fit</span>
-                    </li>
-                    <li className="flex items-center gap-1.5 text-foreground font-medium text-[11px]">
-                      <CheckCircle2 className="size-3 text-primary shrink-0" />
-                      <span>Single-Coin Pack Size Pricing Matrix</span>
-                    </li>
-                    <li className="flex items-center gap-1.5 text-foreground font-medium text-[11px]">
-                      <CheckCircle2 className="size-3 text-primary shrink-0" />
-                      <span>Packaging Usability &amp; Durability Score</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-
-              {/* Footer Audit Standards & Action */}
-              <div className="space-y-2.5 pt-3 border-t border-border/60">
-                <div className="flex items-center justify-between text-[10px] font-mono text-muted-foreground">
-                  <span>Standard: Double-Blind &bull; Lab Controlled</span>
-                  <span className="text-primary font-bold">N=500+</span>
-                </div>
-                <Link
-                  href="/solutions"
-                  className="w-full inline-flex items-center justify-between px-3 py-1.5 rounded-md bg-muted/40 hover:bg-primary/10 text-foreground hover:text-primary text-xs font-semibold transition-all border border-border/50"
-                >
-                  <span>Explore Sensory Audits</span>
-                  <ChevronRight className="size-3.5" />
-                </Link>
-              </div>
-            </div>
-
-            {/* Pillar 04 */}
-            <div className="p-6 rounded-xl border border-border/80 bg-card hover:border-primary/50 transition-all shadow-xs flex flex-col justify-between space-y-5 group">
-              <div className="space-y-4">
-                {/* Header & Icon */}
-                <div className="flex items-center justify-between">
-                  <span className="px-2.5 py-1 rounded bg-primary/10 text-primary font-mono text-[10px] font-bold tracking-wider">
-                    PILLAR 04 // INTERMEDIATION &amp; DEALS
-                  </span>
-                  <div className="p-2 rounded-lg bg-muted/60 border border-border/60 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
-                    <Handshake className="size-4" />
-                  </div>
-                </div>
-
-                <div className="space-y-1">
-                  <h3 className="text-base font-bold text-foreground leading-snug group-hover:text-primary transition-colors">
-                    B2B Intermediation &amp; Deal Rooms
-                  </h3>
-                  <p className="text-xs font-medium text-muted-foreground">
-                    Direct Factory Vetting &amp; Bilateral Sourcing Desks
-                  </p>
-                </div>
-
-                {/* Problem & Field Solution Blocks */}
-                <div className="space-y-3 text-xs border-t border-border/60 pt-3">
-                  <div className="space-y-1">
-                    <span className="text-[10px] font-mono uppercase font-bold text-muted-foreground">The Market Blindspot:</span>
-                    <p className="text-[11px] text-muted-foreground leading-relaxed">
-                      Cross-border procurement without on-site factory verification exposes buyers to counterfeit brokers, delayed freight, and default risk.
-                    </p>
-                  </div>
-
-                  <div className="space-y-1">
-                    <span className="text-[10px] font-mono uppercase font-bold text-foreground">Fieldwork Methodology:</span>
-                    <p className="text-[11px] text-muted-foreground leading-relaxed">
-                      Physical plant inspections in Shenzhen/Yiwu/Mumbai, bilateral NDA enforcement, Tier-1 distributor vetting, and escrow transaction architecture.
-                    </p>
-                  </div>
-                </div>
-
-                {/* Structured Deliverables */}
-                <div className="space-y-1.5 border-t border-border/60 pt-3">
-                  <span className="text-[10px] font-mono uppercase font-bold text-muted-foreground">Primary Deliverables:</span>
-                  <ul className="space-y-1 text-xs">
-                    <li className="flex items-center gap-1.5 text-foreground font-medium text-[11px]">
-                      <CheckCircle2 className="size-3 text-primary shrink-0" />
-                      <span>Audited Factory Due Diligence Dossier</span>
-                    </li>
-                    <li className="flex items-center gap-1.5 text-foreground font-medium text-[11px]">
-                      <CheckCircle2 className="size-3 text-primary shrink-0" />
-                      <span>Confidential Bilateral Deal Room Access</span>
-                    </li>
-                    <li className="flex items-center gap-1.5 text-foreground font-medium text-[11px]">
-                      <CheckCircle2 className="size-3 text-primary shrink-0" />
-                      <span>AfCFTA Cross-Border Tariff Roadmap</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-
-              {/* Footer Audit Standards & Action */}
-              <div className="space-y-2.5 pt-3 border-t border-border/60">
-                <div className="flex items-center justify-between text-[10px] font-mono text-muted-foreground">
-                  <span>Standard: Bilateral NDA &bull; Plant Floor Audited</span>
-                  <span className="text-primary font-bold">$185M+ Pipe</span>
-                </div>
-                <Link
-                  href="/contact"
-                  className="w-full inline-flex items-center justify-between px-3 py-1.5 rounded-md bg-muted/40 hover:bg-primary/10 text-foreground hover:text-primary text-xs font-semibold transition-all border border-border/50"
-                >
-                  <span>Initiate Deal Scoping</span>
-                  <ChevronRight className="size-3.5" />
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CHAPTER 4: SOUTH-SOUTH TRADE DESK & BILATERAL INTERMEDIATION */}
-      <section id="corridors" className="py-12 sm:py-16 border-b border-border/70 bg-muted/15 scroll-mt-20">
-        <div className="mx-auto w-full max-w-[1536px] px-4 sm:px-6 lg:px-8 xl:px-10 space-y-8">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-border/60 pb-4">
-            <div className="space-y-1">
-              <div className="text-[11px] font-mono font-bold tracking-wider text-primary uppercase">
-                03 // BILATERAL TRADE DESKS
-              </div>
-              <h2 className="text-xl sm:text-2xl font-bold text-foreground tracking-tight">
-                South-South Corridors: Africa • China • India
-              </h2>
-            </div>
-            <div className="text-xs font-mono text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/60 px-3 py-1.5 rounded-md border border-emerald-200 dark:border-emerald-800 shrink-0 font-bold">
-              ACTIVE PIPELINE: $185M+
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-stretch">
-            {/* Visual Panel */}
-            <div className="lg:col-span-5 relative rounded-xl overflow-hidden border border-border/80 shadow-sm min-h-[320px] flex flex-col justify-end p-5">
-              <Image
-                src="/images/landing-port.jpg"
-                alt="Maritime container terminal logistics for cross-border trade between Africa, China and India"
-                fill
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 40vw"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent pointer-events-none" />
-
-              <div className="relative z-10 space-y-1.5 text-white">
-                <div className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-blue-600 text-white text-[10px] font-bold font-mono">
-                  <Lock className="size-3" />
-                  CONFIDENTIAL DEAL ROOM
-                </div>
-                <h3 className="text-base font-bold leading-tight">
-                  Bilateral Commercial Sourcing &amp; Execution
-                </h3>
-                <p className="text-xs text-white/80 leading-relaxed">
-                  Connecting African commercial buyers directly to audited manufacturing plants in Guangdong/Zhejiang, and pharmaceutical partners in Mumbai/Gujarat.
-                </p>
-              </div>
-            </div>
-
-            {/* B2B Services Grid */}
-            <div className="lg:col-span-7 bg-card rounded-xl border border-border/80 p-5 sm:p-6 shadow-xs space-y-4">
-              <div className="flex items-center justify-between border-b border-border/60 pb-2.5">
-                <span className="text-xs font-mono font-bold uppercase text-foreground">
-                  Intermediation Verification Protocols
-                </span>
-                <span className="text-[10px] font-mono text-muted-foreground">BILATERAL NDAs ENFORCED</span>
-              </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
-                <div className="p-3 rounded-lg border border-border/60 bg-muted/20 space-y-1">
-                  <h4 className="font-bold text-foreground flex items-center gap-1.5">
-                    <CheckCircle2 className="size-3.5 text-primary" /> Market Entry Roadmaps
-                  </h4>
-                  <p className="text-muted-foreground text-[11px] leading-relaxed">
-                    Structured regulatory, tariff, and commercial structuring across target AfCFTA jurisdictions.
-                  </p>
-                </div>
-
-                <div className="p-3 rounded-lg border border-border/60 bg-muted/20 space-y-1">
-                  <h4 className="font-bold text-foreground flex items-center gap-1.5">
-                    <CheckCircle2 className="size-3.5 text-primary" /> Direct Factory Audits
-                  </h4>
-                  <p className="text-muted-foreground text-[11px] leading-relaxed">
-                    Physical on-site verification of manufacturing plants in Shenzhen, Guangzhou, and Yiwu.
-                  </p>
-                </div>
-
-                <div className="p-3 rounded-lg border border-border/60 bg-muted/20 space-y-1">
-                  <h4 className="font-bold text-foreground flex items-center gap-1.5">
-                    <CheckCircle2 className="size-3.5 text-primary" /> Healthcare &amp; API Sourcing
-                  </h4>
-                  <p className="text-muted-foreground text-[11px] leading-relaxed">
-                    Audited pharmaceutical formulation and active ingredient supply corridors from India.
-                  </p>
-                </div>
-
-                <div className="p-3 rounded-lg border border-border/60 bg-muted/20 space-y-1">
-                  <h4 className="font-bold text-foreground flex items-center gap-1.5">
-                    <CheckCircle2 className="size-3.5 text-primary" /> Tier-1 Distributor Vetting
-                  </h4>
-                  <p className="text-muted-foreground text-[11px] leading-relaxed">
-                    Vetting wholesale distributors, cold-chain operators, and local distribution networks.
-                  </p>
-                </div>
-              </div>
-
-              <div className="pt-2 border-t border-border/60 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs">
-                <span className="text-muted-foreground">Strict bilateral non-disclosure agreements executed prior to deal room access.</span>
-                <Link
-                  href="/contact"
-                  className="font-bold text-primary hover:underline flex items-center gap-1 shrink-0"
-                >
-                  Initiate Intermediation Brief <ArrowRight className="size-3" />
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CHAPTER 5: EMPIRICAL TELEMETRY STUDIO SPOTLIGHT (5 PUBLISHED SURVEYS GATEWAY) */}
-      <section id="insights" className="py-12 sm:py-16 border-b border-border/70 bg-background scroll-mt-20">
-        <div className="mx-auto w-full max-w-[1536px] px-4 sm:px-6 lg:px-8 xl:px-10 space-y-8">
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-border/60 pb-4">
-            <div className="space-y-1">
-              <div className="text-[11px] font-mono font-bold tracking-wider text-primary uppercase">
-                04 // EMPIRICAL STUDIES &amp; FIELD DATA
-              </div>
-              <h2 className="text-xl sm:text-2xl font-bold text-foreground tracking-tight">
-                Published Research Surveys &amp; Statistical Distributions
-              </h2>
-            </div>
-            <Link
-              href="/insights#published-surveys"
-              className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-md bg-primary text-primary-foreground font-bold text-xs uppercase tracking-wider shadow-sm hover:bg-primary/90 transition-all"
-            >
-              <BarChart3 className="size-3.5" />
-              <span>Launch Research Studio (5 Studies)</span>
-              <ArrowRight className="size-3" />
-            </Link>
-          </div>
-
-          {/* 3 Tabular Empirical Study Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-            {/* Survey 1 */}
-            <div className="p-5 rounded-xl border border-border/80 bg-card shadow-xs space-y-3 flex flex-col justify-between">
-              <div className="space-y-2">
-                <div className="flex items-center justify-between text-[11px] font-mono text-muted-foreground">
-                  <span className="text-primary font-bold">TECH GOVERNANCE</span>
-                  <span>N = 1,840 Leaders</span>
-                </div>
-                <h3 className="text-sm font-bold text-foreground leading-snug">
-                  Transitioning from Artificial Intelligence to Super Intelligence
+                <h3 className="text-base font-bold text-foreground">
+                  Traditional Research Agencies
                 </h3>
                 <p className="text-xs text-muted-foreground leading-relaxed">
-                  A 46-point perception divergence exists between corporate marketing executives (58% favor renaming) and higher education faculties (69% oppose rebranding without AGI reasoning benchmarks).
+                  Focus predominantly on standardized consumer surveys and focus groups in formal supermarkets.
                 </p>
+                <div className="space-y-2 pt-2 border-t border-border/60 text-xs text-muted-foreground">
+                  <div className="flex items-start gap-2">
+                    <span className="text-amber-500 font-bold">&times;</span>
+                    <span>Outputs static PowerPoint reports with unverified theoretical TAM sizing.</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <span className="text-amber-500 font-bold">&times;</span>
+                    <span>Zero business connections, commercial deal structuring, or partner execution.</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <span className="text-amber-500 font-bold">&times;</span>
+                    <span>Leaves clients to figure out how to translate findings into commercial reality.</span>
+                  </div>
+                </div>
               </div>
-              <div className="pt-2 border-t border-border/60 flex items-center justify-between text-xs">
-                <span className="font-mono text-muted-foreground text-[11px]">95% CI (± 2.2%)</span>
-                <Link
-                  href="/insights#published-surveys"
-                  className="font-semibold text-primary hover:underline"
-                >
-                  View Charts &rarr;
-                </Link>
+              <div className="text-[11px] font-mono text-muted-foreground bg-muted/40 p-2 rounded-lg">
+                Outcome: Static data without commercial execution
               </div>
             </div>
 
-            {/* Survey 2 */}
-            <div className="p-5 rounded-xl border border-border/80 bg-card shadow-xs space-y-3 flex flex-col justify-between">
-              <div className="space-y-2">
-                <div className="flex items-center justify-between text-[11px] font-mono text-muted-foreground">
-                  <span className="text-primary font-bold">HEALTHCARE TELEMETRY</span>
-                  <span>N = 3,420 Households</span>
+            {/* Column 2: General Business Consultancies */}
+            <div className="p-6 rounded-2xl border border-border/80 bg-card space-y-4 flex flex-col justify-between">
+              <div className="space-y-3">
+                <div className="flex items-center justify-between text-xs font-mono">
+                  <span className="text-muted-foreground font-bold">MANAGEMENT CONSULTING</span>
+                  <XCircle className="size-4 text-amber-500" />
                 </div>
-                <h3 className="text-sm font-bold text-foreground leading-snug">
-                  Alternative Medicine &amp; Dual-Care Regimens in India
+                <h3 className="text-base font-bold text-foreground">
+                  General Business Consultancies
                 </h3>
                 <p className="text-xs text-muted-foreground leading-relaxed">
-                  68% of households practice integrative dual-care, consuming allopathy for acute conditions while adhering to Ayurveda for chronic wellness. 74% of purchases are brand-loyal via neighborhood chemists.
+                  Provide high-level corporate frameworks, macroeconomic summaries, and costly retainers.
                 </p>
+                <div className="space-y-2 pt-2 border-t border-border/60 text-xs text-muted-foreground">
+                  <div className="flex items-start gap-2">
+                    <span className="text-amber-500 font-bold">&times;</span>
+                    <span>Rely heavily on secondary desk research and outdated government statistics.</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <span className="text-amber-500 font-bold">&times;</span>
+                    <span>No grassroots field presence in the informal retail kiosks where 80%+ trade happens.</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <span className="text-amber-500 font-bold">&times;</span>
+                    <span>Advisory recommendations disconnected from bilateral factory floors or local distributors.</span>
+                  </div>
+                </div>
               </div>
-              <div className="pt-2 border-t border-border/60 flex items-center justify-between text-xs">
-                <span className="font-mono text-muted-foreground text-[11px]">95% CI (± 1.8%)</span>
-                <Link
-                  href="/insights#published-surveys"
-                  className="font-semibold text-primary hover:underline"
-                >
-                  View Charts &rarr;
-                </Link>
+              <div className="text-[11px] font-mono text-muted-foreground bg-muted/40 p-2 rounded-lg">
+                Outcome: Abstract strategy without ground truth
               </div>
             </div>
 
-            {/* Survey 3 */}
-            <div className="p-5 rounded-xl border border-border/80 bg-card shadow-xs space-y-3 flex flex-col justify-between">
-              <div className="space-y-2">
-                <div className="flex items-center justify-between text-[11px] font-mono text-muted-foreground">
-                  <span className="text-primary font-bold">RETAIL PRICING</span>
-                  <span>N = 14,200 Audits</span>
+            {/* Column 3: The Stratum Integrated Model */}
+            <div className="p-6 rounded-2xl border-2 border-primary bg-gradient-to-b from-primary/10 via-primary/5 to-card space-y-4 flex flex-col justify-between relative shadow-md ring-1 ring-primary/20">
+              <div className="space-y-3">
+                <div className="flex items-center justify-between text-xs font-mono">
+                  <span className="text-primary font-bold flex items-center gap-1.5">
+                    <span className="size-2 rounded-full bg-primary animate-pulse" />
+                    STRATUM RESEARCH LTD
+                  </span>
+                  <span className="px-2 py-0.5 rounded-full bg-primary/20 text-primary text-[10px] font-bold tracking-wide">
+                    INTEGRATED MODEL
+                  </span>
                 </div>
-                <h3 className="text-sm font-bold text-foreground leading-snug">
-                  Price Elasticity Thresholds for Beverages in Urban &amp; Peri-Urban Dukas
+                <h3 className="text-base font-bold text-foreground">
+                  The Integrated Stratum Model
                 </h3>
-                <p className="text-xs text-muted-foreground leading-relaxed">
-                  Price resistance thresholds in informal trade channels trigger immediate 24% SKU switching at subnational currency increments when pack sizes exceed single-coin price points.
+                <p className="text-xs text-foreground/90 leading-relaxed font-medium">
+                  Market intelligence, strategic research, and business intermediation under one unified roof.
                 </p>
+                <div className="space-y-2 pt-2 border-t border-primary/20 text-xs text-foreground/90">
+                  <div className="flex items-start gap-2">
+                    <CheckCircle2 className="size-3.5 text-primary shrink-0 mt-0.5" />
+                    <span><strong>Primary Ground Truth:</strong> Double-blind audits in traditional trade channels.</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <CheckCircle2 className="size-3.5 text-primary shrink-0 mt-0.5" />
+                    <span><strong>Strategic Intelligence:</strong> Subnational pricing elasticity &amp; opportunity mapping.</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <CheckCircle2 className="size-3.5 text-primary shrink-0 mt-0.5" />
+                    <span><strong>Business Intermediation:</strong> Direct partner vetting &amp; bilateral sourcing desks.</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <CheckCircle2 className="size-3.5 text-primary shrink-0 mt-0.5" />
+                    <span><strong>Digital Market:</strong> Platform access for continuous telemetry and deal matching.</span>
+                  </div>
+                </div>
               </div>
-              <div className="pt-2 border-t border-border/60 flex items-center justify-between text-xs">
-                <span className="font-mono text-muted-foreground text-[11px]">95% CI (± 1.5%)</span>
-                <Link
-                  href="/insights#published-surveys"
-                  className="font-semibold text-primary hover:underline"
-                >
-                  View Charts &rarr;
-                </Link>
+              <div className="text-[11px] font-mono text-primary font-bold bg-primary/10 p-2.5 rounded-lg text-center border border-primary/20">
+                Outcome: From market understanding to executed commercial deals
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* CHAPTER 6: REGIONAL COVERAGE & STRATEGIC ENGAGEMENT */}
-      <section id="engagement" className="py-12 sm:py-16 border-b border-border/70 bg-muted/15 scroll-mt-20">
-        <div className="mx-auto w-full max-w-[1536px] px-4 sm:px-6 lg:px-8 xl:px-10 space-y-8">
+      {/* CHAPTER 3: PRIORITY 2 — THE 6 DISTINCT SERVICE LINES (EXACT CLIENT TAXONOMY) */}
+      <section id="services" className="py-14 sm:py-20 border-b border-border/70 bg-background scroll-mt-20">
+        <div className="mx-auto w-full max-w-[1536px] px-4 sm:px-6 lg:px-8 xl:px-10 space-y-10">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-border/60 pb-4">
-            <div className="max-w-3xl space-y-1.5">
-              <div className="text-[11px] font-mono font-bold tracking-wider text-primary uppercase">
-                05 // INITIATE ENGAGEMENT &amp; COVERAGE
+            <div className="space-y-1.5 max-w-3xl">
+              <div className="inline-flex items-center gap-2 px-2.5 py-0.5 rounded bg-primary/10 text-primary font-mono text-[11px] font-bold tracking-wider uppercase">
+                PRIORITY 2: SEPARATE SERVICE LINES CLEARLY
               </div>
-              <h2 className="text-xl sm:text-2xl font-bold text-foreground tracking-tight">
-                Understand the Market. Identify the Opportunity. Make Better Decisions.
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight">
+                Stratum&apos;s Six Core Capabilities
               </h2>
               <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-                Whether you are entering a new regional market, launching a consumer product, evaluating an investment opportunity, or seeking verified trade partners, Stratum delivers audit-grade intelligence.
+                Stratum&apos;s research, intelligence, intermediation and digital-market activities are presented as distinct but complementary capabilities.
+              </p>
+            </div>
+            <Link
+              href="/services"
+              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-muted hover:bg-muted/80 text-foreground font-semibold text-xs transition-colors shrink-0"
+            >
+              <span>Explore Comprehensive Services Guide</span>
+              <ArrowRight className="size-3.5" />
+            </Link>
+          </div>
+
+          {/* Grid of the 6 Service Lines (Image 3 Exact Sequence & Wording) */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
+            {/* 01 Research */}
+            <div className="p-6 rounded-2xl border border-border/80 bg-card hover:border-primary/50 hover:-translate-y-1 hover:shadow-md transition-all duration-200 flex flex-col justify-between space-y-5 group">
+              <div className="space-y-3">
+                <div className="flex items-center justify-between">
+                  <span className="text-sm font-mono font-black text-primary px-2.5 py-0.5 rounded bg-primary/10">
+                    01
+                  </span>
+                  <Compass className="size-5 text-muted-foreground group-hover:text-primary transition-colors" />
+                </div>
+                <h3 className="text-lg font-bold text-foreground group-hover:text-primary transition-colors">Research</h3>
+                <p className="text-xs sm:text-sm font-medium text-foreground/90 leading-snug">
+                  Market research, consumer insights, brand tracking, product testing and data collection.
+                </p>
+                <p className="text-xs text-muted-foreground leading-relaxed">
+                  Primary ground-truth investigations capturing authentic household consumption habits, informal kiosk SKU velocities, and localized sensory preferences.
+                </p>
+              </div>
+              <div className="pt-3 border-t border-border/60 flex items-center justify-between text-xs">
+                <Link
+                  href="/services#research"
+                  className="font-bold text-primary group-hover:underline flex items-center gap-1"
+                >
+                  <span>View Research Scope</span>
+                  <ArrowRight className="size-3 transition-transform group-hover:translate-x-1" />
+                </Link>
+              </div>
+            </div>
+
+            {/* 02 Intelligence */}
+            <div className="p-6 rounded-2xl border border-border/80 bg-card hover:border-primary/50 hover:-translate-y-1 hover:shadow-md transition-all duration-200 flex flex-col justify-between space-y-5 group">
+              <div className="space-y-3">
+                <div className="flex items-center justify-between">
+                  <span className="text-sm font-mono font-black text-primary px-2.5 py-0.5 rounded bg-primary/10">
+                    02
+                  </span>
+                  <TrendingUp className="size-5 text-muted-foreground group-hover:text-primary transition-colors" />
+                </div>
+                <h3 className="text-lg font-bold text-foreground group-hover:text-primary transition-colors">Intelligence</h3>
+                <p className="text-xs sm:text-sm font-medium text-foreground/90 leading-snug">
+                  Market analysis, competitor intelligence, opportunity assessment and strategic insights.
+                </p>
+                <p className="text-xs text-muted-foreground leading-relaxed">
+                  Translating raw fieldwork data into strategic foresight: analyzing competitor unit margins, wholesale discount structures, and subnational price sensitivities.
+                </p>
+              </div>
+              <div className="pt-3 border-t border-border/60 flex items-center justify-between text-xs">
+                <Link
+                  href="/services#intelligence"
+                  className="font-bold text-primary group-hover:underline flex items-center gap-1"
+                >
+                  <span>View Intelligence Scope</span>
+                  <ArrowRight className="size-3 transition-transform group-hover:translate-x-1" />
+                </Link>
+              </div>
+            </div>
+
+            {/* 03 Opportunity */}
+            <div className="p-6 rounded-2xl border border-border/80 bg-card hover:border-primary/50 hover:-translate-y-1 hover:shadow-md transition-all duration-200 flex flex-col justify-between space-y-5 group">
+              <div className="space-y-3">
+                <div className="flex items-center justify-between">
+                  <span className="text-sm font-mono font-black text-primary px-2.5 py-0.5 rounded bg-primary/10">
+                    03
+                  </span>
+                  <Search className="size-5 text-muted-foreground group-hover:text-primary transition-colors" />
+                </div>
+                <h3 className="text-lg font-bold text-foreground group-hover:text-primary transition-colors">Opportunity</h3>
+                <p className="text-xs sm:text-sm font-medium text-foreground/90 leading-snug">
+                  Investment screening, sector mapping and commercial opportunity identification.
+                </p>
+                <p className="text-xs text-muted-foreground leading-relaxed">
+                  Pinpointing high-potential commercial whitespace and screening targets for corporate expansion, private capital deployment, and strategic acquisitions.
+                </p>
+              </div>
+              <div className="pt-3 border-t border-border/60 flex items-center justify-between text-xs">
+                <Link
+                  href="/services#opportunity"
+                  className="font-bold text-primary group-hover:underline flex items-center gap-1"
+                >
+                  <span>View Opportunity Scope</span>
+                  <ArrowRight className="size-3 transition-transform group-hover:translate-x-1" />
+                </Link>
+              </div>
+            </div>
+
+            {/* 04 Intermediation */}
+            <div className="p-6 rounded-2xl border border-border/80 bg-card hover:border-primary/50 hover:-translate-y-1 hover:shadow-md transition-all duration-200 flex flex-col justify-between space-y-5 group">
+              <div className="space-y-3">
+                <div className="flex items-center justify-between">
+                  <span className="text-sm font-mono font-black text-primary px-2.5 py-0.5 rounded bg-primary/10">
+                    04
+                  </span>
+                  <Handshake className="size-5 text-muted-foreground group-hover:text-primary transition-colors" />
+                </div>
+                <h3 className="text-lg font-bold text-foreground group-hover:text-primary transition-colors">Intermediation</h3>
+                <p className="text-xs sm:text-sm font-medium text-foreground/90 leading-snug">
+                  Connecting businesses, investors, suppliers, distributors and strategic partners.
+                </p>
+                <p className="text-xs text-muted-foreground leading-relaxed">
+                  Connecting clients with vetted Tier-1 regional distributors, institutional co-investors, and verified commercial suppliers directed from our Nairobi headquarters.
+                </p>
+              </div>
+              <div className="pt-3 border-t border-border/60 flex items-center justify-between text-xs">
+                <Link
+                  href="/services#intermediation"
+                  className="font-bold text-primary group-hover:underline flex items-center gap-1"
+                >
+                  <span>View Intermediation Scope</span>
+                  <ArrowRight className="size-3 transition-transform group-hover:translate-x-1" />
+                </Link>
+              </div>
+            </div>
+
+            {/* 05 Market Access */}
+            <div className="p-6 rounded-2xl border border-border/80 bg-card hover:border-primary/50 hover:-translate-y-1 hover:shadow-md transition-all duration-200 flex flex-col justify-between space-y-5 group">
+              <div className="space-y-3">
+                <div className="flex items-center justify-between">
+                  <span className="text-sm font-mono font-black text-primary px-2.5 py-0.5 rounded bg-primary/10">
+                    05
+                  </span>
+                  <Globe2 className="size-5 text-muted-foreground group-hover:text-primary transition-colors" />
+                </div>
+                <h3 className="text-lg font-bold text-foreground group-hover:text-primary transition-colors">Market Access</h3>
+                <p className="text-xs sm:text-sm font-medium text-foreground/90 leading-snug">
+                  Market-entry support, local partner identification and expansion strategy.
+                </p>
+                <p className="text-xs text-muted-foreground leading-relaxed">
+                  De-risking new regional market entry through AfCFTA tariff guidance, local regulatory structuring, co-packer verification, and commercial route-to-market design.
+                </p>
+              </div>
+              <div className="pt-3 border-t border-border/60 flex items-center justify-between text-xs">
+                <Link
+                  href="/services#market-access"
+                  className="font-bold text-primary group-hover:underline flex items-center gap-1"
+                >
+                  <span>View Market Access Scope</span>
+                  <ArrowRight className="size-3 transition-transform group-hover:translate-x-1" />
+                </Link>
+              </div>
+            </div>
+
+            {/* 06 Digital Market */}
+            <div className="p-6 rounded-2xl border border-border/80 bg-card hover:border-primary/50 hover:-translate-y-1 hover:shadow-md transition-all duration-200 flex flex-col justify-between space-y-5 group">
+              <div className="space-y-3">
+                <div className="flex items-center justify-between">
+                  <span className="text-sm font-mono font-black text-primary px-2.5 py-0.5 rounded bg-primary/10">
+                    06
+                  </span>
+                  <Network className="size-5 text-muted-foreground group-hover:text-primary transition-colors" />
+                </div>
+                <h3 className="text-lg font-bold text-foreground group-hover:text-primary transition-colors">Digital Market</h3>
+                <p className="text-xs sm:text-sm font-medium text-foreground/90 leading-snug">
+                  A separate digital platform or marketplace offering, with its own clearly defined features.
+                </p>
+                <p className="text-xs text-muted-foreground leading-relaxed">
+                  A centralized intelligence platform offering continuous telemetry feeds, verified partner directories, encrypted deal rooms, and trade opportunity matchmaking.
+                </p>
+              </div>
+              <div className="pt-3 border-t border-border/60 flex items-center justify-between text-xs">
+                <Link
+                  href="/services#digital-market"
+                  className="font-bold text-primary group-hover:underline flex items-center gap-1"
+                >
+                  <span>View Platform Features</span>
+                  <ArrowRight className="size-3 transition-transform group-hover:translate-x-1" />
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CHAPTER 4: DEMONSTRATING CAPABILITY HONESTLY — CURATED SPOTLIGHT */}
+      <section className="py-14 sm:py-20 border-b border-border/70 bg-muted/15">
+        <div className="mx-auto w-full max-w-[1536px] px-4 sm:px-6 lg:px-8 xl:px-10 space-y-8">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-border/60 pb-4">
+            <div className="space-y-1.5 max-w-3xl">
+              <div className="inline-flex items-center gap-2 px-2.5 py-0.5 rounded bg-primary/10 text-primary font-mono text-[11px] font-bold tracking-wider uppercase">
+                DEMONSTRATED ANALYTICAL CAPABILITY
+              </div>
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight">
+                Sample Research Briefs &amp; Illustrative Frameworks
+              </h2>
+              <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
+                As a newly established firm, Stratum demonstrates capability through transparent research charters, double-blind sampling rigor, and illustrative empirical models.
+              </p>
+            </div>
+            <Link
+              href="/research-briefs"
+              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-primary text-primary-foreground font-semibold text-xs hover:bg-primary/90 transition-all shrink-0 cursor-pointer shadow-xs"
+            >
+              <span>Inspect All Sample Briefs</span>
+              <ArrowRight className="size-3.5" />
+            </Link>
+          </div>
+
+          {/* 3 Executive Brief Teasers */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="p-6 rounded-2xl border border-border/80 bg-card hover:border-primary/50 hover:-translate-y-1 hover:shadow-md transition-all duration-200 space-y-4 flex flex-col justify-between group">
+              <div className="space-y-3">
+                <div className="flex items-center justify-between text-[10px] font-mono">
+                  <span className="font-bold px-2 py-0.5 rounded bg-primary/10 text-primary">SAMPLE BRIEF 01</span>
+                  <span className="text-muted-foreground">01 Research &bull; East Africa</span>
+                </div>
+                <h3 className="text-base font-bold text-foreground leading-snug group-hover:text-primary transition-colors">
+                  Subnational FMCG Informal Retail Distribution &amp; Coin-Point Elasticity
+                </h3>
+                <p className="text-xs text-muted-foreground leading-relaxed">
+                  GPS-verified kiosk audits capturing stockout velocity, informal wholesaler margins, and localized flavor preference.
+                </p>
+              </div>
+              <div className="pt-3 border-t border-border/60 flex items-center justify-between text-xs">
+                <span className="font-mono text-muted-foreground text-[11px]">n = 3,600 &bull; 95% CI</span>
+                <Link
+                  href="/research-briefs?brief=brief-fmcg-elasticity"
+                  className="font-bold text-primary group-hover:underline flex items-center gap-1"
+                >
+                  <span>Inspect Charter</span>
+                  <ArrowRight className="size-3 transition-transform group-hover:translate-x-1" />
+                </Link>
+              </div>
+            </div>
+
+            <div className="p-6 rounded-2xl border border-border/80 bg-card hover:border-emerald-500/50 hover:-translate-y-1 hover:shadow-md transition-all duration-200 space-y-4 flex flex-col justify-between group">
+              <div className="space-y-3">
+                <div className="flex items-center justify-between text-[10px] font-mono">
+                  <span className="font-bold px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-600 dark:text-emerald-400">SAMPLE BRIEF 02</span>
+                  <span className="text-muted-foreground">04 Intermediation &bull; Asia-Africa</span>
+                </div>
+                <h3 className="text-base font-bold text-foreground leading-snug group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
+                  India-to-Africa Pharmaceutical Sourcing &amp; Cold-Chain Verification
+                </h3>
+                <p className="text-xs text-muted-foreground leading-relaxed">
+                  Active pharmaceutical ingredient (API) due diligence, factory inspections in Gujarat/Mumbai, and AfCFTA clearance.
+                </p>
+              </div>
+              <div className="pt-3 border-t border-border/60 flex items-center justify-between text-xs">
+                <span className="font-mono text-muted-foreground text-[11px]">24 Audited Plants</span>
+                <Link
+                  href="/research-briefs?brief=brief-pharma-sourcing"
+                  className="font-bold text-emerald-600 dark:text-emerald-400 group-hover:underline flex items-center gap-1"
+                >
+                  <span>Inspect Charter</span>
+                  <ArrowRight className="size-3 transition-transform group-hover:translate-x-1" />
+                </Link>
+              </div>
+            </div>
+
+            <div className="p-6 rounded-2xl border border-border/80 bg-card hover:border-amber-500/50 hover:-translate-y-1 hover:shadow-md transition-all duration-200 space-y-4 flex flex-col justify-between group">
+              <div className="space-y-3">
+                <div className="flex items-center justify-between text-[10px] font-mono">
+                  <span className="font-bold px-2 py-0.5 rounded bg-amber-500/10 text-amber-600 dark:text-amber-400">SAMPLE BRIEF 03</span>
+                  <span className="text-muted-foreground">03 Opportunity &bull; Agribusiness</span>
+                </div>
+                <h3 className="text-base font-bold text-foreground leading-snug group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">
+                  Decentralized Solar &amp; Cold Storage Commercial Opportunity Screening
+                </h3>
+                <p className="text-xs text-muted-foreground leading-relaxed">
+                  Agricultural value chain mapping, cooperative refrigeration willingness-to-pay, and off-grid demand modeling.
+                </p>
+              </div>
+              <div className="pt-3 border-t border-border/60 flex items-center justify-between text-xs">
+                <span className="font-mono text-muted-foreground text-[11px]">n = 570 Co-ops</span>
+                <Link
+                  href="/research-briefs?brief=brief-solar-coldstorage"
+                  className="font-bold text-amber-600 dark:text-amber-400 group-hover:underline flex items-center gap-1"
+                >
+                  <span>Inspect Charter</span>
+                  <ArrowRight className="size-3 transition-transform group-hover:translate-x-1" />
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CHAPTER 5: MULTIDISCIPLINARY TEAM EXPERIENCE */}
+      <section className="py-14 sm:py-20 border-b border-border/70 bg-background">
+        <div className="mx-auto w-full max-w-[1536px] px-4 sm:px-6 lg:px-8 xl:px-10 space-y-10">
+          <div className="max-w-3xl space-y-2">
+            <div className="inline-flex items-center gap-2 px-2.5 py-0.5 rounded bg-primary/10 text-primary font-mono text-[11px] font-bold tracking-wider uppercase">
+              TEAM EXPERIENCE &amp; CALIBER
+            </div>
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight">
+              Capability Grounded in Proven Domain Experience
+            </h2>
+            <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
+              As a newly established firm, Stratum&apos;s strength rests in the deep sectoral track record of our multidisciplinary practice leads—combining quantitative econometrics with grassroots commercial execution.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            <div className="p-5 rounded-2xl border border-border/80 bg-card space-y-3">
+              <Users2 className="size-6 text-primary" />
+              <h3 className="text-sm font-bold text-foreground">
+                Field Anthropologists &amp; Vernacular Leads
+              </h3>
+              <p className="text-xs text-muted-foreground leading-relaxed">
+                Native dialect practitioners skilled in subnational qualitative interviews and open-air market consumption rituals without Western translation distortion.
+              </p>
+            </div>
+
+            <div className="p-5 rounded-2xl border border-border/80 bg-card space-y-3">
+              <Compass className="size-6 text-emerald-500" />
+              <h3 className="text-sm font-bold text-foreground">
+                Econometricians &amp; Survey Methodologists
+              </h3>
+              <p className="text-xs text-muted-foreground leading-relaxed">
+                Specialists in subnational sample stratification, double-blind design, confidence intervals (95% CI), and price elasticity modeling.
+              </p>
+            </div>
+
+            <div className="p-5 rounded-2xl border border-border/80 bg-card space-y-3">
+              <Building2 className="size-6 text-amber-500" />
+              <h3 className="text-sm font-bold text-foreground">
+                FMCG Route-to-Market Operators
+              </h3>
+              <p className="text-xs text-muted-foreground leading-relaxed">
+                Commercial practitioners with direct experience navigating Tier-1 wholesale channels, van distribution, and retail stockout cycles.
+              </p>
+            </div>
+
+            <div className="p-5 rounded-2xl border border-border/80 bg-card space-y-3">
+              <Handshake className="size-6 text-purple-500" />
+              <h3 className="text-sm font-bold text-foreground">
+                Trade Intermediation &amp; Legal Counsel
+              </h3>
+              <p className="text-xs text-muted-foreground leading-relaxed">
+                Specialists in bilateral escrow structuring, AfCFTA tariff classification, cross-border joint ventures, and direct factory auditing.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CHAPTER 6: ACTIONABLE NEXT STEPS (STREAMLINED EXECUTIVE GATEWAY - NO FORM DUMP) */}
+      <section className="py-14 sm:py-20 bg-card border-t border-border/70">
+        <div className="mx-auto w-full max-w-[1536px] px-4 sm:px-6 lg:px-8 xl:px-10 space-y-10">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-border/60 pb-4">
+            <div className="max-w-3xl space-y-2">
+              <div className="inline-flex items-center gap-2 px-2.5 py-0.5 rounded bg-primary/10 text-primary font-mono text-[11px] font-bold tracking-wider uppercase">
+                ACTIONABLE NEXT STEPS
+              </div>
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight">
+                How to Engage With Stratum
+              </h2>
+              <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
+                Every important engagement begins with a clear objective. Select your mandate below to open a pre-configured intake brief directly with our Nairobi desk.
               </p>
             </div>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-md bg-primary text-primary-foreground font-bold text-xs uppercase tracking-wider shadow-sm hover:bg-primary/90 transition-all shrink-0"
+              className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-lg border border-border/80 bg-background hover:bg-muted text-foreground font-semibold text-xs transition-all shrink-0 cursor-pointer"
             >
-              <span>Talk to Stratum (Contact Desk)</span>
+              <span>View Full Contact Desk</span>
               <ArrowRight className="size-3.5" />
             </Link>
           </div>
 
-          {/* Innovative Regional Coverage Console */}
-          <RegionalCoverageConsole />
-
-          {/* Institutional Advisory Assurances Strip */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
-            <div className="flex items-center gap-3 p-3.5 rounded-lg border border-border/70 bg-card">
-              <ShieldCheck className="size-4 text-emerald-500 shrink-0" />
-              <div>
-                <h4 className="font-bold text-xs text-foreground">Strict Bilateral NDA Protocol</h4>
-                <p className="text-muted-foreground text-[11px]">
-                  All inquiries and scoping discussions protected under binding confidentiality agreements.
+          {/* 5 Sleek Action Cards (Image 4 Explicit Calls to Action) */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+            {/* CTA 1 */}
+            <Link
+              href="/contact?cta=COMMISSION_RESEARCH"
+              className="p-5 rounded-2xl border border-border/80 bg-background hover:border-primary hover:-translate-y-1 hover:shadow-md transition-all duration-200 group flex flex-col justify-between space-y-3 cursor-pointer"
+            >
+              <div className="space-y-2">
+                <span className="text-[10px] font-mono font-bold text-primary px-2 py-0.5 rounded bg-primary/10 inline-block">
+                  01 RESEARCH
+                </span>
+                <h3 className="text-xs sm:text-sm font-bold text-foreground group-hover:text-primary transition-colors leading-snug">
+                  Commission a Research Study
+                </h3>
+                <p className="text-[11px] text-muted-foreground leading-relaxed">
+                  Tailored consumer panels, informal kiosk censuses, and localized brand health tracking.
                 </p>
               </div>
+              <div className="pt-2 text-xs font-semibold text-primary flex items-center gap-1">
+                <span>Start Brief</span>
+                <ArrowRight className="size-3 transition-transform group-hover:translate-x-1" />
+              </div>
+            </Link>
+
+            {/* CTA 2 */}
+            <Link
+              href="/contact?cta=REQUEST_INTELLIGENCE"
+              className="p-5 rounded-2xl border border-border/80 bg-background hover:border-primary hover:-translate-y-1 hover:shadow-md transition-all duration-200 group flex flex-col justify-between space-y-3 cursor-pointer"
+            >
+              <div className="space-y-2">
+                <span className="text-[10px] font-mono font-bold text-primary px-2 py-0.5 rounded bg-primary/10 inline-block">
+                  02 INTELLIGENCE
+                </span>
+                <h3 className="text-xs sm:text-sm font-bold text-foreground group-hover:text-primary transition-colors leading-snug">
+                  Request Market Intelligence
+                </h3>
+                <p className="text-[11px] text-muted-foreground leading-relaxed">
+                  Competitor unit margins, subnational price elasticity curves, and trade diagnostics.
+                </p>
+              </div>
+              <div className="pt-2 text-xs font-semibold text-primary flex items-center gap-1">
+                <span>Start Brief</span>
+                <ArrowRight className="size-3 transition-transform group-hover:translate-x-1" />
+              </div>
+            </Link>
+
+            {/* CTA 3 */}
+            <Link
+              href="/contact?cta=EXPLORE_INVESTMENT"
+              className="p-5 rounded-2xl border border-border/80 bg-background hover:border-primary hover:-translate-y-1 hover:shadow-md transition-all duration-200 group flex flex-col justify-between space-y-3 cursor-pointer"
+            >
+              <div className="space-y-2">
+                <span className="text-[10px] font-mono font-bold text-primary px-2 py-0.5 rounded bg-primary/10 inline-block">
+                  03 OPPORTUNITY
+                </span>
+                <h3 className="text-xs sm:text-sm font-bold text-foreground group-hover:text-primary transition-colors leading-snug">
+                  Explore Investment Opportunities
+                </h3>
+                <p className="text-[11px] text-muted-foreground leading-relaxed">
+                  Pre-capital commercial feasibility audits, sector whitespace maps, and target screening.
+                </p>
+              </div>
+              <div className="pt-2 text-xs font-semibold text-primary flex items-center gap-1">
+                <span>Start Brief</span>
+                <ArrowRight className="size-3 transition-transform group-hover:translate-x-1" />
+              </div>
+            </Link>
+
+            {/* CTA 4 */}
+            <Link
+              href="/contact?cta=DISCUSS_MARKET_ENTRY"
+              className="p-5 rounded-2xl border border-border/80 bg-background hover:border-primary hover:-translate-y-1 hover:shadow-md transition-all duration-200 group flex flex-col justify-between space-y-3 cursor-pointer"
+            >
+              <div className="space-y-2">
+                <span className="text-[10px] font-mono font-bold text-primary px-2 py-0.5 rounded bg-primary/10 inline-block">
+                  05 ACCESS
+                </span>
+                <h3 className="text-xs sm:text-sm font-bold text-foreground group-hover:text-primary transition-colors leading-snug">
+                  Discuss Market Entry
+                </h3>
+                <p className="text-[11px] text-muted-foreground leading-relaxed">
+                  Turnkey jurisdictional roadmaps, AfCFTA tariff compliance, and local distributor pairing.
+                </p>
+              </div>
+              <div className="pt-2 text-xs font-semibold text-primary flex items-center gap-1">
+                <span>Start Brief</span>
+                <ArrowRight className="size-3 transition-transform group-hover:translate-x-1" />
+              </div>
+            </Link>
+
+            {/* CTA 5 */}
+            <Link
+              href="/contact?cta=STRATEGIC_PARTNER"
+              className="p-5 rounded-2xl border border-border/80 bg-background hover:border-primary hover:-translate-y-1 hover:shadow-md transition-all duration-200 group flex flex-col justify-between space-y-3 cursor-pointer"
+            >
+              <div className="space-y-2">
+                <span className="text-[10px] font-mono font-bold text-primary px-2 py-0.5 rounded bg-primary/10 inline-block">
+                  04 INTERMEDIATION
+                </span>
+                <h3 className="text-xs sm:text-sm font-bold text-foreground group-hover:text-primary transition-colors leading-snug">
+                  Become a Strategic Partner
+                </h3>
+                <p className="text-[11px] text-muted-foreground leading-relaxed">
+                  Commercial partner vetting, verified distributor networks, and bilateral transaction intermediation.
+                </p>
+              </div>
+              <div className="pt-2 text-xs font-semibold text-primary flex items-center gap-1">
+                <span>Start Brief</span>
+                <ArrowRight className="size-3 transition-transform group-hover:translate-x-1" />
+              </div>
+            </Link>
+          </div>
+
+          {/* Direct Executive Hotline Strip */}
+          <div className="p-4 rounded-xl border border-border/80 bg-background/80 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs">
+            <div className="flex items-center gap-2">
+              <span className="size-2 rounded-full bg-emerald-500 animate-pulse" />
+              <span className="text-foreground font-semibold">Prefer direct dialogue with our Nairobi executive desk?</span>
             </div>
-
-            <div className="flex items-center gap-3 p-3.5 rounded-lg border border-border/70 bg-card">
-              <PhoneCall className="size-4 text-primary shrink-0" />
-              <div>
-                <h4 className="font-bold text-xs text-foreground">Rapid 6-Hour Response Window</h4>
-                <p className="text-muted-foreground text-[11px]">
-                  A specialized regional lead will respond with preliminary telemetry scoping within 6 business hours.
-                </p>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-3 p-3.5 rounded-lg border border-border/70 bg-card">
-              <Building2 className="size-4 text-blue-500 shrink-0" />
-              <div>
-                <h4 className="font-bold text-xs text-foreground">Central Operations Command</h4>
-                <p className="text-muted-foreground text-[11px]">
-                  Headquartered in East Africa (Nairobi), directing cross-border corridors globally.
-                </p>
-              </div>
+            <div className="flex flex-wrap items-center gap-4 text-xs font-mono">
+              <a
+                href="https://wa.me/254721154382"
+                target="_blank"
+                rel="noreferrer"
+                className="text-emerald-600 dark:text-emerald-400 font-bold hover:underline inline-flex items-center gap-1"
+              >
+                <span>WhatsApp: +254 721 154382</span>
+              </a>
+              <span className="text-border">•</span>
+              <a
+                href="mailto:info@stratumresearchltd.com"
+                className="text-primary font-bold hover:underline inline-flex items-center gap-1"
+              >
+                <span>info@stratumresearchltd.com</span>
+              </a>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Global Corporate Footer */}
+      {/* Global Comprehensive Footer */}
       <Footer />
 
       {/* Native Mobile PWA Bottom Bar */}

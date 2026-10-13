@@ -1,7 +1,9 @@
 import React from "react";
 import Link from "next/link";
+import { Metadata } from "next";
 import { Navbar } from "@/components/landing/navbar";
 import { Footer } from "@/components/landing/footer";
+import { MobilePwaBar } from "@/components/navigation/mobile-pwa-bar";
 import { ResearchStudioWrapper } from "@/components/research/research-studio-wrapper";
 import {
   FileText,
@@ -14,104 +16,118 @@ import {
   Layers,
   ArrowUpRight,
   BarChart3,
+  ShieldCheck,
+  CheckCircle2,
+  Clock,
+  Compass,
+  Building2,
+  Lock,
 } from "lucide-react";
 
-export const metadata = {
-  title: "Insights & Perspectives — STRATUM Research Ltd",
+export const metadata: Metadata = {
+  title: "Insights & Market Telemetry — Stratum Research Ltd",
   description:
-    "Explore research reports, market insights, consumer pulse snapshots, and perspectives from Stratum Research across Africa, Asia, and global emerging markets.",
+    "Explore empirical research briefs, subnational market telemetry, category audits, and strategic perspectives from Stratum Research Ltd.",
 };
 
 const INSIGHT_CATEGORIES = [
   {
     id: "reports",
-    title: "Research Reports",
-    description: "In-depth Stratum research reports, category audits, and comprehensive sector market studies.",
+    title: "Primary Research Reports",
+    description: "In-depth category censuses, subnational distribution audits, and sector feasibility studies.",
     icon: FileText,
-    badge: "BENCHMARK REPORTS",
+    badge: "BENCHMARK STUDIES",
     items: [
       {
-        title: "The 84% Reality: Mapping Informal Kiosk Retail Volume Across Sub-Saharan Africa",
+        title: "The 84% Reality: Mapping Informal Kiosk Retail Volume & Single-Coin Price Elasticity",
         category: "Consumer & Retail",
         date: "Q3 2026",
-        region: "Kenya, Nigeria & South Africa",
+        region: "East Africa (Nairobi, Kiambu & Machakos Corridors)",
         readTime: "18 min read",
+        samplePower: "n = 3,600 GPS-Audited Outlets",
       },
       {
-        title: "Cross-Border Commercial Corridors: China & India Trade Intermediation in African Ports",
+        title: "Cross-Border Commercial Sourcing: Direct Production Verification Between Asia & East Africa Gateways",
         category: "B2B Trade & Logistics",
         date: "Q3 2026",
-        region: "Mombasa, Lagos & Durban Corridors",
-        readTime: "24 min read",
+        region: "Mombasa Corridor & Indian Ocean Maritime Gates",
+        readTime: "22 min read",
+        samplePower: "24 Verified Manufacturing Plants",
       },
     ],
   },
   {
     id: "market-insights",
-    title: "Market Insights",
-    description: "Short-form data analysis of consumer behaviour, industries, regulatory shifts, and emerging trends.",
+    title: "Subnational Market Telemetry",
+    description: "Empirical field findings on merchant velocity, unit economics, regulatory shifts, and distributor markups.",
     icon: TrendingUp,
-    badge: "SECTOR INTELLIGENCE",
+    badge: "FIELD TELEMETRY",
     items: [
       {
-        title: "Price Elasticity Thresholds for Ready-to-Drink Beverages in Urban & Peri-Urban Dukas",
+        title: "Price Elasticity Thresholds: Consumer Resistance Curves for Fast-Moving Beverages at Coin Denominations",
         category: "FMCG Telemetry",
         date: "September 2026",
-        region: "Nairobi & Lagos Hubs",
+        region: "Nairobi Commercial Districts & Peri-Urban Hubs",
         readTime: "8 min read",
+        samplePower: "n = 1,200 Retail Dukas",
       },
       {
-        title: "Agricultural Supply Aggregation: Cold-Chain Integrity and Distributor Margins",
-        category: "Agri-Business",
+        title: "Decentralized Agricultural Cold-Chain: Post-Harvest Spoilage Rates and Cooperative Willingness-to-Pay",
+        category: "Clean Energy & Agri",
         date: "August 2026",
-        region: "East & Southern Africa",
+        region: "Rift Valley & Lake Victoria Horticultural Corridors",
         readTime: "11 min read",
+        samplePower: "n = 570 Agri Enterprises",
       },
     ],
   },
   {
     id: "consumer-pulse",
-    title: "Consumer Pulse",
-    description: "Real-time snapshots of what consumers are thinking, buying, experiencing, and expecting.",
+    title: "Consumer Pulse & Taste Testing",
+    description: "Direct consumer intercepts, mobile basket pacing logs, and vernacular blind sensory evaluations.",
     icon: Sparkles,
     badge: "DIRECT CONSUMER FEED",
     items: [
       {
-        title: "Household Basket Adjustments Under Food Inflation: Weekly Field Intercepts",
+        title: "Household Basket Adjustments Under Food Inflation: Weekly Field Intercepts & Brand Substitution Pacing",
         category: "Consumer Behavior",
-        date: "Weekly Telemetry",
-        region: "Pan-African Panel Network",
-        readTime: "6 min read",
+        date: "Bi-Weekly Panel",
+        region: "East Africa Urban & Informal Settlements",
+        readTime: "7 min read",
+        samplePower: "n = 2,400 Household Heads",
       },
       {
-        title: "Sensory & Packaging Preferences: Why Localized Visual Language Drives 3x Brand Trial",
+        title: "Vernacular Packaging vs. Standard English Branding: Measuring 2.4x Trial Velocity in Native Dialects",
         category: "Product Testing",
         date: "July 2026",
-        region: "West & Central Africa",
+        region: "Kenya Urban & Peri-Urban Trade Belts",
         readTime: "9 min read",
+        samplePower: "Double-Blind Sensory Intercepts",
       },
     ],
   },
   {
     id: "perspectives",
-    title: "Stratum Perspectives & Blogs",
-    description: "Thought leadership, methodological deep-dives, and executive commentary from the Stratum research team.",
+    title: "Stratum Perspectives & Methodologies",
+    description: "Methodological papers, field dispatch notes, and executive guidance from our Nairobi research leads.",
     icon: BookOpen,
-    badge: "EXECUTIVE PERSPECTIVES",
+    badge: "METHODOLOGICAL PAPERS",
     items: [
       {
-        title: "Why Desk-Based Scrapers Fail in Developing Markets: The Necessity of Human-Ground Telemetry",
+        title: "Why Desk-Based Scraping Fails in Developing Markets: The Necessity of GPS-Geofenced Human Fieldwork",
         category: "Research Methodology",
         date: "June 2026",
-        region: "Global Emerging Markets",
+        region: "Sub-Saharan Emerging Markets",
         readTime: "14 min read",
+        samplePower: "ESOMAR Double-Blind Standard",
       },
       {
-        title: "From Data to Signed Contracts: Structuring B2B Distributor Intermediation Under Bilateral NDAs",
-        category: "The Deal Room",
+        title: "From Empirical Research to Signed Contracts: Structuring B2B Deal Rooms Under Bilateral Mutual NDAs",
+        category: "Commercial Intermediation",
         date: "May 2026",
-        region: "London, Nairobi & Shanghai Desks",
+        region: "Central Operations Desk • Nairobi HQ",
         readTime: "12 min read",
+        samplePower: "Bilateral Legal Architecture",
       },
     ],
   },
@@ -123,59 +139,98 @@ export default function InsightsPage() {
       <Navbar />
 
       {/* Hero Header */}
-      <section className="relative pt-10 pb-12 md:pt-14 md:pb-16 overflow-hidden stratum-grid-bg border-b border-border/60">
-        <div className="mx-auto w-full max-w-[1536px] px-4 sm:px-6 lg:px-8 xl:px-10 space-y-5">
-          <div className="max-w-3xl space-y-3">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-border/80 bg-muted/40 text-xs font-semibold text-muted-foreground font-mono">
-              <span className="size-2 rounded-full bg-primary animate-pulse" />
-              <span>STRATUM INSIGHTS & PERSPECTIVES</span>
-              <span>•</span>
-              <span className="text-foreground font-bold">INTELLIGENCE WORTH SHARING</span>
+      <section className="relative pt-10 pb-12 sm:pt-14 sm:pb-16 overflow-hidden border-b border-border/70 bg-background">
+        <div className="mx-auto w-full max-w-[1536px] px-4 sm:px-6 lg:px-8 xl:px-10 space-y-6">
+          <div className="max-w-4xl space-y-4">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md border border-border/70 bg-card text-xs font-mono font-semibold text-muted-foreground shadow-2xs">
+              <span className="text-primary font-bold">01 // EMPIRICAL INTELLIGENCE</span>
+              <span className="text-border">•</span>
+              <span className="text-foreground">MARKET TELEMETRY &amp; BRIEFS</span>
             </div>
 
-            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-foreground tracking-tight leading-[1.2]">
-              Intelligence Worth Sharing: Research, Perspectives & Market Data
+            <h1 className="text-2xl sm:text-3xl lg:text-[36px] font-extrabold text-foreground tracking-tight leading-[1.2]">
+              Market Insights, Empirical Telemetry &amp; Research Briefs
             </h1>
 
-            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-              Explore selected Stratum research reports, short-form market insights, consumer pulse snapshots, and executive perspectives across diverse emerging markets.
+            <p className="text-xs sm:text-sm lg:text-base text-muted-foreground leading-relaxed max-w-3xl font-normal">
+              Stratum demonstrates methodological capability through field-tested research briefs, subnational econometric models, and transparent sample architectures (95% CI). Explore our empirical analyses below or commission custom telemetry for your sector.
             </p>
 
+            {/* Verification Trust Chips */}
+            <div className="flex flex-wrap items-center gap-2 pt-1 font-mono text-[11px] text-muted-foreground">
+              <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-muted/40 border border-border/60">
+                <CheckCircle2 className="size-3 text-primary" />
+                Primary Fieldwork Only
+              </span>
+              <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-muted/40 border border-border/60">
+                <ShieldCheck className="size-3 text-primary" />
+                Statistical 95% Confidence Interval
+              </span>
+              <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-muted/40 border border-border/60">
+                <Compass className="size-3 text-primary" />
+                GPS-Geofenced Observations
+              </span>
+              <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-muted/40 border border-border/60">
+                <Building2 className="size-3 text-primary" />
+                Centrally Directed from Nairobi HQ
+              </span>
+            </div>
+
             <div className="flex flex-wrap items-center gap-3 pt-2">
-              <Link
+              <a
                 href="#published-surveys"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-primary text-primary-foreground font-bold text-xs uppercase tracking-wider shadow-sm hover:bg-primary/90 transition-all"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-primary text-primary-foreground font-bold text-xs uppercase tracking-wider shadow-sm hover:bg-primary/90 transition-all cursor-pointer"
               >
                 <BarChart3 className="size-3.5" />
-                Explore Published Surveys
+                <span>Explore Interactive Data Studio</span>
                 <ArrowRight className="size-3" />
-              </Link>
+              </a>
               <Link
-                href="/reports"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-border bg-card text-foreground font-semibold text-xs hover:bg-muted/60 transition-all shadow-xs"
+                href="/research-briefs"
+                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg border border-border/80 bg-card hover:bg-muted text-foreground text-xs font-semibold transition-all shadow-2xs"
               >
-                <FileText className="size-3.5" />
-                Browse Full Research Reports
+                <FileText className="size-3.5 text-primary" />
+                <span>Sample Research Briefs</span>
               </Link>
               <Link
                 href="/blogs"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-border bg-card text-foreground font-semibold text-xs hover:bg-muted/60 transition-all shadow-xs"
+                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg border border-border/80 bg-card hover:bg-muted text-foreground text-xs font-semibold transition-all shadow-2xs"
               >
-                <BookOpen className="size-3.5" />
-                Read Stratum Blogs
+                <BookOpen className="size-3.5 text-primary" />
+                <span>Read Editorial Essays</span>
               </Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Main Categories Section */}
-      <main className="py-12 sm:py-16 border-b border-border/60">
+      {/* Main Interactive Studio & Categories Section */}
+      <main className="py-12 sm:py-16 border-b border-border/70 bg-background">
         <div className="mx-auto w-full max-w-[1536px] px-4 sm:px-6 lg:px-8 xl:px-10 space-y-16">
-          {/* Prominent Featured Column: Our Market Research Insights */}
-          <section className="scroll-mt-24">
+          {/* Prominent Featured Column: Interactive Market Research Studio */}
+          <section id="published-surveys" className="scroll-mt-24 space-y-4">
+            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3 border-b border-border/60 pb-3">
+              <div className="space-y-1">
+                <div className="inline-flex items-center gap-2 px-2.5 py-0.5 rounded bg-primary/10 text-primary font-mono text-[11px] font-bold uppercase tracking-wider">
+                  <BarChart3 className="size-3" />
+                  INTERACTIVE FIELD STUDIO
+                </div>
+                <h2 className="text-xl sm:text-2xl font-bold text-foreground tracking-tight">
+                  Empirical Survey Datasets &amp; Cross-Sectional Telemetry
+                </h2>
+                <p className="text-xs text-muted-foreground">
+                  Inspect empirical distributions, regional trade corridor comparisons, and trajectory curves captured across our fieldwork sweeps.
+                </p>
+              </div>
+              <div className="text-xs font-mono text-muted-foreground bg-muted/30 px-3 py-1.5 rounded-md border border-border/70 shrink-0">
+                <span>Protocol: Double-Blind &bull; Statistical 95% CI</span>
+              </div>
+            </div>
+
             <ResearchStudioWrapper />
           </section>
+
+          {/* Structured Intelligence Category Grid */}
           {INSIGHT_CATEGORIES.map((cat) => {
             const Icon = cat.icon;
             return (
@@ -184,10 +239,10 @@ export default function InsightsPage() {
                   <div className="space-y-1">
                     <div className="flex items-center gap-2">
                       <Icon className="size-4 text-primary" />
-                      <h2 className="text-lg sm:text-xl font-bold text-foreground">
+                      <h3 className="text-lg sm:text-xl font-bold text-foreground">
                         {cat.title}
-                      </h2>
-                      <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-muted text-muted-foreground">
+                      </h3>
+                      <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-muted text-muted-foreground font-semibold">
                         {cat.badge}
                       </span>
                     </div>
@@ -199,29 +254,41 @@ export default function InsightsPage() {
                   {cat.items.map((item) => (
                     <article
                       key={item.title}
-                      className="p-5 sm:p-6 rounded-2xl border border-border/80 bg-card hover:border-foreground/30 transition-all flex flex-col justify-between space-y-4 shadow-xs group"
+                      className="p-5 sm:p-6 rounded-2xl border border-border/80 bg-card hover:border-primary/40 transition-all flex flex-col justify-between space-y-4 shadow-2xs group"
                     >
                       <div className="space-y-2.5">
                         <div className="flex items-center justify-between text-[11px] font-mono text-muted-foreground">
                           <span className="text-primary font-semibold">{item.category}</span>
-                          <span>{item.date}</span>
+                          <span className="text-muted-foreground">{item.date}</span>
                         </div>
-                        <h3 className="text-base font-bold text-foreground group-hover:text-primary transition-colors leading-snug">
+                        <h4 className="text-base font-bold text-foreground group-hover:text-primary transition-colors leading-snug">
                           {item.title}
-                        </h3>
+                        </h4>
                       </div>
 
-                      <div className="pt-3 border-t border-border/60 flex items-center justify-between text-xs text-muted-foreground">
-                        <span className="flex items-center gap-1.5 font-medium">
-                          <Globe2 className="size-3 text-muted-foreground" />
-                          {item.region}
-                        </span>
-                        <Link
-                          href="/contact"
-                          className="font-semibold text-primary group-hover:underline flex items-center gap-1"
-                        >
-                          Request Study <ArrowRight className="size-3" />
-                        </Link>
+                      <div className="space-y-3 pt-3 border-t border-border/60">
+                        <div className="flex flex-wrap items-center justify-between gap-2 text-xs text-muted-foreground font-mono">
+                          <span className="flex items-center gap-1.5 font-medium truncate max-w-[260px]">
+                            <Globe2 className="size-3 text-primary shrink-0" />
+                            {item.region}
+                          </span>
+                          <span className="font-semibold text-foreground shrink-0">
+                            {item.samplePower}
+                          </span>
+                        </div>
+
+                        <div className="flex items-center justify-between pt-1">
+                          <span className="text-[11px] font-mono text-muted-foreground">
+                            {item.readTime}
+                          </span>
+                          <Link
+                            href="/contact?cta=COMMISSION_RESEARCH"
+                            className="font-bold text-xs text-primary group-hover:underline flex items-center gap-1"
+                          >
+                            <span>Request This Study Scope</span>
+                            <ArrowRight className="size-3" />
+                          </Link>
+                        </div>
                       </div>
                     </article>
                   ))}
@@ -232,28 +299,39 @@ export default function InsightsPage() {
         </div>
       </main>
 
-      {/* Newsletter / Custom Scoping CTA */}
-      <section className="py-12 sm:py-16 bg-muted/20 border-b border-border/60">
+      {/* Custom Scoping Callout Banner */}
+      <section className="py-12 sm:py-16 bg-muted/20 border-b border-border/70">
         <div className="mx-auto w-full max-w-4xl px-4 sm:px-6 lg:px-8 text-center space-y-4">
-          <h2 className="text-xl sm:text-2xl font-bold text-foreground tracking-tight">
-            Commission a Bespoke Market Study or Briefing
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-primary/10 border border-primary/20 text-xs font-mono font-bold text-primary">
+            <Lock className="size-3" />
+            CONFIDENTIAL SCOPING BRIEFING
+          </div>
+          <h2 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-foreground tracking-tight">
+            Commission a Bespoke Market Study or Scoping Memo
           </h2>
           <p className="text-xs sm:text-sm text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Need customized telemetry for your product category or target country? Connect with our research directors in Nairobi, Lagos, or London under strict commercial confidentiality.
+            Need customized primary data or subnational telemetry for your product category? Discuss your objectives with our research directors at our Nairobi headquarters under a strict bilateral NDA.
           </p>
-          <div className="pt-2">
+          <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
             <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground font-bold text-xs uppercase tracking-wider shadow-sm hover:bg-primary/90 transition-all"
+              href="/contact?cta=COMMISSION_RESEARCH"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-primary text-primary-foreground font-bold text-xs uppercase tracking-wider shadow-sm hover:bg-primary/90 transition-all cursor-pointer"
             >
-              Talk to Stratum — Request Research Scope
+              <span>Talk to Stratum — Request Research Scope</span>
               <ArrowRight className="size-3.5" />
+            </Link>
+            <Link
+              href="/services"
+              className="inline-flex items-center gap-2 px-5 py-3 rounded-xl border border-border/80 bg-card hover:bg-muted text-foreground text-xs font-semibold transition-all cursor-pointer"
+            >
+              <span>Explore Our 6 Services</span>
             </Link>
           </div>
         </div>
       </section>
 
       <Footer />
+      <MobilePwaBar />
     </div>
   );
 }

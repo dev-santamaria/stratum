@@ -3,7 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import { StratumLogo } from "../brand/stratum-logo";
-import { ShieldCheck, Lock, Globe2, MapPin, Mail, Sparkles } from "lucide-react";
+import { ShieldCheck, Lock, Globe2, MapPin, Mail, Sparkles, ArrowRight } from "lucide-react";
 
 export function Footer() {
   return (
@@ -17,102 +17,121 @@ export function Footer() {
               <StratumLogo size="md" />
             </Link>
             <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed max-w-sm">
-              Stratum is a global market intelligence and business intermediation firm helping businesses, investors, brands, and entrepreneurs make informed decisions in complex and emerging markets.
+              Stratum Research Ltd is a market intelligence, strategic research and business intermediation firm helping companies understand markets, identify opportunities and execute growth strategies across Africa and other emerging markets.
             </p>
 
             <div className="pt-2 flex flex-col gap-2 text-xs text-muted-foreground font-mono">
               <div className="flex items-center gap-2">
                 <span className="size-2 rounded-full bg-emerald-500 animate-pulse" />
-                <span className="text-foreground font-semibold">5+ CONTINENTS • 10M+ RESPONDENTS</span>
+                <span className="text-foreground font-semibold">MARKET INTELLIGENCE &bull; STRATEGY &bull; INTERMEDIATION</span>
               </div>
               <div className="text-[11px] text-muted-foreground">
-                Official Inquiries: <a href="mailto:info@stratumresearchltd.com" className="text-primary hover:underline">info@stratumresearchltd.com</a>
+                Registered HQ: <span className="text-foreground font-medium">Nairobi, Kenya</span>
+              </div>
+              <div className="text-[11px] text-muted-foreground">
+                Direct Line &amp; WhatsApp:{" "}
+                <a href="tel:+254721154382" className="text-foreground font-medium hover:underline">
+                  +254 721 154382
+                </a>
+              </div>
+              <div className="text-[11px] text-muted-foreground">
+                Official Inquiries:{" "}
+                <a href="mailto:info@stratumresearchltd.com" className="text-primary hover:underline">
+                  info@stratumresearchltd.com
+                </a>
               </div>
             </div>
           </div>
 
-          {/* Column 2: Solutions & Research (2 cols) */}
-          <div className="lg:col-span-2 space-y-3">
+          {/* Column 2: The 6 Service Lines (Priority 2) (3 cols) */}
+          <div className="lg:col-span-3 space-y-3">
             <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-foreground">
-              Our Solutions
+              Our 6 Service Lines
             </h4>
             <ul className="space-y-2 text-xs text-muted-foreground">
               <li>
-                <Link href="/solutions#market-opportunity" className="hover:text-primary transition-colors">
-                  Market Opportunity
+                <Link href="/services#research" className="hover:text-primary transition-colors flex items-center justify-between group">
+                  <span>01 Research</span>
+                  <span className="text-[10px] text-muted-foreground group-hover:text-primary">Consumer &amp; Field</span>
                 </Link>
               </li>
               <li>
-                <Link href="/solutions#consumer-intelligence" className="hover:text-primary transition-colors">
-                  Consumer Intelligence
+                <Link href="/services#intelligence" className="hover:text-primary transition-colors flex items-center justify-between group">
+                  <span>02 Intelligence</span>
+                  <span className="text-[10px] text-muted-foreground group-hover:text-primary">Market &amp; Competitor</span>
                 </Link>
               </li>
               <li>
-                <Link href="/solutions#product-testing" className="hover:text-primary transition-colors">
-                  Product & Concept Testing
+                <Link href="/services#opportunity" className="hover:text-primary transition-colors flex items-center justify-between group">
+                  <span>03 Opportunity</span>
+                  <span className="text-[10px] text-muted-foreground group-hover:text-primary">Screening &amp; Mapping</span>
                 </Link>
               </li>
               <li>
-                <Link href="/solutions#brand-intelligence" className="hover:text-primary transition-colors">
-                  Brand Intelligence
+                <Link href="/services#intermediation" className="hover:text-primary transition-colors flex items-center justify-between group">
+                  <span>04 Intermediation</span>
+                  <span className="text-[10px] text-muted-foreground group-hover:text-primary">B2B Connections</span>
                 </Link>
               </li>
               <li>
-                <Link href="/solutions#market-entry" className="hover:text-primary transition-colors">
-                  Market Entry & Expansion
+                <Link href="/services#market-access" className="hover:text-primary transition-colors flex items-center justify-between group">
+                  <span>05 Market Access</span>
+                  <span className="text-[10px] text-muted-foreground group-hover:text-primary">Entry &amp; Expansion</span>
                 </Link>
               </li>
               <li>
-                <Link href="/solutions#b2b-intermediation" className="hover:text-primary transition-colors font-semibold text-foreground">
-                  Business Intermediation
+                <Link href="/services#digital-market" className="hover:text-primary transition-colors flex items-center justify-between group">
+                  <span>06 Digital Market</span>
+                  <span className="text-[10px] text-muted-foreground group-hover:text-primary">Platform Offering</span>
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Column 3: Intelligence & Data (2 cols) */}
-          <div className="lg:col-span-2 space-y-3">
+          {/* Column 3: Actionable Next Steps (2 cols) */}
+          <div className="lg:col-span-3 space-y-3">
             <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-foreground">
-              Intelligence & Studies
+              Actionable Next Steps
             </h4>
             <ul className="space-y-2 text-xs text-muted-foreground">
               <li>
-                <Link href="/reports" className="hover:text-primary transition-colors font-semibold text-foreground">
-                  Research Reports
+                <Link href="/contact?cta=COMMISSION_RESEARCH" className="hover:text-primary transition-colors">
+                  Commission a Research Study
                 </Link>
               </li>
               <li>
-                <Link href="/blogs" className="hover:text-primary transition-colors">
-                  Stratum Blogs
+                <Link href="/contact?cta=REQUEST_INTELLIGENCE" className="hover:text-primary transition-colors">
+                  Request Market Intelligence
                 </Link>
               </li>
               <li>
-                <Link href="/insights" className="hover:text-primary transition-colors">
-                  Market Insights & Pulse
+                <Link href="/contact?cta=EXPLORE_INVESTMENT" className="hover:text-primary transition-colors">
+                  Explore Investment Opportunities
                 </Link>
               </li>
               <li>
-                <Link href="/how-we-work" className="hover:text-primary transition-colors">
-                  How We Work (5 Stages)
+                <Link href="/contact?cta=DISCUSS_MARKET_ENTRY" className="hover:text-primary transition-colors">
+                  Discuss Market Entry
                 </Link>
               </li>
               <li>
-                <Link href="/solutions" className="hover:text-primary transition-colors">
-                  Proprietary Datasets
+                <Link href="/contact?cta=STRATEGIC_PARTNER" className="hover:text-primary transition-colors">
+                  Become a Strategic Partner
                 </Link>
               </li>
-              <li>
-                <Link href="/solutions#b2b-intermediation" className="hover:text-primary transition-colors">
-                  Cross-Border Trade Desk
+              <li className="pt-1">
+                <Link href="/insights" className="text-primary hover:underline font-semibold flex items-center gap-1">
+                  <span>Illustrative Market Analyses</span>
+                  <ArrowRight className="size-3" />
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Column 4: Platform & Knowledge (2 cols) */}
+          {/* Column 4: Institutional & Governance (2 cols) */}
           <div className="lg:col-span-2 space-y-3">
             <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-foreground">
-              Company & Hubs
+              Firm &amp; Governance
             </h4>
             <ul className="space-y-2 text-xs text-muted-foreground">
               <li>
@@ -121,175 +140,59 @@ export function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/how-we-work" className="hover:text-primary transition-colors">
+                  How We Work
+                </Link>
+              </li>
+              <li>
                 <Link href="/why-stratum" className="hover:text-primary transition-colors">
-                  Why Stratum
+                  Stratum Identity
                 </Link>
               </li>
               <li>
-                <Link href="/careers" className="hover:text-primary transition-colors text-primary font-semibold">
-                  Careers at Stratum
+                <Link href="/faq" className="hover:text-primary transition-colors">
+                  Frequently Asked Questions (FAQ)
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="hover:text-primary transition-colors">
-                  Talk to Stratum
+                <Link href="/careers" className="hover:text-primary transition-colors">
+                  Careers &amp; Network
                 </Link>
               </li>
-            </ul>
-          </div>
-
-          {/* Column 5: Legal & Governance (2 cols) */}
-          <div className="lg:col-span-2 space-y-3">
-            <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-foreground">
-              Legal & Trust
-            </h4>
-            <ul className="space-y-2 text-xs text-muted-foreground">
               <li>
-                <Link href="/privacy" className="hover:text-primary transition-colors font-medium">
+                <Link href="/privacy" className="hover:text-primary transition-colors">
                   Privacy Policy
                 </Link>
               </li>
               <li>
-                <Link href="/terms" className="hover:text-primary transition-colors font-medium">
-                  Terms of Service
+                <Link href="/terms" className="hover:text-primary transition-colors">
+                  Terms of Engagement
                 </Link>
-              </li>
-              <li>
-                <Link href="/eula" className="hover:text-primary transition-colors font-medium">
-                  End User License (EULA)
-                </Link>
-              </li>
-              <li>
-                <Link href="/cookies" className="hover:text-primary transition-colors font-medium">
-                  Cookie Policy
-                </Link>
-              </li>
-              <li>
-                <button
-                  type="button"
-                  suppressHydrationWarning
-                  onClick={() => {
-                    if (typeof window !== "undefined") {
-                      window.dispatchEvent(new Event("open-cookie-settings"));
-                    }
-                  }}
-                  className="hover:text-primary transition-colors font-medium text-left cursor-pointer"
-                >
-                  Cookie Preferences &amp; Settings
-                </button>
-              </li>
-              <li>
-                <span className="text-[11px] text-muted-foreground/80 block">
-                  ESOMAR Corporate Protocols
-                </span>
-              </li>
-              <li>
-                <span className="text-[11px] text-muted-foreground/80 block">
-                  Bilateral NDA Data Vault
-                </span>
               </li>
             </ul>
           </div>
         </div>
+      </div>
 
-        {/* 2. Corporate Head Office & Active Commercial Corridors */}
-        <div className="mt-10 pt-6 border-t border-border/60 space-y-3">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-[11px] font-mono">
-            <span className="font-bold text-foreground uppercase tracking-wider flex items-center gap-1.5">
-              <span className="size-2 rounded-full bg-emerald-500 animate-pulse" />
-              Corporate Head Office &amp; Active Fieldwork Corridors
+      {/* 2. Institutional Governance & Data Privacy Strip */}
+      <div className="border-t border-border/60 bg-muted/20">
+        <div className="mx-auto w-full max-w-[1536px] px-4 sm:px-6 lg:px-8 xl:px-10 py-4 flex flex-col md:flex-row items-center justify-between gap-4 text-xs font-mono text-muted-foreground">
+          <div className="flex flex-wrap items-center gap-4 text-center md:text-left">
+            <span className="flex items-center gap-1.5 text-foreground">
+              <ShieldCheck className="size-3.5 text-emerald-500" />
+              <span>Double-Blind Research Standards</span>
             </span>
-            <span className="text-muted-foreground">
-              All regional corridors centrally directed via East Africa Headquarters (Nairobi)
-            </span>
-          </div>
-
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 text-[11px] text-muted-foreground">
-            {/* Corporate Head Office: East Africa (Nairobi, Kenya) */}
-            <div className="space-y-0.5 p-2.5 rounded-lg bg-primary/5 border border-primary/25">
-              <span className="font-bold text-foreground flex items-center gap-1">
-                <MapPin className="size-3 text-primary" /> East Africa (HQ)
-              </span>
-              <p className="text-foreground font-medium">Head Office &amp; Operations Command</p>
-              <span className="text-[10px] font-mono text-primary font-bold block">Nairobi, Kenya</span>
-            </div>
-
-            {/* West Africa */}
-            <div className="space-y-0.5 p-2.5 rounded-lg bg-card border border-border/60">
-              <span className="font-bold text-foreground flex items-center gap-1">
-                <Globe2 className="size-3 text-blue-500" /> West Africa
-              </span>
-              <p>Fieldwork &amp; Consumer Panels</p>
-              <span className="text-[10px] font-mono text-muted-foreground block">ECOWAS Trade Corridor</span>
-            </div>
-
-            {/* Southern Africa */}
-            <div className="space-y-0.5 p-2.5 rounded-lg bg-card border border-border/60">
-              <span className="font-bold text-foreground flex items-center gap-1">
-                <Globe2 className="size-3 text-emerald-500" /> Southern Africa
-              </span>
-              <p>Regional Fieldwork Network</p>
-              <span className="text-[10px] font-mono text-muted-foreground block">Industrial &amp; Retail Panels</span>
-            </div>
-
-            {/* North Africa */}
-            <div className="space-y-0.5 p-2.5 rounded-lg bg-card border border-border/60">
-              <span className="font-bold text-foreground flex items-center gap-1">
-                <Globe2 className="size-3 text-amber-500" /> North Africa
-              </span>
-              <p>Cross-Border Telemetry</p>
-              <span className="text-[10px] font-mono text-muted-foreground block">Maghreb Sourcing Corridor</span>
-            </div>
-
-            {/* Europe */}
-            <div className="space-y-0.5 p-2.5 rounded-lg bg-card border border-border/60">
-              <span className="font-bold text-foreground flex items-center gap-1">
-                <Globe2 className="size-3 text-indigo-500" /> Europe
-              </span>
-              <p>Institutional Advisory Desk</p>
-              <span className="text-[10px] font-mono text-muted-foreground block">Capital Markets Gateway</span>
-            </div>
-
-            {/* Asia: China & India */}
-            <div className="space-y-0.5 p-2.5 rounded-lg bg-card border border-border/60">
-              <span className="font-bold text-foreground flex items-center gap-1">
-                <Globe2 className="size-3 text-cyan-500" /> Asia (China &amp; India)
-              </span>
-              <p>Bilateral Trade Corridors</p>
-              <span className="text-[10px] font-mono text-muted-foreground block">Direct Factory Sourcing</span>
-            </div>
-          </div>
-        </div>
-
-        {/* 3. Bottom Legal Copyright & Domain Badges */}
-        <div className="mt-8 pt-6 border-t border-border/60 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-muted-foreground font-mono">
-          <div>
-            © {new Date().getFullYear()} STRATUM RESEARCH LTD (stratumresearchltd.com). ALL RIGHTS RESERVED.
-          </div>
-
-          <div className="flex flex-wrap items-center gap-3">
-            <span className="flex items-center gap-1 text-emerald-600 dark:text-emerald-400">
-              <ShieldCheck className="size-3.5" />
-              KDPA / NDPR / POPIA / GDPR VERIFIED
-            </span>
-            <span>•</span>
-            <span className="flex items-center gap-1">
+            <span>&bull;</span>
+            <span className="flex items-center gap-1.5">
               <Lock className="size-3.5 text-primary" />
-              BILATERAL DEAL ROOM VAULT
+              <span>Bilateral Mutual NDAs Executed</span>
             </span>
-            <span>•</span>
-            <Link href="/privacy" className="hover:text-foreground underline">
-              Privacy
-            </Link>
-            <Link href="/terms" className="hover:text-foreground underline">
-              Terms
-            </Link>
-            <Link href="/eula" className="hover:text-foreground underline">
-              EULA
-            </Link>
-            <Link href="/cookies" className="hover:text-foreground underline">
-              Cookies
-            </Link>
+            <span>&bull;</span>
+            <span>Kenya Data Protection Act (KDPA) &amp; GDPR Compliant Protocols</span>
+          </div>
+
+          <div className="flex items-center gap-4 text-[11px]">
+            <span>&copy; {new Date().getFullYear()} Stratum Research Ltd. All rights reserved.</span>
           </div>
         </div>
       </div>

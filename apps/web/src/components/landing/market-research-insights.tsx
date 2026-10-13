@@ -1776,7 +1776,7 @@ export function MarketResearchInsights({
                     <MapPin className="size-3.5 text-primary shrink-0" />
                     <span>GPS Telemetry: All retail kiosks, hospital chemists &amp; commercial desks mapped with sub-meter spatial coordinates.</span>
                   </div>
-                  <span className="text-[11px] text-primary font-semibold">ESOMAR Article 12 Certified</span>
+                  <span className="text-[11px] text-primary font-semibold">ESOMAR Research Ethics Aligned</span>
                 </div>
               </div>
             ) : activeFormat === "trajectory" ? (

@@ -274,7 +274,7 @@ export default function ReportsPage() {
             <div className="flex items-center gap-2">
               <span className="size-2 rounded-full bg-emerald-500 animate-pulse" />
               <span className="text-foreground font-bold">RESEARCH DOSSIER REPOSITORY:</span>
-              <span>Primary Field Telemetry • 14,200+ Audited Outlets • 190,000+ Panelists • ESOMAR &amp; KDPA Certified</span>
+              <span>Empirical Field Telemetry &bull; Double-Blind Protocol &bull; Aligned with ESOMAR &amp; KDPA Standards</span>
             </div>
             <div className="flex items-center gap-3 text-[11px]">
               <span className="text-primary font-bold">CENTRAL COMMAND</span>
@@ -291,25 +291,25 @@ export default function ReportsPage() {
                 <FileText className="size-3.5 text-primary" />
               </div>
               <div className="text-xl sm:text-2xl font-black font-mono text-foreground">{REPORTS.length} Dossiers</div>
-              <p className="text-[11px] text-muted-foreground">Empirical Ground-Truth Studies</p>
+              <p className="text-[11px] text-muted-foreground">Illustrative Ground-Truth Studies</p>
             </div>
 
             <div className="p-3.5 rounded-lg border border-border/70 bg-card space-y-1">
               <div className="flex items-center justify-between text-muted-foreground text-xs font-mono">
-                <span>PANEL AUDITED</span>
+                <span>STATISTICAL POWER</span>
                 <Users2 className="size-3.5 text-emerald-500" />
               </div>
-              <div className="text-xl sm:text-2xl font-black font-mono text-foreground">190,000+</div>
-              <p className="text-[11px] text-muted-foreground">Direct Consumer Intercepts</p>
+              <div className="text-xl sm:text-2xl font-black font-mono text-foreground">95% CI</div>
+              <p className="text-[11px] text-muted-foreground">Standard Statistical Confidence</p>
             </div>
 
             <div className="p-3.5 rounded-lg border border-border/70 bg-card space-y-1">
               <div className="flex items-center justify-between text-muted-foreground text-xs font-mono">
-                <span>RETAIL CENSUS</span>
+                <span>RETAIL SAMPLING</span>
                 <Radio className="size-3.5 text-blue-500" />
               </div>
-              <div className="text-xl sm:text-2xl font-black font-mono text-foreground">14,200+</div>
-              <p className="text-[11px] text-muted-foreground">GPS-Stamped POS Audits</p>
+              <div className="text-xl sm:text-2xl font-black font-mono text-foreground">GPS Audited</div>
+              <p className="text-[11px] text-muted-foreground">Double-Blind Retail Censuses</p>
             </div>
 
             <div className="p-3.5 rounded-lg border border-border/70 bg-card space-y-1">

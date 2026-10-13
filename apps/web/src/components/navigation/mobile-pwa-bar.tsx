@@ -16,16 +16,16 @@ export function MobilePwaBar() {
       isActive: pathname === "/",
     },
     {
-      label: "Solutions",
-      href: "/solutions",
+      label: "Services",
+      href: "/services",
       icon: Layers,
-      isActive: pathname === "/solutions",
+      isActive: pathname === "/services",
     },
     {
-      label: "Reports",
-      href: "/reports",
+      label: "Briefs",
+      href: "/research-briefs",
       icon: FileText,
-      isActive: pathname === "/reports",
+      isActive: pathname === "/research-briefs",
     },
     {
       label: "Insights",

@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 240" width="800" height="240">
+  <defs>
+    <!-- Cyan / Modern Tech Data Gradient -->
+    <linearGradient id="gTeal" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00B4D8"/>
+      <stop offset="100%" stop-color="#0077B6"/>
+    </linearGradient>
+
+    <!-- Warm Amber / Kenya Soil & Sun Accent -->
+    <linearGradient id="gGold" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F59E0B"/>
+      <stop offset="100%" stop-color="#D97706"/>
+    </linearGradient>
+
+    <!-- Deep Navy / Statistical Rigor & Authority -->
+    <linearGradient id="gNavy" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#1E293B"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ICON: Multi-Layered Symmetrical Strata with Data Points -->
+  <g transform="translate(40, 35)">
+    <!-- Top Stratum -->
+    <rect x="40" y="0" width="100" height="24" rx="12" fill="url(#gGold)"/>
+    <!-- Upper Data Stratum -->
+    <rect x="15" y="36" width="125" height="24" rx="12" fill="url(#gTeal)"/>
+    <!-- Core Analytical Bedrock -->
+    <rect x="35" y="72" width="125" height="24" rx="12" fill="url(#gNavy)"/>
+    <!-- Base Stratum -->
+    <rect x="15" y="108" width="95" height="24" rx="12" fill="url(#gGold)"/>
+    
+    <!-- Strategic Insight Nodes -->
+    <circle cx="135" cy="120" r="12" fill="url(#gTeal)"/>
+    <circle cx="15" cy="12" r="10" fill="#0F172A"/>
+  </g>
+
+  <!-- TYPOGRAPHY -->
+  <g transform="translate(230, 0)">
+    <!-- Company Name -->
+    <text x="0" y="115" 
+          font-family="'Inter', 'Helvetica Neue', Arial, sans-serif" 
+          font-size="68" 
+          font-weight="900" 
+          letter-spacing="7" 
+          fill="#0F172A">
+      STRATUM
+    </text>
+
+    <!-- Category / Descriptor -->
+    <text x="4" y="150" 
+          font-family="'Inter', 'Helvetica Neue', Arial, sans-serif" 
+          font-size="15" 
+          font-weight="700" 
+          letter-spacing="8" 
+          fill="#0077B6">
+      RESEARCH &amp; ANALYTICS
+    </text>
+
+    <!-- Structural Divider Accent -->
+    <rect x="4" y="168" width="60" height="4" rx="2" fill="#D97706"/>
+    <rect x="70" y="169" width="380" height="2" rx="1" fill="#CBD5E1"/>
+  </g>
+</svg>
