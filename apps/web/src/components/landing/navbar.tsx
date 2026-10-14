@@ -58,14 +58,14 @@ export function Navbar() {
             <DropdownMenu>
               <DropdownMenuTrigger
                 suppressHydrationWarning
-                className={`group inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-medium tracking-normal transition-all whitespace-nowrap outline-none focus-visible:ring-1 focus-visible:ring-primary ${
+                className={`group inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg text-sm font-semibold tracking-normal transition-all whitespace-nowrap outline-none focus-visible:ring-1 focus-visible:ring-primary ${
                   isServicesActive
-                    ? "text-primary font-semibold bg-primary/10"
+                    ? "text-primary bg-primary/10"
                     : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
                 }`}
               >
                 <span>Services</span>
-                <ChevronDown className="size-3 text-muted-foreground transition-transform duration-200 group-data-[state=open]:rotate-180" />
+                <ChevronDown className="size-3.5 text-muted-foreground transition-transform duration-200 group-data-[state=open]:rotate-180" />
               </DropdownMenuTrigger>
               <DropdownMenuContent
                 align="start"
@@ -168,9 +168,9 @@ export function Navbar() {
             {/* 2. How We Work */}
             <Link
               href="/how-we-work"
-              className={`px-3 py-1.5 rounded-lg text-xs font-medium tracking-normal transition-all whitespace-nowrap ${
+              className={`px-3.5 py-2 rounded-lg text-sm font-semibold tracking-normal transition-all whitespace-nowrap ${
                 pathname === "/how-we-work"
-                  ? "text-primary font-semibold bg-primary/10"
+                  ? "text-primary bg-primary/10"
                   : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
               }`}
             >
@@ -181,14 +181,14 @@ export function Navbar() {
             <DropdownMenu>
               <DropdownMenuTrigger
                 suppressHydrationWarning
-                className={`group inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-medium tracking-normal transition-all whitespace-nowrap outline-none focus-visible:ring-1 focus-visible:ring-primary ${
+                className={`group inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg text-sm font-semibold tracking-normal transition-all whitespace-nowrap outline-none focus-visible:ring-1 focus-visible:ring-primary ${
                   isInsightsActive
-                    ? "text-primary font-semibold bg-primary/10"
+                    ? "text-primary bg-primary/10"
                     : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
                 }`}
               >
                 <span>Capability &amp; Insights</span>
-                <ChevronDown className="size-3 text-muted-foreground transition-transform duration-200 group-data-[state=open]:rotate-180" />
+                <ChevronDown className="size-3.5 text-muted-foreground transition-transform duration-200 group-data-[state=open]:rotate-180" />
               </DropdownMenuTrigger>
               <DropdownMenuContent
                 align="start"
@@ -247,14 +247,14 @@ export function Navbar() {
             <DropdownMenu>
               <DropdownMenuTrigger
                 suppressHydrationWarning
-                className={`group inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-medium tracking-normal transition-all whitespace-nowrap outline-none focus-visible:ring-1 focus-visible:ring-primary ${
+                className={`group inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg text-sm font-semibold tracking-normal transition-all whitespace-nowrap outline-none focus-visible:ring-1 focus-visible:ring-primary ${
                   isCompanyActive
-                    ? "text-primary font-semibold bg-primary/10"
+                    ? "text-primary bg-primary/10"
                     : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
                 }`}
               >
                 <span>About</span>
-                <ChevronDown className="size-3 text-muted-foreground transition-transform duration-200 group-data-[state=open]:rotate-180" />
+                <ChevronDown className="size-3.5 text-muted-foreground transition-transform duration-200 group-data-[state=open]:rotate-180" />
               </DropdownMenuTrigger>
               <DropdownMenuContent
                 align="start"
@@ -320,14 +320,14 @@ export function Navbar() {
             </DropdownMenu>
           </nav>
 
-          {/* Primary Action Button (Matches Image 2 exactly: "Discuss an Opportunity ↗") */}
+          {/* Primary Action Button */}
           <div className="flex items-center gap-2">
             <Link
               href="/contact?cta=EXPLORE_INVESTMENT"
-              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg border border-border/80 bg-card hover:bg-muted/60 text-foreground font-semibold text-xs transition-all shadow-2xs group"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-border/80 bg-card hover:bg-muted/60 text-foreground font-semibold text-sm transition-all shadow-2xs group"
             >
               <span>Discuss an Opportunity</span>
-              <ArrowRight className="size-3 -rotate-45 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 text-primary" />
+              <ArrowRight className="size-3.5 -rotate-45 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 text-primary" />
             </Link>
           </div>
         </div>
@@ -354,53 +354,53 @@ export function Navbar() {
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
         <div className="lg:hidden border-t border-border bg-card p-4 space-y-4 animate-in slide-in-from-top-2">
-          <nav className="flex flex-col space-y-2">
+          <nav className="flex flex-col space-y-1">
             <Link
               href="/services"
               onClick={() => setMobileMenuOpen(false)}
-              className="px-3 py-2 rounded-lg text-xs font-semibold text-foreground hover:bg-muted"
+              className="px-3.5 py-2.5 rounded-lg text-sm font-semibold text-foreground hover:bg-muted"
             >
               Our 6 Services
             </Link>
             <Link
               href="/how-we-work"
               onClick={() => setMobileMenuOpen(false)}
-              className="px-3 py-2 rounded-lg text-xs font-semibold text-foreground hover:bg-muted"
+              className="px-3.5 py-2.5 rounded-lg text-sm font-semibold text-foreground hover:bg-muted"
             >
               How We Work
             </Link>
             <Link
               href="/research-briefs"
               onClick={() => setMobileMenuOpen(false)}
-              className="px-3 py-2 rounded-lg text-xs font-semibold text-foreground hover:bg-muted"
+              className="px-3.5 py-2.5 rounded-lg text-sm font-semibold text-foreground hover:bg-muted"
             >
               Sample Research Briefs
             </Link>
             <Link
               href="/insights"
               onClick={() => setMobileMenuOpen(false)}
-              className="px-3 py-2 rounded-lg text-xs font-semibold text-foreground hover:bg-muted"
+              className="px-3.5 py-2.5 rounded-lg text-sm font-semibold text-foreground hover:bg-muted"
             >
               Illustrative Analyses
             </Link>
             <Link
               href="/about"
               onClick={() => setMobileMenuOpen(false)}
-              className="px-3 py-2 rounded-lg text-xs font-semibold text-foreground hover:bg-muted"
+              className="px-3.5 py-2.5 rounded-lg text-sm font-semibold text-foreground hover:bg-muted"
             >
               About Stratum
             </Link>
             <Link
               href="/why-stratum"
               onClick={() => setMobileMenuOpen(false)}
-              className="px-3 py-2 rounded-lg text-xs font-semibold text-foreground hover:bg-muted"
+              className="px-3.5 py-2.5 rounded-lg text-sm font-semibold text-foreground hover:bg-muted"
             >
               Stratum Identity &amp; Distinction
             </Link>
             <Link
               href="/faq"
               onClick={() => setMobileMenuOpen(false)}
-              className="px-3 py-2 rounded-lg text-xs font-semibold text-foreground hover:bg-muted"
+              className="px-3.5 py-2.5 rounded-lg text-sm font-semibold text-foreground hover:bg-muted"
             >
               Frequently Asked Questions (FAQ)
             </Link>
@@ -409,10 +409,10 @@ export function Navbar() {
             <Link
               href="/contact?cta=EXPLORE_INVESTMENT"
               onClick={() => setMobileMenuOpen(false)}
-              className="w-full inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-lg bg-primary text-primary-foreground font-bold text-xs uppercase tracking-wider"
+              className="w-full inline-flex items-center justify-center gap-2 px-4 py-3 rounded-lg bg-primary text-primary-foreground font-bold text-sm uppercase tracking-wider"
             >
               <span>Discuss an Opportunity</span>
-              <ArrowRight className="size-3 -rotate-45" />
+              <ArrowRight className="size-3.5 -rotate-45" />
             </Link>
           </div>
         </div>

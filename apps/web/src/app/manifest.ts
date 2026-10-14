@@ -8,16 +8,16 @@ export default function manifest(): MetadataRoute.Manifest {
       "Bridging Investment Gaps Across Africa Through Intelligence, Insight & Intermediation.",
     start_url: "/",
     display: "standalone",
-    background_color: "#0a0d14",
-    theme_color: "#1E56FF",
+    background_color: "#00182E",
+    theme_color: "#002B49",
     icons: [
       {
-        src: "/favicon.svg",
-        sizes: "any",
-        type: "image/svg+xml",
+        src: "/images/logo/stratfavicon.png",
+        sizes: "192x192 512x512",
+        type: "image/png",
       },
       {
-        src: "/icon.svg",
+        src: "/favicon.svg",
         sizes: "any",
         type: "image/svg+xml",
       },

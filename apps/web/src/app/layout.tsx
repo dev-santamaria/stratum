@@ -35,7 +35,7 @@ const satoshi = localFont({
 });
 
 export const viewport: Viewport = {
-  themeColor: "#1E56FF",
+  themeColor: "#002B49",
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
@@ -56,11 +56,14 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
+      { url: "/images/logo/stratfavicon.png", type: "image/png" },
+      { url: "/favicon.png", type: "image/png" },
       { url: "/favicon.svg", type: "image/svg+xml" },
-      { url: "/icon.svg", type: "image/svg+xml" },
     ],
-    shortcut: "/favicon.svg",
-    apple: "/favicon.svg",
+    shortcut: "/images/logo/stratfavicon.png",
+    apple: [
+      { url: "/images/logo/stratfavicon.png", sizes: "180x180", type: "image/png" },
+    ],
   },
 };
 

@@ -1812,12 +1812,12 @@ export function MarketResearchInsights({
                     >
                       <defs>
                         <linearGradient id="primaryAreaGrad" x1="0" y1="0" x2="0" y2="1">
-                          <stop offset="5%" stopColor="#1E56FF" stopOpacity={0.35} />
-                          <stop offset="95%" stopColor="#1E56FF" stopOpacity={0.02} />
+                          <stop offset="5%" stopColor="#004B87" stopOpacity={0.35} />
+                          <stop offset="95%" stopColor="#004B87" stopOpacity={0.02} />
                         </linearGradient>
                         <linearGradient id="ciBandGrad" x1="0" y1="0" x2="0" y2="1">
-                          <stop offset="5%" stopColor="#3B82F6" stopOpacity={0.15} />
-                          <stop offset="95%" stopColor="#3B82F6" stopOpacity={0.05} />
+                          <stop offset="5%" stopColor="#167D3C" stopOpacity={0.15} />
+                          <stop offset="95%" stopColor="#167D3C" stopOpacity={0.05} />
                         </linearGradient>
                       </defs>
                       <CartesianGrid strokeDasharray="3 3" opacity={0.2} vertical={false} />
@@ -1859,11 +1859,11 @@ export function MarketResearchInsights({
                         type="monotone"
                         dataKey="actualValue"
                         name={activeSurvey.trajectoryPrimaryLabel}
-                        stroke="#1E56FF"
+                        stroke="#004B87"
                         strokeWidth={3}
                         fill="url(#primaryAreaGrad)"
-                        dot={{ r: 4, strokeWidth: 2, fill: "#ffffff", stroke: "#1E56FF" }}
-                        activeDot={{ r: 6, stroke: "#1E56FF", strokeWidth: 2 }}
+                        dot={{ r: 4, strokeWidth: 2, fill: "#ffffff", stroke: "#004B87" }}
+                        activeDot={{ r: 6, stroke: "#004B87", strokeWidth: 2 }}
                       />
                       {/* Benchmark Comparison Line */}
                       <Line

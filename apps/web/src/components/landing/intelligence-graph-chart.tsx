@@ -17,10 +17,10 @@ import { PieChart as PieIcon, TrendingUp, ShieldAlert, Sparkles, Filter } from "
 
 // Channel Share Data across African Markets
 const RETAIL_CHANNEL_DATA = [
-  { name: "Informal Kiosks & Spazas", value: 68, color: "#1E56FF" },
-  { name: "Open-Air Souks & Wholesalers", value: 16, color: "#06B6D4" },
-  { name: "Modern Supermarkets", value: 11, color: "#10B981" },
-  { name: "Quick Commerce & D2C", value: 5, color: "#F59E0B" },
+  { name: "Informal Kiosks & Spazas", value: 68, color: "#004B87" },
+  { name: "Open-Air Souks & Wholesalers", value: 16, color: "#167D3C" },
+  { name: "Modern Supermarkets", value: 11, color: "#22C55E" },
+  { name: "Quick Commerce & D2C", value: 5, color: "#64748B" },
 ];
 
 // Price Sensitivity & Velocity across Corridors
@@ -161,12 +161,12 @@ export function IntelligenceGraphChart() {
                 >
                   <defs>
                     <linearGradient id="colorVelocity" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="5%" stopColor="#1E56FF" stopOpacity={0.4} />
-                      <stop offset="95%" stopColor="#1E56FF" stopOpacity={0.0} />
+                      <stop offset="5%" stopColor="#004B87" stopOpacity={0.4} />
+                      <stop offset="95%" stopColor="#004B87" stopOpacity={0.0} />
                     </linearGradient>
                     <linearGradient id="colorElasticity" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="5%" stopColor="#06B6D4" stopOpacity={0.3} />
-                      <stop offset="95%" stopColor="#06B6D4" stopOpacity={0.0} />
+                      <stop offset="5%" stopColor="#167D3C" stopOpacity={0.3} />
+                      <stop offset="95%" stopColor="#167D3C" stopOpacity={0.0} />
                     </linearGradient>
                   </defs>
                   <CartesianGrid strokeDasharray="3 3" stroke="rgba(150, 150, 150, 0.15)" />
@@ -193,7 +193,7 @@ export function IntelligenceGraphChart() {
                     type="monotone"
                     dataKey="velocity"
                     name="Off-Shelf Velocity Index"
-                    stroke="#1E56FF"
+                    stroke="#004B87"
                     strokeWidth={2}
                     fillOpacity={1}
                     fill="url(#colorVelocity)"
@@ -202,7 +202,7 @@ export function IntelligenceGraphChart() {
                     type="monotone"
                     dataKey="elasticity"
                     name="Price Resistance Index"
-                    stroke="#06B6D4"
+                    stroke="#167D3C"
                     strokeWidth={2}
                     fillOpacity={1}
                     fill="url(#colorElasticity)"
@@ -212,11 +212,11 @@ export function IntelligenceGraphChart() {
             </div>
             <div className="flex items-center justify-between text-[10px] text-muted-foreground font-mono pt-1">
               <span className="flex items-center gap-1.5">
-                <span className="size-2 rounded-full bg-[#1E56FF]" />
+                <span className="size-2 rounded-full bg-[#004B87]" />
                 Off-Shelf SKU Velocity
               </span>
               <span className="flex items-center gap-1.5">
-                <span className="size-2 rounded-full bg-[#06B6D4]" />
+                <span className="size-2 rounded-full bg-[#167D3C]" />
                 Price Resistance Index
               </span>
               <span className="text-emerald-500 font-bold">99.4% Field Confidence</span>

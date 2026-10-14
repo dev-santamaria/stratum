@@ -16,54 +16,25 @@ import {
   Eye,
   Sliders,
   Palette,
+  Compass,
+  ArrowRight,
 } from "lucide-react";
 
 export default function LogoPreviewPage() {
   const [selectedSize, setSelectedSize] = useState<
     "xs" | "sm" | "md" | "lg" | "xl" | "2xl"
   >("md");
-  const [selectedFormat, setSelectedFormat] = useState<"svg" | "png" | "image">(
-    "svg"
-  );
-  const [showSubtitle, setShowSubtitle] = useState(true);
-  const [isFitted, setIsFitted] = useState(true);
+  const [showWordmark, setShowWordmark] = useState(true);
   const [bgMode, setBgMode] = useState<"light" | "navy" | "dark" | "gradient">(
     "light"
   );
   const [copied, setCopied] = useState(false);
 
-  const copySvgCode = () => {
-    const rawSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 240" width="800" height="240">
-  <defs>
-    <linearGradient id="gTeal" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#00B4D8"/>
-      <stop offset="100%" stop-color="#0077B6"/>
-    </linearGradient>
-    <linearGradient id="gGold" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#F59E0B"/>
-      <stop offset="100%" stop-color="#D97706"/>
-    </linearGradient>
-    <linearGradient id="gNavy" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#0F172A"/>
-      <stop offset="100%" stop-color="#1E293B"/>
-    </linearGradient>
-  </defs>
-  <g transform="translate(40, 35)">
-    <rect x="40" y="0" width="100" height="24" rx="12" fill="url(#gGold)"/>
-    <rect x="15" y="36" width="125" height="24" rx="12" fill="url(#gTeal)"/>
-    <rect x="35" y="72" width="125" height="24" rx="12" fill="url(#gNavy)"/>
-    <rect x="15" y="108" width="95" height="24" rx="12" fill="url(#gGold)"/>
-    <circle cx="135" cy="120" r="12" fill="url(#gTeal)"/>
-    <circle cx="15" cy="12" r="10" fill="#0F172A"/>
-  </g>
-  <g transform="translate(230, 0)">
-    <text x="0" y="115" font-family="'Inter', 'Helvetica Neue', Arial, sans-serif" font-size="68" font-weight="900" letter-spacing="7" fill="#0F172A">STRATUM</text>
-    <text x="4" y="150" font-family="'Inter', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="700" letter-spacing="8" fill="#0077B6">RESEARCH &amp; ANALYTICS</text>
-    <rect x="4" y="168" width="60" height="4" rx="2" fill="#D97706"/>
-    <rect x="70" y="169" width="380" height="2" rx="1" fill="#CBD5E1"/>
-  </g>
-</svg>`;
-    navigator.clipboard.writeText(rawSvg);
+  const copyImgPath = () => {
+    const assetPath = showWordmark
+      ? "/images/logo/stratLogo.jpeg"
+      : "/images/logo/stratfavicon.png";
+    navigator.clipboard.writeText(assetPath);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
@@ -71,11 +42,11 @@ export default function LogoPreviewPage() {
   const getBgStyle = () => {
     switch (bgMode) {
       case "navy":
-        return "bg-[#0F172A] text-white border-slate-700";
+        return "bg-[#002B49] text-white border-blue-900";
       case "dark":
-        return "bg-black text-white border-zinc-800";
+        return "bg-[#051424] text-white border-slate-800";
       case "gradient":
-        return "bg-gradient-to-br from-[#0F172A] via-[#0284C7]/20 to-[#0F172A] text-white border-sky-900/50";
+        return "bg-gradient-to-br from-[#00182E] via-[#002B49] to-[#0A3D24] text-white border-emerald-900/50";
       default:
         return "bg-white text-slate-900 border-slate-200 shadow-sm";
     }
@@ -89,15 +60,13 @@ export default function LogoPreviewPage() {
         {/* Header */}
         <div className="space-y-4">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold tracking-wide uppercase">
-            <Sparkles className="size-3.5" /> Brand Identity Preview
+            <Sparkles className="size-3.5" /> Official Brand Identity System
           </div>
           <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900">
-            STRATUM Corporate Brand Logo Showcase
+            STRATUM Research Brand Identity &amp; Color Theme
           </h1>
           <p className="text-base text-slate-600 max-w-3xl leading-relaxed">
-            Preview the new official STRATUM Research & Analytics identity
-            system across formats (pure vector SVG and retina PNG), viewport
-            scales, and theme environments.
+            Preview the official STRATUM Research identity system featuring the Pan-African ribbon emblem, authoritative wordmark typography, and the unified Deep Navy &amp; African Emerald color architecture.
           </p>
         </div>
 
@@ -105,14 +74,13 @@ export default function LogoPreviewPage() {
         <div className="bg-white rounded-2xl border border-slate-200/90 shadow-md p-6 sm:p-8 space-y-6">
           <div className="flex flex-wrap items-center justify-between gap-4 border-b border-slate-100 pb-5">
             <div className="flex items-center gap-2 text-sm font-bold text-slate-900">
-              <Sliders className="size-4 text-primary" /> Interactive Logo
-              Studio
+              <Sliders className="size-4 text-primary" /> Interactive Brand Studio
             </div>
 
             <div className="flex flex-wrap items-center gap-2 text-xs">
-              {/* Copy SVG code */}
+              {/* Copy Path */}
               <button
-                onClick={copySvgCode}
+                onClick={copyImgPath}
                 className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-slate-200 bg-slate-50 text-slate-700 hover:bg-slate-100 transition-colors font-medium"
               >
                 {copied ? (
@@ -120,54 +88,61 @@ export default function LogoPreviewPage() {
                 ) : (
                   <Copy className="size-3.5" />
                 )}
-                {copied ? "Copied SVG" : "Copy SVG Code"}
+                {copied ? "Copied Asset Path" : "Copy Asset Path"}
               </button>
 
               {/* View Raw Assets */}
               <a
-                href="/images/logo/StratumLogo.svg"
+                href="/images/logo/stratLogo.jpeg"
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-slate-200 bg-slate-50 text-slate-700 hover:bg-slate-100 transition-colors font-medium"
               >
-                <Download className="size-3.5" /> StratumLogo.svg
+                <Download className="size-3.5" /> Full Logo (stratLogo.jpeg)
               </a>
               <a
-                href="/images/logo/StratumLogo.png"
+                href="/images/logo/stratfavicon.png"
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-slate-200 bg-slate-50 text-slate-700 hover:bg-slate-100 transition-colors font-medium"
               >
-                <Download className="size-3.5" /> StratumLogo.png
+                <Download className="size-3.5" /> Transparent Favicon (stratfavicon.png)
               </a>
             </div>
           </div>
 
           {/* Controls Bar */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-xs">
-            {/* Format Selector */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs">
+            {/* Display Mode (Full Logo vs Mark) */}
             <div className="space-y-1.5">
-              <label className="font-semibold text-slate-700">Renderer Format</label>
+              <label className="font-semibold text-slate-700">Display Variant</label>
               <div className="flex rounded-lg bg-slate-100 p-1">
-                {(["svg", "png", "image"] as const).map((fmt) => (
-                  <button
-                    key={fmt}
-                    onClick={() => setSelectedFormat(fmt)}
-                    className={`flex-1 py-1 px-2 rounded-md font-medium uppercase text-[11px] transition-all ${
-                      selectedFormat === fmt
-                        ? "bg-white text-primary shadow-xs font-bold"
-                        : "text-slate-600 hover:text-slate-900"
-                    }`}
-                  >
-                    {fmt === "image" ? "SVG Img" : fmt}
-                  </button>
-                ))}
+                <button
+                  onClick={() => setShowWordmark(true)}
+                  className={`flex-1 py-1 px-2 rounded-md font-medium text-[11px] transition-all ${
+                    showWordmark
+                      ? "bg-white text-primary shadow-xs font-bold"
+                      : "text-slate-600 hover:text-slate-900"
+                  }`}
+                >
+                  Full Logo
+                </button>
+                <button
+                  onClick={() => setShowWordmark(false)}
+                  className={`flex-1 py-1 px-2 rounded-md font-medium text-[11px] transition-all ${
+                    !showWordmark
+                      ? "bg-white text-primary shadow-xs font-bold"
+                      : "text-slate-600 hover:text-slate-900"
+                  }`}
+                >
+                  Emblem / Mark
+                </button>
               </div>
             </div>
 
             {/* Size Selector */}
             <div className="space-y-1.5">
-              <label className="font-semibold text-slate-700">Size Preset</label>
+              <label className="font-semibold text-slate-700">Scale Preset</label>
               <div className="flex rounded-lg bg-slate-100 p-1">
                 {(["sm", "md", "lg", "xl", "2xl"] as const).map((sz) => (
                   <button
@@ -204,48 +179,21 @@ export default function LogoPreviewPage() {
                 ))}
               </div>
             </div>
-
-            {/* Toggles */}
-            <div className="space-y-1.5">
-              <label className="font-semibold text-slate-700">Display Options</label>
-              <div className="flex items-center gap-3 pt-1">
-                <label className="inline-flex items-center gap-1.5 cursor-pointer">
-                  <input
-                    type="checkbox"
-                    checked={showSubtitle}
-                    onChange={(e) => setShowSubtitle(e.target.checked)}
-                    className="rounded text-primary focus:ring-primary size-3.5"
-                  />
-                  <span>Subtitle</span>
-                </label>
-                <label className="inline-flex items-center gap-1.5 cursor-pointer">
-                  <input
-                    type="checkbox"
-                    checked={isFitted}
-                    onChange={(e) => setIsFitted(e.target.checked)}
-                    className="rounded text-primary focus:ring-primary size-3.5"
-                  />
-                  <span>Fitted ViewBox</span>
-                </label>
-              </div>
-            </div>
           </div>
 
           {/* Interactive Sandbox Canvas */}
           <div
-            className={`min-h-[220px] rounded-xl border p-8 flex flex-col items-center justify-center transition-all ${getBgStyle()}`}
+            className={`min-h-[240px] rounded-xl border p-8 flex flex-col items-center justify-center transition-all ${getBgStyle()}`}
           >
-            <div className="p-4 rounded-lg flex items-center justify-center">
+            <div className="p-4 rounded-xl flex items-center justify-center">
               <StratumLogo
                 size={selectedSize}
-                format={selectedFormat}
-                showSubtitle={showSubtitle}
-                fitted={isFitted}
+                showWordmark={showWordmark}
                 variant={bgMode === "light" ? "default" : "dark"}
               />
             </div>
-            <div className="text-[11px] opacity-60 font-mono mt-3">
-              Preset: {selectedSize.toUpperCase()} • Format: {selectedFormat.toUpperCase()} • Box: {isFitted ? "Fitted (Optimal)" : "Full 800x240"}
+            <div className="text-[11px] opacity-75 font-mono mt-3">
+              Preset: {selectedSize.toUpperCase()} • Mode: {showWordmark ? "Full Logo (stratLogo.jpeg)" : "Transparent Emblem (stratfavicon.png)"} • Surface: {bgMode.toUpperCase()}
             </div>
           </div>
         </div>
@@ -260,64 +208,64 @@ export default function LogoPreviewPage() {
             {/* Light Matrix */}
             <div className="bg-white rounded-xl border border-slate-200 p-6 space-y-5">
               <div className="text-xs font-semibold text-slate-500 uppercase tracking-wider">
-                Light Background (Navbars, Invoices, Reports)
+                Light Background (Navbars, Reports, Official Documents)
               </div>
               <div className="space-y-4">
                 <div className="flex items-center justify-between border-b border-slate-100 pb-3">
-                  <span className="text-xs text-slate-500 font-mono">2XL (68px)</span>
+                  <span className="text-xs text-slate-500 font-mono">2XL (110px)</span>
                   <StratumLogo size="2xl" variant="default" />
                 </div>
                 <div className="flex items-center justify-between border-b border-slate-100 pb-3">
-                  <span className="text-xs text-slate-500 font-mono">XL (54px)</span>
+                  <span className="text-xs text-slate-500 font-mono">XL (88px)</span>
                   <StratumLogo size="xl" variant="default" />
                 </div>
                 <div className="flex items-center justify-between border-b border-slate-100 pb-3">
-                  <span className="text-xs text-slate-500 font-mono">LG (44px)</span>
+                  <span className="text-xs text-slate-500 font-mono">LG (70px)</span>
                   <StratumLogo size="lg" variant="default" />
                 </div>
                 <div className="flex items-center justify-between border-b border-slate-100 pb-3">
-                  <span className="text-xs text-slate-500 font-mono">MD (36px — Default Navbar)</span>
+                  <span className="text-xs text-slate-500 font-mono">MD (56px — Active Navbar)</span>
                   <StratumLogo size="md" variant="default" />
                 </div>
                 <div className="flex items-center justify-between border-b border-slate-100 pb-3">
-                  <span className="text-xs text-slate-500 font-mono">SM (28px)</span>
+                  <span className="text-xs text-slate-500 font-mono">SM (42px)</span>
                   <StratumLogo size="sm" variant="default" />
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-xs text-slate-500 font-mono">XS (22px)</span>
+                  <span className="text-xs text-slate-500 font-mono">XS (32px)</span>
                   <StratumLogo size="xs" variant="default" />
                 </div>
               </div>
             </div>
 
             {/* Dark Matrix */}
-            <div className="bg-[#0F172A] text-white rounded-xl border border-slate-800 p-6 space-y-5">
-              <div className="text-xs font-semibold text-slate-400 uppercase tracking-wider">
-                Deep Navy Surface (Hero Cards, Dark Footers)
+            <div className="bg-[#002B49] text-white rounded-xl border border-blue-900 p-6 space-y-5">
+              <div className="text-xs font-semibold text-blue-200 uppercase tracking-wider">
+                Stratum Navy Surface (Hero Cards, Executive Dark Mode)
               </div>
               <div className="space-y-4">
-                <div className="flex items-center justify-between border-b border-slate-800 pb-3">
-                  <span className="text-xs text-slate-400 font-mono">2XL (68px)</span>
+                <div className="flex items-center justify-between border-b border-blue-900/60 pb-3">
+                  <span className="text-xs text-blue-300 font-mono">2XL (110px)</span>
                   <StratumLogo size="2xl" variant="dark" />
                 </div>
-                <div className="flex items-center justify-between border-b border-slate-800 pb-3">
-                  <span className="text-xs text-slate-400 font-mono">XL (54px)</span>
+                <div className="flex items-center justify-between border-b border-blue-900/60 pb-3">
+                  <span className="text-xs text-blue-300 font-mono">XL (88px)</span>
                   <StratumLogo size="xl" variant="dark" />
                 </div>
-                <div className="flex items-center justify-between border-b border-slate-800 pb-3">
-                  <span className="text-xs text-slate-400 font-mono">LG (44px)</span>
+                <div className="flex items-center justify-between border-b border-blue-900/60 pb-3">
+                  <span className="text-xs text-blue-300 font-mono">LG (70px)</span>
                   <StratumLogo size="lg" variant="dark" />
                 </div>
-                <div className="flex items-center justify-between border-b border-slate-800 pb-3">
-                  <span className="text-xs text-slate-400 font-mono">MD (36px)</span>
+                <div className="flex items-center justify-between border-b border-blue-900/60 pb-3">
+                  <span className="text-xs text-blue-300 font-mono">MD (56px)</span>
                   <StratumLogo size="md" variant="dark" />
                 </div>
-                <div className="flex items-center justify-between border-b border-slate-800 pb-3">
-                  <span className="text-xs text-slate-400 font-mono">SM (28px)</span>
+                <div className="flex items-center justify-between border-b border-blue-900/60 pb-3">
+                  <span className="text-xs text-blue-300 font-mono">SM (42px)</span>
                   <StratumLogo size="sm" variant="dark" />
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-xs text-slate-400 font-mono">XS (22px)</span>
+                  <span className="text-xs text-blue-300 font-mono">XS (32px)</span>
                   <StratumLogo size="xs" variant="dark" />
                 </div>
               </div>
@@ -328,10 +276,10 @@ export default function LogoPreviewPage() {
         {/* Icon-Only / App Mark Section */}
         <div className="bg-white rounded-2xl border border-slate-200/90 shadow-sm p-6 sm:p-8 space-y-5">
           <div className="flex items-center gap-2 text-sm font-bold text-slate-900">
-            <Layers className="size-4 text-primary" /> Icon-Only &amp; Micro-Contexts (Favicons, Mobile Marks)
+            <Layers className="size-4 text-primary" /> Africa Ribbon Emblem &amp; Favicon (stratfavicon.png)
           </div>
           <p className="text-xs text-slate-600 max-w-2xl leading-relaxed">
-            When space is limited (such as mobile headers, collapsed sidebars, or favicons), the multi-layered strata icon mark functions independently as an unmistakable corporate signature.
+            The stylized ribbon emblem enclosing the silhouette of Africa is provided as a transparent PNG asset, functioning seamlessly as the primary browser favicon, app icon, and standalone mark across light, dark, and colored environments without any white background box.
           </p>
 
           <div className="flex flex-wrap items-center gap-8 pt-2">
@@ -339,64 +287,71 @@ export default function LogoPreviewPage() {
               <div className="p-4 rounded-xl bg-slate-100 border border-slate-200">
                 <StratumLogo size="xl" showWordmark={false} />
               </div>
-              <span className="text-[11px] font-mono text-slate-500">XL Mark</span>
+              <span className="text-[11px] font-mono text-slate-500">XL Mark (88px)</span>
             </div>
 
             <div className="flex flex-col items-center gap-2">
               <div className="p-3 rounded-xl bg-slate-100 border border-slate-200">
                 <StratumLogo size="lg" showWordmark={false} />
               </div>
-              <span className="text-[11px] font-mono text-slate-500">LG Mark</span>
+              <span className="text-[11px] font-mono text-slate-500">LG Mark (70px)</span>
             </div>
 
             <div className="flex flex-col items-center gap-2">
-              <div className="p-2.5 rounded-xl bg-[#0F172A] border border-slate-800">
+              <div className="p-2.5 rounded-xl bg-[#002B49] border border-blue-900">
                 <StratumLogo size="md" showWordmark={false} variant="dark" />
               </div>
-              <span className="text-[11px] font-mono text-slate-500">Dark Mark</span>
+              <span className="text-[11px] font-mono text-slate-500">Navy Surface</span>
             </div>
 
             <div className="flex flex-col items-center gap-2">
-              <div className="size-12 rounded-xl bg-white border border-slate-200 shadow-sm flex items-center justify-center">
+              <div className="size-14 rounded-xl bg-white border border-slate-200 shadow-sm flex items-center justify-center p-1">
                 <StratumLogo size="sm" showWordmark={false} />
               </div>
               <span className="text-[11px] font-mono text-slate-500">App Icon (48px)</span>
             </div>
 
             <div className="flex flex-col items-center gap-2">
-              <div className="size-8 rounded-lg bg-[#0F172A] flex items-center justify-center shadow-xs">
-                <StratumLogo size="xs" showWordmark={false} variant="dark" />
+              <div className="size-10 rounded-lg bg-white border border-slate-200 shadow-xs flex items-center justify-center p-0.5">
+                <StratumLogo size="xs" showWordmark={false} />
               </div>
-              <span className="text-[11px] font-mono text-slate-500">Favicon (32px)</span>
+              <span className="text-[11px] font-mono text-slate-500">Favicon (24px)</span>
             </div>
           </div>
         </div>
 
-        {/* Color Palette Specifications */}
+        {/* Color Palette Specifications Directly from Logo */}
         <div className="bg-white rounded-2xl border border-slate-200/90 shadow-sm p-6 sm:p-8 space-y-4">
           <div className="flex items-center gap-2 text-sm font-bold text-slate-900">
-            <Palette className="size-4 text-primary" /> Brand Color Palette Reference
+            <Palette className="size-4 text-primary" /> Harmonized Brand Color Architecture
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-2">
             <div className="p-4 rounded-xl border border-slate-200 bg-slate-50/50 space-y-2">
-              <div className="h-10 rounded-lg bg-gradient-to-r from-[#00B4D8] to-[#0077B6]" />
-              <div className="text-xs font-bold text-slate-900">Tech Cyan / Data Teal</div>
-              <div className="text-[11px] font-mono text-slate-500">#00B4D8 → #0077B6</div>
-              <div className="text-[11px] text-slate-600">Modern tech telemetry &amp; quantitative synthesis</div>
+              <div className="h-12 rounded-lg bg-[#002B49] shadow-xs" />
+              <div className="text-xs font-bold text-slate-900">Stratum Midnight Navy</div>
+              <div className="text-[11px] font-mono text-slate-500">#002B49 • Logo Typography</div>
+              <div className="text-[11px] text-slate-600">Institutional rigor, trust &amp; market authority</div>
             </div>
 
             <div className="p-4 rounded-xl border border-slate-200 bg-slate-50/50 space-y-2">
-              <div className="h-10 rounded-lg bg-gradient-to-r from-[#F59E0B] to-[#D97706]" />
-              <div className="text-xs font-bold text-slate-900">Warm Amber / Kenya Sun</div>
-              <div className="text-[11px] font-mono text-slate-500">#F59E0B → #D97706</div>
-              <div className="text-[11px] text-slate-600">Pan-African soil, energy, &amp; market opportunity</div>
+              <div className="h-12 rounded-lg bg-[#004B87] shadow-xs" />
+              <div className="text-xs font-bold text-slate-900">Stratum Sapphire Blue</div>
+              <div className="text-[11px] font-mono text-slate-500">#004B87 • Ribbon Highlight</div>
+              <div className="text-[11px] text-slate-600">Primary interactive token &amp; analytical signal</div>
             </div>
 
             <div className="p-4 rounded-xl border border-slate-200 bg-slate-50/50 space-y-2">
-              <div className="h-10 rounded-lg bg-gradient-to-r from-[#0F172A] to-[#1E293B]" />
-              <div className="text-xs font-bold text-slate-900">Deep Navy / Analytical Bedrock</div>
-              <div className="text-[11px] font-mono text-slate-500">#0F172A → #1E293B</div>
-              <div className="text-[11px] text-slate-600">Institutional rigor, trust, &amp; executive authority</div>
+              <div className="h-12 rounded-lg bg-[#167D3C] shadow-xs" />
+              <div className="text-xs font-bold text-slate-900">Pan-African Emerald</div>
+              <div className="text-[11px] font-mono text-slate-500">#167D3C • African Continent</div>
+              <div className="text-[11px] text-slate-600">Intermediation, commercial growth &amp; deal execution</div>
+            </div>
+
+            <div className="p-4 rounded-xl border border-slate-200 bg-slate-50/50 space-y-2">
+              <div className="h-12 rounded-lg bg-[#64748B] shadow-xs" />
+              <div className="text-xs font-bold text-slate-900">Research Platinum Slate</div>
+              <div className="text-[11px] font-mono text-slate-500">#64748B • Structural Divider</div>
+              <div className="text-[11px] text-slate-600">Subtitles, field metrics &amp; architectural precision</div>
             </div>
           </div>
         </div>

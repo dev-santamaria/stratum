@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useId } from "react";
+import React from "react";
 import Image from "next/image";
 
 export interface StratumLogoProps {
@@ -11,6 +11,7 @@ export interface StratumLogoProps {
   variant?: "default" | "dark" | "monochrome";
   format?: "svg" | "png" | "image";
   fitted?: boolean;
+  priority?: boolean;
 }
 
 export function StratumLogo({
@@ -19,233 +20,76 @@ export function StratumLogo({
   showWordmark = true,
   showSubtitle = true,
   variant = "default",
-  format = "svg",
+  format = "image",
   fitted = true,
+  priority = true,
 }: StratumLogoProps) {
-  const uniqueId = useId().replace(/:/g, "_");
-  const tealGradId = `gTeal_${uniqueId}`;
-  const goldGradId = `gGold_${uniqueId}`;
-  const navyGradId = `gNavy_${uniqueId}`;
+  // Sizing definitions matching cropped aspect ratios:
+  // stratLogo.jpeg is 1316 x 360 (approx 3.65:1 ratio)
+  // stratfavicon.jpeg is 962 x 1034 (approx 0.93:1 ratio)
+  // Dimensions calibrated for commanding visibility and readability
+  const fullLogoSizes = {
+    xs: { h: 32, w: 117, class: "h-8 sm:h-9 w-auto" },
+    sm: { h: 42, w: 153, class: "h-10 sm:h-11 w-auto" },
+    md: { h: 56, w: 204, class: "h-12 sm:h-13 md:h-14 lg:h-[56px] w-auto" },
+    lg: { h: 70, w: 255, class: "h-16 sm:h-17 md:h-[70px] w-auto" },
+    xl: { h: 88, w: 321, class: "h-20 sm:h-22 md:h-[88px] w-auto" },
+    "2xl": { h: 110, w: 401, class: "h-24 sm:h-28 md:h-[110px] w-auto" },
+  }[size] || { h: 56, w: 204, class: "h-12 sm:h-13 md:h-14 lg:h-[56px] w-auto" };
 
-  // Dimensions configuration for standard aspect ratios
-  const sizeConfig = {
-    xs: { h: 22, fullW: fitted ? 93 : 73, iconW: 24, class: "h-[22px]" },
-    sm: { h: 28, fullW: fitted ? 118 : 93, iconW: 32, class: "h-[28px]" },
-    md: { h: 36, fullW: fitted ? 152 : 120, iconW: 42, class: "h-[36px]" },
-    lg: { h: 44, fullW: fitted ? 186 : 146, iconW: 52, class: "h-[44px]" },
-    xl: { h: 54, fullW: fitted ? 228 : 180, iconW: 64, class: "h-[54px]" },
-    "2xl": { h: 68, fullW: fitted ? 287 : 226, iconW: 80, class: "h-[68px]" },
-  }[size];
+  const markSizes = {
+    xs: { h: 32, w: 30, class: "h-8 sm:h-9 w-auto" },
+    sm: { h: 42, w: 39, class: "h-10 sm:h-11 w-auto" },
+    md: { h: 56, w: 52, class: "h-12 sm:h-13 md:h-14 lg:h-[56px] w-auto" },
+    lg: { h: 70, w: 65, class: "h-16 sm:h-17 md:h-[70px] w-auto" },
+    xl: { h: 88, w: 82, class: "h-20 sm:h-22 md:h-[88px] w-auto" },
+    "2xl": { h: 110, w: 102, class: "h-24 sm:h-28 md:h-[110px] w-auto" },
+  }[size] || { h: 56, w: 52, class: "h-12 sm:h-13 md:h-14 lg:h-[56px] w-auto" };
 
-  // Resolve color tokens based on color variant
   const isDark = variant === "dark";
   const isMono = variant === "monochrome";
 
-  const textColor = isMono
-    ? "currentColor"
-    : isDark
-      ? "#F8FAFC"
-      : "#0F172A";
-
-  const subColor = isMono
-    ? "currentColor"
-    : isDark
-      ? "#38BDF8"
-      : "#0077B6";
-
-  const dividerDark = isDark ? "#334155" : "#CBD5E1";
-  const dividerAccent = isMono ? "currentColor" : "#D97706";
-  const nodeDark = isDark ? "#F8FAFC" : "#0F172A";
-
-  // If PNG image format is explicitly requested
-  if (format === "png") {
+  // If wordmark is hidden, show the official Africa Ribbon Emblem (stratfavicon.png)
+  if (!showWordmark) {
     return (
       <div
-        className={`inline-flex items-center select-none transition-transform duration-200 hover:opacity-95 ${className}`}
+        className={`inline-flex items-center justify-center select-none shrink-0 ${
+          isMono ? "grayscale contrast-125" : ""
+        } ${className}`}
+        role="img"
+        aria-label="STRATUM Emblem"
       >
         <Image
-          src="/images/logo/StratumLogo.png"
-          alt="STRATUM Research & Analytics"
-          width={1600}
-          height={480}
-          priority
-          className={`${sizeConfig.class} w-auto object-contain`}
+          src="/images/logo/stratfavicon.png"
+          alt="STRATUM Emblem"
+          width={962}
+          height={1034}
+          priority={priority}
+          className={`${markSizes.class} object-contain transition-transform duration-200 hover:scale-[1.02]`}
         />
       </div>
     );
   }
 
-  // If SVG image file format is explicitly requested
-  if (format === "image") {
-    return (
-      <div
-        className={`inline-flex items-center select-none transition-transform duration-200 hover:opacity-95 ${className}`}
-      >
-        <Image
-          src="/images/logo/StratumLogo.svg"
-          alt="STRATUM Research & Analytics"
-          width={800}
-          height={240}
-          priority
-          className={`${sizeConfig.class} w-auto object-contain`}
-        />
-      </div>
-    );
-  }
-
-  // Default: Pure Vector SVG for maximum fidelity and crisp rendering
-  // Fitted viewBox trims empty perimeter whitespace for tight alignment in navbars
-  const viewBox = !showWordmark
-    ? "35 25 175 150"
-    : fitted
-      ? "35 25 655 155"
-      : "0 0 800 240";
-
+  // Full STRATUM RESEARCH Logo (stratLogo.jpeg)
   return (
     <div
-      className={`inline-flex items-center select-none ${className}`}
+      className={`inline-flex items-center select-none shrink-0 ${
+        isDark
+          ? "bg-white px-3 py-1.5 rounded-xl shadow-xs"
+          : "mix-blend-multiply dark:mix-blend-normal dark:bg-white dark:px-3 dark:py-1.5 dark:rounded-xl"
+      } ${isMono ? "grayscale contrast-125" : ""} ${className}`}
       role="img"
-      aria-label="STRATUM Research & Analytics Logo"
+      aria-label="STRATUM Research Logo"
     >
-      <svg
-        viewBox={viewBox}
-        className={`${sizeConfig.class} w-auto overflow-visible transition-transform duration-200 hover:scale-[1.01]`}
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <defs>
-          {/* Cyan / Modern Tech Data Gradient */}
-          <linearGradient id={tealGradId} x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="#00B4D8" />
-            <stop offset="100%" stopColor="#0077B6" />
-          </linearGradient>
-
-          {/* Warm Amber / Kenya Soil & Sun Accent */}
-          <linearGradient id={goldGradId} x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="#F59E0B" />
-            <stop offset="100%" stopColor="#D97706" />
-          </linearGradient>
-
-          {/* Deep Navy / Statistical Rigor & Authority */}
-          <linearGradient id={navyGradId} x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop
-              offset="0%"
-              stopColor={isDark ? "#1E293B" : "#0F172A"}
-            />
-            <stop
-              offset="100%"
-              stopColor={isDark ? "#334155" : "#1E293B"}
-            />
-          </linearGradient>
-        </defs>
-
-        {/* ICON: Multi-Layered Symmetrical Strata with Data Points */}
-        <g transform="translate(40, 35)">
-          {/* Top Stratum */}
-          <rect
-            x="40"
-            y="0"
-            width="100"
-            height="24"
-            rx="12"
-            fill={isMono ? "currentColor" : `url(#${goldGradId})`}
-          />
-          {/* Upper Data Stratum */}
-          <rect
-            x="15"
-            y="36"
-            width="125"
-            height="24"
-            rx="12"
-            fill={isMono ? "currentColor" : `url(#${tealGradId})`}
-          />
-          {/* Core Analytical Bedrock */}
-          <rect
-            x="35"
-            y="72"
-            width="125"
-            height="24"
-            rx="12"
-            fill={isMono ? "currentColor" : `url(#${navyGradId})`}
-          />
-          {/* Base Stratum */}
-          <rect
-            x="15"
-            y="108"
-            width="95"
-            height="24"
-            rx="12"
-            fill={isMono ? "currentColor" : `url(#${goldGradId})`}
-          />
-
-          {/* Strategic Insight Nodes */}
-          <circle
-            cx="135"
-            cy="120"
-            r="12"
-            fill={isMono ? "currentColor" : `url(#${tealGradId})`}
-          />
-          <circle
-            cx="15"
-            cy="12"
-            r="10"
-            fill={nodeDark}
-          />
-        </g>
-
-        {/* TYPOGRAPHY */}
-        {showWordmark && (
-          <g transform="translate(230, 0)">
-            {/* Company Name */}
-            <text
-              x="0"
-              y="115"
-              fontFamily="'Inter', 'Helvetica Neue', var(--font-satoshi), Arial, sans-serif"
-              fontSize="68"
-              fontWeight="900"
-              letterSpacing="7"
-              fill={textColor}
-            >
-              STRATUM
-            </text>
-
-            {/* Category / Descriptor */}
-            {showSubtitle && (
-              <>
-                <text
-                  x="4"
-                  y="150"
-                  fontFamily="'Inter', 'Helvetica Neue', var(--font-satoshi), Arial, sans-serif"
-                  fontSize="15"
-                  fontWeight="700"
-                  letterSpacing="8"
-                  fill={subColor}
-                >
-                  RESEARCH &amp; ANALYTICS
-                </text>
-
-                {/* Structural Divider Accent */}
-                <rect
-                  x="4"
-                  y="168"
-                  width="60"
-                  height="4"
-                  rx="2"
-                  fill={dividerAccent}
-                />
-                <rect
-                  x="70"
-                  y="169"
-                  width="380"
-                  height="2"
-                  rx="1"
-                  fill={dividerDark}
-                />
-              </>
-            )}
-          </g>
-        )}
-      </svg>
+      <Image
+        src="/images/logo/stratLogo.jpeg"
+        alt="STRATUM Research"
+        width={1316}
+        height={360}
+        priority={priority}
+        className={`${fullLogoSizes.class} object-contain transition-transform duration-200 hover:scale-[1.01]`}
+      />
     </div>
   );
 }

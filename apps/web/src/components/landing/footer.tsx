@@ -14,7 +14,7 @@ export function Footer() {
           {/* Column 1: Brand & Official Thesis (4 cols on lg) */}
           <div className="lg:col-span-4 space-y-4">
             <Link href="/" className="inline-block">
-              <StratumLogo size="md" />
+              <StratumLogo size="lg" />
             </Link>
             <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed max-w-sm">
               Stratum Research Ltd is a market intelligence, strategic research and business intermediation firm helping companies understand markets, identify opportunities and execute growth strategies across Africa and other emerging markets.
