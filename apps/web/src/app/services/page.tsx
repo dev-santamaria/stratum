@@ -28,12 +28,15 @@ import {
   Network,
   Clock,
   Shield,
+  MessageSquare,
+  Eye,
+  Sliders,
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Services — 6 Distinct Capabilities | STRATUM Research Ltd",
+  title: "Services — 6 Distinct Capabilities & Intelligence Suite | STRATUM",
   description:
-    "Explore Stratum's 6 distinct service lines: Research, Intelligence, Opportunity, Intermediation, Market Access, and Digital Market.",
+    "Explore Stratum's 6 core service lines: Research, Intelligence, Opportunity, Intermediation, Market Access, and Digital Market, along with our comprehensive Intelligence Suite.",
 };
 
 export const SERVICES_CATALOG = [
@@ -227,9 +230,9 @@ export const SERVICES_CATALOG = [
     number: "06",
     name: "Digital Market",
     kicker: "TECHNOLOGY PLATFORM & MARKETPLACE OFFERING",
-    headline: "A separate digital platform or marketplace offering, with its own clearly defined platform & marketplace features.",
+    headline: "A separate digital platform or marketplace offering, with its own clearly defined features.",
     description:
-      "A dedicated digital intelligence platform and marketplace offering engineered to democratize access to verified emerging market data, commercial partner directories, and structured trade opportunities.",
+      "The Stratum Digital Market provides an e-commerce and intelligence gateway for selected products and projects emerging from our research and business ecosystem, creating a pathway between market intelligence, product discovery, and commercial scale.",
     icon: Network,
     capabilities: [
       {
@@ -245,8 +248,8 @@ export const SERVICES_CATALOG = [
         desc: "Secure, encrypted repository for sharing due diligence dossiers, product assays, and bilateral contract terms.",
       },
       {
-        title: "Structured Trade Opportunity Board",
-        desc: "Curated deal board showcasing pre-screened commercial supply requests, co-investment briefs, and distributor tenders.",
+        title: "Commercial Distribution Gateway",
+        desc: "E-commerce and marketplace channel supporting the commercialisation and distribution of emerging products.",
       },
     ],
     sampleDeliverables: [
@@ -263,26 +266,26 @@ export const SERVICES_CATALOG = [
 
 export default function ServicesPage() {
   return (
-    <div className="flex flex-col min-h-screen bg-background text-foreground antialiased selection:bg-primary selection:text-primary-foreground">
+    <div className="flex flex-col min-h-screen bg-background text-foreground antialiased selection:bg-primary selection:text-primary-foreground pb-16 sm:pb-0">
       <Navbar />
 
-      {/* Hero Header */}
-      <section className="relative pt-10 pb-14 sm:pt-14 sm:pb-18 border-b border-border/70 bg-background">
+      {/* 1. HERO HEADER */}
+      <section className="relative pt-10 pb-14 sm:pt-14 sm:pb-18 border-b border-border/80 bg-background">
         <div className="mx-auto w-full max-w-[1536px] px-4 sm:px-6 lg:px-8 xl:px-10 space-y-6">
           <div className="max-w-4xl space-y-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md border border-border/80 bg-muted/40 text-[11px] font-mono font-semibold text-muted-foreground">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md border border-border/80 bg-muted/40 text-[11px] font-mono font-semibold text-muted-foreground shadow-2xs">
               <span className="size-1.5 rounded-full bg-primary" />
               <span className="text-foreground font-bold tracking-wide">STRATUM SERVICES ARCHITECTURE</span>
               <span className="text-border">•</span>
-              <span>PRIORITY 2: 6 DISTINCT SERVICE LINES</span>
+              <span className="text-primary font-bold">SIX CORE SERVICE LINES</span>
             </div>
 
-            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-foreground tracking-tight leading-[1.2]">
-              Distinct but Complementary Capabilities Built for Emerging Markets
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-serif text-foreground tracking-tight leading-[1.15]">
+              Six Distinct Capabilities Built for Complex &amp; Emerging Markets
             </h1>
 
             <p className="text-xs sm:text-sm lg:text-base text-muted-foreground leading-relaxed max-w-3xl font-normal">
-              Stratum presents research, intelligence, opportunity identification, intermediation, market access, and digital market activities as separate, clearly defined capabilities. Whether you require empirical ground research or direct cross-border partner introductions, each service offers a defined methodology and actionable deliverable.
+              Stratum presents research, intelligence, opportunity identification, intermediation, market access, and digital market activities as distinct, clearly defined capabilities. Whether you require empirical ground research or direct cross-border partner introductions, each service offers a defined methodology and actionable commercial outcome.
             </p>
 
             {/* Quick Service Anchor Navigation */}
@@ -303,7 +306,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* The 6 Services Deep-Dive Sections */}
+      {/* 2. THE 6 CORE SERVICES DEEP DIVES */}
       <section className="py-12 sm:py-16 space-y-16">
         <div className="mx-auto w-full max-w-[1536px] px-4 sm:px-6 lg:px-8 xl:px-10 space-y-16">
           {SERVICES_CATALOG.map((service, index) => {
@@ -335,7 +338,7 @@ export default function ServicesPage() {
                               {service.kicker}
                             </span>
                           </div>
-                          <h2 className="text-xl sm:text-2xl font-bold text-foreground">
+                          <h2 className="text-xl sm:text-2xl font-bold font-serif text-foreground">
                             {service.name}
                           </h2>
                         </div>
@@ -406,7 +409,191 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Embedded Actionable Next Steps / Executive Consultation Workspace */}
+      {/* 3. STRATUM INTELLIGENCE SUITE (FROM ORIGINAL DOCUMENT) */}
+      <section className="py-14 sm:py-20 border-t border-b border-border/80 bg-muted/20">
+        <div className="mx-auto w-full max-w-[1536px] px-4 sm:px-6 lg:px-8 xl:px-10 space-y-12">
+          <div className="max-w-3xl space-y-2">
+            <span className="text-xs font-mono font-bold tracking-wider text-primary uppercase">
+              STRATUM INTELLIGENCE
+            </span>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold font-serif text-foreground tracking-tight">
+              Turning Market Information Into Actionable Intelligence
+            </h2>
+            <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
+              Our intelligence services help businesses, brands, investors, and entrepreneurs understand markets, consumers, competitors, products, and emerging opportunities:
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
+            {/* 1. Market Research */}
+            <div className="p-6 rounded-2xl border border-border/80 bg-card space-y-4 flex flex-col justify-between">
+              <div className="space-y-3">
+                <div className="size-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
+                  <BarChart3 className="size-5" />
+                </div>
+                <h3 className="text-base font-bold text-foreground">Tailored Market Research</h3>
+                <p className="text-xs text-muted-foreground leading-relaxed">
+                  Tailored market research for companies seeking to enter, expand, or invest in new markets and sectors.
+                </p>
+                <div className="space-y-1.5 pt-2 border-t border-border/60 text-xs text-muted-foreground">
+                  <div className="font-semibold text-foreground text-[11px] font-mono uppercase">What our research covers:</div>
+                  <div>• Market size, segmentation and growth dynamics</div>
+                  <div>• Consumer behaviour, preferences and consumption</div>
+                  <div>• Competitive landscapes and wholesale discounts</div>
+                  <div>• Distribution channels and trade corridors</div>
+                  <div>• Commercial whitespace and expansion paths</div>
+                </div>
+              </div>
+              <Link
+                href="/contact?cta=COMMISSION_RESEARCH"
+                className="font-bold text-xs text-primary hover:underline flex items-center gap-1 pt-2"
+              >
+                <span>Commission Study</span>
+                <ArrowRight className="size-3" />
+              </Link>
+            </div>
+
+            {/* 2. Brand Tracking & Online Panels */}
+            <div className="p-6 rounded-2xl border border-border/80 bg-card space-y-4 flex flex-col justify-between">
+              <div className="space-y-3">
+                <div className="size-10 rounded-xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center">
+                  <Sparkles className="size-5" />
+                </div>
+                <h3 className="text-base font-bold text-foreground">Brand Tracking &amp; Online Panels</h3>
+                <p className="text-xs text-muted-foreground leading-relaxed">
+                  Continuously monitor brand health and market perception through structured consumer research, polling, and online panels.
+                </p>
+                <div className="space-y-1.5 pt-2 border-t border-border/60 text-xs text-muted-foreground">
+                  <div className="font-semibold text-foreground text-[11px] font-mono uppercase">Core tracking metrics:</div>
+                  <div>• Spontaneous &amp; prompted brand awareness</div>
+                  <div>• Brand consideration and trial conversion</div>
+                  <div>• Usage frequency, repeat buying and preference</div>
+                  <div>• Customer perception, trust and reputation</div>
+                  <div>• Competitive benchmarking &amp; sentiment analysis</div>
+                </div>
+              </div>
+              <Link
+                href="/contact?cta=COMMISSION_RESEARCH"
+                className="font-bold text-xs text-emerald-600 dark:text-emerald-400 hover:underline flex items-center gap-1 pt-2"
+              >
+                <span>Configure Tracking Panel</span>
+                <ArrowRight className="size-3" />
+              </Link>
+            </div>
+
+            {/* 3. Qualitative Research */}
+            <div className="p-6 rounded-2xl border border-border/80 bg-card space-y-4 flex flex-col justify-between">
+              <div className="space-y-3">
+                <div className="size-10 rounded-xl bg-purple-500/10 text-purple-600 dark:text-purple-400 flex items-center justify-center">
+                  <Users2 className="size-5" />
+                </div>
+                <h3 className="text-base font-bold text-foreground">Qualitative Research</h3>
+                <p className="text-xs text-muted-foreground leading-relaxed">
+                  Understanding the why behind consumer behaviour. Uncovering motivations, attitudes, experiences, and perceptions.
+                </p>
+                <div className="space-y-1.5 pt-2 border-t border-border/60 text-xs text-muted-foreground">
+                  <div className="font-semibold text-foreground text-[11px] font-mono uppercase">Qualitative methodologies:</div>
+                  <div>• Focus groups across diverse demographic strata</div>
+                  <div>• In-depth interviews (IDIs) in native dialects</div>
+                  <div>• Ethnographic and household lifestyle studies</div>
+                  <div>• Open-air consumer observation &amp; pantry audits</div>
+                  <div>• Concept exploration &amp; behavioural studies</div>
+                </div>
+              </div>
+              <Link
+                href="/contact?cta=COMMISSION_RESEARCH"
+                className="font-bold text-xs text-purple-600 dark:text-purple-400 hover:underline flex items-center gap-1 pt-2"
+              >
+                <span>Schedule Qualitative Study</span>
+                <ArrowRight className="size-3" />
+              </Link>
+            </div>
+
+            {/* 4. Product Testing */}
+            <div className="p-6 rounded-2xl border border-border/80 bg-card space-y-4 flex flex-col justify-between">
+              <div className="space-y-3">
+                <div className="size-10 rounded-xl bg-rose-500/10 text-rose-600 dark:text-rose-400 flex items-center justify-center">
+                  <FlaskConical className="size-5" />
+                </div>
+                <h3 className="text-base font-bold text-foreground">Product &amp; Sensory Testing</h3>
+                <p className="text-xs text-muted-foreground leading-relaxed">
+                  Understanding how consumers respond to products, pack designs, and formulations before making major commercial investments.
+                </p>
+                <div className="space-y-1.5 pt-2 border-t border-border/60 text-xs text-muted-foreground">
+                  <div className="font-semibold text-foreground text-[11px] font-mono uppercase">Evaluated dimensions:</div>
+                  <div>• Early-stage product concepts &amp; claims</div>
+                  <div>• Flavours, aromas, and chemical formulations</div>
+                  <div>• Physical product characteristics &amp; ergonomics</div>
+                  <div>• Packaging presentation, sachet fit &amp; durability</div>
+                  <div>• Real purchase intent &amp; price-value perception</div>
+                </div>
+              </div>
+              <Link
+                href="/contact?cta=COMMISSION_RESEARCH"
+                className="font-bold text-xs text-rose-600 dark:text-rose-400 hover:underline flex items-center gap-1 pt-2"
+              >
+                <span>Initiate Product Test</span>
+                <ArrowRight className="size-3" />
+              </Link>
+            </div>
+
+            {/* 5. Feedback Gallery */}
+            <div className="p-6 rounded-2xl border border-border/80 bg-card space-y-4 flex flex-col justify-between">
+              <div className="space-y-3">
+                <div className="size-10 rounded-xl bg-amber-500/10 text-amber-600 dark:text-amber-400 flex items-center justify-center">
+                  <MessageSquare className="size-5" />
+                </div>
+                <h3 className="text-base font-bold text-foreground">Feedback Gallery</h3>
+                <p className="text-xs text-muted-foreground leading-relaxed">
+                  Hear what the market is saying. A structured view of authentic consumer reactions to your products, services, and brands.
+                </p>
+                <div className="space-y-1.5 pt-2 border-t border-border/60 text-xs text-muted-foreground">
+                  <div className="font-semibold text-foreground text-[11px] font-mono uppercase">Feedback captures:</div>
+                  <div>• Unfiltered consumer voice &amp; spontaneous feedback</div>
+                  <div>• Competitor product critiques &amp; substitution reasons</div>
+                  <div>• Identified themes and emerging consumer expectations</div>
+                  <div>• Audio snippets and native-vernacular transcripts</div>
+                </div>
+              </div>
+              <Link
+                href="/contact?cta=REQUEST_INTELLIGENCE"
+                className="font-bold text-xs text-amber-600 dark:text-amber-400 hover:underline flex items-center gap-1 pt-2"
+              >
+                <span>Access Feedback Gallery</span>
+                <ArrowRight className="size-3" />
+              </Link>
+            </div>
+
+            {/* 6. Stratum Data: Proprietary Datasets */}
+            <div className="p-6 rounded-2xl border-2 border-primary/40 bg-primary/5 space-y-4 flex flex-col justify-between">
+              <div className="space-y-3">
+                <div className="size-10 rounded-xl bg-primary/20 text-primary flex items-center justify-center">
+                  <Database className="size-5" />
+                </div>
+                <h3 className="text-base font-bold text-foreground">STRATUM DATA: Proprietary Datasets</h3>
+                <p className="text-xs text-muted-foreground leading-relaxed">
+                  Our bespoke and standardised research services generate proprietary datasets covering consumer behaviour, market dynamics, consumption, and distribution.
+                </p>
+                <div className="space-y-1.5 pt-2 border-t border-primary/20 text-xs text-muted-foreground">
+                  <div className="font-semibold text-primary text-[11px] font-mono uppercase">Dataset features:</div>
+                  <div>• Continuously refreshed empirical telemetry</div>
+                  <div>• GPS spatial outlet mapping &amp; retail price sweeps</div>
+                  <div>• Exportable microdata (CSV, SPSS, Excel, APIs)</div>
+                  <div>• Fully compliant with KDPA and privacy standards</div>
+                </div>
+              </div>
+              <Link
+                href="/contact?cta=REQUEST_INTELLIGENCE"
+                className="font-bold text-xs text-primary hover:underline flex items-center gap-1 pt-2"
+              >
+                <span>Access Market Intelligence &rarr;</span>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 4. EMBEDDED ACTIONABLE CONSULTATION WORKSPACE */}
       <section className="py-14 sm:py-20 border-t border-border/70 bg-card">
         <div className="mx-auto w-full max-w-[1536px] px-4 sm:px-6 lg:px-8 xl:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
@@ -416,13 +603,13 @@ export default function ServicesPage() {
               <div className="space-y-2">
                 <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-md border border-border/80 bg-muted/40 text-[11px] font-mono font-semibold text-muted-foreground">
                   <span className="size-2 rounded-full bg-emerald-500 animate-pulse" />
-                  <span className="text-foreground font-bold">EXECUTIVE CONSULTATION DESK</span>
+                  <span className="text-foreground font-bold">CLIENT ADVISORY DESK</span>
                 </div>
-                <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight leading-tight">
-                  Ready to Engage With Stratum?
+                <h2 className="text-2xl sm:text-3xl font-bold font-serif text-foreground tracking-tight leading-tight">
+                  Ready to Initiate a Mandate?
                 </h2>
                 <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed font-normal">
-                  Every inquiry is reviewed directly by our practice leads in Nairobi. Select your objective, define your target market corridor, and submit your brief below.
+                  Every inquiry is reviewed directly by our practice leads in Nairobi. Select your service line, define your target market corridor, and submit your brief below:
                 </p>
               </div>
 
@@ -444,7 +631,7 @@ export default function ServicesPage() {
                     <span>Direct Practice Assignment</span>
                   </div>
                   <p className="text-[11px] text-muted-foreground leading-relaxed">
-                    Briefs are directly routed to the designated desk lead across our 6 service capabilities.
+                    Briefs are directly routed to the designated desk lead across our 6 core capabilities.
                   </p>
                 </div>
 
@@ -462,10 +649,10 @@ export default function ServicesPage() {
               {/* Direct Corporate Hotline */}
               <div className="p-4 rounded-xl border border-border/80 bg-muted/30 text-xs space-y-2">
                 <div className="font-mono text-[11px] text-muted-foreground uppercase font-bold">
-                  Central Corporate Office:
+                  Nairobi Headquarters:
                 </div>
                 <div className="font-semibold text-foreground">
-                  Delta Corner Tower, Westlands, Nairobi, Kenya
+                  Westlands, Nairobi, Kenya
                 </div>
                 <div className="pt-1 flex flex-wrap items-center gap-3 font-mono text-[11px]">
                   <a href="tel:+254721154382" className="text-foreground hover:underline font-bold">

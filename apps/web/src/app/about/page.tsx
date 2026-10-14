@@ -47,7 +47,7 @@ export default function AboutPage() {
               <span className="text-foreground">NAIROBI, KENYA HEADQUARTERS</span>
             </div>
 
-            <h1 className="text-2xl sm:text-3xl md:text-4xl xl:text-5xl font-extrabold text-foreground tracking-tight leading-[1.15]">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold font-serif text-foreground tracking-tight leading-[1.15]">
               Market Intelligence, Strategic Research &amp; Business Intermediation
             </h1>
 

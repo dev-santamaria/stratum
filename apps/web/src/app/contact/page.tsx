@@ -53,7 +53,7 @@ export default function ContactPage() {
               <span className="text-foreground font-bold">CLIENT ADVISORY &bull; NAIROBI HEADQUARTERS</span>
             </div>
 
-            <h1 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight leading-tight">
+            <h1 className="text-3xl sm:text-4xl font-bold font-serif text-foreground tracking-tight leading-tight">
               Initiate a Strategic Mandate With Stratum
             </h1>
 

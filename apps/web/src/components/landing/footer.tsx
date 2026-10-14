@@ -85,6 +85,18 @@ export function Footer() {
                   <span className="text-[10px] text-muted-foreground group-hover:text-primary">Platform Offering</span>
                 </Link>
               </li>
+              <li className="pt-2 border-t border-border/60">
+                <Link href="/solutions" className="font-semibold text-foreground hover:text-primary transition-colors flex items-center justify-between">
+                  <span>Explore Solutions</span>
+                  <ArrowRight className="size-3 text-primary" />
+                </Link>
+              </li>
+              <li>
+                <Link href="/industries" className="font-semibold text-foreground hover:text-primary transition-colors flex items-center justify-between">
+                  <span>Industries We Serve</span>
+                  <ArrowRight className="size-3 text-primary" />
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -120,8 +132,8 @@ export function Footer() {
                 </Link>
               </li>
               <li className="pt-1">
-                <Link href="/insights" className="text-primary hover:underline font-semibold flex items-center gap-1">
-                  <span>Illustrative Market Analyses</span>
+                <Link href="/research-briefs" className="text-primary hover:underline font-semibold flex items-center gap-1">
+                  <span>Sample Research Briefs</span>
                   <ArrowRight className="size-3" />
                 </Link>
               </li>
@@ -140,18 +152,23 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/how-we-work" className="hover:text-primary transition-colors">
-                  How We Work
+                <Link href="/why-stratum" className="hover:text-primary transition-colors">
+                  Why Stratum?
                 </Link>
               </li>
               <li>
-                <Link href="/why-stratum" className="hover:text-primary transition-colors">
-                  Stratum Identity
+                <Link href="/how-we-work" className="hover:text-primary transition-colors">
+                  How We Work (5 Stages)
+                </Link>
+              </li>
+              <li>
+                <Link href="/insights" className="hover:text-primary transition-colors">
+                  Insights &amp; Telemetry
                 </Link>
               </li>
               <li>
                 <Link href="/faq" className="hover:text-primary transition-colors">
-                  Frequently Asked Questions (FAQ)
+                  FAQs &amp; Scoping
                 </Link>
               </li>
               <li>

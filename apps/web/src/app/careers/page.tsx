@@ -22,6 +22,7 @@ import {
   Database,
   Lock,
   HeartHandshake,
+  Handshake,
   GraduationCap,
   TrendingUp,
   Zap,
@@ -203,25 +204,33 @@ export default function CareersPage() {
         <div className="mx-auto w-full max-w-[1536px] px-4 sm:px-6 lg:px-8 xl:px-10 space-y-6">
           <div className="max-w-4xl space-y-4">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md border border-border/70 bg-card text-xs font-mono font-semibold text-muted-foreground shadow-2xs">
-              <span className="text-primary font-bold">01 // TALENT ARCHITECTURE</span>
+              <span className="text-primary font-bold">CAREERS AT STRATUM</span>
               <span className="text-border">•</span>
-              <span className="text-foreground">CAREERS, VOLUNTEERING &amp; GIG PATHWAYS</span>
+              <span className="text-foreground">CURIOSITY DRIVES BETTER QUESTIONS</span>
             </div>
 
-            <h1 className="text-2xl sm:text-3xl md:text-4xl xl:text-5xl font-extrabold text-foreground tracking-tight leading-[1.15]">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold font-serif text-foreground tracking-tight leading-[1.15]">
               Curiosity Drives Better Questions. Better Questions Drive Better Insights.
             </h1>
 
-            <p className="text-xs sm:text-sm lg:text-base text-muted-foreground leading-relaxed max-w-3xl font-normal">
-              Welcome to an institutional community of econometricians, field anthropologists, data scientists, and cross-border trade intermediaries. From grassroots volunteers and project-based gig enumerators to senior corporate practice leads, we develop talent on the ground where emerging market truth is found.
-            </p>
+            <div className="space-y-3 text-xs sm:text-sm lg:text-base text-muted-foreground leading-relaxed max-w-3xl font-normal">
+              <p>
+                <strong>Do You Want to Work With Us at Stratum?</strong>
+              </p>
+              <p>
+                Welcome to a community of researchers, analysts, field professionals, strategists, and business minds driven by curiosity and a passion for understanding people, markets, and businesses.
+              </p>
+              <p>
+                At Stratum, you will have opportunities to learn, contribute, develop new skills, work across diverse markets, and grow professionally while contributing to research that helps businesses make better decisions.
+              </p>
+            </div>
 
             <div className="flex flex-wrap items-center gap-3 pt-2">
               <a
-                href="#volunteering"
+                href="#life-at-stratum"
                 className="inline-flex items-center gap-2 px-5 py-2.5 rounded-md bg-primary text-primary-foreground font-bold text-xs uppercase tracking-wider shadow-sm hover:bg-primary/90 transition-all cursor-pointer"
               >
-                <span>Explore Volunteering &amp; Gig Pathways</span>
+                <span>Life at Stratum</span>
                 <ArrowRight className="size-3.5" />
               </a>
               <a
@@ -229,7 +238,7 @@ export default function CareersPage() {
                 className="inline-flex items-center gap-2 px-4 py-2.5 rounded-md border border-border/80 bg-card hover:bg-muted text-foreground text-xs font-semibold transition-all"
               >
                 <Briefcase className="size-3.5 text-primary" />
-                <span>View Permanent Vacancies</span>
+                <span>View Open Opportunities</span>
               </a>
             </div>
           </div>
@@ -289,15 +298,82 @@ export default function CareersPage() {
         </div>
       </section>
 
+      {/* LIFE AT STRATUM (FROM ORIGINAL DOCUMENT) */}
+      <section id="life-at-stratum" className="py-12 sm:py-16 border-b border-border/70 bg-background scroll-mt-20">
+        <div className="mx-auto w-full max-w-[1536px] px-4 sm:px-6 lg:px-8 xl:px-10 space-y-8">
+          <div className="max-w-3xl space-y-1.5">
+            <span className="text-[11px] font-mono font-bold tracking-wider text-primary uppercase">
+              LIFE AT STRATUM
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-bold font-serif text-foreground tracking-tight">
+              A Community Driven by Curiosity &amp; Impact
+            </h2>
+            <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
+              At Stratum, you will have opportunities to learn, contribute, develop new skills, work across diverse markets, and grow professionally while contributing to research that helps businesses make better decisions.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            <div className="p-5 rounded-2xl border border-border/80 bg-card space-y-2">
+              <Sparkles className="size-5 text-primary" />
+              <h3 className="text-sm font-bold text-foreground">Learn and Grow</h3>
+              <p className="text-xs text-muted-foreground leading-relaxed">
+                Continuous professional growth, formal mentorship from sector directors, and training in state-of-the-art econometric tools.
+              </p>
+            </div>
+
+            <div className="p-5 rounded-2xl border border-border/80 bg-card space-y-2">
+              <Globe2 className="size-5 text-emerald-600 dark:text-emerald-400" />
+              <h3 className="text-sm font-bold text-foreground">Work Across Diverse Markets</h3>
+              <p className="text-xs text-muted-foreground leading-relaxed">
+                Exposure to cross-border commercial corridors spanning East, West, Southern Africa, and Asia trade gateways.
+              </p>
+            </div>
+
+            <div className="p-5 rounded-2xl border border-border/80 bg-card space-y-2">
+              <Users2 className="size-5 text-amber-600 dark:text-amber-400" />
+              <h3 className="text-sm font-bold text-foreground">Collaborate with Multidisciplinary Teams</h3>
+              <p className="text-xs text-muted-foreground leading-relaxed">
+                Work alongside native dialect ethnographers, quantitative survey methodologists, supply chain operators, and legal counsel.
+              </p>
+            </div>
+
+            <div className="p-5 rounded-2xl border border-border/80 bg-card space-y-2">
+              <TrendingUp className="size-5 text-purple-600 dark:text-purple-400" />
+              <h3 className="text-sm font-bold text-foreground">Develop Research &amp; Analytical Skills</h3>
+              <p className="text-xs text-muted-foreground leading-relaxed">
+                Master double-blind sample power calibration, GPS spatial outlet audits, and predictive pricing resistance curves.
+              </p>
+            </div>
+
+            <div className="p-5 rounded-2xl border border-border/80 bg-card space-y-2">
+              <Handshake className="size-5 text-blue-600 dark:text-blue-400" />
+              <h3 className="text-sm font-bold text-foreground">Engage with Real Businesses &amp; Consumers</h3>
+              <p className="text-xs text-muted-foreground leading-relaxed">
+                Direct field interaction in the open-air wholesale corridors and neighborhood kiosks where real economic decisions happen.
+              </p>
+            </div>
+
+            <div className="p-5 rounded-2xl border border-border/80 bg-card space-y-2">
+              <Award className="size-5 text-teal-600 dark:text-teal-400" />
+              <h3 className="text-sm font-bold text-foreground">Contribute to High-Impact Projects</h3>
+              <p className="text-xs text-muted-foreground leading-relaxed">
+                Your research shapes million-dollar investment allocations, regional market entry roadmaps, and healthcare supply chains.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* 2. FIELD ENVOY TALENT PIPELINE & VOLUNTEERING PATHWAY */}
       <section id="volunteering" className="py-12 sm:py-16 border-b border-border/70 bg-muted/15 scroll-mt-20">
         <div className="mx-auto w-full max-w-[1536px] px-4 sm:px-6 lg:px-8 xl:px-10 space-y-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-border/60 pb-4">
             <div className="max-w-3xl space-y-1.5">
               <span className="text-[11px] font-mono font-bold tracking-wider text-primary uppercase">
-                02 // GRASSROOTS TALENT ARCHITECTURE • VOLUNTEERING &amp; GIGS
+                GRASSROOTS TALENT ARCHITECTURE • VOLUNTEERING &amp; GIGS
               </span>
-              <h2 className="text-xl sm:text-2xl lg:text-[28px] font-bold text-foreground tracking-tight">
+              <h2 className="text-xl sm:text-2xl lg:text-[28px] font-bold font-serif text-foreground tracking-tight">
                 From Field Volunteering to Permanent Leadership
               </h2>
               <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">

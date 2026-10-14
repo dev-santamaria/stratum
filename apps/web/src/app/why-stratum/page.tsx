@@ -157,7 +157,7 @@ export default function WhyStratumPage() {
               <span className="text-foreground">PRIMARY FIELDWORK &bull; STRATEGY &bull; INTERMEDIATION</span>
             </div>
 
-            <h1 className="text-2xl sm:text-3xl md:text-4xl xl:text-5xl font-extrabold text-foreground tracking-tight leading-[1.15]">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold font-serif text-foreground tracking-tight leading-[1.15]">
               Ground-Truth Intelligence Where Incumbents Fail
             </h1>
 
@@ -184,6 +184,55 @@ export default function WhyStratumPage() {
         </div>
       </section>
 
+      {/* The 3 Core Institutional Pillars from Original Document */}
+      <section className="py-12 sm:py-16 border-b border-border/80 bg-background">
+        <div className="mx-auto w-full max-w-[1536px] px-4 sm:px-6 lg:px-8 xl:px-10 space-y-8">
+          <div className="max-w-3xl space-y-1.5">
+            <span className="text-[11px] font-mono font-bold tracking-wider text-primary uppercase">
+              INSTITUTIONAL PILLARS
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-bold font-serif text-foreground tracking-tight">
+              Three Distinct Foundations of the Stratum Approach
+            </h2>
+            <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
+              Stratum combines international market research experience with on-the-ground understanding of local markets, rigorous quality-control procedures, and proprietary intelligence.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="p-6 rounded-2xl border border-border/80 bg-card space-y-3">
+              <Globe2 className="size-6 text-primary" />
+              <h3 className="text-base font-bold text-foreground">
+                Deep Understanding of Diverse Markets
+              </h3>
+              <p className="text-xs text-muted-foreground leading-relaxed">
+                Stratum combines international market research experience with on-the-ground understanding of local markets. Our approach brings together digital research, face-to-face fieldwork, consumer engagement, and market intelligence to help clients navigate diverse commercial environments.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl border border-border/80 bg-card space-y-3">
+              <ShieldCheck className="size-6 text-emerald-600 dark:text-emerald-400" />
+              <h3 className="text-base font-bold text-foreground">
+                Rigorous Quality Control
+              </h3>
+              <p className="text-xs text-muted-foreground leading-relaxed">
+                We combine digital and face-to-face data collection with structured analysis and quality-control processes. Our field teams engage respondents directly, while our digital platforms facilitate scalable consumer research under audit protocols designed to improve the accuracy, consistency, and reliability of all information.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl border border-border/80 bg-card space-y-3">
+              <Database className="size-6 text-amber-600 dark:text-amber-400" />
+              <h3 className="text-base font-bold text-foreground">
+                Proprietary Intelligence
+              </h3>
+              <p className="text-xs text-muted-foreground leading-relaxed">
+                Our research generates proprietary datasets and intelligence covering consumer behaviour, market dynamics, consumption patterns, distribution, and related topics. Where applicable, these datasets are continuously refreshed to provide clients with relevant and timely market intelligence.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Comparative Benchmark Table */}
       <section className="py-12 sm:py-16 border-b border-border/70 bg-muted/15">
         <div className="mx-auto w-full max-w-[1536px] px-4 sm:px-6 lg:px-8 xl:px-10 space-y-8">
@@ -191,7 +240,7 @@ export default function WhyStratumPage() {
             <span className="text-[11px] font-mono font-bold tracking-wider text-primary uppercase">
               METHODOLOGICAL COMPARISON
             </span>
-            <h2 className="text-xl sm:text-2xl font-bold text-foreground tracking-tight">
+            <h2 className="text-xl sm:text-2xl font-bold font-serif text-foreground tracking-tight">
               Why Stratum Differs from Incumbent Alternatives
             </h2>
             <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">

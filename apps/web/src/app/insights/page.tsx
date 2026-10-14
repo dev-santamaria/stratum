@@ -143,17 +143,17 @@ export default function InsightsPage() {
         <div className="mx-auto w-full max-w-[1536px] px-4 sm:px-6 lg:px-8 xl:px-10 space-y-6">
           <div className="max-w-4xl space-y-4">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md border border-border/70 bg-card text-xs font-mono font-semibold text-muted-foreground shadow-2xs">
-              <span className="text-primary font-bold">01 // EMPIRICAL INTELLIGENCE</span>
+              <span className="text-primary font-bold">STRATUM INSIGHTS</span>
               <span className="text-border">•</span>
-              <span className="text-foreground">MARKET TELEMETRY &amp; BRIEFS</span>
+              <span className="text-foreground">INTELLIGENCE WORTH SHARING</span>
             </div>
 
-            <h1 className="text-2xl sm:text-3xl lg:text-[36px] font-extrabold text-foreground tracking-tight leading-[1.2]">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-serif text-foreground tracking-tight leading-[1.15]">
               Market Insights, Empirical Telemetry &amp; Research Briefs
             </h1>
 
             <p className="text-xs sm:text-sm lg:text-base text-muted-foreground leading-relaxed max-w-3xl font-normal">
-              Stratum demonstrates methodological capability through field-tested research briefs, subnational econometric models, and transparent sample architectures (95% CI). Explore our empirical analyses below or commission custom telemetry for your sector.
+              Explore research reports, market insights, consumer pulse snapshots, and strategic perspectives from the Stratum research team. We demonstrate capability through transparent sample architectures, empirical field models, and actionable intelligence.
             </p>
 
             {/* Verification Trust Chips */}

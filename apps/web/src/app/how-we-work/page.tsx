@@ -274,8 +274,8 @@ export default function HowWeWorkPage() {
               <span className="text-foreground">5-STAGE RESEARCH &amp; COMMERCIALIZATION</span>
             </div>
 
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[36px] font-extrabold text-foreground tracking-tight leading-[1.2]">
-              From Questions to Intelligence. From Intelligence to Commercial Opportunity.
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-serif text-foreground tracking-tight leading-[1.15]">
+              From Questions to Intelligence. From Intelligence to Opportunity.
             </h1>
 
             <p className="text-xs sm:text-sm lg:text-base text-muted-foreground leading-relaxed max-w-3xl font-normal">

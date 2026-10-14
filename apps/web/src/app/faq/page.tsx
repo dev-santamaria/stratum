@@ -144,7 +144,7 @@ export default function FaqPage() {
               <span className="text-foreground">GOVERNANCE &amp; METHODOLOGY</span>
             </div>
 
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-foreground tracking-tight leading-[1.15]">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-foreground tracking-tight leading-[1.15]">
               Everything You Need to Know About Engaging Stratum
             </h1>
 
@@ -334,7 +334,7 @@ export default function FaqPage() {
               START A MANDATE
             </div>
 
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight">
+            <h2 className="text-2xl sm:text-3xl font-serif font-bold text-foreground tracking-tight">
               Ready to Scope Your Next Research or Intelligence Study?
             </h2>
 

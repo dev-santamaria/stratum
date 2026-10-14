@@ -31,8 +31,8 @@ export default function PrivacyPage() {
               <Shield className="size-3 text-emerald-500" />
               <span>REGULATORY PROTOCOL: NDPR • POPIA • KDPA • GDPR</span>
             </div>
-            <h1 className="text-3xl sm:text-4xl font-black text-foreground tracking-tight">
-              Privacy Policy & Data Sovereignty
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-foreground tracking-tight">
+              Privacy Policy &amp; Data Sovereignty
             </h1>
             <p className="text-xs sm:text-sm text-muted-foreground">
               Last updated: October 2026 • Effective across all 54 African Union jurisdictions

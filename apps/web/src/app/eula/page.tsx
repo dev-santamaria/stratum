@@ -31,7 +31,7 @@ export default function EulaPage() {
               <FileCode2 className="size-3 text-cyan-500" />
               <span>SOFTWARE & TELEMETRY API LICENSE</span>
             </div>
-            <h1 className="text-3xl sm:text-4xl font-black text-foreground tracking-tight">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-foreground tracking-tight">
               End User License Agreement (EULA)
             </h1>
             <p className="text-xs sm:text-sm text-muted-foreground">

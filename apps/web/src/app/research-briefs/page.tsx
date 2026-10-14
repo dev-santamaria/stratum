@@ -41,7 +41,7 @@ export default function ResearchBriefsPage() {
               <span className="text-foreground">SAMPLE BRIEFS &amp; CHARTERS</span>
             </div>
 
-            <h1 className="text-2xl sm:text-3xl lg:text-[36px] font-extrabold text-foreground tracking-tight leading-[1.2]">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-serif text-foreground tracking-tight leading-[1.15]">
               Sample Research Briefs &amp; Scoping Blueprints
             </h1>
 

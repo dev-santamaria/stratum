@@ -80,6 +80,7 @@ export default function RootLayout({
       className={`${satoshi.variable} h-full scroll-smooth antialiased`}
       suppressHydrationWarning
     >
+      <head />
       <body
         className="min-h-full flex flex-col font-sans bg-background text-foreground antialiased selection:bg-primary selection:text-primary-foreground"
         suppressHydrationWarning

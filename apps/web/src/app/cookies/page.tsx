@@ -39,8 +39,8 @@ export default function CookiePolicyPage() {
               <span className="text-foreground">COMPLIANCE FRAMEWORK</span>
             </div>
 
-            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-foreground tracking-tight leading-[1.2]">
-              Cookie Policy & Telemetry Governance
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-foreground tracking-tight leading-[1.2]">
+              Cookie Policy &amp; Telemetry Governance
             </h1>
 
             <p className="text-sm sm:text-base text-muted-foreground leading-relaxed max-w-3xl font-normal">

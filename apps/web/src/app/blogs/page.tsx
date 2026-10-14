@@ -314,12 +314,12 @@ export default function BlogsPage() {
         <div className="mx-auto w-full max-w-[1536px] px-4 sm:px-6 lg:px-8 xl:px-10 space-y-6">
           <div className="max-w-4xl space-y-4">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md border border-border/70 bg-card text-xs font-mono font-semibold text-muted-foreground shadow-2xs">
-              <span className="text-primary font-bold">01 // STRATUM EDITORIAL DESK</span>
+              <span className="text-primary font-bold">STRATUM EDITORIAL DESK</span>
               <span className="text-border">•</span>
               <span className="text-foreground">EMERGING MARKETS INTELLIGENCE</span>
             </div>
 
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[36px] font-extrabold text-foreground tracking-tight leading-[1.2]">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-foreground tracking-tight leading-[1.15]">
               Stratum Blogs &amp; Editorial Analysis
             </h1>
 

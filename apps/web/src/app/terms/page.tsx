@@ -31,8 +31,8 @@ export default function TermsPage() {
               <Scale className="size-3 text-primary" />
               <span>COMMERCIAL MASTER SERVICES AGREEMENT</span>
             </div>
-            <h1 className="text-3xl sm:text-4xl font-black text-foreground tracking-tight">
-              Terms of Service & Engagement
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-foreground tracking-tight">
+              Terms of Service &amp; Engagement
             </h1>
             <p className="text-xs sm:text-sm text-muted-foreground">
               Last updated: October 2026 • Effective for all Stratum enterprise engagements and Deal Room sessions
