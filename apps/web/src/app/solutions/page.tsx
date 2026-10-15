@@ -13,179 +13,165 @@ import {
   Globe2,
   Handshake,
   CheckCircle2,
-  Compass,
-  BarChart3,
-  Search,
-  Building2,
-  Lock,
-  ChevronRight,
+  Phone,
   HelpCircle,
   FileText,
-  Layers,
+  Workflow,
+  Search,
+  Building2,
+  Clock,
+  ShieldCheck,
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Solutions — Intelligence Designed Around Your Business Needs | Stratum",
+  title: "Tailored Research — Strategic Solutions | Stratum",
   description:
-    "Explore Stratum's business intelligence solutions: Market Opportunity, Consumer Intelligence, Product & Concept Testing, Brand Intelligence, Market Entry & Expansion, and B2B Intermediation.",
+    "Stratum offers tailored research to businesses and entrepreneurs seeking to gather exclusive insights and intelligence on their specific brand, products or services.",
 };
 
-const STRATUM_SOLUTIONS = [
+interface SolutionItem {
+  id: string;
+  number: string;
+  name: string;
+  kicker: string;
+  tagline: string;
+  description: string;
+  bgClass: string;
+  borderClass: string;
+  accentBadgeClass: string;
+  icon: React.ElementType;
+  keyPoints: string[];
+  deliverable: string;
+  ctaLabel: string;
+  ctaHref: string;
+}
+
+const STRATUM_SOLUTIONS: SolutionItem[] = [
   {
     id: "market-opportunity",
     number: "01",
     name: "Market Opportunity Intelligence",
+    kicker: "SOLUTION 01 // OPPORTUNITY SIZING",
     tagline: "Identify, Size & Quantify Real Demand Across Emerging Corridors",
     description:
-      "We help clients identify and assess market opportunities by analysing consumer needs, market dynamics, competition, distribution, emerging trends, and potential demand.",
-    details:
-      "In markets where between 70% and 85% of retail transacts through informal kiosks and open-air hubs, standard macroeconomic desk data paints a distorted picture. Stratum combines double-blind retail audits with econometric whitespace modelling to provide true TAM, SAM, and SOM calculations.",
-    targetQuestions: [
-      "What is the actual commercial volume moving through informal vs modern channels?",
-      "Where are category stockouts occurring and who is winning the replacement buy?",
-      "Which secondary urban nodes and transport corridors demonstrate high velocity?",
-      "What margin structure do local wholesalers and distributors demand to push a new brand?",
-    ],
-    deliverables: [
-      "Subnational Addressable Market Sizing Blueprint (Formal + Informal)",
-      "Channel Margin Triangulation & Wholesaler Discount Matrix",
-      "Whitespace Opportunity Map & Competitive Moat Assessment",
-    ],
-    cta: {
-      label: "Request Market Intelligence",
-      href: "/contact?cta=REQUEST_INTELLIGENCE",
-    },
+      "We help clients identify and assess market opportunities by analysing consumer needs, market dynamics, competition, informal trade distribution, and potential demand across urban and transport nodes.",
+    bgClass: "bg-[#002B49] text-white",
+    borderClass: "border-[#003A63] hover:border-sky-400/60",
+    accentBadgeClass: "bg-white/10 text-sky-200 border-white/20",
     icon: TrendingUp,
+    keyPoints: [
+      "Informal vs. modern channel commercial volume sizing",
+      "Category stockout & replacement brand audit",
+      "Wholesaler margin & distributor discount triangulation",
+    ],
+    deliverable: "Addressable Market Sizing Blueprint & Whitespace Map",
+    ctaLabel: "REQUEST INTELLIGENCE",
+    ctaHref: "/contact?cta=REQUEST_INTELLIGENCE&solution=market-opportunity",
   },
   {
     id: "consumer-intelligence",
     number: "02",
     name: "Consumer Intelligence",
+    kicker: "SOLUTION 02 // CONSUMER BEHAVIOUR",
     tagline: "Understand the Why Behind Everyday Purchasing Decisions",
     description:
-      "Through targeted research, we identify patterns in consumer behaviour, preferences, habits, satisfaction, and consumption to help businesses and investors make informed decisions.",
-    details:
-      "We uncover what consumers need, want, prefer, and experience, capturing the socio-cultural and economic drivers behind everyday basket allocations. Our bilingual field teams operate in native dialects across community settlements, suburban households, and commercial hubs.",
-    targetQuestions: [
-      "How do households budget their daily spend under persistent food and utility inflation?",
-      "What triggers consumer switching between staple brands and private-label alternatives?",
-      "How do peer recommendations, localized rituals, and vernacular packaging impact trial?",
-      "What are the critical price resistance thresholds at standard physical coin increments?",
-    ],
-    deliverables: [
-      "Household Wallet Share & Category Consumption Pacing Log",
-      "Single-Coin Price Sensitivity & Elasticity Curves",
-      "Consumer Persona Archetypes & Dialect Nuance Profiles",
-    ],
-    cta: {
-      label: "Commission a Consumer Study",
-      href: "/contact?cta=COMMISSION_RESEARCH",
-    },
+      "Through targeted fieldwork, we uncover what consumers need, want, prefer, and experience, capturing the socio-cultural and economic drivers behind everyday household basket allocations.",
+    bgClass: "bg-[#167D3C] text-white",
+    borderClass: "border-[#1B9447] hover:border-emerald-300/60",
+    accentBadgeClass: "bg-white/10 text-emerald-100 border-white/20",
     icon: Users2,
+    keyPoints: [
+      "Household wallet share & inflation coping strategies",
+      "Brand switching triggers & private-label substitutions",
+      "Single-coin physical price resistance thresholds",
+    ],
+    deliverable: "Household Wallet Share Log & Elasticity Curves",
+    ctaLabel: "COMMISSION CONSUMER STUDY",
+    ctaHref: "/contact?cta=COMMISSION_RESEARCH&solution=consumer-intelligence",
   },
   {
     id: "product-concept-testing",
     number: "03",
     name: "Product & Concept Testing",
+    kicker: "SOLUTION 03 // FORMULATION & PACKAGING",
     tagline: "Test Formulations, Flavours & Packaging Before Commercialisation",
     description:
-      "We help clients explore new products and concepts by testing consumer reception, identifying opportunities for improvement, and understanding potential market response before commercialisation.",
-    details:
-      "De-risk capital investment and manufacturing runs. We evaluate product concepts, recipe formulations, sensory characteristics, pack ergonomics, shelf visibility, and purchase intent across targeted demographic segments.",
-    targetQuestions: [
-      "Do localized sensory profiles (sweetness, texture, aroma) meet local palate expectations?",
-      "Does the packaging withstand high-humidity, transport friction, and single-unit kiosk resale?",
-      "What is the net purchase intent compared against dominant incumbent products?",
-      "Is the proposed retail pack size aligned with daily household liquidity?",
-    ],
-    deliverables: [
-      "Blind & Branded Sensory Evaluation Diagnostic",
-      "Pack Ergonomics, Shelf Standout & Durability Benchmark",
-      "Concept Optimisation & Trial Conversion Scorecard",
-    ],
-    cta: {
-      label: "Test a New Product Concept",
-      href: "/contact?cta=COMMISSION_RESEARCH",
-    },
+      "De-risk capital investment and manufacturing runs. We evaluate product concepts, recipe formulations, sensory characteristics, pack ergonomics, and purchase intent across targeted demographic segments.",
+    bgClass: "bg-[#004B87] text-white",
+    borderClass: "border-[#0060AD] hover:border-cyan-300/60",
+    accentBadgeClass: "bg-white/10 text-cyan-100 border-white/20",
     icon: FlaskConical,
+    keyPoints: [
+      "Localized palate, flavour & sensory profile trials",
+      "Packaging humidity resistance, friction & sachet durability",
+      "Net purchase intent vs. incumbent market leaders",
+    ],
+    deliverable: "Sensory Evaluation Diagnostic & Concept Scorecard",
+    ctaLabel: "TEST A NEW CONCEPT",
+    ctaHref: "/contact?cta=COMMISSION_RESEARCH&solution=product-testing",
   },
   {
     id: "brand-intelligence",
     number: "04",
     name: "Brand Intelligence & Tracking",
+    kicker: "SOLUTION 04 // EQUITY & HEALTH",
     tagline: "Continuously Monitor Health, Perception & Competitive Velocity",
     description:
-      "We help businesses track the development and reception of their brands, products, and services across diverse consumer markets. Our approach helps clients monitor brand health, consumer perception, competitive performance, and relevant KPIs.",
-    details:
-      "Brand equity in emerging markets is dynamic. We establish longitudinal tracking panels that measure unprompted awareness, brand consideration, customer sentiment, Net Promoter Scores (NPS), and competitive vulnerability.",
-    targetQuestions: [
-      "How does brand recall convert to real kiosk shelf availability and final purchase?",
-      "What attributes drive positive brand advocacy or reputational churn?",
-      "How effective is above-the-line marketing compared to grassroots POS activations?",
-      "Which competitor actions are successfully eroding brand loyalty?",
-    ],
-    deliverables: [
-      "Quarterly Brand Health Tracker & Share-of-Voice Audit",
-      "Competitive Perception Mapping & NPS Sentiment Index",
-      "Brand Equity & Marketing ROI Diagnostic Dossier",
-    ],
-    cta: {
-      label: "Track Your Brand",
-      href: "/contact?cta=COMMISSION_RESEARCH",
-    },
+      "We establish longitudinal tracking panels that measure unprompted awareness, brand consideration, customer sentiment, Net Promoter Scores (NPS), and competitive vulnerability across diverse trade corridors.",
+    bgClass: "bg-[#1E293B] text-white",
+    borderClass: "border-[#334155] hover:border-indigo-400/60",
+    accentBadgeClass: "bg-white/10 text-indigo-200 border-white/20",
     icon: Sparkles,
+    keyPoints: [
+      "Brand recall conversion to physical kiosk availability",
+      "Customer advocacy & reputational churn drivers",
+      "Competitor counter-moves & loyalty erosion telemetry",
+    ],
+    deliverable: "Quarterly Brand Health Tracker & NPS Sentiment Index",
+    ctaLabel: "TRACK YOUR BRAND",
+    ctaHref: "/contact?cta=COMMISSION_RESEARCH&solution=brand-tracking",
   },
   {
     id: "market-entry-expansion",
     number: "05",
     name: "Market Entry & Expansion",
+    kicker: "SOLUTION 05 // JURISDICTIONAL ROADMAPS",
     tagline: "Practically Explore New Jurisdictions With Ground-Level Execution",
     description:
-      "We help clients practically explore new markets through research, consumer engagement, product testing, and market intelligence. Our work provides insight into market conditions, consumer demand, competitive environments, and potential opportunities.",
-    details:
-      "Moving beyond theoretical macroeconomic slide decks, Stratum builds turnkey route-to-market roadmaps. We examine AfCFTA tariff implications, local regulatory licensing, co-packer verification, cold-chain logistical feasibility, and distributor economics.",
-    targetQuestions: [
-      "What import duties, non-tariff barriers, and local standards apply to the product category?",
-      "Which Tier-1 distributors hold verified balance sheets and van-sales routes in secondary towns?",
-      "What is the minimum viable working capital needed for break-even in the first 18 months?",
-      "How can supply chains be structured to hedge against foreign exchange fluctuations?",
-    ],
-    deliverables: [
-      "Turnkey Jurisdictional Route-to-Market Strategy",
-      "Tier-1 Regional Distributor Screening & Financial Due Diligence Dossier",
-      "AfCFTA Cross-Border Trade & Regulatory Compliance Roadmap",
-    ],
-    cta: {
-      label: "Discuss Market Entry",
-      href: "/contact?cta=DISCUSS_MARKET_ENTRY",
-    },
+      "Moving beyond theoretical macroeconomic slide decks, Stratum builds turnkey route-to-market roadmaps analyzing AfCFTA tariff implications, local regulatory licensing, co-packer verification, and distributor economics.",
+    bgClass: "bg-[#0A3D62] text-white",
+    borderClass: "border-[#0E5284] hover:border-sky-300/60",
+    accentBadgeClass: "bg-white/10 text-sky-100 border-white/20",
     icon: Globe2,
+    keyPoints: [
+      "Tariff optimization, standards & non-tariff barrier audits",
+      "Tier-1 distributor balance sheet & logistics fleet audits",
+      "Working capital hedging under foreign exchange volatility",
+    ],
+    deliverable: "Turnkey Route-to-Market Strategy & Distributor Dossier",
+    ctaLabel: "DISCUSS MARKET ENTRY",
+    ctaHref: "/contact?cta=DISCUSS_MARKET_ENTRY&solution=market-entry",
   },
   {
     id: "business-intermediation",
     number: "06",
     name: "Business & Investment Intermediation",
+    kicker: "SOLUTION 06 // BILATERAL MATCHMAKING",
     tagline: "Bridge Investment Gaps Through Bilateral Strategic Matchmaking",
     description:
-      "We bridge investment gaps through business-to-business intermediation. We connect businesses, investors, entrepreneurs, and strategic partners with relevant opportunities and potential counterparts to support market entry, partnerships, investment, and cross-border business development.",
-    details:
       "Stratum operates dedicated bilateral sourcing and deal-facilitation desks. We bridge institutional capital, private equity, commercial enterprises, and vetted regional suppliers under confidential bilateral NDAs.",
-    targetQuestions: [
-      "Which verified regional enterprises represent actionable co-investment or acquisition targets?",
-      "How can direct factory inspections in Asia or Africa verify production capacities prior to wire transfers?",
-      "Who are the reliable logistics, warehousing, and escrow partners in the target corridor?",
-      "How do we structure commercial joint ventures that align international capital with local operational know-how?",
-    ],
-    deliverables: [
-      "Bilateral Commercial Partner Dossier & Reputational Audit",
-      "Direct Manufacturing Plant & Supply Chain Audit Report",
-      "Confidential Deal Room Repository & JV Term-Sheet Framework",
-    ],
-    cta: {
-      label: "Explore Investment Opportunities",
-      href: "/contact?cta=EXPLORE_INVESTMENT",
-    },
+    bgClass: "bg-[#002B49] text-white",
+    borderClass: "border-[#004B87] hover:border-sky-300/60",
+    accentBadgeClass: "bg-white/10 text-sky-200 border-white/20",
     icon: Handshake,
+    keyPoints: [
+      "Actionable regional co-investment & acquisition targets",
+      "Direct Asian & African factory technical inspections",
+      "Confidential deal room repository & JV term-sheet structuring",
+    ],
+    deliverable: "Bilateral Partner Dossier & Confidential Deal Room",
+    ctaLabel: "EXPLORE OPPORTUNITIES",
+    ctaHref: "/contact?cta=EXPLORE_INVESTMENT&solution=business-intermediation",
   },
 ];
 
@@ -194,118 +180,125 @@ const PROBLEM_SOLVER_QUESTIONS = [
     question: "Explore Market Opportunities",
     answer: "Understand market dynamics, consumer demand, competitive landscapes, and emerging opportunities before entering or expanding into a market.",
     solutionId: "market-opportunity",
-    serviceRef: "02 Intelligence",
+    serviceRef: "02 INTELLIGENCE",
   },
   {
     question: "Understand Consumer Behaviour",
-    answer: "Discover what consumers need, want, prefer, experience, and why they make the decisions they do.",
+    answer: "Discover what consumers need, want, prefer, experience, and why they make everyday basket allocations.",
     solutionId: "consumer-intelligence",
-    serviceRef: "01 Research",
+    serviceRef: "01 RESEARCH",
   },
   {
     question: "Meet New Investors & Business Partners",
     answer: "Identify relevant investors, businesses, strategic partners, suppliers, distributors, and other commercial connections.",
     solutionId: "business-intermediation",
-    serviceRef: "04 Intermediation",
+    serviceRef: "04 INTERMEDIATION",
   },
   {
     question: "Track Your Brand",
     answer: "Monitor brand health, consumer perception, competitive performance, and key brand performance indicators.",
     solutionId: "brand-intelligence",
-    serviceRef: "01 Research",
+    serviceRef: "01 RESEARCH",
   },
   {
     question: "Assess Consumer Satisfaction",
     answer: "Hear directly from consumers and understand their experiences with your brand, products, and services.",
     solutionId: "consumer-intelligence",
-    serviceRef: "01 Research",
+    serviceRef: "01 RESEARCH",
   },
   {
     question: "Test a New Product",
     answer: "Test concepts, products, flavours, packaging, positioning, and consumer reception before making major commercial decisions.",
     solutionId: "product-concept-testing",
-    serviceRef: "01 Research",
+    serviceRef: "01 RESEARCH",
   },
   {
     question: "Monitor Brand Performance",
     answer: "Establish and utilise relevant KPIs to measure, track, and improve brand performance across target markets.",
     solutionId: "brand-intelligence",
-    serviceRef: "02 Intelligence",
+    serviceRef: "02 INTELLIGENCE",
   },
 ];
 
 export default function SolutionsPage() {
   return (
     <div className="flex flex-col min-h-screen bg-background text-foreground antialiased selection:bg-primary selection:text-primary-foreground pb-16 sm:pb-0">
+      {/* 1. Global Navigation Bar */}
       <Navbar />
 
-      {/* 1. EXECUTIVE HEADER */}
-      <section className="relative pt-10 pb-12 sm:pt-14 sm:pb-16 border-b border-border/80 bg-background">
-        <div className="mx-auto w-full max-w-[1536px] px-4 sm:px-6 lg:px-8 xl:px-10 space-y-6">
+      {/* 2. Hero Header: Minimalist Inter Typography, Sharp Edges */}
+      <section className="py-12 sm:py-16 border-b border-border/80 bg-slate-50 dark:bg-card/40">
+        <div className="mx-auto w-full max-w-[1536px] px-4 sm:px-6 lg:px-8 xl:px-10">
           <div className="max-w-4xl space-y-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md border border-border/80 bg-muted/40 text-xs font-mono font-semibold text-muted-foreground shadow-2xs">
-              <span className="text-primary font-bold">OUR SOLUTIONS</span>
-              <span className="text-border">•</span>
-              <span className="text-foreground">INTELLIGENCE DESIGNED AROUND YOUR BUSINESS NEEDS</span>
+            <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-none border border-border/80 bg-background text-[11px] font-mono font-semibold text-primary shadow-2xs">
+              <Workflow className="size-3 text-primary shrink-0" />
+              <span>OUR SOLUTIONS &bull; TAILORED RESEARCH DESK</span>
             </div>
 
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold font-serif text-foreground tracking-tight leading-[1.15]">
-              Intelligence Designed Around Your Business Needs
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-medium text-foreground tracking-tight leading-tight">
+              Tailored Research
             </h1>
 
-            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed max-w-3xl font-normal">
-              Stratum combines first-hand market research, real-time insights, consumer intelligence, and business-to-business intermediation to help clients identify opportunities, understand markets, validate ideas, and make better-informed commercial decisions.
+            <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed max-w-3xl font-normal">
+              Stratum offers tailored research to businesses and entrepreneurs seeking to gather exclusive insights and intelligence on their specific brand, products or services.
             </p>
 
-            <div className="flex flex-wrap items-center gap-3.5 pt-2">
+            <div className="pt-2 flex flex-wrap items-center gap-3">
               <Link
-                href="/contact"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground font-bold text-xs uppercase tracking-wider shadow-sm hover:bg-primary/90 transition-all cursor-pointer"
+                href="/contact?cta=COMMISSION_RESEARCH"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-none bg-primary text-primary-foreground font-semibold text-xs uppercase tracking-wider hover:bg-primary/90 transition-all shadow-xs"
               >
-                <span>Talk to Stratum</span>
+                <span>COMMISSION A STUDY</span>
                 <ArrowRight className="size-3.5" />
               </Link>
-              <Link
+              <a
                 href="#problem-solver"
-                className="inline-flex items-center gap-2 px-5 py-3 rounded-lg border border-border/80 bg-card hover:bg-muted text-foreground text-xs font-semibold transition-all"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-none border border-border/80 bg-card hover:bg-muted text-foreground text-xs font-semibold uppercase tracking-wider transition-all shadow-2xs"
               >
-                <span>What Do You Need to Know?</span>
+                <HelpCircle className="size-3.5 text-primary" />
+                <span>WHAT DO YOU NEED TO KNOW?</span>
+              </a>
+              <Link
+                href="/services"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-none border border-border/80 bg-card hover:bg-muted text-foreground text-xs font-semibold uppercase tracking-wider transition-all shadow-2xs"
+              >
+                <span>OUR 6 SERVICES</span>
               </Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 2. "WHAT DO YOU NEED TO KNOW?" INTERACTIVE PROBLEM SOLVER */}
-      <section id="problem-solver" className="py-14 sm:py-18 border-b border-border/80 bg-muted/15 scroll-mt-20">
+      {/* 3. "WHAT DO YOU NEED TO KNOW?" PROBLEM SOLVER (Sharp Rectangular Cards) */}
+      <section id="problem-solver" className="py-14 sm:py-20 border-b border-border/80 bg-background scroll-mt-20">
         <div className="mx-auto w-full max-w-[1536px] px-4 sm:px-6 lg:px-8 xl:px-10 space-y-8">
-          <div className="max-w-3xl space-y-2">
-            <span className="text-xs font-mono font-bold tracking-wider text-primary uppercase">
-              WHAT DO YOU NEED TO KNOW?
+          <div className="max-w-3xl space-y-1.5">
+            <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-primary">
+              DECISION-GRADE PROBLEM SOLVER
             </span>
-            <h2 className="text-2xl sm:text-3xl font-bold font-serif text-foreground tracking-tight">
+            <h2 className="text-xl sm:text-2xl font-semibold text-foreground tracking-tight">
               Tell Us What You Need to Understand. We’ll Help You Find the Answer.
             </h2>
             <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-              Every mandate begins with a fundamental question. Select the challenge facing your leadership team to inspect our tailored solution methodology:
+              Every mandate begins with a fundamental commercial question. Select the challenge facing your leadership team to inspect our tailored solution methodology:
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
             {PROBLEM_SOLVER_QUESTIONS.map((item, idx) => (
-              <Link
+              <a
                 key={idx}
                 href={`#${item.solutionId}`}
-                className="p-5 rounded-2xl border border-border/80 bg-card hover:border-primary/60 hover:-translate-y-1 hover:shadow-md transition-all duration-200 group flex flex-col justify-between space-y-3 cursor-pointer"
+                className="p-5 rounded-none border border-border/80 bg-card hover:border-primary/60 hover:-translate-y-0.5 hover:shadow-xs transition-all duration-200 group flex flex-col justify-between space-y-3 cursor-pointer"
               >
                 <div className="space-y-2">
-                  <div className="flex items-center justify-between text-[11px] font-mono">
-                    <span className="font-bold text-primary px-2 py-0.5 rounded bg-primary/10">
+                  <div className="flex items-center justify-between text-[10px] font-mono border-b border-border/60 pb-2">
+                    <span className="font-bold text-primary px-2 py-0.5 rounded-none bg-primary/10 border border-primary/20">
                       QUESTION 0{idx + 1}
                     </span>
-                    <span className="text-muted-foreground text-[10px]">{item.serviceRef}</span>
+                    <span className="text-muted-foreground uppercase">{item.serviceRef}</span>
                   </div>
-                  <h3 className="text-sm font-bold text-foreground group-hover:text-primary transition-colors leading-snug">
+                  <h3 className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors leading-snug">
                     {item.question}
                   </h3>
                   <p className="text-xs text-muted-foreground leading-relaxed">
@@ -313,108 +306,99 @@ export default function SolutionsPage() {
                   </p>
                 </div>
                 <div className="pt-2 text-xs font-semibold text-primary flex items-center gap-1 group-hover:underline">
-                  <span>Explore Solution Scope</span>
+                  <span className="uppercase text-[11px] tracking-wider">EXPLORE SCOPE</span>
                   <ArrowRight className="size-3 transition-transform group-hover:translate-x-1" />
                 </div>
-              </Link>
+              </a>
             ))}
           </div>
         </div>
       </section>
 
-      {/* 3. THE SIX STRATEGIC SOLUTIONS (DEEP DIVES) */}
-      <section className="py-14 sm:py-20 border-b border-border/80 bg-background">
-        <div className="mx-auto w-full max-w-[1536px] px-4 sm:px-6 lg:px-8 xl:px-10 space-y-16">
-          <div className="max-w-3xl space-y-2">
-            <span className="text-xs font-mono font-bold tracking-wider text-primary uppercase">
+      {/* 4. THE SIX TAILORED SOLUTIONS: Tall WordPress-Style Sharp-Edged Colored Cards */}
+      <section className="py-14 sm:py-20 border-b border-border/80 bg-slate-50 dark:bg-card/40">
+        <div className="mx-auto w-full max-w-[1536px] px-4 sm:px-6 lg:px-8 xl:px-10 space-y-10">
+          <div className="max-w-3xl space-y-1.5">
+            <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-primary">
               COMPREHENSIVE SOLUTION SUITE
             </span>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold font-serif text-foreground tracking-tight">
-              Six Tailored Solutions For Complex &amp; Emerging Markets
+            <h2 className="text-xl sm:text-2xl font-semibold text-foreground tracking-tight">
+              Six Tailored Solutions For Emerging Markets
             </h2>
             <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-              Designed around the commercial realities of businesses, brands, institutional investors, and entrepreneurs operating across Africa and emerging global corridors.
+              Designed around the commercial realities of businesses, brands, institutional investors, and expanding enterprises:
             </p>
           </div>
 
-          <div className="space-y-12">
+          {/* WordPress Grid: 6 Tall Sharp Cards with Colored Backgrounds */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
             {STRATUM_SOLUTIONS.map((sol) => {
               const Icon = sol.icon;
               return (
                 <div
                   key={sol.id}
                   id={sol.id}
-                  className="p-6 sm:p-8 lg:p-10 rounded-2xl border border-border/80 bg-card shadow-sm scroll-mt-24 space-y-8"
+                  className={`${sol.bgClass} border ${sol.borderClass} rounded-none p-6 sm:p-7 flex flex-col justify-between space-y-6 shadow-sm transition-all duration-200 group hover:-translate-y-1 hover:shadow-md min-h-[480px] scroll-mt-24`}
                 >
-                  {/* Header Row */}
-                  <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-6 border-b border-border/60 pb-6">
-                    <div className="space-y-3 max-w-4xl">
-                      <div className="flex items-center gap-3">
-                        <span className="text-xs font-mono font-black text-primary px-3 py-1 rounded-md bg-primary/10">
-                          SOLUTION {sol.number}
-                        </span>
-                        <div className="size-8 rounded-lg bg-muted flex items-center justify-center text-primary">
-                          <Icon className="size-4" />
-                        </div>
+                  {/* Top Section */}
+                  <div className="space-y-4">
+                    {/* Number + Icon Strip */}
+                    <div className="flex items-center justify-between border-b border-white/15 pb-4">
+                      <span className="font-mono text-xs font-bold tracking-wider opacity-90">
+                        {sol.kicker}
+                      </span>
+                      <div className="size-9 rounded-none bg-white/15 border border-white/20 flex items-center justify-center text-white group-hover:scale-105 transition-transform">
+                        <Icon className="size-4.5" />
                       </div>
-                      <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold font-serif text-foreground">
+                    </div>
+
+                    {/* Title + Tagline */}
+                    <div className="space-y-1">
+                      <h3 className="text-lg sm:text-xl font-medium tracking-tight text-white">
                         {sol.name}
                       </h3>
-                      <div className="text-xs sm:text-sm font-semibold text-primary">
+                      <p className="text-[11px] font-mono text-white/80 uppercase tracking-wider">
                         {sol.tagline}
-                      </div>
-                      <p className="text-xs sm:text-sm text-foreground/90 font-medium leading-relaxed">
-                        {sol.description}
-                      </p>
-                      <p className="text-xs text-muted-foreground leading-relaxed">
-                        {sol.details}
                       </p>
                     </div>
 
-                    <div className="shrink-0 pt-2">
-                      <Link
-                        href={sol.cta.href}
-                        className="inline-flex items-center gap-2 px-5 py-3 rounded-lg bg-primary text-primary-foreground font-bold text-xs uppercase tracking-wider shadow-sm hover:bg-primary/90 transition-all cursor-pointer whitespace-nowrap"
-                      >
-                        <span>{sol.cta.label}</span>
-                        <ArrowRight className="size-3.5" />
-                      </Link>
+                    {/* Brief Description */}
+                    <p className="text-xs sm:text-sm text-white/90 leading-relaxed font-normal">
+                      {sol.description}
+                    </p>
+
+                    {/* Key Questions / Capabilities */}
+                    <div className="space-y-2 pt-2 border-t border-white/10">
+                      <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-white/70 block">
+                        CORE BUSINESS FOCUS:
+                      </span>
+                      {sol.keyPoints.map((pt) => (
+                        <div key={pt} className="flex items-start gap-2 text-xs text-white/90">
+                          <CheckCircle2 className="size-3.5 text-white/80 shrink-0 mt-0.5" />
+                          <span className="leading-snug">{pt}</span>
+                        </div>
+                      ))}
                     </div>
                   </div>
 
-                  {/* 2-Column Details: Target Questions & Typical Deliverables */}
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-                    {/* Column 1: Core Commercial Questions Addressed */}
-                    <div className="space-y-3.5 p-5 rounded-xl bg-muted/30 border border-border/60">
-                      <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-foreground flex items-center gap-2">
-                        <HelpCircle className="size-3.5 text-primary" />
-                        <span>Core Business Questions Addressed</span>
-                      </h4>
-                      <ul className="space-y-2.5 text-xs text-muted-foreground">
-                        {sol.targetQuestions.map((q, qIdx) => (
-                          <li key={qIdx} className="flex items-start gap-2.5">
-                            <span className="size-1.5 rounded-full bg-primary mt-1.5 shrink-0" />
-                            <span className="leading-relaxed">{q}</span>
-                          </li>
-                        ))}
-                      </ul>
+                  {/* Bottom Deliverable & Action Button */}
+                  <div className="pt-4 border-t border-white/15 space-y-3">
+                    <div className="space-y-0.5">
+                      <span className="text-[10px] font-mono uppercase tracking-wider text-white/70 block">
+                        CORE DELIVERABLE:
+                      </span>
+                      <span className="text-xs font-medium text-white block">
+                        {sol.deliverable}
+                      </span>
                     </div>
 
-                    {/* Column 2: Standard Executive Deliverables */}
-                    <div className="space-y-3.5 p-5 rounded-xl bg-muted/30 border border-border/60">
-                      <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-foreground flex items-center gap-2">
-                        <FileText className="size-3.5 text-emerald-600 dark:text-emerald-400" />
-                        <span>Decision-Grade Deliverables</span>
-                      </h4>
-                      <ul className="space-y-2.5 text-xs text-muted-foreground">
-                        {sol.deliverables.map((del, dIdx) => (
-                          <li key={dIdx} className="flex items-start gap-2.5">
-                            <CheckCircle2 className="size-3.5 text-emerald-600 dark:text-emerald-400 mt-0.5 shrink-0" />
-                            <span className="leading-relaxed font-medium text-foreground">{del}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
+                    <Link
+                      href={sol.ctaHref}
+                      className="inline-flex items-center justify-between w-full px-4 py-2.5 rounded-none bg-white text-[#002B49] font-semibold text-xs uppercase tracking-wider hover:bg-slate-100 transition-colors shadow-xs"
+                    >
+                      <span>{sol.ctaLabel}</span>
+                      <ArrowRight className="size-3.5" />
+                    </Link>
                   </div>
                 </div>
               );
@@ -423,39 +407,53 @@ export default function SolutionsPage() {
         </div>
       </section>
 
-      {/* 4. TURN INSIGHT INTO OPPORTUNITY CTA FOOTER STRIP */}
-      <section className="py-14 sm:py-18 bg-muted/20 border-b border-border/80">
+      {/* 5. SIGNATURE MIDNIGHT NAVY CORPORATE CTA BANNER (#002B49) */}
+      <section className="py-12 sm:py-16 bg-[#002B49] text-white rounded-none border-b border-border/80">
         <div className="mx-auto w-full max-w-[1536px] px-4 sm:px-6 lg:px-8 xl:px-10">
-          <div className="p-8 sm:p-12 rounded-3xl border border-border/90 bg-card text-center max-w-4xl mx-auto space-y-6 shadow-sm">
-            <span className="text-xs font-mono font-bold tracking-widest text-primary uppercase">
-              TURN INSIGHT INTO OPPORTUNITY
-            </span>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold font-serif text-foreground tracking-tight">
-              Understand the Market. Identify the Opportunity. Make Better Decisions.
-            </h2>
-            <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-              Whether you are entering a new market, launching a product, tracking your brand, evaluating an investment opportunity, or seeking strategic business connections, Stratum provides the intelligence and market access to help you move forward.
-            </p>
-            <div className="pt-2 flex flex-wrap items-center justify-center gap-4">
+          <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8">
+            <div className="max-w-3xl space-y-2">
+              <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-none bg-white/10 border border-white/20 text-[10px] font-mono text-white/90">
+                <Sparkles className="size-3 text-sky-300" />
+                <span>NAIROBI ADVISORY &bull; TAILORED RESEARCH DESK</span>
+              </div>
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-medium tracking-tight text-white">
+                Understand the Market. Identify the Opportunity. Make Better Decisions.
+              </h2>
+              <p className="text-xs sm:text-sm text-white/80 leading-relaxed font-normal">
+                Whether you are entering a new market, launching a product, tracking your brand, evaluating an investment opportunity, or seeking strategic business connections, Stratum provides the intelligence to help you move forward.
+              </p>
+            </div>
+
+            <div className="flex flex-wrap items-center gap-3 shrink-0">
               <Link
-                href="/contact"
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-lg bg-primary text-primary-foreground font-bold text-xs uppercase tracking-wider shadow-sm hover:bg-primary/90 transition-all cursor-pointer"
+                href="/contact?cta=COMMISSION_RESEARCH"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-none bg-white text-[#002B49] font-semibold text-xs uppercase tracking-wider hover:bg-slate-100 transition-colors shadow-xs"
               >
-                <span>Talk to Stratum</span>
+                <span>COMMISSION A STUDY</span>
                 <ArrowRight className="size-3.5" />
               </Link>
               <Link
-                href="/services"
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-lg border border-border bg-background hover:bg-muted text-foreground font-semibold text-xs transition-all cursor-pointer"
+                href="/contact"
+                className="inline-flex items-center gap-2 px-5 py-3 rounded-none border border-white/30 bg-transparent text-white font-semibold text-xs uppercase tracking-wider hover:bg-white/10 transition-colors"
               >
-                <span>Explore Our 6 Services</span>
+                <Phone className="size-3.5" />
+                <span>CALL NAIROBI HQ</span>
+              </Link>
+              <Link
+                href="/services"
+                className="inline-flex items-center gap-2 px-5 py-3 rounded-none border border-white/30 bg-transparent text-white font-semibold text-xs uppercase tracking-wider hover:bg-white/10 transition-colors"
+              >
+                <span>EXPLORE OUR 6 SERVICES</span>
               </Link>
             </div>
           </div>
         </div>
       </section>
 
+      {/* Global Footer */}
       <Footer />
+
+      {/* Native Mobile PWA Bottom Bar */}
       <MobilePwaBar />
     </div>
   );

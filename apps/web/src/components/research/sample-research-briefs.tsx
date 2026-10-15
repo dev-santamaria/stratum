@@ -11,27 +11,16 @@ import {
   ShieldCheck,
   Eye,
   X,
-  ChevronRight,
   Building2,
-  Clock,
   FlaskConical,
   BarChart3,
   MapPin,
   Users,
   Target,
-  Sparkles,
-  BadgeCheck,
   Search,
-  Layers,
   Check,
   Activity,
   FileCheck,
-  TrendingUp,
-  Cpu,
-  Lock,
-  Boxes,
-  Zap,
-  Globe2,
   ArrowUpRight,
 } from "lucide-react";
 
@@ -373,21 +362,21 @@ function SampleResearchBriefsContent() {
   }, [briefParam]);
 
   return (
-    <div className="space-y-10">
+    <div className="space-y-8">
       {/* ========================================================
           1. THE EXECUTIVE BLUEPRINT DECK (INTERACTIVE SWITCHER)
           ======================================================== */}
       <div className="space-y-3">
         <div className="flex flex-wrap items-center justify-between gap-3 text-xs font-mono">
           <div className="flex items-center gap-2 text-muted-foreground">
-            <span className="size-2 rounded-full bg-primary animate-pulse" />
+            <span className="size-2 rounded-none bg-primary animate-pulse" />
             <span className="font-bold text-foreground uppercase tracking-wider">
               FLAGSHIP RESEARCH SPECIMEN SELECTOR
             </span>
             <span className="text-border">•</span>
             <span>3 FIELD-TESTED CHARTERS AVAILABLE</span>
           </div>
-          <div className="text-[11px] text-muted-foreground hidden sm:block">
+          <div className="text-[11px] text-muted-foreground hidden sm:block uppercase">
             SELECT A BLUEPRINT TO INSPECT STATISTICAL PARAMETERS &amp; DELIVERABLES
           </div>
         </div>
@@ -401,10 +390,10 @@ function SampleResearchBriefsContent() {
                 key={brief.id}
                 type="button"
                 onClick={() => setSelectedBrief(brief)}
-                className={`text-left p-4 sm:p-5 rounded-2xl border transition-all cursor-pointer relative overflow-hidden group ${
+                className={`text-left p-5 rounded-none border transition-all cursor-pointer relative overflow-hidden group ${
                   isSelected
-                    ? "bg-card border-primary shadow-md ring-2 ring-primary/20"
-                    : "bg-card/70 border-border/70 hover:border-border hover:bg-card hover:shadow-xs"
+                    ? "bg-card border-primary shadow-xs ring-1 ring-primary/40"
+                    : "bg-card/70 border-border/80 hover:border-border hover:bg-card hover:shadow-2xs"
                 }`}
               >
                 {/* Active Accent Top Line */}
@@ -417,7 +406,7 @@ function SampleResearchBriefsContent() {
                   <div className="flex items-center justify-between text-[11px] font-mono">
                     <div className="flex items-center gap-2">
                       <span
-                        className={`font-extrabold px-2.5 py-0.5 rounded-md ${
+                        className={`font-bold px-2 py-0.5 rounded-none uppercase ${
                           isSelected
                             ? "bg-primary text-primary-foreground"
                             : "bg-muted text-muted-foreground group-hover:text-foreground"
@@ -425,7 +414,7 @@ function SampleResearchBriefsContent() {
                       >
                         {brief.badge}
                       </span>
-                      <span className="text-muted-foreground font-semibold">
+                      <span className="text-muted-foreground font-semibold uppercase">
                         {brief.briefNumber === "01"
                           ? "FMCG Trade"
                           : brief.briefNumber === "02"
@@ -435,20 +424,20 @@ function SampleResearchBriefsContent() {
                     </div>
 
                     {isSelected ? (
-                      <span className="inline-flex items-center gap-1 text-[10px] font-bold text-primary bg-primary/10 px-2 py-0.5 rounded-full">
+                      <span className="inline-flex items-center gap-1 text-[10px] font-bold text-primary bg-primary/10 px-2 py-0.5 rounded-none uppercase">
                         <Check className="size-3" />
                         ACTIVE
                       </span>
                     ) : (
-                      <span className="text-[10px] text-muted-foreground group-hover:text-foreground flex items-center gap-0.5">
-                        Inspect <ArrowUpRight className="size-3" />
+                      <span className="text-[10px] text-muted-foreground group-hover:text-foreground flex items-center gap-0.5 uppercase">
+                        INSPECT <ArrowUpRight className="size-3" />
                       </span>
                     )}
                   </div>
 
                   {/* Title */}
                   <h3
-                    className={`text-xs sm:text-sm font-bold leading-snug line-clamp-2 ${
+                    className={`text-xs sm:text-sm font-medium leading-snug line-clamp-2 ${
                       isSelected ? "text-foreground" : "text-foreground/80 group-hover:text-foreground"
                     }`}
                   >
@@ -456,12 +445,12 @@ function SampleResearchBriefsContent() {
                   </h3>
 
                   {/* Micro Metric & Footprint */}
-                  <div className="pt-2 border-t border-border/50 flex items-center justify-between text-[11px] font-mono text-muted-foreground">
-                    <span className="flex items-center gap-1 truncate max-w-[130px]">
+                  <div className="pt-2 border-t border-border/60 flex items-center justify-between text-[11px] font-mono text-muted-foreground">
+                    <span className="flex items-center gap-1 truncate max-w-[130px] uppercase">
                       <MapPin className="size-3 text-primary shrink-0" />
                       {brief.geographyShort}
                     </span>
-                    <span className="font-bold text-foreground shrink-0">
+                    <span className="font-bold text-foreground shrink-0 uppercase">
                       {brief.sampleCount}
                     </span>
                   </div>
@@ -475,20 +464,20 @@ function SampleResearchBriefsContent() {
       {/* ========================================================
           2. THE ACTIVE INTELLIGENCE DOSSIER WORKSTATION
           ======================================================== */}
-      <div className="rounded-3xl border border-border/80 bg-card overflow-hidden shadow-lg">
+      <div className="rounded-none border border-border/80 bg-card overflow-hidden shadow-2xs">
         {/* Workstation Command Banner */}
-        <div className="px-6 py-4.5 bg-muted/40 border-b border-border/70 flex flex-wrap items-center justify-between gap-4">
+        <div className="px-6 py-4 bg-muted/40 border-b border-border/80 flex flex-wrap items-center justify-between gap-4">
           <div className="flex items-center gap-3">
-            <div className="size-9 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary shrink-0">
+            <div className="size-9 rounded-none bg-primary/10 border border-primary/20 flex items-center justify-center text-primary shrink-0">
               <FlaskConical className="size-4.5" />
             </div>
             <div>
               <div className="flex items-center gap-2 text-[11px] font-mono">
-                <span className="font-extrabold text-foreground">{selectedBrief.code}</span>
+                <span className="font-bold text-foreground">{selectedBrief.code}</span>
                 <span className="text-border">•</span>
                 <span className="text-primary font-bold">{selectedBrief.sectorTag}</span>
               </div>
-              <span className="text-xs text-muted-foreground font-mono">
+              <span className="text-xs text-muted-foreground font-mono uppercase">
                 SERVICE LINES: {selectedBrief.serviceCategory}
               </span>
             </div>
@@ -499,36 +488,34 @@ function SampleResearchBriefsContent() {
             <button
               type="button"
               onClick={() => setInspectModalOpen(true)}
-              className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl border border-border/80 bg-card hover:bg-muted text-foreground text-xs font-semibold transition-all cursor-pointer shadow-2xs"
+              className="inline-flex items-center gap-2 px-3.5 py-2 rounded-none border border-border/80 bg-card hover:bg-muted text-foreground text-xs font-semibold uppercase tracking-wider transition-all cursor-pointer shadow-2xs"
             >
               <Eye className="size-3.5 text-primary" />
-              <span>Inspect Full Charter Memo</span>
+              <span>INSPECT FULL CHARTER MEMO</span>
             </button>
             <Link
               href={`/contact?cta=${selectedBrief.ctaParam}&brief=${selectedBrief.id}`}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-primary text-primary-foreground text-xs font-bold hover:bg-primary/90 transition-all shadow-xs cursor-pointer"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-none bg-primary text-primary-foreground text-xs font-bold uppercase tracking-wider hover:bg-primary/90 transition-all shadow-xs cursor-pointer"
             >
-              <span>Commission This Study</span>
+              <span>COMMISSION THIS STUDY</span>
               <ArrowRight className="size-3.5" />
             </Link>
           </div>
         </div>
 
         {/* Workstation Core Content (7 cols analytical / 5 cols live specimen HUD) */}
-        <div className="p-6 sm:p-8 lg:p-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
-            {/* ----------------------------------------------------
-                LEFT COLUMN (7 COLS): ANALYTICAL METHODOLOGY & HYPOTHESES
-                ---------------------------------------------------- */}
-            <div className="lg:col-span-7 space-y-8">
+        <div className="p-6 sm:p-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            {/* LEFT COLUMN (7 COLS): ANALYTICAL METHODOLOGY & HYPOTHESES */}
+            <div className="lg:col-span-7 space-y-6">
               {/* Brief Title & Tagline */}
               <div className="space-y-2">
-                <div className="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-md bg-primary/10 text-primary font-mono text-[11px] font-bold uppercase tracking-wider">
+                <div className="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-none bg-primary/10 text-primary font-mono text-[11px] font-bold uppercase tracking-wider">
                   <span>{selectedBrief.badge} SPECIFICATION DOSSIER</span>
                   <span>•</span>
                   <span>CONFIDENTIAL BLUEPRINT</span>
                 </div>
-                <h2 className="text-xl sm:text-2xl lg:text-[28px] font-extrabold text-foreground tracking-tight leading-snug">
+                <h2 className="text-xl sm:text-2xl font-medium text-foreground tracking-tight leading-snug">
                   {selectedBrief.title}
                 </h2>
                 <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
@@ -537,7 +524,7 @@ function SampleResearchBriefsContent() {
               </div>
 
               {/* Problem Framing & Commercial Disconnect */}
-              <div className="p-5 rounded-2xl border border-border/80 bg-muted/20 space-y-3">
+              <div className="p-5 rounded-none border border-border/80 bg-muted/20 space-y-3">
                 <div className="flex items-center justify-between text-[11px] font-mono">
                   <span className="font-bold text-foreground uppercase tracking-wider flex items-center gap-1.5">
                     <Target className="size-3.5 text-primary" />
@@ -553,7 +540,7 @@ function SampleResearchBriefsContent() {
                 <p className="text-xs text-foreground/90 leading-relaxed">
                   {selectedBrief.problemFraming.narrative}
                 </p>
-                <div className="pt-2 border-t border-border/50 text-[11px] text-muted-foreground italic">
+                <div className="pt-2 border-t border-border/60 text-[11px] text-muted-foreground italic">
                   <span className="font-semibold text-foreground not-italic">Market Blindspot: </span>
                   &ldquo;{selectedBrief.problemFraming.marketDisconnect}&rdquo;
                 </div>
@@ -565,7 +552,7 @@ function SampleResearchBriefsContent() {
                   STATISTICAL SAMPLE DESIGN &amp; CONFIDENCE CALIBRATION
                 </span>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 font-mono text-xs">
-                  <div className="p-3.5 rounded-xl border border-border/70 bg-card space-y-1">
+                  <div className="p-3.5 rounded-none border border-border/80 bg-card space-y-1">
                     <span className="text-[10px] text-muted-foreground uppercase flex items-center gap-1">
                       <BarChart3 className="size-3 text-primary" />
                       Statistical Power &amp; Margin of Error
@@ -573,7 +560,7 @@ function SampleResearchBriefsContent() {
                     <p className="font-bold text-foreground text-xs sm:text-sm">{selectedBrief.samplePower}</p>
                   </div>
 
-                  <div className="p-3.5 rounded-xl border border-border/70 bg-card space-y-1">
+                  <div className="p-3.5 rounded-none border border-border/80 bg-card space-y-1">
                     <span className="text-[10px] text-muted-foreground uppercase flex items-center gap-1">
                       <MapPin className="size-3 text-primary" />
                       Geographic Audit Footprint
@@ -581,7 +568,7 @@ function SampleResearchBriefsContent() {
                     <p className="font-bold text-foreground text-xs sm:text-sm">{selectedBrief.geography}</p>
                   </div>
 
-                  <div className="p-3.5 rounded-xl border border-border/70 bg-card space-y-1">
+                  <div className="p-3.5 rounded-none border border-border/80 bg-card space-y-1">
                     <span className="text-[10px] text-muted-foreground uppercase flex items-center gap-1">
                       <Users className="size-3 text-primary" />
                       Target Respondent Mix
@@ -589,7 +576,7 @@ function SampleResearchBriefsContent() {
                     <p className="font-bold text-foreground text-xs sm:text-sm">{selectedBrief.targetRespondents}</p>
                   </div>
 
-                  <div className="p-3.5 rounded-xl border border-border/70 bg-card space-y-1">
+                  <div className="p-3.5 rounded-none border border-border/80 bg-card space-y-1">
                     <span className="text-[10px] text-muted-foreground uppercase flex items-center gap-1">
                       <ShieldCheck className="size-3 text-primary" />
                       Quality Control Standard
@@ -610,13 +597,13 @@ function SampleResearchBriefsContent() {
                   {selectedBrief.coreHypotheses.map((item, idx) => (
                     <div
                       key={idx}
-                      className="p-4 rounded-xl border border-border/80 bg-card space-y-2.5 transition-all hover:border-primary/40"
+                      className="p-4 rounded-none border border-border/80 bg-card space-y-2.5 transition-all hover:border-primary/40"
                     >
                       <div className="flex flex-wrap items-center justify-between gap-2 text-xs">
-                        <span className="font-mono font-extrabold text-primary bg-primary/10 px-2 py-0.5 rounded">
+                        <span className="font-mono font-bold text-primary bg-primary/10 px-2 py-0.5 rounded-none">
                           [{item.code}]
                         </span>
-                        <span className="font-mono text-[10px] font-bold px-2 py-0.5 rounded bg-muted text-foreground">
+                        <span className="font-mono text-[10px] font-bold px-2 py-0.5 rounded-none bg-muted text-foreground uppercase">
                           {item.impactTag}
                         </span>
                       </div>
@@ -626,7 +613,7 @@ function SampleResearchBriefsContent() {
                           <span className="font-semibold text-foreground/80 font-mono text-[11px]">Conventional Assumption: </span>
                           {item.assumption}
                         </p>
-                        <p className="text-foreground font-medium leading-relaxed bg-muted/20 p-2.5 rounded-lg border border-border/50">
+                        <p className="text-foreground font-medium leading-relaxed bg-muted/20 p-2.5 rounded-none border border-border/60">
                           <span className="font-bold text-primary font-mono text-[11px]">Ground Truth Finding: </span>
                           {item.fieldFinding}
                         </p>
@@ -647,18 +634,18 @@ function SampleResearchBriefsContent() {
                   {selectedBrief.deliverables.map((deliv, idx) => (
                     <div
                       key={idx}
-                      className="p-4 rounded-xl border border-border/80 bg-muted/20 space-y-2 flex flex-col justify-between"
+                      className="p-4 rounded-none border border-border/80 bg-muted/20 space-y-2 flex flex-col justify-between"
                     >
                       <div className="space-y-1.5">
                         <div className="flex items-center justify-between text-[10px] font-mono">
-                          <span className="font-extrabold text-primary">[{deliv.num}]</span>
-                          <span className="text-muted-foreground font-semibold">{deliv.format}</span>
+                          <span className="font-bold text-primary">[{deliv.num}]</span>
+                          <span className="text-muted-foreground font-semibold uppercase">{deliv.format}</span>
                         </div>
                         <h5 className="text-xs font-bold text-foreground leading-snug">
                           {deliv.title}
                         </h5>
                       </div>
-                      <p className="text-[11px] text-muted-foreground leading-relaxed pt-2 border-t border-border/50">
+                      <p className="text-[11px] text-muted-foreground leading-relaxed pt-2 border-t border-border/60">
                         {deliv.desc}
                       </p>
                     </div>
@@ -667,12 +654,10 @@ function SampleResearchBriefsContent() {
               </div>
             </div>
 
-            {/* ----------------------------------------------------
-                RIGHT COLUMN (5 COLS): LIVE SPECIMEN HUD & COMMISSIONING
-                ---------------------------------------------------- */}
+            {/* RIGHT COLUMN (5 COLS): LIVE SPECIMEN HUD & COMMISSIONING */}
             <div className="lg:col-span-5 space-y-6">
               {/* The Live Field Specimen Telemetry Box */}
-              <div className="p-6 rounded-2xl border border-border/80 bg-card space-y-5 shadow-sm relative overflow-hidden">
+              <div className="p-6 rounded-none border border-border/80 bg-card space-y-5 shadow-2xs relative overflow-hidden">
                 {/* Header of HUD */}
                 <div className="space-y-1 border-b border-border/60 pb-3.5">
                   <div className="flex items-center justify-between text-[11px] font-mono">
@@ -680,7 +665,7 @@ function SampleResearchBriefsContent() {
                       <Activity className="size-3.5 text-primary" />
                       {selectedBrief.illustrativeArtifact.title}
                     </span>
-                    <span className="text-[9px] bg-primary/10 text-primary border border-primary/20 px-2 py-0.5 rounded font-bold">
+                    <span className="text-[9px] bg-primary/10 text-primary border border-primary/20 px-2 py-0.5 rounded-none font-bold uppercase">
                       {selectedBrief.illustrativeArtifact.telemetryTag}
                     </span>
                   </div>
@@ -692,19 +677,19 @@ function SampleResearchBriefsContent() {
                 {/* 3 Telemetry Metrics with Visual Meters */}
                 <div className="space-y-4">
                   {selectedBrief.illustrativeArtifact.metrics.map((m, idx) => (
-                    <div key={idx} className="space-y-1.5 p-3 rounded-xl bg-muted/30 border border-border/50">
+                    <div key={idx} className="space-y-1.5 p-3 rounded-none bg-muted/30 border border-border/60">
                       <div className="flex items-baseline justify-between">
                         <span className="text-xs font-bold text-foreground uppercase font-mono">
                           {m.label}
                         </span>
-                        <span className="text-base sm:text-lg font-extrabold text-primary font-mono">
+                        <span className="text-base sm:text-lg font-bold text-primary font-mono">
                           {m.value}
                         </span>
                       </div>
                       {/* Visual Meter Bar */}
-                      <div className="w-full h-1.5 rounded-full bg-muted overflow-hidden">
+                      <div className="w-full h-1.5 rounded-none bg-muted overflow-hidden">
                         <div
-                          className="h-full bg-primary rounded-full transition-all duration-500"
+                          className="h-full bg-primary rounded-none transition-all duration-500"
                           style={{ width: `${m.progressPercent}%` }}
                         />
                       </div>
@@ -716,20 +701,20 @@ function SampleResearchBriefsContent() {
                 </div>
 
                 {/* Lead Insight Quotation */}
-                <div className="p-4 rounded-xl border border-primary/20 bg-primary/5 space-y-2">
+                <div className="p-4 rounded-none border border-primary/20 bg-primary/5 space-y-2">
                   <span className="text-[10px] font-mono font-bold text-primary uppercase">
                     STRATEGIC LEAD SYNTHESIS:
                   </span>
                   <p className="text-xs text-foreground/90 leading-relaxed italic">
                     &ldquo;{selectedBrief.illustrativeArtifact.strategicInsight}&rdquo;
                   </p>
-                  <p className="text-[10px] font-mono text-muted-foreground pt-1 border-t border-primary/15">
+                  <p className="text-[10px] font-mono text-muted-foreground pt-1 border-t border-primary/15 uppercase">
                     {selectedBrief.illustrativeArtifact.leadAuthor}
                   </p>
                 </div>
 
                 {/* Quality & ESOMAR Guarantee Stamp */}
-                <div className="pt-2 flex items-center justify-between text-[11px] font-mono text-muted-foreground">
+                <div className="pt-2 flex items-center justify-between text-[11px] font-mono text-muted-foreground uppercase">
                   <span className="flex items-center gap-1.5">
                     <ShieldCheck className="size-3.5 text-primary" />
                     ESOMAR 2026 Standards
@@ -739,10 +724,10 @@ function SampleResearchBriefsContent() {
               </div>
 
               {/* Commission Custom Scoping Panel */}
-              <div className="p-6 rounded-2xl border border-primary/25 bg-card space-y-4 shadow-sm">
+              <div className="p-6 rounded-none border border-primary/25 bg-card space-y-4 shadow-2xs">
                 <div className="space-y-1.5">
                   <div className="flex items-center gap-2">
-                    <div className="size-7 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center text-primary shrink-0">
+                    <div className="size-7 rounded-none bg-primary/10 border border-primary/20 flex items-center justify-center text-primary shrink-0">
                       <FileCheck className="size-3.5" />
                     </div>
                     <span className="text-xs font-mono font-bold text-primary uppercase">
@@ -759,11 +744,11 @@ function SampleResearchBriefsContent() {
 
                 {/* Quick SLA Metrics */}
                 <div className="grid grid-cols-2 gap-2 text-[11px] font-mono">
-                  <div className="p-2.5 rounded-lg bg-muted/30 border border-border/60">
+                  <div className="p-2.5 rounded-none bg-muted/30 border border-border/60">
                     <span className="text-muted-foreground text-[10px] uppercase block">Triage SLA:</span>
                     <span className="font-bold text-foreground">&lt; 6 Hours</span>
                   </div>
-                  <div className="p-2.5 rounded-lg bg-muted/30 border border-border/60">
+                  <div className="p-2.5 rounded-none bg-muted/30 border border-border/60">
                     <span className="text-muted-foreground text-[10px] uppercase block">Protection:</span>
                     <span className="font-bold text-foreground">Bilateral NDA</span>
                   </div>
@@ -773,16 +758,16 @@ function SampleResearchBriefsContent() {
                 <div className="space-y-2 pt-1">
                   <Link
                     href={`/contact?cta=${selectedBrief.ctaParam}&brief=${selectedBrief.id}`}
-                    className="w-full inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-primary text-primary-foreground font-bold text-xs uppercase tracking-wider hover:bg-primary/90 transition-all shadow-sm cursor-pointer"
+                    className="w-full inline-flex items-center justify-center gap-2 px-4 py-3 rounded-none bg-primary text-primary-foreground font-bold text-xs uppercase tracking-wider hover:bg-primary/90 transition-all shadow-sm cursor-pointer"
                   >
-                    <span>Commission Custom Study</span>
+                    <span>COMMISSION CUSTOM STUDY</span>
                     <ArrowRight className="size-3.5" />
                   </Link>
                   <Link
                     href="/services"
-                    className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl border border-border/80 bg-card hover:bg-muted text-foreground font-semibold text-xs transition-all cursor-pointer"
+                    className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-none border border-border/80 bg-card hover:bg-muted text-foreground font-bold text-xs uppercase tracking-wider transition-all cursor-pointer"
                   >
-                    <span>Explore Our 6 Services</span>
+                    <span>EXPLORE OUR 6 SERVICES</span>
                   </Link>
                 </div>
               </div>
@@ -791,23 +776,23 @@ function SampleResearchBriefsContent() {
         </div>
 
         {/* Workstation Footer Ribbon */}
-        <div className="px-6 sm:px-8 py-4 bg-muted/30 border-t border-border/70 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs">
-          <span className="text-muted-foreground font-mono text-[11px]">
+        <div className="px-6 sm:px-8 py-4 bg-muted/30 border-t border-border/80 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs">
+          <span className="text-muted-foreground font-mono text-[11px] uppercase">
             Protocol: Double-Blind Telemetry &bull; 95% Confidence Interval &bull; Nairobi HQ Central Operations
           </span>
           <div className="flex items-center gap-4">
             <button
               type="button"
               onClick={() => setInspectModalOpen(true)}
-              className="text-foreground hover:text-primary font-semibold transition-colors cursor-pointer"
+              className="text-foreground hover:text-primary font-bold text-xs uppercase tracking-wider transition-colors cursor-pointer"
             >
-              Inspect Full Memo
+              INSPECT FULL MEMO
             </button>
             <Link
               href={`/contact?cta=${selectedBrief.ctaParam}&brief=${selectedBrief.id}`}
-              className="font-bold text-primary hover:underline flex items-center gap-1"
+              className="font-bold text-xs uppercase tracking-wider text-primary hover:underline flex items-center gap-1"
             >
-              <span>Request Scoping Call</span>
+              <span>REQUEST SCOPING CALL</span>
               <ArrowRight className="size-3" />
             </Link>
           </div>
@@ -819,11 +804,11 @@ function SampleResearchBriefsContent() {
           ======================================================== */}
       <div className="pt-4 space-y-4">
         <div className="space-y-1">
-          <div className="inline-flex items-center gap-2 px-2.5 py-0.5 rounded bg-primary/10 text-primary font-mono text-[11px] font-bold tracking-wider uppercase">
+          <div className="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-none bg-primary/10 text-primary font-mono text-[11px] font-bold tracking-wider uppercase">
             <Compass className="size-3" />
             METHODOLOGICAL STANDARDS
           </div>
-          <h3 className="text-lg sm:text-xl font-bold text-foreground">
+          <h3 className="text-xl sm:text-2xl font-medium text-foreground tracking-tight">
             Why Stratum Field Architectures Deliver Decision-Grade Data
           </h3>
           <p className="text-xs text-muted-foreground max-w-2xl">
@@ -831,9 +816,9 @@ function SampleResearchBriefsContent() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 pt-2">
-          <div className="p-4.5 rounded-2xl border border-border/80 bg-card space-y-2 hover:border-primary/40 transition-all">
-            <div className="size-8 rounded-lg bg-primary/10 text-primary flex items-center justify-center font-mono font-bold text-xs">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-2">
+          <div className="p-5 rounded-none border border-border/80 bg-card space-y-2 hover:border-primary/50 transition-all">
+            <div className="size-8 rounded-none bg-primary/10 text-primary flex items-center justify-center font-mono font-bold text-xs border border-primary/20">
               01
             </div>
             <h4 className="text-xs sm:text-sm font-bold text-foreground">
@@ -844,8 +829,8 @@ function SampleResearchBriefsContent() {
             </p>
           </div>
 
-          <div className="p-4.5 rounded-2xl border border-border/80 bg-card space-y-2 hover:border-primary/40 transition-all">
-            <div className="size-8 rounded-lg bg-primary/10 text-primary flex items-center justify-center font-mono font-bold text-xs">
+          <div className="p-5 rounded-none border border-border/80 bg-card space-y-2 hover:border-primary/50 transition-all">
+            <div className="size-8 rounded-none bg-primary/10 text-primary flex items-center justify-center font-mono font-bold text-xs border border-primary/20">
               02
             </div>
             <h4 className="text-xs sm:text-sm font-bold text-foreground">
@@ -856,8 +841,8 @@ function SampleResearchBriefsContent() {
             </p>
           </div>
 
-          <div className="p-4.5 rounded-2xl border border-border/80 bg-card space-y-2 hover:border-primary/40 transition-all">
-            <div className="size-8 rounded-lg bg-primary/10 text-primary flex items-center justify-center font-mono font-bold text-xs">
+          <div className="p-5 rounded-none border border-border/80 bg-card space-y-2 hover:border-primary/50 transition-all">
+            <div className="size-8 rounded-none bg-primary/10 text-primary flex items-center justify-center font-mono font-bold text-xs border border-primary/20">
               03
             </div>
             <h4 className="text-xs sm:text-sm font-bold text-foreground">
@@ -868,8 +853,8 @@ function SampleResearchBriefsContent() {
             </p>
           </div>
 
-          <div className="p-4.5 rounded-2xl border border-border/80 bg-card space-y-2 hover:border-primary/40 transition-all">
-            <div className="size-8 rounded-lg bg-primary/10 text-primary flex items-center justify-center font-mono font-bold text-xs">
+          <div className="p-5 rounded-none border border-border/80 bg-card space-y-2 hover:border-primary/50 transition-all">
+            <div className="size-8 rounded-none bg-primary/10 text-primary flex items-center justify-center font-mono font-bold text-xs border border-primary/20">
               04
             </div>
             <h4 className="text-xs sm:text-sm font-bold text-foreground">
@@ -887,11 +872,11 @@ function SampleResearchBriefsContent() {
           ======================================================== */}
       {inspectModalOpen && (
         <div className="fixed inset-0 z-50 bg-black/75 backdrop-blur-xs flex items-center justify-center p-4">
-          <div className="bg-card border border-border/80 rounded-3xl max-w-3xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-8 space-y-6 shadow-2xl relative">
+          <div className="bg-card border border-border/80 rounded-none max-w-3xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-8 space-y-6 shadow-2xl relative">
             <button
               type="button"
               onClick={() => setInspectModalOpen(false)}
-              className="absolute top-5 right-5 p-2 rounded-xl text-muted-foreground hover:text-foreground hover:bg-muted transition-colors cursor-pointer"
+              className="absolute top-5 right-5 p-2 rounded-none text-muted-foreground hover:text-foreground hover:bg-muted transition-colors cursor-pointer"
             >
               <X className="size-5" />
             </button>
@@ -899,15 +884,15 @@ function SampleResearchBriefsContent() {
             {/* Document Header */}
             <div className="space-y-2 border-b border-border/60 pb-5">
               <div className="flex items-center gap-2">
-                <span className="text-[11px] font-mono font-extrabold text-primary uppercase">
+                <span className="text-[11px] font-mono font-bold text-primary uppercase">
                   STRATUM OFFICIAL SPECIFICATION MEMO &bull; {selectedBrief.badge}
                 </span>
                 <span className="text-border">•</span>
-                <span className="text-[10px] font-mono text-muted-foreground">
+                <span className="text-[10px] font-mono text-muted-foreground uppercase">
                   NAIROBI CENTRAL OPERATIONS DESK
                 </span>
               </div>
-              <h3 className="text-xl sm:text-2xl font-extrabold text-foreground tracking-tight">
+              <h3 className="text-xl sm:text-2xl font-medium text-foreground tracking-tight">
                 {selectedBrief.title}
               </h3>
               <p className="text-xs text-muted-foreground">{selectedBrief.tagline}</p>
@@ -916,27 +901,27 @@ function SampleResearchBriefsContent() {
             {/* Document Body */}
             <div className="space-y-5 text-xs text-muted-foreground leading-relaxed">
               <div className="space-y-1.5">
-                <h4 className="font-bold text-foreground text-sm font-mono">1. Executive Scoping Thesis</h4>
+                <h4 className="font-bold text-foreground text-sm font-mono uppercase">1. Executive Scoping Thesis</h4>
                 <p className="text-foreground/90">{selectedBrief.problemFraming.narrative}</p>
               </div>
 
               <div className="space-y-1.5">
-                <h4 className="font-bold text-foreground text-sm font-mono">2. Statistical Sample Design &amp; Confidence Level</h4>
+                <h4 className="font-bold text-foreground text-sm font-mono uppercase">2. Statistical Sample Design &amp; Confidence Level</h4>
                 <p>
                   Calibrated sample size: <strong>{selectedBrief.samplePower}</strong>. Stratification captures subnational economic diversity across primary wholesale belts, secondary transit nodes, and informal neighborhood kiosks. Double-blind enumerator verification with GPS geofencing eliminates observer bias.
                 </p>
               </div>
 
               <div className="space-y-2">
-                <h4 className="font-bold text-foreground text-sm font-mono">3. Field Hypotheses vs. Empirical Ground Truth</h4>
+                <h4 className="font-bold text-foreground text-sm font-mono uppercase">3. Field Hypotheses vs. Empirical Ground Truth</h4>
                 <div className="space-y-2">
                   {selectedBrief.coreHypotheses.map((h, i) => (
-                    <div key={i} className="p-3 rounded-xl border border-border/70 bg-muted/20 space-y-1">
+                    <div key={i} className="p-3 rounded-none border border-border/80 bg-muted/20 space-y-1">
                       <div className="flex items-center justify-between font-mono text-[11px]">
                         <span className="font-bold text-foreground">[{h.code}] Assumption: {h.assumption}</span>
                         <span className="text-primary font-bold">{h.impactTag}</span>
                       </div>
-                      <p className="text-foreground font-semibold">
+                      <p className="text-foreground font-medium">
                         Field Discovery: {h.fieldFinding}
                       </p>
                     </div>
@@ -945,7 +930,7 @@ function SampleResearchBriefsContent() {
               </div>
 
               <div className="space-y-1.5">
-                <h4 className="font-bold text-foreground text-sm font-mono">4. Fieldwork Protocols &amp; Quality Control</h4>
+                <h4 className="font-bold text-foreground text-sm font-mono uppercase">4. Fieldwork Protocols &amp; Quality Control</h4>
                 <ul className="list-disc pl-5 space-y-1 text-foreground/90">
                   {selectedBrief.fieldworkProtocols.map((p, i) => (
                     <li key={i}>{p}</li>
@@ -954,7 +939,7 @@ function SampleResearchBriefsContent() {
               </div>
 
               <div className="space-y-1.5">
-                <h4 className="font-bold text-foreground text-sm font-mono">5. Required Deliverables for Executive Decision-Makers</h4>
+                <h4 className="font-bold text-foreground text-sm font-mono uppercase">5. Required Deliverables for Executive Decision-Makers</h4>
                 <ul className="list-disc pl-5 space-y-1 text-foreground/90">
                   {selectedBrief.deliverables.map((d, i) => (
                     <li key={i}>
@@ -967,22 +952,22 @@ function SampleResearchBriefsContent() {
 
             {/* Modal Footer */}
             <div className="pt-4 border-t border-border/60 flex flex-wrap items-center justify-between gap-3">
-              <span className="text-[11px] font-mono text-muted-foreground">
+              <span className="text-[11px] font-mono text-muted-foreground uppercase">
                 Methodology governed by ESOMAR guidelines &bull; Nairobi Operations Desk
               </span>
               <div className="flex items-center gap-2">
                 <button
                   type="button"
                   onClick={() => setInspectModalOpen(false)}
-                  className="px-4 py-2 rounded-xl border border-border text-xs font-semibold hover:bg-muted transition-colors cursor-pointer"
+                  className="px-4 py-2 rounded-none border border-border text-xs font-bold uppercase tracking-wider hover:bg-muted transition-colors cursor-pointer"
                 >
-                  Close
+                  CLOSE
                 </button>
                 <Link
                   href={`/contact?cta=${selectedBrief.ctaParam}&brief=${selectedBrief.id}`}
-                  className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-primary text-primary-foreground font-bold text-xs hover:bg-primary/90 transition-all cursor-pointer shadow-xs"
+                  className="inline-flex items-center gap-1.5 px-4 py-2 rounded-none bg-primary text-primary-foreground font-bold text-xs uppercase tracking-wider hover:bg-primary/90 transition-all cursor-pointer shadow-xs"
                 >
-                  <span>Request Similar Scope</span>
+                  <span>REQUEST SIMILAR SCOPE</span>
                   <ArrowRight className="size-3.5" />
                 </Link>
               </div>
@@ -998,7 +983,7 @@ export function SampleResearchBriefs() {
   return (
     <Suspense
       fallback={
-        <div className="p-8 rounded-3xl border border-border/80 bg-card text-center text-xs text-muted-foreground animate-pulse font-mono">
+        <div className="p-8 rounded-none border border-border/80 bg-card text-center text-xs text-muted-foreground animate-pulse font-mono">
           Loading research brief charters...
         </div>
       }

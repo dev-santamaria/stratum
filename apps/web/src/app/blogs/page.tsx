@@ -25,8 +25,8 @@ import {
   Share2,
   X,
   ChevronRight,
-  Bookmark,
-  Layers,
+  Phone,
+  Workflow,
   MapPin,
 } from "lucide-react";
 
@@ -178,24 +178,25 @@ const BLOG_POSTS: BlogPost[] = [
       "Blind sensory testing in mother-tongue dialects yields 43% higher qualitative sentiment accuracy than standardized English focus groups.",
     fullBody: [
       "When evaluating consumer products in East African markets, standardized English surveys often fail to capture true consumer reactions. Terms describing mouthfeel, richness, sweetness, and aftertaste do not map directly into formal English corporate scales.",
-      "In native dialects, respondents speak with visceral honesty about product texture, aroma, satiety, and cultural suitability. In informal settlements and peri-urban hubs, conversational interviews in Swahili reveal commercial drivers that formal surveys miss.",
-      "Stratum’s qualitative moderation teams conduct blind sensory testing booths paired with vernacular in-depth interviews (IDIs). We measure calibrated sweetness-to-acidity ratios, lipid mouthfeel perceptions, and pack-in-hand tactile ergonomics across varying socio-economic classes.",
-      "Product development teams must recognize that regional consumer palates are sophisticated, highly localized, and culturally anchored. Success requires formulation calibration grounded in authentic dialogue.",
+      "Stratum’s qualitative division conducts central-location sensory testing sessions in native dialects: Swahili and regional commercial vernaculars. In blinded tests of beverage and confectionery prototypes, respondents expressing mild approval in English voiced clear reservations regarding chemical aftertastes and artificial colorants when interviewed in their home language.",
+      "Furthermore, sensory perception is intimately tied to localized preparation rituals. A powder sachet evaluated with room-temperature tap water in an air-conditioned hotel boardroom performs differently than when prepared with borehole water in a roadside kiosk.",
+      "Our research indicates that international FMCG entrants who calibrate formulations against dialect sensory benchmarks achieve significantly higher initial repeat-purchase rates than competitors relying on standardized testing protocols.",
+      "Product formulation success in emerging markets requires listening to consumers in the language of their everyday commercial experience.",
     ],
-    image: "/images/landing-reaction.jpg",
-    tags: ["Sensory Panels", "Taste Formulations", "Vernacular IDIs", "Beverage Testing", "East Africa"],
+    image: "/images/landing-market.jpg",
+    tags: ["Sensory Testing", "Vernacular Research", "Food Formulation", "Consumer Palate", "Blind Taste Trials"],
   },
   {
     id: "blog-06",
-    title: "De-Risking Cross-Border Commercial Expansion: The Architecture of Verified Deal Rooms",
-    subtitle: "How bilateral non-disclosure agreements and forensic distributor due diligence replace opaque agent networks.",
-    slug: "derisking-market-entry-afcfta-deal-rooms",
-    category: "Commercial Intermediation & M&A",
+    title: "Cross-Border Trade Intermediation: Structuring Bilateral Deal Rooms Under NDAs",
+    subtitle: "How institutional investors and commercial buyers mitigate counterparty risk across African regional corridors.",
+    slug: "cross-border-deal-rooms-bilateral-intermediation",
+    category: "Bilateral Trade & Sourcing",
     categoryFilter: "TRADE",
-    corridor: "Regional Commercial Trade Corridors",
+    corridor: "Regional African Trade Desks",
     corridorFilter: "REGIONAL_TRADE",
-    author: "Commercial Intermediation Practice",
-    authorRole: "Managing Director • Nairobi Operations Desk",
+    author: "Corporate Strategy & Deal Room Secretariat",
+    authorRole: "Senior Commercial Director • Nairobi HQ",
     date: "July 2026",
     readTime: "9 min read",
     summary:
@@ -306,115 +307,110 @@ export default function BlogsPage() {
   const featuredPost = BLOG_POSTS[0];
 
   return (
-    <div className="flex flex-col min-h-screen bg-background text-foreground antialiased selection:bg-primary selection:text-primary-foreground">
+    <div className="flex flex-col min-h-screen bg-background text-foreground antialiased selection:bg-primary selection:text-primary-foreground pb-16 sm:pb-0">
       <Navbar />
 
-      {/* 1. HERO HEADER */}
-      <section className="relative pt-10 pb-12 sm:pt-14 sm:pb-16 overflow-hidden border-b border-border/70 bg-background">
-        <div className="mx-auto w-full max-w-[1536px] px-4 sm:px-6 lg:px-8 xl:px-10 space-y-6">
+      {/* 1. HERO HEADER: Minimalist Inter Typography, Sharp Edges */}
+      <section className="py-12 sm:py-16 border-b border-border/80 bg-slate-50 dark:bg-card/40">
+        <div className="mx-auto w-full max-w-[1536px] px-4 sm:px-6 lg:px-8 xl:px-10">
           <div className="max-w-4xl space-y-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md border border-border/70 bg-card text-xs font-mono font-semibold text-muted-foreground shadow-2xs">
-              <span className="text-primary font-bold">STRATUM EDITORIAL DESK</span>
-              <span className="text-border">•</span>
-              <span className="text-foreground">EMERGING MARKETS INTELLIGENCE</span>
+            <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-none border border-border/80 bg-background text-[11px] font-mono font-semibold text-primary shadow-2xs">
+              <Workflow className="size-3 text-primary shrink-0" />
+              <span>STRATUM EDITORIAL DESK &bull; NAIROBI ADVISORY DESK</span>
             </div>
 
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-foreground tracking-tight leading-[1.15]">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-medium text-foreground tracking-tight leading-tight">
               Stratum Blogs &amp; Editorial Analysis
             </h1>
 
-            <p className="text-xs sm:text-sm lg:text-base text-muted-foreground leading-relaxed max-w-3xl font-normal">
+            <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed max-w-3xl font-normal">
               Long-form analytical essays, field dispatches, and econometric perspectives exploring consumer behavior, retail velocity, and South-South bilateral trade across East Africa and Asian production corridors.
             </p>
 
-            <div className="flex flex-wrap items-center gap-3 pt-2">
+            <div className="pt-2 flex flex-wrap items-center gap-3">
+              <Link
+                href="/contact?cta=COMMISSION_RESEARCH"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-none bg-primary text-primary-foreground font-semibold text-xs uppercase tracking-wider hover:bg-primary/90 transition-all shadow-xs"
+              >
+                <span>COMMISSION A STUDY</span>
+                <ArrowRight className="size-3.5" />
+              </Link>
               <a
                 href="#all-essays"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-primary text-primary-foreground font-bold text-xs uppercase tracking-wider shadow-sm hover:bg-primary/90 transition-all cursor-pointer"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-none border border-border/80 bg-card hover:bg-muted text-foreground text-xs font-semibold uppercase tracking-wider transition-all shadow-2xs"
               >
-                <BookOpen className="size-3.5" />
-                <span>Explore {BLOG_POSTS.length} Published Essays</span>
-                <ArrowRight className="size-3.5" />
+                <BookOpen className="size-3.5 text-primary" />
+                <span>EXPLORE {BLOG_POSTS.length} PUBLISHED ESSAYS</span>
               </a>
               <Link
                 href="/research-briefs"
-                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg border border-border/80 bg-card hover:bg-muted text-foreground text-xs font-semibold transition-all cursor-pointer shadow-2xs"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-none border border-border/80 bg-card hover:bg-muted text-foreground text-xs font-semibold uppercase tracking-wider transition-all shadow-2xs"
               >
                 <FileText className="size-3.5 text-primary" />
-                <span>Sample Research Briefs</span>
+                <span>SAMPLE RESEARCH BRIEFS</span>
               </Link>
             </div>
           </div>
+        </div>
+      </section>
 
-          {/* Scale Metrics & Editorial Telemetry Ribbon */}
-          <div className="p-3.5 rounded-xl border border-border/70 bg-muted/20 flex flex-wrap items-center justify-between gap-3 text-xs text-muted-foreground font-mono">
-            <div className="flex items-center gap-2">
-              <span className="size-2 rounded-full bg-emerald-500 animate-pulse" />
-              <span className="text-foreground font-bold">EDITORIAL DESK FOOTPRINT:</span>
-              <span>8 Grounded Essays &bull; Primary Field Observations &bull; Bi-Weekly Publishing Cycle</span>
-            </div>
-            <div className="flex items-center gap-2 text-[11px]">
-              <MapPin className="size-3 text-primary" />
-              <span className="text-foreground font-semibold">Central Operations Command:</span>
-              <span>Nairobi, Kenya (Delta Corner Tower)</span>
-            </div>
-          </div>
-
-          {/* Scale Metrics Bar */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 pt-2">
-            <div className="p-4 rounded-xl border border-border/70 bg-card space-y-1">
-              <div className="flex items-center justify-between text-muted-foreground text-xs font-mono">
+      {/* 2. SCALE METRICS STRIP (Sharp 4-Column Grid) */}
+      <section className="py-6 border-b border-border/80 bg-background">
+        <div className="mx-auto w-full max-w-[1536px] px-4 sm:px-6 lg:px-8 xl:px-10">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
+            <div className="p-4 rounded-none border border-border/80 bg-card space-y-1">
+              <div className="flex items-center justify-between text-muted-foreground text-[10px] font-mono uppercase">
                 <span>ESSAYS PUBLISHED</span>
                 <BookOpen className="size-3.5 text-primary" />
               </div>
-              <div className="text-xl sm:text-2xl font-black font-mono text-foreground">{BLOG_POSTS.length} Essays</div>
+              <div className="text-xl sm:text-2xl font-medium font-mono text-foreground">{BLOG_POSTS.length} Essays</div>
               <p className="text-[11px] text-muted-foreground">Original Ground-Truth Analysis</p>
             </div>
 
-            <div className="p-4 rounded-xl border border-border/70 bg-card space-y-1">
-              <div className="flex items-center justify-between text-muted-foreground text-xs font-mono">
+            <div className="p-4 rounded-none border border-border/80 bg-card space-y-1">
+              <div className="flex items-center justify-between text-muted-foreground text-[10px] font-mono uppercase">
                 <span>TRADE CORRIDORS</span>
                 <Globe2 className="size-3.5 text-emerald-500" />
               </div>
-              <div className="text-xl sm:text-2xl font-black font-mono text-foreground">East Africa &amp; Asia</div>
+              <div className="text-xl sm:text-2xl font-medium font-mono text-foreground">East Africa &amp; Asia</div>
               <p className="text-[11px] text-muted-foreground">Regional &amp; Bilateral Desks</p>
             </div>
 
-            <div className="p-4 rounded-xl border border-border/70 bg-card space-y-1">
-              <div className="flex items-center justify-between text-muted-foreground text-xs font-mono">
+            <div className="p-4 rounded-none border border-border/80 bg-card space-y-1">
+              <div className="flex items-center justify-between text-muted-foreground text-[10px] font-mono uppercase">
                 <span>FIELD EMPIRICISM</span>
-                <Radio className="size-3.5 text-blue-500" />
+                <Radio className="size-3.5 text-primary" />
               </div>
-              <div className="text-xl sm:text-2xl font-black font-mono text-foreground">Primary Fieldwork</div>
+              <div className="text-xl sm:text-2xl font-medium font-mono text-foreground">Primary Fieldwork</div>
               <p className="text-[11px] text-muted-foreground">Zero Synthetic Desktop Scraping</p>
             </div>
 
-            <div className="p-4 rounded-xl border border-border/70 bg-card space-y-1">
-              <div className="flex items-center justify-between text-muted-foreground text-xs font-mono">
+            <div className="p-4 rounded-none border border-border/80 bg-card space-y-1">
+              <div className="flex items-center justify-between text-muted-foreground text-[10px] font-mono uppercase">
                 <span>INTAKE SLA</span>
-                <Clock className="size-3.5 text-amber-500" />
+                <Clock className="size-3.5 text-primary" />
               </div>
-              <div className="text-xl sm:text-2xl font-black font-mono text-foreground">&lt; 6 Hours</div>
+              <div className="text-xl sm:text-2xl font-medium font-mono text-foreground">&lt; 6 Hours</div>
               <p className="text-[11px] text-muted-foreground">Direct Desk Lead Allocation</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 2. FEATURED LEAD ESSAY */}
-      <section className="py-12 sm:py-16 border-b border-border/70 bg-card">
+      {/* 3. FEATURED LEAD DISPATCH */}
+      <section className="py-14 sm:py-20 border-b border-border/80 bg-slate-50 dark:bg-card/40">
         <div className="mx-auto w-full max-w-[1536px] px-4 sm:px-6 lg:px-8 xl:px-10 space-y-6">
           <div className="flex items-center justify-between border-b border-border/60 pb-3">
-            <span className="text-[11px] font-mono font-bold tracking-wider text-primary uppercase">
-              02 // FEATURED LEAD DISPATCH
+            <span className="text-[10px] font-mono font-bold tracking-wider text-primary uppercase">
+              FEATURED LEAD DISPATCH // EXECUTIVE READ
             </span>
             <span className="text-xs font-mono text-muted-foreground">
-              Selected by Editorial Board &bull; Executive Read
+              Selected by Editorial Board
             </span>
           </div>
 
-          <div className="p-6 sm:p-8 lg:p-10 rounded-2xl border border-border/80 bg-background shadow-xs grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            <div className="lg:col-span-6 relative aspect-[16/10] rounded-xl overflow-hidden border border-border/70 bg-muted">
+          <div className="p-6 sm:p-8 lg:p-10 rounded-none border border-border/80 bg-card shadow-xs grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <div className="lg:col-span-6 relative aspect-[16/10] rounded-none overflow-hidden border border-border/70 bg-muted">
               <Image
                 src={featuredPost.image}
                 alt={featuredPost.title}
@@ -424,10 +420,10 @@ export default function BlogsPage() {
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
               <div className="absolute top-3 left-3 flex items-center gap-2">
-                <span className="text-[10px] font-mono font-bold px-2.5 py-1 rounded bg-primary text-primary-foreground shadow-xs">
+                <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded-none bg-primary text-primary-foreground shadow-xs">
                   FEATURED DISPATCH
                 </span>
-                <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-card/90 backdrop-blur-xs text-foreground border border-border/60">
+                <span className="text-[10px] font-mono px-2 py-0.5 rounded-none bg-card/90 backdrop-blur-xs text-foreground border border-border/60">
                   {featuredPost.category}
                 </span>
               </div>
@@ -446,7 +442,7 @@ export default function BlogsPage() {
                 </span>
               </div>
 
-              <h2 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-foreground leading-snug tracking-tight">
+              <h2 className="text-xl sm:text-2xl font-semibold text-foreground leading-snug tracking-tight">
                 {featuredPost.title}
               </h2>
 
@@ -454,7 +450,7 @@ export default function BlogsPage() {
                 {featuredPost.subtitle}
               </p>
 
-              <div className="p-3.5 rounded-xl bg-primary/5 border border-primary/20 space-y-1">
+              <div className="p-3.5 rounded-none bg-primary/5 border border-primary/20 space-y-1">
                 <span className="text-[10px] font-mono font-bold text-primary uppercase">
                   CORE EMPIRICAL FINDING:
                 </span>
@@ -470,9 +466,9 @@ export default function BlogsPage() {
                 <button
                   type="button"
                   onClick={() => setActiveReadingModal(featuredPost)}
-                  className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-primary text-primary-foreground text-xs font-bold hover:bg-primary/90 transition-all cursor-pointer shadow-xs"
+                  className="inline-flex items-center gap-1.5 px-4 py-2 rounded-none bg-primary text-primary-foreground text-xs font-semibold uppercase tracking-wider hover:bg-primary/90 transition-all cursor-pointer shadow-xs"
                 >
-                  <span>Read Full Essay</span>
+                  <span>READ FULL ESSAY</span>
                   <ArrowRight className="size-3.5" />
                 </button>
               </div>
@@ -481,20 +477,17 @@ export default function BlogsPage() {
         </div>
       </section>
 
-      {/* 3. ALL ESSAYS INDEX WITH FILTERS */}
-      <section id="all-essays" className="py-12 sm:py-16 border-b border-border/70 scroll-mt-20">
+      {/* 4. ALL ESSAYS INDEX WITH FILTERS */}
+      <section id="all-essays" className="py-14 sm:py-20 border-b border-border/80 bg-background scroll-mt-20">
         <div className="mx-auto w-full max-w-[1536px] px-4 sm:px-6 lg:px-8 xl:px-10 space-y-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-border/60 pb-4">
             <div className="space-y-1">
-              <span className="text-[11px] font-mono font-bold tracking-wider text-primary uppercase">
-                03 // EDITORIAL ARCHIVE
+              <span className="text-[10px] font-mono font-bold tracking-wider text-primary uppercase">
+                EDITORIAL ARCHIVE // {filteredPosts.length} ESSAYS
               </span>
-              <h3 className="text-xl sm:text-2xl font-bold text-foreground">
+              <h3 className="text-xl sm:text-2xl font-semibold text-foreground">
                 All Published Research Essays &amp; Dispatches
               </h3>
-              <p className="text-xs text-muted-foreground">
-                Filter by commercial corridor or sector practice to examine field observations.
-              </p>
             </div>
 
             {/* Search Input */}
@@ -505,7 +498,7 @@ export default function BlogsPage() {
                 placeholder="Search essays, tags, topics..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-9 pr-3 py-2 rounded-lg border border-border/80 bg-card text-xs text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary"
+                className="w-full pl-9 pr-3 py-1.5 rounded-none border border-border/80 bg-background text-xs text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary"
               />
               {searchQuery && (
                 <button
@@ -523,21 +516,21 @@ export default function BlogsPage() {
           <div className="space-y-3">
             {/* Corridor Filter */}
             <div className="flex flex-wrap items-center gap-2 text-xs font-mono">
-              <span className="text-muted-foreground text-[11px] uppercase mr-1">Corridor:</span>
+              <span className="text-muted-foreground text-[10px] uppercase mr-1">Corridor:</span>
               {[
-                { id: "ALL", label: "All Corridors" },
-                { id: "EAST_AFRICA", label: "East Africa" },
-                { id: "ASIA_AFRICA", label: "Asia-Africa Desk" },
-                { id: "REGIONAL_TRADE", label: "Regional Trade" },
+                { id: "ALL", label: "ALL CORRIDORS" },
+                { id: "EAST_AFRICA", label: "EAST AFRICA" },
+                { id: "ASIA_AFRICA", label: "ASIA-AFRICA DESK" },
+                { id: "REGIONAL_TRADE", label: "REGIONAL TRADE" },
               ].map((c) => (
                 <button
                   key={c.id}
                   type="button"
                   onClick={() => setSelectedCorridor(c.id)}
-                  className={`px-3 py-1 rounded-md text-xs transition-all cursor-pointer ${
+                  className={`px-3 py-1 rounded-none text-[11px] font-semibold transition-all cursor-pointer ${
                     selectedCorridor === c.id
-                      ? "bg-primary text-primary-foreground font-bold shadow-2xs"
-                      : "bg-muted/40 text-muted-foreground hover:bg-muted hover:text-foreground border border-border/60"
+                      ? "bg-primary text-primary-foreground"
+                      : "border border-border/80 bg-card hover:bg-muted text-muted-foreground"
                   }`}
                 >
                   {c.label}
@@ -547,24 +540,24 @@ export default function BlogsPage() {
 
             {/* Category Filter */}
             <div className="flex flex-wrap items-center gap-2 text-xs font-mono">
-              <span className="text-muted-foreground text-[11px] uppercase mr-1">Sector:</span>
+              <span className="text-muted-foreground text-[10px] uppercase mr-1">Sector:</span>
               {[
-                { id: "ALL", label: "All Practices" },
-                { id: "RETAIL", label: "Retail & FMCG" },
-                { id: "TRADE", label: "Trade & Sourcing" },
-                { id: "HEALTHCARE", label: "Healthcare" },
-                { id: "SUSTAINABILITY", label: "Circular Economy" },
-                { id: "SENSORY", label: "Sensory & Taste" },
-                { id: "ENTERPRISE", label: "Enterprise Tech" },
+                { id: "ALL", label: "ALL PRACTICES" },
+                { id: "RETAIL", label: "RETAIL & FMCG" },
+                { id: "TRADE", label: "TRADE & SOURCING" },
+                { id: "HEALTHCARE", label: "HEALTHCARE" },
+                { id: "SUSTAINABILITY", label: "CIRCULAR ECONOMY" },
+                { id: "SENSORY", label: "SENSORY & TASTE" },
+                { id: "ENTERPRISE", label: "ENTERPRISE TECH" },
               ].map((cat) => (
                 <button
                   key={cat.id}
                   type="button"
                   onClick={() => setSelectedCategory(cat.id)}
-                  className={`px-3 py-1 rounded-md text-xs transition-all cursor-pointer ${
+                  className={`px-3 py-1 rounded-none text-[11px] font-semibold transition-all cursor-pointer ${
                     selectedCategory === cat.id
-                      ? "bg-foreground text-background font-bold shadow-2xs"
-                      : "bg-muted/40 text-muted-foreground hover:bg-muted hover:text-foreground border border-border/60"
+                      ? "bg-foreground text-background"
+                      : "border border-border/80 bg-card hover:bg-muted text-muted-foreground"
                   }`}
                 >
                   {cat.label}
@@ -574,11 +567,11 @@ export default function BlogsPage() {
           </div>
 
           {/* Filtered Posts Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
             {filteredPosts.map((post) => (
               <article
                 key={post.id}
-                className="rounded-2xl border border-border/80 bg-card overflow-hidden hover:border-primary/40 transition-all flex flex-col justify-between shadow-2xs group"
+                className="rounded-none border border-border/80 bg-card overflow-hidden hover:border-primary/50 transition-all flex flex-col justify-between shadow-2xs group"
               >
                 <div className="relative aspect-[16/10] overflow-hidden bg-muted">
                   <Image
@@ -589,7 +582,7 @@ export default function BlogsPage() {
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
                   <div className="absolute top-2.5 left-2.5">
-                    <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-card/90 backdrop-blur-xs text-foreground border border-border/60">
+                    <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded-none bg-card/90 backdrop-blur-xs text-foreground border border-border/60">
                       {post.category}
                     </span>
                   </div>
@@ -597,14 +590,14 @@ export default function BlogsPage() {
 
                 <div className="p-5 space-y-3 flex-1 flex flex-col justify-between">
                   <div className="space-y-2">
-                    <div className="flex items-center justify-between text-[11px] font-mono text-muted-foreground">
+                    <div className="flex items-center justify-between text-[10px] font-mono text-muted-foreground">
                       <span className="text-primary font-semibold truncate max-w-[170px]">
                         {post.corridor}
                       </span>
                       <span>{post.readTime}</span>
                     </div>
 
-                    <h4 className="text-sm font-bold text-foreground leading-snug group-hover:text-primary transition-colors line-clamp-2">
+                    <h4 className="text-sm font-semibold text-foreground leading-snug group-hover:text-primary transition-colors line-clamp-2">
                       {post.title}
                     </h4>
 
@@ -614,15 +607,15 @@ export default function BlogsPage() {
                   </div>
 
                   <div className="pt-3 border-t border-border/60 flex items-center justify-between text-xs">
-                    <span className="text-[11px] font-mono text-muted-foreground truncate max-w-[150px]">
+                    <span className="text-[10px] font-mono text-muted-foreground truncate max-w-[150px]">
                       {post.date}
                     </span>
                     <button
                       type="button"
                       onClick={() => setActiveReadingModal(post)}
-                      className="font-bold text-xs text-primary group-hover:underline flex items-center gap-1 cursor-pointer"
+                      className="font-semibold text-xs text-primary group-hover:underline flex items-center gap-1 cursor-pointer uppercase tracking-wider"
                     >
-                      <span>Read Essay</span>
+                      <span>READ ESSAY</span>
                       <ArrowRight className="size-3" />
                     </button>
                   </div>
@@ -632,7 +625,7 @@ export default function BlogsPage() {
           </div>
 
           {filteredPosts.length === 0 && (
-            <div className="p-8 rounded-2xl border border-border/80 bg-card text-center space-y-2">
+            <div className="p-8 rounded-none border border-border/80 bg-card text-center space-y-2">
               <p className="text-sm font-bold text-foreground">No essays match your filter criteria.</p>
               <p className="text-xs text-muted-foreground">Try clearing your search query or selecting &quot;All Corridors&quot;.</p>
               <button
@@ -642,7 +635,7 @@ export default function BlogsPage() {
                   setSelectedCategory("ALL");
                   setSearchQuery("");
                 }}
-                className="mt-2 text-xs font-bold text-primary hover:underline cursor-pointer"
+                className="mt-2 text-xs font-bold text-primary hover:underline cursor-pointer uppercase tracking-wider"
               >
                 Reset All Filters
               </button>
@@ -651,14 +644,14 @@ export default function BlogsPage() {
         </div>
       </section>
 
-      {/* 4. DISPATCH NEWSLETTER SIGNUP */}
-      <section className="py-12 sm:py-16 bg-muted/20 border-b border-border/70">
+      {/* 5. NEWSLETTER SIGNUP STRIP (Sharp rectangular form) */}
+      <section className="py-12 sm:py-16 bg-slate-50 dark:bg-card/40 border-b border-border/80">
         <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:px-8 text-center space-y-4">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-primary/10 border border-primary/20 text-xs font-mono font-bold text-primary">
+          <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-none bg-primary/10 border border-primary/20 text-[10px] font-mono font-bold text-primary">
             <Mail className="size-3" />
-            EXECUTIVE INTELLIGENCE DISPATCH
+            <span>EXECUTIVE INTELLIGENCE DISPATCH</span>
           </div>
-          <h3 className="text-xl sm:text-2xl font-extrabold text-foreground tracking-tight">
+          <h3 className="text-xl sm:text-2xl font-medium text-foreground tracking-tight">
             Subscribe to Bi-Weekly Market Dispatches
           </h3>
           <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
@@ -673,39 +666,72 @@ export default function BlogsPage() {
                 placeholder="corporate.email@organization.com"
                 value={newsletterEmail}
                 onChange={(e) => setNewsletterEmail(e.target.value)}
-                className="flex-1 px-3.5 py-2.5 rounded-xl border border-border/80 bg-card text-xs text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary shadow-2xs"
+                className="flex-1 px-3.5 py-2 rounded-none border border-border/80 bg-card text-xs text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary shadow-2xs"
               />
               <button
                 type="submit"
-                className="px-5 py-2.5 rounded-xl bg-primary text-primary-foreground font-bold text-xs uppercase tracking-wider hover:bg-primary/90 transition-all cursor-pointer shadow-xs"
+                className="px-5 py-2 rounded-none bg-primary text-primary-foreground font-semibold text-xs uppercase tracking-wider hover:bg-primary/90 transition-all cursor-pointer shadow-xs"
               >
                 Subscribe
               </button>
             </div>
             {subscribedSuccess && (
-              <div className="p-2.5 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-emerald-600 dark:text-emerald-400 text-xs font-mono font-bold flex items-center justify-center gap-1.5">
+              <div className="p-2.5 rounded-none bg-emerald-500/10 border border-emerald-500/30 text-emerald-600 dark:text-emerald-400 text-xs font-mono font-bold flex items-center justify-center gap-1.5">
                 <CheckCircle2 className="size-3.5" />
                 <span>Subscription confirmed! Next dispatch will arrive in your inbox.</span>
               </div>
             )}
           </form>
+        </div>
+      </section>
 
-          <div className="pt-3 flex flex-wrap items-center justify-center gap-4 text-xs font-mono text-muted-foreground">
-            <span>Executive Readership</span>
-            <span>•</span>
-            <span>Zero Marketing Spam</span>
-            <span>•</span>
-            <Link href="/contact?cta=COMMISSION_RESEARCH" className="text-primary hover:underline font-bold">
-              Commission Bespoke Study &rarr;
-            </Link>
+      {/* 6. SIGNATURE MIDNIGHT NAVY CORPORATE CTA BANNER (#002B49) */}
+      <section className="py-12 sm:py-16 bg-[#002B49] text-white rounded-none border-b border-border/80">
+        <div className="mx-auto w-full max-w-[1536px] px-4 sm:px-6 lg:px-8 xl:px-10">
+          <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8">
+            <div className="max-w-3xl space-y-2">
+              <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-none bg-white/10 border border-white/20 text-[10px] font-mono text-white/90">
+                <Sparkles className="size-3 text-sky-300" />
+                <span>EDITORIAL DESK &bull; NAIROBI OPERATIONS HEADQUARTERS</span>
+              </div>
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-medium tracking-tight text-white">
+                Commission an In-Depth Market Study or Scoping Briefing
+              </h2>
+              <p className="text-xs sm:text-sm text-white/80 leading-relaxed font-normal">
+                Discuss your sector, research mandate, or investment thesis directly with our research leads in Nairobi. We draft initial scoping memos within 6 business hours.
+              </p>
+            </div>
+
+            <div className="flex flex-wrap items-center gap-3 shrink-0">
+              <Link
+                href="/contact?cta=COMMISSION_RESEARCH"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-none bg-white text-[#002B49] font-semibold text-xs uppercase tracking-wider hover:bg-slate-100 transition-colors shadow-xs"
+              >
+                <span>COMMISSION A STUDY</span>
+                <ArrowRight className="size-3.5" />
+              </Link>
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 px-5 py-3 rounded-none border border-white/30 bg-transparent text-white font-semibold text-xs uppercase tracking-wider hover:bg-white/10 transition-colors"
+              >
+                <Phone className="size-3.5" />
+                <span>CALL NAIROBI HQ</span>
+              </Link>
+              <Link
+                href="/reports"
+                className="inline-flex items-center gap-2 px-5 py-3 rounded-none border border-white/30 bg-transparent text-white font-semibold text-xs uppercase tracking-wider hover:bg-white/10 transition-colors"
+              >
+                <span>VIEW REPORTS</span>
+              </Link>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* FULL ESSAY MODAL READER */}
+      {/* FULL ESSAY MODAL READER (Sharp Rectangular Dialog) */}
       {activeReadingModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-xs animate-in fade-in overflow-y-auto">
-          <div className="bg-card border border-border/80 rounded-3xl max-w-3xl w-full max-h-[90vh] overflow-y-auto shadow-2xl p-6 sm:p-8 space-y-6 relative">
+          <div className="bg-card border border-border/80 rounded-none max-w-3xl w-full max-h-[90vh] overflow-y-auto shadow-2xl p-6 sm:p-8 space-y-6 relative">
             <div className="flex items-center justify-between border-b border-border/60 pb-4">
               <div className="flex items-center gap-2 text-xs font-mono text-primary font-bold">
                 <BookOpen className="size-4" />
@@ -714,7 +740,7 @@ export default function BlogsPage() {
               <button
                 type="button"
                 onClick={() => setActiveReadingModal(null)}
-                className="p-1.5 rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted text-xs cursor-pointer"
+                className="p-1.5 rounded-none text-muted-foreground hover:text-foreground hover:bg-muted text-xs cursor-pointer"
               >
                 <X className="size-5" />
               </button>
@@ -729,7 +755,7 @@ export default function BlogsPage() {
                 <span>{activeReadingModal.readTime}</span>
               </div>
 
-              <h2 className="text-xl sm:text-2xl font-extrabold text-foreground leading-snug">
+              <h2 className="text-xl sm:text-2xl font-semibold text-foreground leading-snug">
                 {activeReadingModal.title}
               </h2>
 
@@ -739,7 +765,7 @@ export default function BlogsPage() {
             </div>
 
             {/* Key Takeaway Box */}
-            <div className="p-4 rounded-xl bg-primary/5 border border-primary/20 space-y-1">
+            <div className="p-4 rounded-none bg-primary/5 border border-primary/20 space-y-1">
               <span className="text-[10px] font-mono font-bold text-primary uppercase block">
                 CORE STATISTICAL FINDING:
               </span>
@@ -770,13 +796,13 @@ export default function BlogsPage() {
                 <button
                   type="button"
                   onClick={() => setActiveReadingModal(null)}
-                  className="px-4 py-2 rounded-lg border border-border text-xs font-semibold text-muted-foreground hover:text-foreground cursor-pointer"
+                  className="px-4 py-2 rounded-none border border-border text-xs font-semibold text-muted-foreground hover:text-foreground cursor-pointer uppercase tracking-wider"
                 >
                   Close
                 </button>
                 <Link
                   href="/contact?cta=COMMISSION_RESEARCH"
-                  className="px-4 py-2 rounded-lg bg-primary text-primary-foreground text-xs font-bold shadow-xs hover:bg-primary/90 transition-all cursor-pointer font-sans"
+                  className="px-4 py-2 rounded-none bg-primary text-primary-foreground text-xs font-semibold uppercase tracking-wider shadow-xs hover:bg-primary/90 transition-all cursor-pointer"
                 >
                   Commission Full Study
                 </Link>

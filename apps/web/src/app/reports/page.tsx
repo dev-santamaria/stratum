@@ -22,7 +22,8 @@ import {
   Users2,
   Radio,
   Layers,
-  Recycle,
+  Phone,
+  Workflow,
   Target,
 } from "lucide-react";
 import { ResearchStudioWrapper } from "@/components/research/research-studio-wrapper";
@@ -223,124 +224,126 @@ export default function ReportsPage() {
   });
 
   return (
-    <div className="flex flex-col min-h-screen bg-background text-foreground antialiased selection:bg-primary selection:text-primary-foreground">
+    <div className="flex flex-col min-h-screen bg-background text-foreground antialiased selection:bg-primary selection:text-primary-foreground pb-16 sm:pb-0">
       <Navbar />
 
-      {/* 1. HERO HEADER */}
-      <section className="relative pt-10 pb-12 sm:pt-14 sm:pb-16 overflow-hidden stratum-grid-bg border-b border-border/70">
-        <div className="mx-auto w-full max-w-[1536px] px-4 sm:px-6 lg:px-8 xl:px-10 space-y-6">
+      {/* 1. HERO HEADER: Minimalist Inter Typography, Sharp Edges */}
+      <section className="py-12 sm:py-16 border-b border-border/80 bg-slate-50 dark:bg-card/40">
+        <div className="mx-auto w-full max-w-[1536px] px-4 sm:px-6 lg:px-8 xl:px-10">
           <div className="max-w-4xl space-y-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md border border-border/70 bg-card text-xs font-mono font-semibold text-muted-foreground shadow-2xs">
-              <span className="text-primary font-bold">STRATUM RESEARCH REPORTS</span>
-              <span className="text-border">•</span>
-              <span className="text-foreground">EMPIRICAL MARKET STUDIES</span>
+            <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-none border border-border/80 bg-background text-[11px] font-mono font-semibold text-primary shadow-2xs">
+              <Workflow className="size-3 text-primary shrink-0" />
+              <span>STRATUM RESEARCH REPORTS &bull; NAIROBI ADVISORY DESK</span>
             </div>
 
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold font-serif text-foreground tracking-tight leading-[1.15]">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-medium text-foreground tracking-tight leading-tight">
               Research Reports &amp; Empirical Market Studies
             </h1>
 
-            <p className="text-xs sm:text-sm lg:text-base text-muted-foreground leading-relaxed max-w-3xl font-normal">
+            <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed max-w-3xl font-normal">
               Explore selected Stratum research reports, category dossiers, and consumer telemetry benchmarks across pan-African and South-South commercial corridors. Grounded in direct human fieldwork, satellite geostamping, and econometric modeling.
             </p>
 
-            <div className="flex flex-wrap items-center gap-3 pt-2">
-              <a
-                href="#telemetry-studio"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-md bg-primary text-primary-foreground font-bold text-xs uppercase tracking-wider shadow-sm hover:bg-primary/90 transition-all cursor-pointer"
+            <div className="pt-2 flex flex-wrap items-center gap-3">
+              <Link
+                href="/contact?cta=COMMISSION_RESEARCH"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-none bg-primary text-primary-foreground font-semibold text-xs uppercase tracking-wider hover:bg-primary/90 transition-all shadow-xs"
               >
-                <Target className="size-3.5" />
-                <span>Launch Telemetry Studio (4 Formats)</span>
+                <span>COMMISSION A STUDY</span>
                 <ArrowRight className="size-3.5" />
-              </a>
+              </Link>
               <a
                 href="#dossiers-directory"
-                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-md border border-border/80 bg-card hover:bg-muted text-foreground text-xs font-semibold transition-all cursor-pointer"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-none border border-border/80 bg-card hover:bg-muted text-foreground text-xs font-semibold uppercase tracking-wider transition-all shadow-2xs"
               >
                 <FileText className="size-3.5 text-primary" />
-                <span>Browse 8 Published Dossiers</span>
+                <span>BROWSE 8 PUBLISHED DOSSIERS</span>
               </a>
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-md border border-border/80 bg-card hover:bg-muted text-muted-foreground hover:text-foreground text-xs font-semibold transition-all cursor-pointer"
+              <a
+                href="#telemetry-studio"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-none border border-border/80 bg-card hover:bg-muted text-foreground text-xs font-semibold uppercase tracking-wider transition-all shadow-2xs"
               >
-                <span>Commission Bespoke Study</span>
-              </Link>
+                <Target className="size-3.5 text-primary" />
+                <span>LAUNCH TELEMETRY STUDIO</span>
+              </a>
             </div>
           </div>
+        </div>
+      </section>
 
-          {/* Unified Footprint Telemetry Ribbon */}
-          <div className="p-3 rounded-lg border border-border/70 bg-card/60 flex flex-wrap items-center justify-between gap-3 text-xs text-muted-foreground font-mono">
-            <div className="flex items-center gap-2">
-              <span className="size-2 rounded-full bg-emerald-500 animate-pulse" />
-              <span className="text-foreground font-bold">RESEARCH DOSSIER REPOSITORY:</span>
-              <span>Empirical Field Telemetry &bull; Double-Blind Protocol &bull; Aligned with ESOMAR &amp; KDPA Standards</span>
-            </div>
-            <div className="flex items-center gap-3 text-[11px]">
-              <span className="text-primary font-bold">CENTRAL COMMAND</span>
-              <span>•</span>
-              <span>Nairobi, Kenya</span>
-            </div>
-          </div>
-
-          {/* Scale Metrics Bar */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 pt-2">
-            <div className="p-3.5 rounded-lg border border-border/70 bg-card space-y-1">
-              <div className="flex items-center justify-between text-muted-foreground text-xs font-mono">
+      {/* 2. SCALE METRICS BAR (Sharp 4-Column Grid) */}
+      <section className="py-6 border-b border-border/80 bg-background">
+        <div className="mx-auto w-full max-w-[1536px] px-4 sm:px-6 lg:px-8 xl:px-10">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
+            <div className="p-4 rounded-none border border-border/80 bg-card space-y-1">
+              <div className="flex items-center justify-between text-muted-foreground text-[10px] font-mono uppercase">
                 <span>PUBLISHED STUDIES</span>
                 <FileText className="size-3.5 text-primary" />
               </div>
-              <div className="text-xl sm:text-2xl font-black font-mono text-foreground">{REPORTS.length} Dossiers</div>
+              <div className="text-xl sm:text-2xl font-medium font-mono text-foreground">{REPORTS.length} Dossiers</div>
               <p className="text-[11px] text-muted-foreground">Illustrative Ground-Truth Studies</p>
             </div>
 
-            <div className="p-3.5 rounded-lg border border-border/70 bg-card space-y-1">
-              <div className="flex items-center justify-between text-muted-foreground text-xs font-mono">
+            <div className="p-4 rounded-none border border-border/80 bg-card space-y-1">
+              <div className="flex items-center justify-between text-muted-foreground text-[10px] font-mono uppercase">
                 <span>STATISTICAL POWER</span>
                 <Users2 className="size-3.5 text-emerald-500" />
               </div>
-              <div className="text-xl sm:text-2xl font-black font-mono text-foreground">95% CI</div>
+              <div className="text-xl sm:text-2xl font-medium font-mono text-foreground">95% CI</div>
               <p className="text-[11px] text-muted-foreground">Standard Statistical Confidence</p>
             </div>
 
-            <div className="p-3.5 rounded-lg border border-border/70 bg-card space-y-1">
-              <div className="flex items-center justify-between text-muted-foreground text-xs font-mono">
+            <div className="p-4 rounded-none border border-border/80 bg-card space-y-1">
+              <div className="flex items-center justify-between text-muted-foreground text-[10px] font-mono uppercase">
                 <span>RETAIL SAMPLING</span>
-                <Radio className="size-3.5 text-blue-500" />
+                <Radio className="size-3.5 text-primary" />
               </div>
-              <div className="text-xl sm:text-2xl font-black font-mono text-foreground">GPS Audited</div>
+              <div className="text-xl sm:text-2xl font-medium font-mono text-foreground">GPS Audited</div>
               <p className="text-[11px] text-muted-foreground">Double-Blind Retail Censuses</p>
             </div>
 
-            <div className="p-3.5 rounded-lg border border-border/70 bg-card space-y-1">
-              <div className="flex items-center justify-between text-muted-foreground text-xs font-mono">
+            <div className="p-4 rounded-none border border-border/80 bg-card space-y-1">
+              <div className="flex items-center justify-between text-muted-foreground text-[10px] font-mono uppercase">
                 <span>INTAKE SLA</span>
-                <Clock className="size-3.5 text-amber-500" />
+                <Clock className="size-3.5 text-primary" />
               </div>
-              <div className="text-xl sm:text-2xl font-black font-mono text-foreground">&lt; 6 Hours</div>
+              <div className="text-xl sm:text-2xl font-medium font-mono text-foreground">&lt; 6 Hours</div>
               <p className="text-[11px] text-muted-foreground">Data Room Scoping &amp; NDA</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 2. INTERACTIVE RESEARCH STUDIO: 4 INNOVATIVE TELEMETRY FORMATS */}
-      <section className="py-12 sm:py-16 border-b border-border/70 scroll-mt-20" id="telemetry-studio">
-        <div className="mx-auto w-full max-w-[1536px] px-4 sm:px-6 lg:px-8 xl:px-10">
-          <ResearchStudioWrapper />
+      {/* 3. INTERACTIVE TELEMETRY STUDIO */}
+      <section className="py-14 sm:py-20 border-b border-border/80 bg-slate-50 dark:bg-card/40 scroll-mt-20" id="telemetry-studio">
+        <div className="mx-auto w-full max-w-[1536px] px-4 sm:px-6 lg:px-8 xl:px-10 space-y-6">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3 border-b border-border/60 pb-3">
+            <div className="space-y-1">
+              <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-primary">
+                TELEMETRY STUDIO // 4 DATA FORMATS
+              </span>
+              <h2 className="text-xl sm:text-2xl font-semibold text-foreground tracking-tight">
+                Empirical Telemetry Explorer
+              </h2>
+            </div>
+          </div>
+
+          <div className="rounded-none border border-border/80 bg-card p-4 sm:p-6 shadow-xs">
+            <ResearchStudioWrapper />
+          </div>
         </div>
       </section>
 
-      {/* 3. INTERACTIVE REPORTS DIRECTORY & FILTERING */}
-      <section className="py-12 sm:py-16 border-b border-border/70 scroll-mt-20" id="dossiers-directory">
+      {/* 4. DOSSIERS DIRECTORY & FILTERING */}
+      <section className="py-14 sm:py-20 border-b border-border/80 bg-background scroll-mt-20" id="dossiers-directory">
         <div className="mx-auto w-full max-w-[1536px] px-4 sm:px-6 lg:px-8 xl:px-10 space-y-8">
           {/* Header & Filter Controls Bar */}
           <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 border-b border-border/60 pb-4">
             <div className="space-y-1">
-              <span className="text-[11px] font-mono font-bold tracking-wider text-primary uppercase">
-                03 // DIRECTORY OF PUBLISHED STUDIES
+              <span className="text-[10px] font-mono font-bold tracking-wider text-primary uppercase">
+                PUBLISHED STUDIES DIRECTORY
               </span>
-              <h2 className="text-xl sm:text-2xl font-bold text-foreground tracking-tight">
+              <h2 className="text-xl sm:text-2xl font-semibold text-foreground tracking-tight">
                 Showing {filteredReports.length} Empirical Research Briefings
               </h2>
             </div>
@@ -348,105 +351,97 @@ export default function ReportsPage() {
             {/* Filter Pills & Keyword Search */}
             <div className="flex flex-wrap items-center gap-2">
               <div className="relative">
-                <Search className="size-3.5 absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" />
+                <Search className="size-3.5 text-muted-foreground absolute left-3 top-1/2 -translate-y-1/2" />
                 <input
                   type="text"
-                  placeholder="Search reports by topic, sector, or keyword..."
+                  placeholder="Filter studies..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="pl-8 pr-3 py-1.5 rounded-md border border-border bg-card text-xs text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary w-56 sm:w-64"
+                  className="pl-8 pr-3 py-1.5 rounded-none border border-border/80 bg-background text-xs text-foreground focus:outline-none focus:ring-1 focus:ring-primary w-48 sm:w-60"
                 />
               </div>
 
-              <div className="flex flex-wrap items-center gap-1 font-mono text-[11px]">
+              <div className="flex flex-wrap gap-1">
                 {[
-                  { id: "ALL", label: "ALL CORRIDORS" },
+                  { id: "ALL", label: "ALL" },
                   { id: "EAST_AFRICA", label: "EAST AFRICA" },
                   { id: "WEST_AFRICA", label: "WEST AFRICA" },
                   { id: "SOUTHERN_AFRICA", label: "SOUTHERN AFRICA" },
                   { id: "ASIA_AFRICA", label: "ASIA-AFRICA" },
-                ].map((item) => (
+                ].map((corridor) => (
                   <button
-                    key={item.id}
-                    type="button"
-                    onClick={() => setSelectedCorridor(item.id)}
-                    className={`px-2.5 py-1.5 rounded-md border text-[11px] font-bold transition-all cursor-pointer ${
-                      selectedCorridor === item.id
-                        ? "bg-primary text-primary-foreground border-primary shadow-2xs"
-                        : "bg-card text-muted-foreground border-border/80 hover:bg-muted/60 hover:text-foreground"
+                    key={corridor.id}
+                    onClick={() => setSelectedCorridor(corridor.id)}
+                    className={`px-3 py-1.5 rounded-none text-[11px] font-mono font-semibold transition-all cursor-pointer ${
+                      selectedCorridor === corridor.id
+                        ? "bg-primary text-primary-foreground"
+                        : "border border-border/80 bg-card hover:bg-muted text-muted-foreground"
                     }`}
                   >
-                    {item.label}
+                    {corridor.label}
                   </button>
                 ))}
               </div>
             </div>
           </div>
 
-          {/* Reports Grid (2x2 Uniform Boardroom Layout) */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-6">
+          {/* Dossiers Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
             {filteredReports.map((rep) => (
               <div
                 key={rep.id}
-                className="p-6 rounded-lg border border-border/80 bg-card shadow-2xs space-y-4 hover:border-primary/50 transition-all flex flex-col justify-between"
+                className="p-6 rounded-none border border-border/80 bg-card hover:border-primary/50 transition-all flex flex-col justify-between space-y-5 shadow-2xs group"
               >
-                <div className="space-y-3.5">
-                  <div className="flex flex-wrap items-center justify-between gap-2 text-xs font-mono">
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between border-b border-border/60 pb-3">
                     <div className="flex items-center gap-2">
-                      <span className="font-bold text-primary px-2 py-0.5 rounded bg-primary/10 border border-primary/20 text-[10px]">
+                      <span className="font-mono text-[10px] font-bold px-2 py-0.5 rounded-none bg-primary/10 text-primary border border-primary/20">
                         {rep.code}
                       </span>
-                      <span className="text-[10px] text-muted-foreground font-semibold">
-                        {rep.sector}
+                      <span className="text-[10px] font-mono text-muted-foreground uppercase">
+                        {rep.classification}
                       </span>
                     </div>
-                    <span className="text-[10px] text-muted-foreground">
-                      {rep.published}
+                    <span className="text-[10px] font-mono text-muted-foreground">
+                      {rep.published} &bull; {rep.pages}
                     </span>
                   </div>
 
-                  <div className="space-y-1">
-                    <h3 className="text-base sm:text-lg font-bold text-foreground leading-snug">
-                      {rep.title}
-                    </h3>
-                    <p className="text-xs text-muted-foreground font-mono">
-                      Corridor: {rep.corridor}
-                    </p>
+                  <h3 className="text-base sm:text-lg font-semibold text-foreground group-hover:text-primary transition-colors leading-snug">
+                    {rep.title}
+                  </h3>
+
+                  <div className="text-[11px] font-mono text-muted-foreground flex items-center gap-2">
+                    <Globe2 className="size-3 text-primary shrink-0" />
+                    <span>{rep.corridor}</span>
                   </div>
 
-                  <p className="text-xs text-foreground/90 leading-relaxed font-normal">
+                  <p className="text-xs text-muted-foreground leading-relaxed">
                     {rep.executiveSummary}
                   </p>
 
-                  {/* Highlights Card */}
-                  <div className="p-3 rounded-md bg-muted/40 border border-border/70 space-y-1.5 text-xs font-mono">
-                    <span className="text-[10px] font-bold text-primary uppercase tracking-wider block">
-                      KEY EMPIRICAL FINDINGS:
+                  <div className="space-y-1.5 pt-2 border-t border-border/60">
+                    <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-muted-foreground block">
+                      KEY TELEMETRY HIGHLIGHTS:
                     </span>
-                    <ul className="space-y-1 font-sans">
-                      {rep.highlights.map((hl, i) => (
-                        <li key={i} className="flex items-start gap-1.5 text-muted-foreground text-[11px] leading-snug">
-                          <CheckCircle2 className="size-3 text-emerald-500 shrink-0 mt-0.5" />
-                          <span>{hl}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  <div className="text-[11px] font-mono text-muted-foreground">
-                    <span className="text-foreground font-semibold">Methodology:</span> {rep.methodology}
+                    {rep.highlights.map((hl, hIdx) => (
+                      <div key={hIdx} className="flex items-start gap-2 text-xs text-foreground/90">
+                        <CheckCircle2 className="size-3.5 text-emerald-600 dark:text-emerald-400 shrink-0 mt-0.5" />
+                        <span className="leading-snug">{hl}</span>
+                      </div>
+                    ))}
                   </div>
                 </div>
 
-                <div className="pt-3 border-t border-border/60 flex items-center justify-between text-xs font-mono">
-                  <div className="text-[11px] text-muted-foreground">
-                    <span>{rep.pages}</span> • <span className="font-bold text-foreground">{rep.sampleSize}</span>
-                  </div>
+                <div className="pt-3 border-t border-border/60 flex items-center justify-between">
+                  <span className="text-[11px] font-mono text-muted-foreground">
+                    Sample: {rep.sampleSize}
+                  </span>
                   <Link
-                    href="/contact"
-                    className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-md bg-primary text-primary-foreground font-bold text-xs uppercase tracking-wider hover:bg-primary/90 transition-all shadow-2xs cursor-pointer font-sans"
+                    href={`/contact?cta=COMMISSION_RESEARCH&report=${rep.code}`}
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-none bg-primary text-primary-foreground text-xs font-semibold uppercase tracking-wider hover:bg-primary/90 transition-colors shadow-xs"
                   >
-                    <span>Request Full Dossier</span>
+                    <span>REQUEST DOSSIER</span>
                     <ArrowRight className="size-3" />
                   </Link>
                 </div>
@@ -456,99 +451,50 @@ export default function ReportsPage() {
         </div>
       </section>
 
-      {/* 4. INSTITUTIONAL ASSURANCES STRIP */}
-      <section className="py-12 sm:py-16 border-b border-border/70 bg-muted/15">
-        <div className="mx-auto w-full max-w-[1536px] px-4 sm:px-6 lg:px-8 xl:px-10 space-y-8">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-border/60 pb-4">
-            <div className="max-w-3xl space-y-1.5">
-              <div className="text-[11px] font-mono font-bold tracking-wider text-primary uppercase">
-                04 // INSTITUTIONAL ASSURANCES
+      {/* 5. SIGNATURE MIDNIGHT NAVY CORPORATE CTA BANNER (#002B49) */}
+      <section className="py-12 sm:py-16 bg-[#002B49] text-white rounded-none border-b border-border/80">
+        <div className="mx-auto w-full max-w-[1536px] px-4 sm:px-6 lg:px-8 xl:px-10">
+          <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8">
+            <div className="max-w-3xl space-y-2">
+              <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-none bg-white/10 border border-white/20 text-[10px] font-mono text-white/90">
+                <Sparkles className="size-3 text-sky-300" />
+                <span>BESPOKE COMMISSIONING &bull; NAIROBI OPERATIONS DESK</span>
               </div>
-              <h2 className="text-xl sm:text-2xl font-bold text-foreground tracking-tight">
-                Confidentiality &amp; Rigor Enforced Across Every Report
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-medium tracking-tight text-white">
+                Need a Bespoke Market Study Commissioned?
               </h2>
-              <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-                Stratum combines rigorous field telemetry with legally binding bilateral NDAs and centralized command oversight in Nairobi.
+              <p className="text-xs sm:text-sm text-white/80 leading-relaxed font-normal">
+                Our Nairobi research command designs tailored quantitative and qualitative studies for single or multi-country rollout across Africa, China, and India. Receive preliminary scoping notes within 6 business hours.
               </p>
             </div>
-            <Link
-              href="/how-we-work"
-              className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-md border border-border/80 bg-card hover:bg-muted text-foreground font-semibold text-xs transition-all shrink-0 cursor-pointer"
-            >
-              <span>Inspect 5-Stage Framework</span>
-              <ArrowRight className="size-3.5" />
-            </Link>
-          </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-            <div className="flex items-center gap-3 p-3.5 rounded-lg border border-border/70 bg-card">
-              <ShieldCheck className="size-4 text-emerald-500 shrink-0" />
-              <div>
-                <h4 className="font-bold text-xs text-foreground">Strict Bilateral NDA Protocol</h4>
-                <p className="text-muted-foreground text-[11px]">
-                  All report briefings and Deal Room data protected under binding non-disclosure agreements.
-                </p>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-3 p-3.5 rounded-lg border border-border/70 bg-card">
-              <Clock className="size-4 text-primary shrink-0" />
-              <div>
-                <h4 className="font-bold text-xs text-foreground">Rapid 6-Hour Intake Window</h4>
-                <p className="text-muted-foreground text-[11px]">
-                  A specialized research lead will review your briefing and respond within 6 business hours.
-                </p>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-3 p-3.5 rounded-lg border border-border/70 bg-card">
-              <Building2 className="size-4 text-blue-500 shrink-0" />
-              <div>
-                <h4 className="font-bold text-xs text-foreground">Central Operations Command</h4>
-                <p className="text-muted-foreground text-[11px]">
-                  Headquartered in East Africa (Nairobi), orchestrating regional corridors globally.
-                </p>
-              </div>
+            <div className="flex flex-wrap items-center gap-3 shrink-0">
+              <Link
+                href="/contact?cta=COMMISSION_RESEARCH"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-none bg-white text-[#002B49] font-semibold text-xs uppercase tracking-wider hover:bg-slate-100 transition-colors shadow-xs"
+              >
+                <span>COMMISSION A STUDY</span>
+                <ArrowRight className="size-3.5" />
+              </Link>
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 px-5 py-3 rounded-none border border-white/30 bg-transparent text-white font-semibold text-xs uppercase tracking-wider hover:bg-white/10 transition-colors"
+              >
+                <Phone className="size-3.5" />
+                <span>CALL NAIROBI HQ</span>
+              </Link>
+              <Link
+                href="/solutions"
+                className="inline-flex items-center gap-2 px-5 py-3 rounded-none border border-white/30 bg-transparent text-white font-semibold text-xs uppercase tracking-wider hover:bg-white/10 transition-colors"
+              >
+                <span>EXPLORE SOLUTIONS</span>
+              </Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 5. CUSTOM RESEARCH BRIEFING COMMISSION BANNER */}
-      <section className="py-14 sm:py-18 bg-card border-b border-border/70">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center space-y-5">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-primary/10 border border-primary/20 text-xs font-mono font-bold text-primary">
-            <Sparkles className="size-3" />
-            05 // BESPOKE COMMISSIONING DESK
-          </div>
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight">
-            Need a Bespoke Market Study Commissioned?
-          </h2>
-          <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-            Our Nairobi research command designs tailored quantitative and qualitative studies for single or multi-country rollout across Africa, China, and India. Receive preliminary scoping notes within 6 business hours.
-          </p>
-          <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
-            <Link
-              href="/contact"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-md bg-primary text-primary-foreground font-bold text-xs uppercase tracking-wider shadow-sm hover:bg-primary/90 transition-all cursor-pointer"
-            >
-              <span>Commission Bespoke Study — Talk to Stratum</span>
-              <ArrowRight className="size-3.5" />
-            </Link>
-            <Link
-              href="/solutions"
-              className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-md border border-border/80 bg-background hover:bg-muted text-foreground font-semibold text-xs transition-all"
-            >
-              <span>Explore Solutions Portfolio</span>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Global Comprehensive Footer */}
       <Footer />
-
-      {/* Native Mobile PWA Bottom Bar */}
       <MobilePwaBar />
     </div>
   );

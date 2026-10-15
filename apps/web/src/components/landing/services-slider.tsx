@@ -107,45 +107,45 @@ export function ServicesSlider() {
   ];
 
   return (
-    <section className="py-20 sm:py-28 bg-[#167D3C] text-white relative overflow-hidden">
-      <div className="relative mx-auto w-full max-w-[1536px] px-4 sm:px-6 lg:px-8 xl:px-10 space-y-12">
+    <section className="py-14 sm:py-20 bg-[#167D3C] text-white relative overflow-hidden">
+      <div className="relative mx-auto w-full max-w-[1536px] px-4 sm:px-6 lg:px-8 xl:px-10 space-y-10">
         
         {/* Header Strip with Integrated Controls & Purposeful Button Placement */}
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 border-b border-white/20 pb-8">
-          <div className="space-y-3 max-w-2xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-white/15 border border-white/25 text-xs font-mono font-semibold text-white tracking-wider">
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 border-b border-white/20 pb-6">
+          <div className="space-y-2.5 max-w-2xl">
+            <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-none bg-white/15 border border-white/25 text-xs font-mono font-semibold text-white tracking-wider">
               <span>OUR CORE CAPABILITIES</span>
             </div>
 
-            <h2 className="text-3xl sm:text-4xl lg:text-[40px] font-bold tracking-tight text-white leading-tight">
+            <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-white leading-tight">
               Six Integrated Service Lines
             </h2>
 
-            <p className="text-sm sm:text-base text-white/90 leading-relaxed font-normal">
+            <p className="text-xs sm:text-sm text-white/90 leading-relaxed font-normal">
               From grassroots field surveys to cross-border deal intermediation, navigate through our core advisory practices:
             </p>
           </div>
 
           {/* Right Action: Clean Navigation & Explore Services Link */}
-          <div className="flex flex-wrap items-center gap-4 shrink-0">
+          <div className="flex flex-wrap items-center gap-3 shrink-0">
             <Link
               href="/services"
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-white text-[#167D3C] font-bold text-xs uppercase tracking-wider hover:bg-white/90 transition-all shadow-md active:scale-95 cursor-pointer"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-none bg-white text-[#167D3C] font-semibold text-xs uppercase tracking-wider hover:bg-white/90 transition-all shadow-sm active:scale-95 cursor-pointer"
             >
               <span>Explore All Services</span>
               <ArrowRight className="size-3.5" />
             </Link>
 
             {/* Thin Elegant Slider Navigation Arrows */}
-            <div className="flex items-center gap-2 bg-black/15 border border-white/25 rounded-lg p-1">
+            <div className="flex items-center gap-1.5 bg-black/15 border border-white/25 rounded-none p-1">
               <button
                 type="button"
                 onClick={prevSlide}
-                className="size-9 rounded-md flex items-center justify-center text-white/80 hover:text-white hover:bg-white/15 transition-all cursor-pointer"
+                className="size-8 rounded-none flex items-center justify-center text-white/80 hover:text-white hover:bg-white/15 transition-all cursor-pointer"
                 aria-label="Previous capability"
                 title="Previous service line"
               >
-                <ChevronLeft className="size-5 stroke-[1.5]" />
+                <ChevronLeft className="size-4.5 stroke-[1.5]" />
               </button>
 
               <span className="font-mono text-xs font-bold text-white px-2 select-none">
@@ -155,33 +155,33 @@ export function ServicesSlider() {
               <button
                 type="button"
                 onClick={nextSlide}
-                className="size-9 rounded-md flex items-center justify-center text-white/80 hover:text-white hover:bg-white/15 transition-all cursor-pointer"
+                className="size-8 rounded-none flex items-center justify-center text-white/80 hover:text-white hover:bg-white/15 transition-all cursor-pointer"
                 aria-label="Next capability"
                 title="Next service line"
               >
-                <ChevronRight className="size-5 stroke-[1.5]" />
+                <ChevronRight className="size-4.5 stroke-[1.5]" />
               </button>
             </div>
           </div>
         </div>
 
-        {/* Dynamic 3-Card Carousel Display */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 transition-all duration-300">
+        {/* Dynamic 3-Card Carousel Display: Sharp WordPress Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 transition-all duration-300">
           {visibleCards.map((service) => {
             const Icon = service.icon;
             return (
               <div
                 key={service.number}
-                className="p-7 rounded-2xl bg-[#0F5A2A] border border-white/20 hover:border-white/40 hover:bg-[#0D5226] transition-all space-y-6 flex flex-col justify-between group shadow-lg"
+                className="p-6 sm:p-7 rounded-none bg-[#0F5A2A] border border-white/20 hover:border-white/40 hover:bg-[#0D5226] transition-all space-y-5 flex flex-col justify-between group shadow-sm min-h-[380px]"
               >
                 <div className="space-y-4">
                   {/* Top Bar: Number + Icon */}
                   <div className="flex items-center justify-between">
-                    <span className="font-mono text-xs font-bold px-3 py-1 rounded border bg-white/15 border-white/30 text-white">
+                    <span className="font-mono text-xs font-bold px-2.5 py-1 rounded-none border bg-white/15 border-white/30 text-white">
                       LINE {service.number}
                     </span>
-                    <div className="size-10 rounded-xl bg-white/15 flex items-center justify-center text-white group-hover:scale-105 transition-transform">
-                      <Icon className="size-5 text-emerald-100" />
+                    <div className="size-9 rounded-none bg-white/15 flex items-center justify-center text-white group-hover:scale-105 transition-transform">
+                      <Icon className="size-4.5 text-emerald-100" />
                     </div>
                   </div>
 
@@ -189,48 +189,50 @@ export function ServicesSlider() {
                     <span className="text-[10px] font-mono tracking-wider text-emerald-200/80 uppercase block mb-1">
                       {service.subtitle}
                     </span>
-                    <h3 className="text-xl font-bold text-white group-hover:text-emerald-100 transition-colors leading-snug">
+                    <h3 className="text-lg font-bold text-white group-hover:text-emerald-100 transition-colors leading-snug">
                       {service.title}
                     </h3>
                   </div>
 
-                  <p className="text-xs sm:text-sm text-white/90 leading-relaxed font-normal">
+                  <p className="text-xs text-white/90 leading-relaxed font-normal">
                     {service.description}
                   </p>
 
                   {/* Bullet Highlights */}
-                  <div className="space-y-2 pt-2 border-t border-white/15">
+                  <div className="space-y-1.5 pt-2 border-t border-white/15">
                     {service.deliverables.map((item, i) => (
                       <div key={i} className="flex items-center gap-2 text-xs text-white/85">
-                        <span className="size-1 rounded-full bg-emerald-200" />
+                        <span className="size-1 rounded-none bg-emerald-200" />
                         <span>{item}</span>
                       </div>
                     ))}
                   </div>
                 </div>
 
-                {/* Card Action Link */}
-                <Link
-                  href={service.href}
-                  className="inline-flex items-center gap-2 text-xs font-bold text-white hover:text-emerald-100 pt-4 border-t border-white/15 group-hover:translate-x-1 transition-all"
-                >
-                  <span>Methodology &amp; Deliverables</span>
-                  <ArrowRight className="size-3.5 text-white" />
-                </Link>
+                {/* Dedicated View More Button with Arrow */}
+                <div className="pt-3 border-t border-white/15">
+                  <Link
+                    href={service.href}
+                    className="inline-flex items-center justify-between w-full px-4 py-2.5 rounded-none bg-white text-[#167D3C] hover:bg-emerald-50 font-bold text-xs uppercase tracking-wider transition-all shadow-xs group/btn cursor-pointer"
+                  >
+                    <span>VIEW MORE</span>
+                    <ArrowRight className="size-3.5 text-[#167D3C] transition-transform group-hover/btn:translate-x-1" />
+                  </Link>
+                </div>
               </div>
             );
           })}
         </div>
 
         {/* Slider Indicator Dots Strip */}
-        <div className="flex items-center justify-center gap-2 pt-4">
+        <div className="flex items-center justify-center gap-2 pt-2">
           {SERVICES_DATA.map((_, idx) => (
             <button
               key={idx}
               type="button"
               onClick={() => setStartIndex(idx)}
-              className={`h-1.5 transition-all rounded-full cursor-pointer ${
-                startIndex === idx ? "w-8 bg-white" : "w-2 bg-white/30 hover:bg-white/60"
+              className={`h-1 transition-all rounded-none cursor-pointer ${
+                startIndex === idx ? "w-8 bg-white" : "w-3 bg-white/30 hover:bg-white/60"
               }`}
               aria-label={`Jump to service ${idx + 1}`}
             />

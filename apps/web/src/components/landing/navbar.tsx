@@ -30,6 +30,8 @@ import {
   Network,
   Users2,
   Phone,
+  Vote,
+  Cpu,
 } from "lucide-react";
 import {
   DropdownMenu,
@@ -42,22 +44,21 @@ export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname();
 
-  const isServicesActive = pathname === "/services";
-  const isSolutionsActive = pathname === "/solutions";
-  const isIndustriesActive = pathname === "/industries";
+  const isCompanyActive =
+    pathname === "/about" || pathname === "/why-stratum" || pathname === "/faq" || pathname === "/how-we-work" || pathname === "/careers";
+  const isServicesActive = pathname === "/services" || pathname === "/industries";
+  const isPortfolioActive = pathname === "/portfolio" || pathname === "/solutions";
   const isInsightsActive =
     pathname === "/reports" || pathname === "/insights" || pathname === "/blogs" || pathname === "/research-briefs";
-  const isCompanyActive =
-    pathname === "/about" || pathname === "/why-stratum" || pathname === "/faq";
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/80 bg-background/95 backdrop-blur-xl transition-all shadow-xs">
-      {/* 1. TOP INSTITUTIONAL CONTACT MASTHEAD (Wordpress / Corporate Reference Standard) */}
+      {/* 1. TOP INSTITUTIONAL CONTACT MASTHEAD */}
       <div className="hidden md:block w-full border-b border-border/60 bg-muted/40 py-1.5 text-xs text-muted-foreground">
         <div className="mx-auto flex w-full max-w-[1536px] items-center justify-between px-4 sm:px-6 lg:px-8 xl:px-10">
           <div className="flex items-center gap-3 font-mono text-[11px]">
             <span className="inline-flex items-center gap-1.5 text-primary font-bold">
-              <span className="size-1.5 rounded-full bg-emerald-500 animate-pulse" />
+              <span className="size-1.5 rounded-none bg-emerald-500 animate-pulse" />
               STRATUM RESEARCH LTD
             </span>
             <span className="text-border">|</span>
@@ -72,7 +73,7 @@ export function Navbar() {
               className="hover:text-primary transition-colors flex items-center gap-1 text-foreground font-medium"
             >
               <Phone className="size-3 text-emerald-600 dark:text-emerald-400" />
-              <span>Nairobi HQ: +254 721 154382</span>
+              <span>NAIROBI HQ: +254 721 154382</span>
             </a>
             <span className="text-border hidden sm:inline">•</span>
             <a
@@ -86,294 +87,314 @@ export function Navbar() {
         </div>
       </div>
 
-      {/* 2. MAIN NAVIGATION BAR */}
+      {/* 2. MAIN NAVIGATION BAR: CLEAN, UNCLUTTERED, ALL IN CAPS WITH SUBHEADERS */}
       <div className="mx-auto flex w-full max-w-[1536px] items-center justify-between px-4 py-3 sm:px-6 lg:px-8 xl:px-10">
         {/* Brand Logo on the Left */}
         <Link href="/" className="flex items-center group shrink-0" aria-label="STRATUM Homepage">
           <StratumLogo size="md" />
         </Link>
 
-        {/* Desktop Navigation Links */}
-        <div className="hidden lg:flex items-center justify-end gap-3 xl:gap-5 ml-auto">
-          <nav className="flex items-center gap-0.5 xl:gap-1">
-            {/* 1. About Stratum (Dropdown Menu) */}
+        {/* Desktop Navigation Links — Scaffolded into 5 Elegant Categories in CAPS */}
+        <div className="hidden lg:flex items-center justify-end gap-2 xl:gap-4 ml-auto">
+          <nav className="flex items-center gap-1 xl:gap-2">
+            
+            {/* 1. ABOUT (Dropdown with Scaffolded Subheaders) */}
             <DropdownMenu>
               <DropdownMenuTrigger
                 suppressHydrationWarning
-                className={`group inline-flex items-center gap-1.5 px-3 py-2 rounded-lg text-sm font-semibold tracking-normal transition-all whitespace-nowrap outline-none focus-visible:ring-1 focus-visible:ring-primary ${
+                className={`group inline-flex items-center gap-1.5 px-3 py-2 rounded-none text-xs font-semibold tracking-wider uppercase transition-all whitespace-nowrap outline-none focus-visible:ring-1 focus-visible:ring-primary cursor-pointer ${
                   isCompanyActive
                     ? "text-primary bg-primary/10"
                     : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
                 }`}
               >
-                <span>About</span>
-                <ChevronDown className="size-3.5 text-muted-foreground transition-transform duration-200 group-data-[state=open]:rotate-180" />
+                <span>ABOUT</span>
+                <ChevronDown className="size-3 text-muted-foreground transition-transform duration-200 group-data-[state=open]:rotate-180" />
               </DropdownMenuTrigger>
               <DropdownMenuContent
                 align="start"
                 sideOffset={8}
-                className="w-80 p-2 rounded-2xl bg-card/95 backdrop-blur-xl border border-border/80 shadow-2xl space-y-1 z-50 animate-in fade-in-50 zoom-in-95"
+                className="w-80 p-2 rounded-none bg-card/95 backdrop-blur-xl border border-border/80 shadow-xl space-y-1 z-50 animate-in fade-in-50 zoom-in-95"
               >
-                <DropdownMenuItem asChild className="cursor-pointer p-2.5 rounded-xl focus:bg-muted/80">
-                  <Link href="/about" className="flex items-start gap-3 w-full">
-                    <div className="size-8 rounded-lg bg-primary/10 text-primary flex items-center justify-center shrink-0 mt-0.5">
-                      <Building2 className="size-4" />
-                    </div>
+                <div className="px-3 py-1.5 text-[10px] font-mono font-bold uppercase tracking-wider text-muted-foreground border-b border-border/60">
+                  CORPORATE PROFILE
+                </div>
+
+                <DropdownMenuItem asChild className="cursor-pointer p-2 rounded-none focus:bg-muted/80">
+                  <Link href="/about" className="flex items-start gap-2.5 w-full">
+                    <Building2 className="size-4 text-primary shrink-0 mt-0.5" />
                     <div>
-                      <div className="text-xs font-bold text-foreground">About Stratum</div>
+                      <div className="text-xs font-bold text-foreground uppercase tracking-wide">ABOUT STRATUM</div>
                       <p className="text-[11px] text-muted-foreground leading-snug">
-                        Intelligence that moves business forward across diverse markets.
+                        Company mandate, footprint, and executive background.
                       </p>
                     </div>
                   </Link>
                 </DropdownMenuItem>
 
-                <DropdownMenuItem asChild className="cursor-pointer p-2.5 rounded-xl focus:bg-muted/80">
-                  <Link href="/why-stratum" className="flex items-start gap-3 w-full">
-                    <div className="size-8 rounded-lg bg-amber-50 text-amber-600 dark:bg-amber-950/60 dark:text-amber-400 flex items-center justify-center shrink-0 mt-0.5">
-                      <Shield className="size-4" />
-                    </div>
+                <DropdownMenuItem asChild className="cursor-pointer p-2 rounded-none focus:bg-muted/80">
+                  <Link href="/why-stratum" className="flex items-start gap-2.5 w-full">
+                    <Shield className="size-4 text-amber-600 shrink-0 mt-0.5" />
                     <div>
-                      <div className="text-xs font-bold text-foreground">Why Stratum?</div>
+                      <div className="text-xs font-bold text-foreground uppercase tracking-wide">WHY STRATUM?</div>
                       <p className="text-[11px] text-muted-foreground leading-snug">
-                        Deep market understanding, quality control, and proprietary intelligence.
+                        Ground truth advantage and quality control.
                       </p>
                     </div>
                   </Link>
                 </DropdownMenuItem>
 
-                <DropdownMenuItem asChild className="cursor-pointer p-2.5 rounded-xl focus:bg-muted/80">
-                  <Link href="/faq" className="flex items-start gap-3 w-full">
-                    <div className="size-8 rounded-lg bg-blue-50 text-blue-600 dark:bg-blue-950/60 dark:text-blue-400 flex items-center justify-center shrink-0 mt-0.5">
-                      <HelpCircle className="size-4" />
-                    </div>
+                <DropdownMenuItem asChild className="cursor-pointer p-2 rounded-none focus:bg-muted/80">
+                  <Link href="/how-we-work" className="flex items-start gap-2.5 w-full">
+                    <Compass className="size-4 text-emerald-600 shrink-0 mt-0.5" />
                     <div>
-                      <div className="text-xs font-bold text-foreground">FAQs</div>
+                      <div className="text-xs font-bold text-foreground uppercase tracking-wide">HOW WE WORK</div>
                       <p className="text-[11px] text-muted-foreground leading-snug">
-                        Methodology, sampling, NDAs, turnaround, and deliverables.
+                        5-stage research and intermediation lifecycle.
                       </p>
                     </div>
                   </Link>
                 </DropdownMenuItem>
+
+                <div className="px-3 pt-2 pb-1 text-[10px] font-mono font-bold uppercase tracking-wider text-muted-foreground border-t border-border/60">
+                  INSTITUTIONAL
+                </div>
+
+                <div className="grid grid-cols-2 gap-1">
+                  <DropdownMenuItem asChild className="cursor-pointer p-1.5 rounded-none focus:bg-muted/80">
+                    <Link href="/careers" className="text-xs font-bold text-foreground hover:text-primary uppercase tracking-wide">
+                      CAREERS
+                    </Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild className="cursor-pointer p-1.5 rounded-none focus:bg-muted/80">
+                    <Link href="/faq" className="text-xs font-bold text-foreground hover:text-primary uppercase tracking-wide">
+                      FAQS
+                    </Link>
+                  </DropdownMenuItem>
+                </div>
               </DropdownMenuContent>
             </DropdownMenu>
 
-            {/* 2. Solutions (Dedicated Page) */}
-            <Link
-              href="/solutions"
-              className={`px-3 py-2 rounded-lg text-sm font-semibold tracking-normal transition-all whitespace-nowrap ${
-                isSolutionsActive
-                  ? "text-primary bg-primary/10"
-                  : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
-              }`}
-            >
-              Solutions
-            </Link>
-
-            {/* 3. Services (Dropdown Menu with the 6 Service Lines & Intelligence Suite) */}
+            {/* 2. SERVICES (Dropdown with Scaffolded Subheaders) */}
             <DropdownMenu>
               <DropdownMenuTrigger
                 suppressHydrationWarning
-                className={`group inline-flex items-center gap-1.5 px-3 py-2 rounded-lg text-sm font-semibold tracking-normal transition-all whitespace-nowrap outline-none focus-visible:ring-1 focus-visible:ring-primary ${
+                className={`group inline-flex items-center gap-1.5 px-3 py-2 rounded-none text-xs font-semibold tracking-wider uppercase transition-all whitespace-nowrap outline-none focus-visible:ring-1 focus-visible:ring-primary cursor-pointer ${
                   isServicesActive
                     ? "text-primary bg-primary/10"
                     : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
                 }`}
               >
-                <span>Services</span>
-                <ChevronDown className="size-3.5 text-muted-foreground transition-transform duration-200 group-data-[state=open]:rotate-180" />
+                <span>SERVICES</span>
+                <ChevronDown className="size-3 text-muted-foreground transition-transform duration-200 group-data-[state=open]:rotate-180" />
               </DropdownMenuTrigger>
               <DropdownMenuContent
                 align="start"
                 sideOffset={8}
-                className="w-96 p-2 rounded-2xl bg-card/95 backdrop-blur-xl border border-border/80 shadow-2xl space-y-1 z-50 animate-in fade-in-50 zoom-in-95"
+                className="w-96 p-2 rounded-none bg-card/95 backdrop-blur-xl border border-border/80 shadow-xl space-y-1 z-50 animate-in fade-in-50 zoom-in-95"
               >
                 <div className="px-3 py-1.5 text-[10px] font-mono font-bold uppercase tracking-wider text-muted-foreground border-b border-border/60 flex items-center justify-between">
-                  <span>Six Core Capabilities</span>
-                  <Link href="/services" className="text-primary hover:underline lowercase font-sans text-[11px] font-medium">
-                    view all services &rarr;
+                  <span>SIX CORE CAPABILITIES</span>
+                  <Link href="/services" className="text-primary hover:underline text-[10px] font-sans font-semibold uppercase tracking-wider">
+                    ALL SERVICES &rarr;
                   </Link>
                 </div>
 
-                <DropdownMenuItem asChild className="cursor-pointer p-2 rounded-xl focus:bg-muted/80">
-                  <Link href="/services#research" className="flex items-start gap-2.5 w-full">
-                    <span className="text-[10px] font-mono font-bold px-1.5 py-0.5 rounded bg-muted text-foreground mt-0.5">
-                      01
-                    </span>
-                    <div>
-                      <div className="text-xs font-bold text-foreground">Research</div>
-                      <p className="text-[11px] text-muted-foreground leading-snug">
-                        Market research, consumer insights, brand tracking, product testing &amp; field audits.
-                      </p>
-                    </div>
-                  </Link>
-                </DropdownMenuItem>
+                <div className="grid grid-cols-2 gap-1 pt-1">
+                  <DropdownMenuItem asChild className="cursor-pointer p-2 rounded-none focus:bg-muted/80">
+                    <Link href="/services#market-research" className="flex flex-col">
+                      <span className="text-xs font-bold text-foreground uppercase tracking-wide">01. RESEARCH</span>
+                      <span className="text-[10px] text-muted-foreground">Field surveys &amp; retail censuses</span>
+                    </Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild className="cursor-pointer p-2 rounded-none focus:bg-muted/80">
+                    <Link href="/services#business-intelligence" className="flex flex-col">
+                      <span className="text-xs font-bold text-foreground uppercase tracking-wide">02. INTELLIGENCE</span>
+                      <span className="text-[10px] text-muted-foreground">Price &amp; competitor tracking</span>
+                    </Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild className="cursor-pointer p-2 rounded-none focus:bg-muted/80">
+                    <Link href="/services#opportunity-assessment" className="flex flex-col">
+                      <span className="text-xs font-bold text-foreground uppercase tracking-wide">03. OPPORTUNITY</span>
+                      <span className="text-[10px] text-muted-foreground">TAM/SAM/SOM market sizing</span>
+                    </Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild className="cursor-pointer p-2 rounded-none focus:bg-muted/80">
+                    <Link href="/services#intermediation" className="flex flex-col">
+                      <span className="text-xs font-bold text-foreground uppercase tracking-wide">04. INTERMEDIATION</span>
+                      <span className="text-[10px] text-muted-foreground">B2B distributor matching</span>
+                    </Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild className="cursor-pointer p-2 rounded-none focus:bg-muted/80">
+                    <Link href="/services#market-access" className="flex flex-col">
+                      <span className="text-xs font-bold text-foreground uppercase tracking-wide">05. MARKET ACCESS</span>
+                      <span className="text-[10px] text-muted-foreground">Tariffs &amp; route-to-market</span>
+                    </Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild className="cursor-pointer p-2 rounded-none focus:bg-muted/80">
+                    <Link href="/services#digital-market" className="flex flex-col">
+                      <span className="text-xs font-bold text-foreground uppercase tracking-wide">06. DIGITAL MARKET</span>
+                      <span className="text-[10px] text-muted-foreground">E-commerce &amp; deal telemetry</span>
+                    </Link>
+                  </DropdownMenuItem>
+                </div>
 
-                <DropdownMenuItem asChild className="cursor-pointer p-2 rounded-xl focus:bg-muted/80">
-                  <Link href="/services#intelligence" className="flex items-start gap-2.5 w-full">
-                    <span className="text-[10px] font-mono font-bold px-1.5 py-0.5 rounded bg-muted text-foreground mt-0.5">
-                      02
-                    </span>
-                    <div>
-                      <div className="text-xs font-bold text-foreground">Intelligence</div>
-                      <p className="text-[11px] text-muted-foreground leading-snug">
-                        Market analysis, competitor intelligence, opportunity assessment &amp; strategic foresight.
-                      </p>
-                    </div>
+                <div className="px-3 pt-2 pb-1 text-[10px] font-mono font-bold uppercase tracking-wider text-muted-foreground border-t border-border/60 flex items-center justify-between">
+                  <span>SECTOR PRACTICES</span>
+                  <Link href="/industries" className="text-primary hover:underline text-[10px] font-sans font-semibold uppercase tracking-wider">
+                    13+ INDUSTRIES &rarr;
                   </Link>
-                </DropdownMenuItem>
-
-                <DropdownMenuItem asChild className="cursor-pointer p-2 rounded-xl focus:bg-muted/80">
-                  <Link href="/services#opportunity" className="flex items-start gap-2.5 w-full">
-                    <span className="text-[10px] font-mono font-bold px-1.5 py-0.5 rounded bg-muted text-foreground mt-0.5">
-                      03
-                    </span>
-                    <div>
-                      <div className="text-xs font-bold text-foreground">Opportunity</div>
-                      <p className="text-[11px] text-muted-foreground leading-snug">
-                        Investment screening, sector mapping &amp; commercial opportunity identification.
-                      </p>
-                    </div>
-                  </Link>
-                </DropdownMenuItem>
-
-                <DropdownMenuItem asChild className="cursor-pointer p-2 rounded-xl focus:bg-muted/80">
-                  <Link href="/services#intermediation" className="flex items-start gap-2.5 w-full">
-                    <span className="text-[10px] font-mono font-bold px-1.5 py-0.5 rounded bg-muted text-foreground mt-0.5">
-                      04
-                    </span>
-                    <div>
-                      <div className="text-xs font-bold text-foreground">Intermediation</div>
-                      <p className="text-[11px] text-muted-foreground leading-snug">
-                        Connecting businesses, investors, suppliers, distributors &amp; strategic partners.
-                      </p>
-                    </div>
-                  </Link>
-                </DropdownMenuItem>
-
-                <DropdownMenuItem asChild className="cursor-pointer p-2 rounded-xl focus:bg-muted/80">
-                  <Link href="/services#market-access" className="flex items-start gap-2.5 w-full">
-                    <span className="text-[10px] font-mono font-bold px-1.5 py-0.5 rounded bg-muted text-foreground mt-0.5">
-                      05
-                    </span>
-                    <div>
-                      <div className="text-xs font-bold text-foreground">Market Access</div>
-                      <p className="text-[11px] text-muted-foreground leading-snug">
-                        Market-entry support, local partner identification &amp; expansion strategy.
-                      </p>
-                    </div>
-                  </Link>
-                </DropdownMenuItem>
-
-                <DropdownMenuItem asChild className="cursor-pointer p-2 rounded-xl focus:bg-muted/80">
-                  <Link href="/services#digital-market" className="flex items-start gap-2.5 w-full">
-                    <span className="text-[10px] font-mono font-bold px-1.5 py-0.5 rounded bg-muted text-foreground mt-0.5">
-                      06
-                    </span>
-                    <div>
-                      <div className="text-xs font-bold text-foreground">Digital Market</div>
-                      <p className="text-[11px] text-muted-foreground leading-snug">
-                        A dedicated digital platform for telemetry, product commercialisation, and deal rooms.
-                      </p>
-                    </div>
-                  </Link>
-                </DropdownMenuItem>
+                </div>
               </DropdownMenuContent>
             </DropdownMenu>
 
-            {/* 4. Industries (Dedicated Page) */}
-            <Link
-              href="/industries"
-              className={`px-3 py-2 rounded-lg text-sm font-semibold tracking-normal transition-all whitespace-nowrap ${
-                isIndustriesActive
-                  ? "text-primary bg-primary/10"
-                  : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
-              }`}
-            >
-              Industries
-            </Link>
-
-            {/* 5. How We Work */}
-            <Link
-              href="/how-we-work"
-              className={`px-3 py-2 rounded-lg text-sm font-semibold tracking-normal transition-all whitespace-nowrap ${
-                pathname === "/how-we-work"
-                  ? "text-primary bg-primary/10"
-                  : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
-              }`}
-            >
-              How We Work
-            </Link>
-
-            {/* 6. Insights & Reports (Dropdown) */}
+            {/* 3. PORTFOLIO (Dropdown with 4 Pillars & Solutions Subheaders) */}
             <DropdownMenu>
               <DropdownMenuTrigger
                 suppressHydrationWarning
-                className={`group inline-flex items-center gap-1.5 px-3 py-2 rounded-lg text-sm font-semibold tracking-normal transition-all whitespace-nowrap outline-none focus-visible:ring-1 focus-visible:ring-primary ${
+                className={`group inline-flex items-center gap-1.5 px-3 py-2 rounded-none text-xs font-semibold tracking-wider uppercase transition-all whitespace-nowrap outline-none focus-visible:ring-1 focus-visible:ring-primary cursor-pointer ${
+                  isPortfolioActive
+                    ? "text-primary bg-primary/10"
+                    : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
+                }`}
+              >
+                <span>PORTFOLIO</span>
+                <ChevronDown className="size-3 text-muted-foreground transition-transform duration-200 group-data-[state=open]:rotate-180" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent
+                align="start"
+                sideOffset={8}
+                className="w-96 p-2 rounded-none bg-card/95 backdrop-blur-xl border border-border/80 shadow-xl space-y-1 z-50 animate-in fade-in-50 zoom-in-95"
+              >
+                <div className="px-3 py-1.5 text-[10px] font-mono font-bold uppercase tracking-wider text-muted-foreground border-b border-border/60 flex items-center justify-between">
+                  <span>FOUR STRATEGIC PILLARS</span>
+                  <Link href="/portfolio" className="text-primary hover:underline text-[10px] font-sans font-semibold uppercase tracking-wider">
+                    VIEW PORTFOLIO &rarr;
+                  </Link>
+                </div>
+
+                <DropdownMenuItem asChild className="cursor-pointer p-2 rounded-none focus:bg-muted/80">
+                  <Link href="/portfolio#stratum-polls" className="flex items-start gap-2.5 w-full">
+                    <Vote className="size-4 text-[#002B49] dark:text-sky-400 shrink-0 mt-0.5" />
+                    <div>
+                      <div className="text-xs font-bold text-foreground uppercase tracking-wide">STRATUM POLLS</div>
+                      <p className="text-[11px] text-muted-foreground leading-snug">
+                        Opinion polling &amp; first-hand consumer feedback telemetry.
+                      </p>
+                    </div>
+                  </Link>
+                </DropdownMenuItem>
+
+                <DropdownMenuItem asChild className="cursor-pointer p-2 rounded-none focus:bg-muted/80">
+                  <Link href="/portfolio#stratum-consulting" className="flex items-start gap-2.5 w-full">
+                    <TrendingUp className="size-4 text-[#167D3C] shrink-0 mt-0.5" />
+                    <div>
+                      <div className="text-xs font-bold text-foreground uppercase tracking-wide">STRATUM CONSULTING</div>
+                      <p className="text-[11px] text-muted-foreground leading-snug">
+                        Brand growth strategies and sustainable B2B intermediation.
+                      </p>
+                    </div>
+                  </Link>
+                </DropdownMenuItem>
+
+                <DropdownMenuItem asChild className="cursor-pointer p-2 rounded-none focus:bg-muted/80">
+                  <Link href="/portfolio#stratum-digital" className="flex items-start gap-2.5 w-full">
+                    <Globe2 className="size-4 text-[#004B87] shrink-0 mt-0.5" />
+                    <div>
+                      <div className="text-xs font-bold text-foreground uppercase tracking-wide">STRATUM DIGITAL</div>
+                      <p className="text-[11px] text-muted-foreground leading-snug">
+                        Online marketplace for global auctions of products and services.
+                      </p>
+                    </div>
+                  </Link>
+                </DropdownMenuItem>
+
+                <DropdownMenuItem asChild className="cursor-pointer p-2 rounded-none focus:bg-muted/80">
+                  <Link href="/portfolio#stratum-ai" className="flex items-start gap-2.5 w-full">
+                    <Cpu className="size-4 text-indigo-500 shrink-0 mt-0.5" />
+                    <div>
+                      <div className="text-xs font-bold text-foreground uppercase tracking-wide">STRATUM A.I.</div>
+                      <p className="text-[11px] text-muted-foreground leading-snug">
+                        Artificial intelligence data models &amp; workplace productivity training.
+                      </p>
+                    </div>
+                  </Link>
+                </DropdownMenuItem>
+
+                <div className="px-3 pt-2 pb-1 text-[10px] font-mono font-bold uppercase tracking-wider text-muted-foreground border-t border-border/60 flex items-center justify-between">
+                  <span>TAILORED SOLUTIONS</span>
+                  <Link href="/solutions" className="text-primary hover:underline text-[10px] font-sans font-semibold uppercase tracking-wider">
+                    ALL SOLUTIONS &rarr;
+                  </Link>
+                </div>
+              </DropdownMenuContent>
+            </DropdownMenu>
+
+            {/* 4. INSIGHTS (Dropdown with Subheaders) */}
+            <DropdownMenu>
+              <DropdownMenuTrigger
+                suppressHydrationWarning
+                className={`group inline-flex items-center gap-1.5 px-3 py-2 rounded-none text-xs font-semibold tracking-wider uppercase transition-all whitespace-nowrap outline-none focus-visible:ring-1 focus-visible:ring-primary cursor-pointer ${
                   isInsightsActive
                     ? "text-primary bg-primary/10"
                     : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
                 }`}
               >
-                <span>Insights</span>
-                <ChevronDown className="size-3.5 text-muted-foreground transition-transform duration-200 group-data-[state=open]:rotate-180" />
+                <span>INSIGHTS</span>
+                <ChevronDown className="size-3 text-muted-foreground transition-transform duration-200 group-data-[state=open]:rotate-180" />
               </DropdownMenuTrigger>
               <DropdownMenuContent
                 align="start"
                 sideOffset={8}
-                className="w-80 p-2 rounded-2xl bg-card/95 backdrop-blur-xl border border-border/80 shadow-2xl space-y-1 z-50 animate-in fade-in-50 zoom-in-95"
+                className="w-80 p-2 rounded-none bg-card/95 backdrop-blur-xl border border-border/80 shadow-xl space-y-1 z-50 animate-in fade-in-50 zoom-in-95"
               >
-                <DropdownMenuItem asChild className="cursor-pointer p-2 rounded-xl focus:bg-muted/80">
-                  <Link href="/insights" className="flex items-start gap-3 w-full">
-                    <div className="size-8 rounded-lg bg-emerald-50 text-emerald-600 dark:bg-emerald-950/60 dark:text-emerald-400 flex items-center justify-center shrink-0 mt-0.5">
-                      <BarChart3 className="size-4" />
-                    </div>
+                <div className="px-3 py-1.5 text-[10px] font-mono font-bold uppercase tracking-wider text-muted-foreground border-b border-border/60">
+                  PUBLICATIONS &amp; RESEARCH
+                </div>
+
+                <DropdownMenuItem asChild className="cursor-pointer p-2 rounded-none focus:bg-muted/80">
+                  <Link href="/insights" className="flex items-start gap-2.5 w-full">
+                    <BarChart3 className="size-4 text-emerald-600 shrink-0 mt-0.5" />
                     <div>
-                      <div className="text-xs font-bold text-foreground">Insights Hub</div>
+                      <div className="text-xs font-bold text-foreground uppercase tracking-wide">INSIGHTS HUB</div>
                       <p className="text-[11px] text-muted-foreground leading-snug">
-                        Research reports, market insights, and consumer pulse telemetry.
+                        Market analysis and macro consumer trends.
                       </p>
                     </div>
                   </Link>
                 </DropdownMenuItem>
 
-                <DropdownMenuItem asChild className="cursor-pointer p-2 rounded-xl focus:bg-muted/80">
-                  <Link href="/research-briefs" className="flex items-start gap-3 w-full">
-                    <div className="size-8 rounded-lg bg-blue-50 text-blue-600 dark:bg-blue-950/60 dark:text-blue-400 flex items-center justify-center shrink-0 mt-0.5">
-                      <FileText className="size-4" />
-                    </div>
+                <DropdownMenuItem asChild className="cursor-pointer p-2 rounded-none focus:bg-muted/80">
+                  <Link href="/research-briefs" className="flex items-start gap-2.5 w-full">
+                    <FileText className="size-4 text-blue-600 shrink-0 mt-0.5" />
                     <div>
-                      <div className="text-xs font-bold text-foreground">Sample Research Briefs</div>
+                      <div className="text-xs font-bold text-foreground uppercase tracking-wide">SAMPLE RESEARCH BRIEFS</div>
                       <p className="text-[11px] text-muted-foreground leading-snug">
-                        Clearly labelled illustrative scoping charters and study designs.
+                        Scoping charters and illustrative study designs.
                       </p>
                     </div>
                   </Link>
                 </DropdownMenuItem>
 
-                <DropdownMenuItem asChild className="cursor-pointer p-2 rounded-xl focus:bg-muted/80">
-                  <Link href="/reports" className="flex items-start gap-3 w-full">
-                    <div className="size-8 rounded-lg bg-amber-50 text-amber-600 dark:bg-amber-950/60 dark:text-amber-400 flex items-center justify-center shrink-0 mt-0.5">
-                      <Database className="size-4" />
-                    </div>
+                <DropdownMenuItem asChild className="cursor-pointer p-2 rounded-none focus:bg-muted/80">
+                  <Link href="/reports" className="flex items-start gap-2.5 w-full">
+                    <Database className="size-4 text-amber-600 shrink-0 mt-0.5" />
                     <div>
-                      <div className="text-xs font-bold text-foreground">Research Reports</div>
+                      <div className="text-xs font-bold text-foreground uppercase tracking-wide">CATEGORY REPORTS</div>
                       <p className="text-[11px] text-muted-foreground leading-snug">
-                        Deep-dive category studies across key emerging markets.
+                        Deep-dive published category benchmarks.
                       </p>
                     </div>
                   </Link>
                 </DropdownMenuItem>
 
-                <DropdownMenuItem asChild className="cursor-pointer p-2 rounded-xl focus:bg-muted/80">
-                  <Link href="/blogs" className="flex items-start gap-3 w-full">
-                    <div className="size-8 rounded-lg bg-purple-50 text-purple-600 dark:bg-purple-950/60 dark:text-purple-400 flex items-center justify-center shrink-0 mt-0.5">
-                      <BookOpen className="size-4" />
-                    </div>
+                <DropdownMenuItem asChild className="cursor-pointer p-2 rounded-none focus:bg-muted/80">
+                  <Link href="/blogs" className="flex items-start gap-2.5 w-full">
+                    <BookOpen className="size-4 text-purple-600 shrink-0 mt-0.5" />
                     <div>
-                      <div className="text-xs font-bold text-foreground">Stratum Perspectives</div>
+                      <div className="text-xs font-bold text-foreground uppercase tracking-wide">STRATUM PERSPECTIVES</div>
                       <p className="text-[11px] text-muted-foreground leading-snug">
-                        Articles exploring markets, brands, and consumer dynamics.
+                        Essays on African retail and business corridors.
                       </p>
                     </div>
                   </Link>
@@ -381,38 +402,26 @@ export function Navbar() {
               </DropdownMenuContent>
             </DropdownMenu>
 
-            {/* 7. Careers */}
-            <Link
-              href="/careers"
-              className={`px-3 py-2 rounded-lg text-sm font-semibold tracking-normal transition-all whitespace-nowrap ${
-                pathname === "/careers"
-                  ? "text-primary bg-primary/10"
-                  : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
-              }`}
-            >
-              Careers
-            </Link>
-
-            {/* 8. Contact */}
+            {/* 5. CONTACT (Direct Link in CAPS) */}
             <Link
               href="/contact"
-              className={`px-3 py-2 rounded-lg text-sm font-semibold tracking-normal transition-all whitespace-nowrap ${
+              className={`px-3 py-2 rounded-none text-xs font-semibold tracking-wider uppercase transition-all whitespace-nowrap ${
                 pathname === "/contact"
                   ? "text-primary bg-primary/10"
                   : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
               }`}
             >
-              Contact
+              CONTACT
             </Link>
           </nav>
 
-          {/* Primary Action Button (Wordpress Corporate Standard) */}
-          <div className="flex items-center gap-2">
+          {/* Primary Action Button in CAPS */}
+          <div className="flex items-center gap-2 pl-2">
             <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-primary text-primary-foreground font-bold text-xs uppercase tracking-wider hover:bg-primary/90 transition-all shadow-xs group"
+              href="/contact?cta=COMMISSION_RESEARCH"
+              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-none bg-primary text-primary-foreground font-semibold text-xs uppercase tracking-wider hover:bg-primary/90 transition-all shadow-xs group"
             >
-              <span>Talk to Stratum</span>
+              <span>COMMISSION A STUDY</span>
               <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-0.5" />
             </Link>
           </div>
@@ -421,15 +430,15 @@ export function Navbar() {
         {/* Mobile Header Buttons */}
         <div className="flex items-center gap-2 lg:hidden">
           <Link
-            href="/contact"
-            className="px-3 py-1.5 rounded-lg bg-primary text-primary-foreground font-bold text-xs"
+            href="/contact?cta=COMMISSION_RESEARCH"
+            className="px-3 py-2 rounded-none bg-primary text-primary-foreground font-semibold text-[11px] uppercase tracking-wider"
           >
-            Talk to Stratum
+            COMMISSION STUDY
           </Link>
           <button
             type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-2 rounded-lg border border-border text-foreground hover:bg-muted"
+            className="p-2 rounded-none border border-border text-foreground hover:bg-muted cursor-pointer"
             aria-label="Toggle Menu"
           >
             {mobileMenuOpen ? <X className="size-5" /> : <Menu className="size-5" />}
@@ -437,115 +446,140 @@ export function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Drawer */}
+      {/* Mobile Drawer (Clean, Structured in CAPS with Subheaders) */}
       {mobileMenuOpen && (
         <div className="lg:hidden border-t border-border bg-card p-4 space-y-4 animate-in slide-in-from-top-2 max-h-[85vh] overflow-y-auto">
           {/* Mobile Hotline strip */}
-          <div className="p-2.5 rounded-lg bg-muted/60 text-xs font-mono flex flex-col gap-1">
+          <div className="p-2.5 rounded-none bg-muted/60 text-xs font-mono flex flex-col gap-1">
             <div className="flex items-center justify-between">
-              <span className="text-primary font-bold">Nairobi Executive Desk:</span>
+              <span className="text-primary font-bold">NAIROBI HQ:</span>
               <a href="tel:+254721154382" className="text-foreground font-bold hover:underline">
                 +254 721 154382
               </a>
             </div>
             <div className="flex items-center justify-between text-[11px] text-muted-foreground">
-              <span>Official Inquiries:</span>
+              <span>OFFICIAL INQUIRIES:</span>
               <a href="mailto:info@stratumresearchltd.com" className="text-primary hover:underline">
                 info@stratumresearchltd.com
               </a>
             </div>
           </div>
 
-          <nav className="flex flex-col space-y-1">
-            <Link
-              href="/about"
-              onClick={() => setMobileMenuOpen(false)}
-              className="px-3.5 py-2.5 rounded-lg text-sm font-semibold text-foreground hover:bg-muted"
-            >
-              About Stratum
-            </Link>
-            <Link
-              href="/solutions"
-              onClick={() => setMobileMenuOpen(false)}
-              className="px-3.5 py-2.5 rounded-lg text-sm font-semibold text-foreground hover:bg-muted"
-            >
-              Our Solutions
-            </Link>
-            <Link
-              href="/services"
-              onClick={() => setMobileMenuOpen(false)}
-              className="px-3.5 py-2.5 rounded-lg text-sm font-semibold text-foreground hover:bg-muted"
-            >
-              6 Core Service Lines
-            </Link>
-            <Link
-              href="/industries"
-              onClick={() => setMobileMenuOpen(false)}
-              className="px-3.5 py-2.5 rounded-lg text-sm font-semibold text-foreground hover:bg-muted"
-            >
-              Industries We Serve
-            </Link>
-            <Link
-              href="/how-we-work"
-              onClick={() => setMobileMenuOpen(false)}
-              className="px-3.5 py-2.5 rounded-lg text-sm font-semibold text-foreground hover:bg-muted"
-            >
-              How We Work (5 Stages)
-            </Link>
-            <Link
-              href="/why-stratum"
-              onClick={() => setMobileMenuOpen(false)}
-              className="px-3.5 py-2.5 rounded-lg text-sm font-semibold text-foreground hover:bg-muted"
-            >
-              Why Stratum?
-            </Link>
-            <Link
-              href="/insights"
-              onClick={() => setMobileMenuOpen(false)}
-              className="px-3.5 py-2.5 rounded-lg text-sm font-semibold text-foreground hover:bg-muted"
-            >
-              Insights &amp; Reports
-            </Link>
-            <Link
-              href="/research-briefs"
-              onClick={() => setMobileMenuOpen(false)}
-              className="px-3.5 py-2.5 rounded-lg text-sm font-semibold text-foreground hover:bg-muted"
-            >
-              Sample Research Briefs
-            </Link>
-            <Link
-              href="/careers"
-              onClick={() => setMobileMenuOpen(false)}
-              className="px-3.5 py-2.5 rounded-lg text-sm font-semibold text-foreground hover:bg-muted"
-            >
-              Careers &amp; Life at Stratum
-            </Link>
-            <Link
-              href="/faq"
-              onClick={() => setMobileMenuOpen(false)}
-              className="px-3.5 py-2.5 rounded-lg text-sm font-semibold text-foreground hover:bg-muted"
-            >
-              Frequently Asked Questions (FAQ)
-            </Link>
-            <Link
-              href="/contact"
-              onClick={() => setMobileMenuOpen(false)}
-              className="px-3.5 py-2.5 rounded-lg text-sm font-semibold text-foreground hover:bg-muted"
-            >
-              Contact Us
-            </Link>
-          </nav>
+          <nav className="flex flex-col space-y-3">
+            {/* Section 1: Core Navigation in CAPS */}
+            <div className="space-y-1">
+              <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-muted-foreground px-2">
+                MAIN NAVIGATION
+              </span>
+              <div className="grid grid-cols-2 gap-1 pt-1">
+                <Link
+                  href="/about"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="px-3 py-2 rounded-none text-xs font-bold uppercase tracking-wider text-foreground hover:bg-muted"
+                >
+                  ABOUT
+                </Link>
+                <Link
+                  href="/services"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="px-3 py-2 rounded-none text-xs font-bold uppercase tracking-wider text-foreground hover:bg-muted"
+                >
+                  SERVICES
+                </Link>
+                <Link
+                  href="/portfolio"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="px-3 py-2 rounded-none text-xs font-bold uppercase tracking-wider text-primary hover:bg-muted"
+                >
+                  PORTFOLIO
+                </Link>
+                <Link
+                  href="/solutions"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="px-3 py-2 rounded-none text-xs font-bold uppercase tracking-wider text-foreground hover:bg-muted"
+                >
+                  SOLUTIONS
+                </Link>
+                <Link
+                  href="/industries"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="px-3 py-2 rounded-none text-xs font-bold uppercase tracking-wider text-foreground hover:bg-muted"
+                >
+                  INDUSTRIES
+                </Link>
+                <Link
+                  href="/insights"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="px-3 py-2 rounded-none text-xs font-bold uppercase tracking-wider text-foreground hover:bg-muted"
+                >
+                  INSIGHTS
+                </Link>
+                <Link
+                  href="/research-briefs"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="px-3 py-2 rounded-none text-xs font-bold uppercase tracking-wider text-foreground hover:bg-muted"
+                >
+                  BRIEFS
+                </Link>
+                <Link
+                  href="/contact"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="px-3 py-2 rounded-none text-xs font-bold uppercase tracking-wider text-foreground hover:bg-muted"
+                >
+                  CONTACT
+                </Link>
+              </div>
+            </div>
 
-          <div className="pt-2 border-t border-border/60">
-            <Link
-              href="/contact"
-              onClick={() => setMobileMenuOpen(false)}
-              className="w-full inline-flex items-center justify-center gap-2 px-4 py-3 rounded-lg bg-primary text-primary-foreground font-bold text-sm uppercase tracking-wider"
-            >
-              <span>Talk to Stratum</span>
-              <ArrowRight className="size-3.5" />
-            </Link>
-          </div>
+            {/* Section 2: 4 Strategic Pillars in CAPS */}
+            <div className="space-y-1 pt-2 border-t border-border">
+              <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-primary px-2">
+                FOUR STRATEGIC PILLARS
+              </span>
+              <div className="space-y-0.5 pt-1">
+                <Link
+                  href="/portfolio#stratum-polls"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="px-3 py-1.5 rounded-none text-xs font-semibold text-foreground hover:bg-muted block"
+                >
+                  1. STRATUM POLLS
+                </Link>
+                <Link
+                  href="/portfolio#stratum-consulting"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="px-3 py-1.5 rounded-none text-xs font-semibold text-foreground hover:bg-muted block"
+                >
+                  2. STRATUM CONSULTING
+                </Link>
+                <Link
+                  href="/portfolio#stratum-digital"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="px-3 py-1.5 rounded-none text-xs font-semibold text-foreground hover:bg-muted block"
+                >
+                  3. STRATUM DIGITAL
+                </Link>
+                <Link
+                  href="/portfolio#stratum-ai"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="px-3 py-1.5 rounded-none text-xs font-semibold text-foreground hover:bg-muted block"
+                >
+                  4. STRATUM A.I.
+                </Link>
+              </div>
+            </div>
+
+            {/* Bottom Action in CAPS */}
+            <div className="pt-2">
+              <Link
+                href="/contact?cta=COMMISSION_RESEARCH"
+                onClick={() => setMobileMenuOpen(false)}
+                className="w-full flex items-center justify-center gap-2 py-3 rounded-none bg-primary text-primary-foreground font-semibold text-xs uppercase tracking-wider shadow-sm"
+              >
+                <span>COMMISSION A STUDY</span>
+                <ArrowRight className="size-3.5" />
+              </Link>
+            </div>
+          </nav>
         </div>
       )}
     </header>

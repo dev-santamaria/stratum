@@ -86,8 +86,14 @@ export function Footer() {
                 </Link>
               </li>
               <li className="pt-2 border-t border-border/60">
+                <Link href="/portfolio" className="font-semibold text-foreground hover:text-primary transition-colors flex items-center justify-between">
+                  <span>Strategic Portfolio (4 Pillars)</span>
+                  <ArrowRight className="size-3 text-primary" />
+                </Link>
+              </li>
+              <li>
                 <Link href="/solutions" className="font-semibold text-foreground hover:text-primary transition-colors flex items-center justify-between">
-                  <span>Explore Solutions</span>
+                  <span>Tailored Solutions</span>
                   <ArrowRight className="size-3 text-primary" />
                 </Link>
               </li>

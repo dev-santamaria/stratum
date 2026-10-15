@@ -8,18 +8,13 @@ import { MobilePwaBar } from "@/components/navigation/mobile-pwa-bar";
 import {
   HelpCircle,
   ShieldCheck,
-  Lock,
   ArrowRight,
   PhoneCall,
   MessageSquare,
-  Compass,
-  TrendingUp,
-  Handshake,
   Search,
   CheckCircle2,
   ChevronDown,
   Building2,
-  Layers,
   FileText,
 } from "lucide-react";
 
@@ -104,11 +99,11 @@ const FAQ_DATA: FaqItem[] = [
 ];
 
 const CATEGORIES = [
-  { id: "all", label: "All Questions" },
-  { id: "scoping", label: "Intake & Scoping" },
-  { id: "research", label: "Fieldwork & Rigor" },
-  { id: "nda", label: "Confidentiality & NDAs" },
-  { id: "intermediation", label: "Intermediation & Partnerships" },
+  { id: "all", label: "ALL QUESTIONS" },
+  { id: "scoping", label: "INTAKE & SCOPING" },
+  { id: "research", label: "FIELDWORK & RIGOR" },
+  { id: "nda", label: "CONFIDENTIALITY & NDAS" },
+  { id: "intermediation", label: "INTERMEDIATION & PARTNERSHIPS" },
 ];
 
 export default function FaqPage() {
@@ -135,34 +130,34 @@ export default function FaqPage() {
       <Navbar />
 
       {/* 1. HERO HEADER */}
-      <section className="relative pt-12 pb-14 sm:pt-16 sm:pb-20 border-b border-border/70 bg-background overflow-hidden">
+      <section className="relative pt-10 pb-12 sm:pt-14 sm:pb-16 border-b border-border/80 bg-background overflow-hidden">
         <div className="mx-auto w-full max-w-[1536px] px-4 sm:px-6 lg:px-8 xl:px-10">
           <div className="max-w-4xl space-y-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md border border-border/80 bg-muted/40 text-xs font-mono font-semibold text-muted-foreground">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-none border border-border/80 bg-muted/40 text-xs font-mono font-semibold text-muted-foreground shadow-2xs">
               <span className="text-primary font-bold">FREQUENTLY ASKED QUESTIONS</span>
               <span className="text-border">•</span>
               <span className="text-foreground">GOVERNANCE &amp; METHODOLOGY</span>
             </div>
 
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-foreground tracking-tight leading-[1.15]">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-medium text-foreground tracking-tight leading-[1.2]">
               Everything You Need to Know About Engaging Stratum
             </h1>
 
-            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed max-w-3xl font-normal">
+            <p className="text-xs sm:text-sm lg:text-base text-muted-foreground leading-relaxed max-w-3xl font-normal">
               Clear answers regarding our intake process, empirical research standards, bilateral NDAs, business intermediation protocols, and project deliverables from our Nairobi headquarters.
             </p>
 
             <div className="flex flex-wrap items-center gap-3 pt-2">
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-primary text-primary-foreground font-bold text-xs uppercase tracking-wider shadow-sm hover:bg-primary/90 transition-all"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-none bg-primary text-primary-foreground font-bold text-xs uppercase tracking-wider shadow-sm hover:bg-primary/90 transition-all"
               >
-                <span>Submit an Enquiry Brief</span>
+                <span>SUBMIT ENQUIRY BRIEF</span>
                 <ArrowRight className="size-3.5" />
               </Link>
               <a
                 href="tel:+254721154382"
-                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg border border-border/80 bg-card hover:bg-muted text-foreground text-xs font-semibold transition-all"
+                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-none border border-border/80 bg-card hover:bg-muted text-foreground text-xs font-semibold uppercase tracking-wider transition-all"
               >
                 <PhoneCall className="size-3.5 text-primary" />
                 <span>+254 721 154382</span>
@@ -171,10 +166,10 @@ export default function FaqPage() {
                 href="https://wa.me/254721154382"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg border border-emerald-600/40 bg-emerald-50/50 dark:bg-emerald-950/20 text-emerald-700 dark:text-emerald-400 text-xs font-semibold hover:bg-emerald-100/50 transition-all"
+                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-none border border-emerald-600/40 bg-emerald-50/50 dark:bg-emerald-950/20 text-emerald-700 dark:text-emerald-400 text-xs font-semibold uppercase tracking-wider hover:bg-emerald-100/50 transition-all"
               >
                 <MessageSquare className="size-3.5 text-emerald-600 dark:text-emerald-400" />
-                <span>WhatsApp Desk</span>
+                <span>WHATSAPP DESK</span>
               </a>
             </div>
           </div>
@@ -182,7 +177,7 @@ export default function FaqPage() {
       </section>
 
       {/* 2. CATEGORY FILTER & SEARCH BAR */}
-      <section className="py-6 border-b border-border/70 bg-muted/15">
+      <section className="py-6 border-b border-border/80 bg-muted/15">
         <div className="mx-auto w-full max-w-[1536px] px-4 sm:px-6 lg:px-8 xl:px-10">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             {/* Category tabs */}
@@ -192,10 +187,10 @@ export default function FaqPage() {
                   key={cat.id}
                   type="button"
                   onClick={() => setActiveCategory(cat.id)}
-                  className={`px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer border ${
+                  className={`px-3.5 py-1.5 rounded-none text-xs font-semibold uppercase tracking-wider transition-all cursor-pointer border ${
                     activeCategory === cat.id
                       ? "bg-primary text-primary-foreground border-primary shadow-xs"
-                      : "bg-background text-muted-foreground border-border/70 hover:bg-muted hover:text-foreground"
+                      : "bg-background text-muted-foreground border-border/80 hover:bg-muted hover:text-foreground"
                   }`}
                 >
                   {cat.label}
@@ -204,14 +199,14 @@ export default function FaqPage() {
             </div>
 
             {/* Search Input */}
-            <div className="relative w-full md:w-72">
+            <div className="relative w-full md:w-80">
               <Search className="absolute left-3 top-2.5 size-4 text-muted-foreground pointer-events-none" />
               <input
                 type="text"
-                placeholder="Search questions..."
+                placeholder="Search questions or keywords..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-9 pr-3 py-1.5 rounded-lg border border-border/80 bg-background text-xs text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary"
+                className="w-full pl-9 pr-3 py-1.5 rounded-none border border-border/80 bg-background text-xs text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary"
               />
             </div>
           </div>
@@ -219,10 +214,10 @@ export default function FaqPage() {
       </section>
 
       {/* 3. FAQ ACCORDION GRID */}
-      <section className="py-12 sm:py-16 border-b border-border/70 bg-background">
+      <section className="py-12 sm:py-16 border-b border-border/80 bg-background">
         <div className="mx-auto w-full max-w-[1536px] px-4 sm:px-6 lg:px-8 xl:px-10">
           {filteredFaqs.length === 0 ? (
-            <div className="p-12 text-center space-y-3 bg-muted/20 border border-border/70 rounded-2xl max-w-xl mx-auto">
+            <div className="p-12 text-center space-y-3 bg-muted/20 border border-border/80 rounded-none max-w-xl mx-auto">
               <HelpCircle className="size-8 text-muted-foreground mx-auto" />
               <h3 className="text-base font-bold text-foreground">No questions found</h3>
               <p className="text-xs text-muted-foreground">
@@ -234,9 +229,9 @@ export default function FaqPage() {
                   setSearchQuery("");
                   setActiveCategory("all");
                 }}
-                className="px-4 py-2 rounded-lg bg-primary text-primary-foreground text-xs font-semibold"
+                className="px-4 py-2 rounded-none bg-primary text-primary-foreground text-xs font-bold uppercase tracking-wider"
               >
-                Clear Search
+                CLEAR SEARCH
               </button>
             </div>
           ) : (
@@ -246,10 +241,10 @@ export default function FaqPage() {
                 return (
                   <div
                     key={faq.question}
-                    className={`rounded-2xl border transition-all ${
+                    className={`rounded-none border transition-all ${
                       isOpen
-                        ? "border-primary bg-primary/5 ring-1 ring-primary/40 shadow-xs"
-                        : "border-border/80 bg-card hover:border-primary/40 shadow-2xs"
+                        ? "border-primary bg-primary/5 shadow-xs"
+                        : "border-border/80 bg-card hover:border-primary/50 shadow-2xs"
                     }`}
                   >
                     <button
@@ -258,7 +253,7 @@ export default function FaqPage() {
                       className="w-full p-5 text-left flex items-start justify-between gap-4 cursor-pointer"
                     >
                       <div className="space-y-1.5">
-                        <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-muted text-primary border border-border/60">
+                        <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded-none bg-muted text-primary border border-border/80 uppercase">
                           {faq.badge}
                         </span>
                         <h3 className="text-sm sm:text-base font-bold text-foreground leading-snug">
@@ -277,7 +272,7 @@ export default function FaqPage() {
                         <p>{faq.answer}</p>
                         <div className="flex items-center gap-2 text-[10px] font-mono text-muted-foreground pt-1">
                           <CheckCircle2 className="size-3 text-emerald-500" />
-                          <span>Standard Stratum Engagement Protocol</span>
+                          <span>STANDARD STRATUM ENGAGEMENT PROTOCOL</span>
                         </div>
                       </div>
                     )}
@@ -290,33 +285,33 @@ export default function FaqPage() {
       </section>
 
       {/* 4. GOVERNANCE & ETHICS ASSURANCE STRIP */}
-      <section className="py-12 border-b border-border/70 bg-muted/15">
+      <section className="py-12 border-b border-border/80 bg-muted/15">
         <div className="mx-auto w-full max-w-[1536px] px-4 sm:px-6 lg:px-8 xl:px-10">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-            <div className="flex items-center gap-3 p-4 rounded-xl border border-border/70 bg-card">
+            <div className="flex items-center gap-3 p-4 rounded-none border border-border/80 bg-card">
               <ShieldCheck className="size-5 text-emerald-500 shrink-0" />
               <div>
-                <h4 className="font-bold text-xs text-foreground">Strict Bilateral NDA Protocol</h4>
+                <h4 className="font-bold text-xs text-foreground uppercase">Strict Bilateral NDA Protocol</h4>
                 <p className="text-muted-foreground text-[11px] leading-relaxed">
                   Every commercial briefing is protected under enforceable non-disclosure covenants.
                 </p>
               </div>
             </div>
 
-            <div className="flex items-center gap-3 p-4 rounded-xl border border-border/70 bg-card">
+            <div className="flex items-center gap-3 p-4 rounded-none border border-border/80 bg-card">
               <FileText className="size-5 text-primary shrink-0" />
               <div>
-                <h4 className="font-bold text-xs text-foreground">ESOMAR &amp; KDPA Aligned</h4>
+                <h4 className="font-bold text-xs text-foreground uppercase">ESOMAR &amp; KDPA Aligned</h4>
                 <p className="text-muted-foreground text-[11px] leading-relaxed">
                   Field research conforms to international market research codes and Kenya data privacy law.
                 </p>
               </div>
             </div>
 
-            <div className="flex items-center gap-3 p-4 rounded-xl border border-border/70 bg-card">
+            <div className="flex items-center gap-3 p-4 rounded-none border border-border/80 bg-card">
               <Building2 className="size-5 text-blue-500 shrink-0" />
               <div>
-                <h4 className="font-bold text-xs text-foreground">Nairobi Headquarters</h4>
+                <h4 className="font-bold text-xs text-foreground uppercase">Nairobi Headquarters</h4>
                 <p className="text-muted-foreground text-[11px] leading-relaxed">
                   Centrally directed from Delta Corner Tower, Westlands, ensuring consistent quality control.
                 </p>
@@ -326,47 +321,42 @@ export default function FaqPage() {
         </div>
       </section>
 
-      {/* 5. DIRECT ENGAGEMENT CALL TO ACTION */}
-      <section className="py-14 sm:py-18 bg-card border-b border-border/70">
-        <div className="mx-auto w-full max-w-[1536px] px-4 sm:px-6 lg:px-8 xl:px-10">
-          <div className="p-8 sm:p-12 rounded-3xl border border-primary/30 bg-primary/5 text-center space-y-6 max-w-4xl mx-auto">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-primary/10 text-primary font-mono text-xs font-bold">
-              START A MANDATE
-            </div>
-
-            <h2 className="text-2xl sm:text-3xl font-serif font-bold text-foreground tracking-tight">
-              Ready to Scope Your Next Research or Intelligence Study?
-            </h2>
-
-            <p className="text-xs sm:text-sm text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              Submit a 5-question intake brief or connect directly with our Nairobi office to discuss commercial requirements, sample sizes, and timelines.
-            </p>
-
-            <div className="pt-2 flex flex-wrap items-center justify-center gap-3">
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground font-bold text-xs uppercase tracking-wider shadow-sm hover:bg-primary/90 transition-all"
-              >
-                <span>Go to Contact &amp; Scoping Form</span>
-                <ArrowRight className="size-3.5" />
-              </Link>
-              <a
-                href="tel:+254721154382"
-                className="inline-flex items-center gap-2 px-5 py-3 rounded-lg border border-border/80 bg-background hover:bg-muted text-foreground text-xs font-semibold transition-all"
-              >
-                <PhoneCall className="size-3.5 text-primary" />
-                <span>Call +254 721 154382</span>
-              </a>
-              <a
-                href="https://wa.me/254721154382"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-5 py-3 rounded-lg border border-emerald-600/40 bg-emerald-50 dark:bg-emerald-950/20 text-emerald-700 dark:text-emerald-400 text-xs font-semibold hover:bg-emerald-100/50 transition-all"
-              >
-                <MessageSquare className="size-3.5 text-emerald-600 dark:text-emerald-400" />
-                <span>WhatsApp Desk</span>
-              </a>
-            </div>
+      {/* 5. SIGNATURE CORPORATE CTA BANNER */}
+      <section className="py-12 sm:py-16 bg-[#002B49] text-white rounded-none border-b border-border/80">
+        <div className="mx-auto w-full max-w-[1536px] px-4 sm:px-6 lg:px-8 xl:px-10 text-center space-y-4 max-w-4xl">
+          <span className="text-xs font-mono font-bold tracking-widest text-[#48cae4] uppercase">
+            COMMISSION A MANDATE
+          </span>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-medium tracking-tight text-white">
+            Ready to Scope Your Next Research or Intelligence Study?
+          </h2>
+          <p className="text-xs sm:text-sm text-slate-300 max-w-2xl mx-auto leading-relaxed">
+            Submit an intake brief or connect directly with our Nairobi advisory desk to discuss commercial scope, sample sizes, and empirical timelines.
+          </p>
+          <div className="pt-2 flex flex-wrap items-center justify-center gap-3">
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-none bg-white text-[#002B49] font-bold text-xs uppercase tracking-wider hover:bg-slate-100 transition-all cursor-pointer"
+            >
+              <span>SUBMIT SCOPING BRIEF</span>
+              <ArrowRight className="size-3.5" />
+            </Link>
+            <a
+              href="tel:+254721154382"
+              className="inline-flex items-center gap-2 px-5 py-3 rounded-none border border-white/30 text-white hover:bg-white/10 text-xs font-bold uppercase tracking-wider transition-all"
+            >
+              <PhoneCall className="size-3.5" />
+              <span>CALL +254 721 154382</span>
+            </a>
+            <a
+              href="https://wa.me/254721154382"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-5 py-3 rounded-none border border-emerald-500/50 bg-emerald-600/20 text-emerald-300 hover:bg-emerald-600/30 text-xs font-bold uppercase tracking-wider transition-all"
+            >
+              <MessageSquare className="size-3.5" />
+              <span>WHATSAPP DESK</span>
+            </a>
           </div>
         </div>
       </section>

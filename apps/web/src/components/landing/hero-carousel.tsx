@@ -7,7 +7,6 @@ import {
   ArrowRight,
   ChevronLeft,
   ChevronRight,
-  Globe2,
   Pause,
   Play,
 } from "lucide-react";
@@ -16,8 +15,6 @@ interface HeroSlide {
   id: string;
   badge: string;
   kicker: string;
-  navTitle: string;
-  navSub: string;
   title: string;
   tagline: string;
   subtitle: string;
@@ -38,117 +35,107 @@ interface HeroSlide {
 const HERO_SLIDES: HeroSlide[] = [
   {
     id: "slide-1",
-    badge: "GLOBAL INTELLIGENCE & INTERMEDIATION",
-    kicker: "STRATUM RESEARCH LTD",
-    navTitle: "Trade Corridors",
-    navSub: "Cross-border trade & maritime logistics",
+    badge: "PAN-AFRICAN INTELLIGENCE & ADVISORY",
+    kicker: "NAIROBI HQ • EAST AFRICA CORRIDOR",
     title: "Bridging Investment Gaps Through Intelligence, Insight & Intermediation",
     tagline: "Intelligence That Moves Business Forward",
     subtitle:
-      "Stratum is a global market intelligence and business intermediation firm helping businesses, investors, brands, and entrepreneurs make informed decisions in complex and emerging markets.",
-    image: "/images/landing-port.jpg",
-    alt: "Stratum strategic trade and investment corridor research across emerging markets",
-    captionTitle: "CROSS-BORDER TRADE CORRIDORS",
-    captionDetail: "Connecting supply chains, maritime logistics, and AfCFTA investment gateways.",
+      "Stratum is a market intelligence and business intermediation firm helping businesses, investors, brands, and entrepreneurs make informed commercial decisions in complex and emerging markets.",
+    image: "/images/landing-nairobi-skyline.jpg",
+    alt: "Stratum corporate headquarters in Nairobi Upper Hill overlooking East African financial hub",
+    captionTitle: "STRATUM NAIROBI HEADQUARTERS",
+    captionDetail: "Regional advisory desk coordinating subnational fieldwork and market intelligence.",
     primaryCta: {
-      label: "Explore Our Services",
-      href: "/services",
+      label: "PORTFOLIO",
+      href: "/portfolio",
     },
     secondaryCta: {
-      label: "Talk to Stratum",
-      href: "/contact",
+      label: "COMMISSION A STUDY",
+      href: "/contact?cta=COMMISSION_RESEARCH",
     },
   },
   {
     id: "slide-2",
     badge: "PRIMARY GROUND TRUTH & INFORMAL TRADE",
-    kicker: "CONSUMER RESEARCH PRACTICE",
-    navTitle: "Informal Retail",
-    navSub: "Grassroots kiosk audits & pricing",
+    kicker: "CONSUMER FIELD RESEARCH",
     title: "See the Opportunity. Understand the Market. Make the Connection.",
-    tagline: "Empirical Fieldwork Where Trade Truly Happens",
+    tagline: "Empirical Ground Truth Where Real Commerce Transacts",
     subtitle:
-      "Capturing both what consumers say and what drives the decisions they make—uncovering ground truth in the informal kiosks and open-air markets where over 80% of retail transactions occur.",
-    image: "/images/landing-kiosk.jpg",
-    alt: "Stratum primary fieldwork in traditional trade and informal kiosk commerce",
-    captionTitle: "PRIMARY FIELD TELEMETRY",
-    captionDetail: "GPS-audited kiosk censuses, inventory velocities, and subnational pricing data.",
+      "Capturing authentic consumer demand where over 80% of retail transactions occur—in informal kiosks, wholesale open-air markets, and neighborhood distribution nodes.",
+    image: "/images/landing-market-produce.jpg",
+    alt: "Field research and commodity price audits in open-air retail trade hubs",
+    captionTitle: "PRIMARY COMMODITY TELEMETRY",
+    captionDetail: "GPS-tagged field audits, daily price elasticity, and informal distributor networks.",
     primaryCta: {
-      label: "Commission a Study",
+      label: "COMMISSION A STUDY",
       href: "/contact?cta=COMMISSION_RESEARCH",
     },
     secondaryCta: {
-      label: "Sample Briefs",
-      href: "/research-briefs",
+      label: "METHODOLOGY",
+      href: "/how-we-work",
     },
   },
   {
     id: "slide-3",
-    badge: "BUSINESS-TO-BUSINESS INTERMEDIATION",
-    kicker: "STRATEGIC ADVISORY DESK",
-    navTitle: "B2B Deals",
-    navSub: "Vetted distributors & deal rooms",
-    title: "Connecting Businesses to the Right Opportunities",
-    tagline: "From Market Intelligence to Executed Commercial Partnerships",
+    badge: "CROSS-BORDER COMMERCIAL EXPANSION",
+    kicker: "GROWTH HUBS & URBAN CENTERS",
+    title: "Connecting Businesses to High-Growth Emerging Markets",
+    tagline: "Actionable Intelligence for Scalable Capital Deployment",
     subtitle:
-      "We connect businesses, investors, entrepreneurs, and strategic partners with relevant commercial opportunities, vetted suppliers, Tier-1 distributors, and institutional co-investors.",
-    image: "/images/landing-executive.jpg",
-    alt: "Executive consultation and bilateral trade deal room at Stratum",
-    captionTitle: "B2B STRATEGIC INTERMEDIATION",
-    captionDetail: "Verified distributor matching, direct factory audits, and bilateral deal rooms.",
+      "We provide multi-market feasibility analysis, partner due diligence, and regulatory intelligence across fast-growing African commercial capitals.",
+    image: "/images/landing-skyline.jpg",
+    alt: "Modern African metropolitan business towers and cross-border commercial skyline",
+    captionTitle: "METROPOLITAN TRADE GATEWAYS",
+    captionDetail: "Cross-border sector mapping, market sizing, and commercial due diligence.",
     primaryCta: {
-      label: "Discuss Market Entry",
-      href: "/contact?cta=DISCUSS_MARKET_ENTRY",
+      label: "PORTFOLIO",
+      href: "/portfolio",
     },
     secondaryCta: {
-      label: "Strategic Partnerships",
-      href: "/contact?cta=STRATEGIC_PARTNER",
+      label: "CONTACT STRATUM",
+      href: "/contact",
     },
   },
   {
     id: "slide-4",
-    badge: "PRODUCT TESTING & SENSORY EVALUATION",
-    kicker: "CONCEPT VALIDATION LABS",
-    navTitle: "Product Testing",
-    navSub: "Sensory trials & pack validation",
-    title: "Understanding How Consumers Respond Before Major Decisions",
-    tagline: "Test Concepts, Formulations & Packaging with Real Buyers",
+    badge: "STRATEGIC FORESIGHT & SATELLITE PERSPECTIVE",
+    kicker: "PAN-AFRICAN VANTAGE",
+    title: "Clear Foresight Across Dynamic Frontier Economies",
+    tagline: "A Broader Vantage Point for Confident Strategic Moves",
     subtitle:
-      "We help businesses explore new products and concepts by testing consumer reception, identifying opportunities for improvement, and measuring purchase intent prior to capital deployment.",
-    image: "/images/landing-reaction.jpg",
-    alt: "Stratum consumer sensory testing and authentic product reaction research",
-    captionTitle: "PRODUCT & SENSORY TESTING",
-    captionDetail: "Testing formulations, packaging appeal, and coin-point price sensitivity.",
+      "Elevate above fragmented market noise with comprehensive industry benchmarks, predictive consumer trajectories, and bilateral deal screening.",
+    image: "/images/landing-savannah-aerial.jpg",
+    alt: "Aerial landscape view symbolizing broad market foresight and perspective",
+    captionTitle: "MACRO MARKET HORIZONS",
+    captionDetail: "Strategic forecasting, supply chain mapping, and whitespace identification.",
     primaryCta: {
-      label: "Explore Solutions",
-      href: "/solutions",
+      label: "PORTFOLIO",
+      href: "/portfolio",
     },
     secondaryCta: {
-      label: "Start a Product Study",
-      href: "/contact?cta=COMMISSION_RESEARCH",
+      label: "RESEARCH BRIEFS",
+      href: "/research-briefs",
     },
   },
   {
     id: "slide-5",
-    badge: "QUALITATIVE RESEARCH & ETHNOGRAPHY",
-    kicker: "BEHAVIOURAL INTELLIGENCE",
-    navTitle: "Consumer Insights",
-    navSub: "Vernacular IDIs & ethnography",
-    title: "Understanding the Why Behind Consumer Behaviour",
-    tagline: "Deep Cultural Nuance in Native Dialects",
+    badge: "LOGISTICS & MARITIME TRADE CORRIDORS",
+    kicker: "TRADE FLOWS & SUPPLY CHAINS",
+    title: "Navigating Supply Chains & Strategic Trade Corridors",
+    tagline: "Empirical Insights into Tariffs, Ports & Distribution Networks",
     subtitle:
-      "We uncover the motivations, attitudes, experiences, and perceptions that shape consumer decisions across diverse demographic and socioeconomic strata through native-moderated IDIs.",
-    image: "/images/landing-consumer.jpg",
-    alt: "Stratum in-depth qualitative consumer research in local community setting",
-    captionTitle: "QUALITATIVE CONSUMER PANELS",
-    captionDetail: "In-depth interviews (IDIs), focus groups, and household basket allocation pacing.",
+      "Evaluate cross-border freight corridors, port turnaround velocities, and regional wholesale networks to establish resilient supply chains.",
+    image: "/images/landing-port.jpg",
+    alt: "Maritime shipping port and logistics corridor infrastructure",
+    captionTitle: "CORRIDOR LOGISTICS",
+    captionDetail: "Port clearance telemetry, cross-border road transit, and wholesale margin audits.",
     primaryCta: {
-      label: "Request Intelligence",
-      href: "/contact?cta=REQUEST_INTELLIGENCE",
+      label: "COMMISSION A STUDY",
+      href: "/contact?cta=COMMISSION_RESEARCH",
     },
     secondaryCta: {
-      label: "How We Work",
-      href: "/how-we-work",
+      label: "INDUSTRY PRACTICES",
+      href: "/industries",
     },
   },
 ];
@@ -185,189 +172,118 @@ export function HeroCarousel() {
 
   return (
     <section
-      className="relative border-b border-border/80 bg-background overflow-hidden"
+      className="relative w-full min-h-[540px] sm:min-h-[600px] lg:min-h-[640px] flex items-center border-b border-border/80 bg-slate-950 overflow-hidden"
       onMouseEnter={() => setIsPlaying(false)}
       onMouseLeave={() => setIsPlaying(true)}
-      aria-label="Stratum Featured Intelligence Carousel"
+      aria-label="Stratum Featured Intelligence Slider"
     >
-      <div className="mx-auto w-full max-w-[1536px] px-4 sm:px-6 lg:px-8 xl:px-10 pt-6 pb-8 sm:pt-8 sm:pb-10">
+      {/* 1. FULL-BLEED BACKGROUND PHOTOGRAPHIC SLIDES */}
+      {HERO_SLIDES.map((s, idx) => (
+        <div
+          key={s.id}
+          className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+            currentSlide === idx ? "opacity-100 z-0" : "opacity-0 pointer-events-none"
+          }`}
+        >
+          <Image
+            src={s.image}
+            alt={s.alt}
+            fill
+            priority={idx === 0}
+            className="object-cover transition-transform duration-1000 scale-[1.02]"
+            sizes="100vw"
+          />
+        </div>
+      ))}
+
+      {/* 2. ASYMMETRIC GRADIENT OVERLAY (Deep on left for text legibility, 100% transparent on right so photography is vivid and visible) */}
+      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(2,6,23,0.88)_0%,rgba(2,6,23,0.92)_60%,rgba(2,6,23,0.65)_100%)] sm:bg-[linear-gradient(90deg,#020617_0%,#020617_38%,rgba(2,6,23,0.75)_54%,rgba(2,6,23,0.18)_70%,transparent_85%)] z-10 pointer-events-none" />
+
+      {/* 3. FOREGROUND EDITORIAL CONTENT (Thin Inter Typography, Minimal, Mobile-First) */}
+      <div className="relative z-20 mx-auto w-full max-w-[1536px] px-4 sm:px-6 lg:px-8 xl:px-10 py-12 sm:py-16 lg:py-20 flex flex-col justify-between min-h-[540px] sm:min-h-[600px] lg:min-h-[640px]">
         
-        {/* Main Grid: Content (7 cols) + Photography (5 cols) */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+        {/* Main Content Area (Positioned Left, allowing right side of photo to shine) */}
+        <div className="max-w-2xl space-y-4 sm:space-y-5 my-auto">
           
-          {/* LEFT COLUMN (7 COLS): EDITORIAL HEADLINE & CONTENT */}
-          <div className="lg:col-span-7 flex flex-col justify-between space-y-5">
-            
-            {/* Top Identity Badge */}
-            <div className="space-y-2.5">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md border border-border/90 bg-muted/50 text-[11px] font-mono font-semibold text-muted-foreground shadow-2xs">
-                <Globe2 className="size-3.5 text-primary shrink-0" />
-                <span className="text-foreground font-bold tracking-wide">{slide.kicker}</span>
-                <span className="text-border">•</span>
-                <span className="text-primary font-bold hidden sm:inline">{slide.badge}</span>
-              </div>
+          {/* Refined Headline — Scaled to Thin, Elegant Inter Proportion (Non-Bulky) */}
+          <h1 className="text-xl sm:text-2xl lg:text-3xl font-normal sm:font-medium text-white tracking-tight leading-snug max-w-xl transition-all duration-300">
+            {slide.title}
+          </h1>
 
-              {/* Refined Headline — Scaled down as requested for elegant proportion */}
-              <h1 className="text-xl sm:text-2xl lg:text-[28px] font-bold text-foreground tracking-tight leading-snug max-w-2xl min-h-[56px] sm:min-h-[64px] transition-all duration-300">
-                {slide.title}
-              </h1>
-
-              {/* Tagline / Sub-heading */}
-              <div className="text-xs sm:text-sm font-semibold text-primary tracking-normal border-l-2 border-primary pl-3 py-0.5">
-                {slide.tagline}
-              </div>
-            </div>
-
-            {/* Description Paragraph */}
-            <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed font-normal max-w-xl min-h-[50px] transition-opacity duration-300">
-              {slide.subtitle}
-            </p>
-
-            {/* Corporate Dual Action Buttons & Micro Controls */}
-            <div className="flex flex-wrap items-center justify-between gap-4 pt-1">
-              <div className="flex flex-wrap items-center gap-3">
-                <Link
-                  href={slide.primaryCta.href}
-                  className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg bg-primary text-primary-foreground font-bold text-xs uppercase tracking-wider shadow-sm hover:bg-primary/90 transition-all active:scale-[0.99] cursor-pointer"
-                >
-                  <span>{slide.primaryCta.label}</span>
-                  <ArrowRight className="size-3.5" />
-                </Link>
-
-                <Link
-                  href={slide.secondaryCta.href}
-                  className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg border border-border/90 bg-card hover:bg-muted/80 text-foreground font-semibold text-xs transition-all shadow-2xs group cursor-pointer"
-                >
-                  <span>{slide.secondaryCta.label}</span>
-                  <ArrowRight className="size-3.5 -rotate-45 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 text-primary" />
-                </Link>
-              </div>
-
-              {/* Prev / Next & Pause Controls */}
-              <div className="flex items-center gap-1.5">
-                <button
-                  type="button"
-                  onClick={prevSlide}
-                  className="size-7 rounded-lg border border-border/80 bg-card hover:bg-muted text-foreground flex items-center justify-center transition-all cursor-pointer shadow-2xs"
-                  aria-label="Previous slide"
-                >
-                  <ChevronLeft className="size-3.5" />
-                </button>
-
-                <button
-                  type="button"
-                  onClick={() => setIsPlaying(!isPlaying)}
-                  className="size-7 rounded-lg border border-border/80 bg-card hover:bg-muted text-muted-foreground flex items-center justify-center transition-all cursor-pointer shadow-2xs"
-                  aria-label={isPlaying ? "Pause auto-advance" : "Resume auto-advance"}
-                  title={isPlaying ? "Pause" : "Play"}
-                >
-                  {isPlaying ? <Pause className="size-3" /> : <Play className="size-3" />}
-                </button>
-
-                <button
-                  type="button"
-                  onClick={nextSlide}
-                  className="size-7 rounded-lg border border-border/80 bg-card hover:bg-muted text-foreground flex items-center justify-center transition-all cursor-pointer shadow-2xs"
-                  aria-label="Next slide"
-                >
-                  <ChevronRight className="size-3.5" />
-                </button>
-              </div>
-            </div>
-
+          {/* Tagline / Sub-heading */}
+          <div className="text-xs sm:text-[13px] font-medium text-emerald-400 tracking-normal border-l-2 border-emerald-400 pl-3 py-0.5">
+            {slide.tagline}
           </div>
 
-          {/* RIGHT COLUMN (5 COLS): HIGH-RESOLUTION AUTHENTIC FIELD PHOTOGRAPHY */}
-          <div className="lg:col-span-5">
-            <div className="relative rounded-2xl overflow-hidden border border-border/90 shadow-md bg-card aspect-[4/3] sm:aspect-[16/10] lg:aspect-auto lg:h-[360px] group">
-              {HERO_SLIDES.map((s, idx) => (
-                <div
-                  key={s.id}
-                  className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
-                    currentSlide === idx ? "opacity-100 z-10" : "opacity-0 z-0 pointer-events-none"
-                  }`}
-                >
-                  <Image
-                    src={s.image}
-                    alt={s.alt}
-                    fill
-                    priority={idx === 0}
-                    className="object-cover transition-transform duration-1000 group-hover:scale-103"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 40vw"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent pointer-events-none" />
-                </div>
-              ))}
+          {/* Description Paragraph: Brief, Clean */}
+          <p className="text-xs sm:text-sm text-slate-200/90 leading-relaxed font-normal max-w-xl transition-opacity duration-300">
+            {slide.subtitle}
+          </p>
 
-              {/* Dynamic Fieldwork Caption Overlay */}
-              <div className="absolute bottom-3 inset-x-3 z-20 p-3.5 rounded-xl bg-background/95 dark:bg-background/90 backdrop-blur-md border border-border/90 shadow-md text-foreground space-y-1 transition-all">
-                <div className="flex items-center justify-between text-[11px] font-mono">
-                  <span className="text-primary font-bold flex items-center gap-1.5">
-                    <span className="size-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                    {slide.captionTitle}
-                  </span>
-                  <span className="text-muted-foreground text-[10px]">Verified Fieldwork</span>
-                </div>
-                <p className="text-xs text-muted-foreground leading-snug font-normal line-clamp-1">
-                  {slide.captionDetail}
-                </p>
-              </div>
-            </div>
+          {/* Action Buttons in CAPS */}
+          <div className="pt-2 flex flex-wrap items-center gap-3">
+            <Link
+              href={slide.primaryCta.href}
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-none bg-primary text-primary-foreground font-semibold text-xs uppercase tracking-wider shadow-md hover:bg-primary/90 transition-all active:scale-[0.99] cursor-pointer"
+            >
+              <span>{slide.primaryCta.label}</span>
+              <ArrowRight className="size-3.5" />
+            </Link>
+
+            <Link
+              href={slide.secondaryCta.href}
+              className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-none border border-white/30 bg-white/10 hover:bg-white/20 text-white font-semibold text-xs uppercase tracking-wider transition-all backdrop-blur-md cursor-pointer"
+            >
+              <span>{slide.secondaryCta.label}</span>
+              <ArrowRight className="size-3.5 -rotate-45 text-emerald-400" />
+            </Link>
           </div>
 
         </div>
 
-        {/* ENHANCED CAROUSEL CARD STRIP: Cards without gap separations, just clean divider line with subtle BG */}
-        <div className="pt-6 sm:pt-8">
-          <div className="w-full rounded-2xl border border-border/80 bg-muted/30 dark:bg-muted/15 backdrop-blur-md overflow-hidden grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 divide-y sm:divide-y-0 sm:divide-x divide-border/70 shadow-2xs">
-            {HERO_SLIDES.map((s, idx) => {
-              const isActive = currentSlide === idx;
-              return (
-                <button
-                  key={s.id}
-                  type="button"
-                  onClick={() => goToSlide(idx)}
-                  className={`p-3.5 sm:p-4 text-left transition-all relative flex flex-col justify-between gap-1.5 cursor-pointer group ${
-                    isActive
-                      ? "bg-card text-foreground shadow-xs"
-                      : "hover:bg-muted/60 text-muted-foreground"
-                  }`}
-                >
-                  {/* Active Top Accent Line */}
-                  {isActive && (
-                    <div className="absolute top-0 inset-x-0 h-1 bg-primary" />
-                  )}
+        {/* Bottom Floating Bar: Minimalist Slide Counter & Prev/Next Controls (Pure Controls, No Location/Caption Clutter) */}
+        <div className="pt-6 flex items-center justify-between border-t border-white/15 text-white/80">
+          {/* Simple Tab Indicator */}
+          <div className="flex items-center gap-2 text-[11px] font-mono text-slate-300">
+            <span className="size-2 rounded-none bg-emerald-400 animate-pulse" />
+            <span className="font-semibold text-white/90 uppercase tracking-wider">STRATUM PAN-AFRICAN INTELLIGENCE</span>
+          </div>
 
-                  <div className="flex items-center justify-between w-full">
-                    <span
-                      className={`font-mono text-[10px] font-bold transition-colors ${
-                        isActive ? "text-primary" : "text-muted-foreground group-hover:text-foreground"
-                      }`}
-                    >
-                      0{idx + 1}
-                    </span>
-                    <span
-                      className={`size-1.5 rounded-full transition-all ${
-                        isActive ? "bg-primary scale-125" : "bg-border group-hover:bg-muted-foreground"
-                      }`}
-                    />
-                  </div>
+          {/* Minimal Controls & Slide Counter */}
+          <div className="flex items-center gap-3">
+            <span className="font-mono text-xs font-bold text-white tracking-widest">
+              0{currentSlide + 1} <span className="text-white/40">/</span> 0{HERO_SLIDES.length}
+            </span>
 
-                  <div className="space-y-0.5">
-                    <h4
-                      className={`text-xs font-bold leading-tight transition-colors line-clamp-1 ${
-                        isActive ? "text-foreground" : "text-foreground/80 group-hover:text-foreground"
-                      }`}
-                    >
-                      {s.navTitle}
-                    </h4>
-                    <p className="text-[11px] text-muted-foreground leading-snug line-clamp-1">
-                      {s.navSub}
-                    </p>
-                  </div>
-                </button>
-              );
-            })}
+            <div className="flex items-center gap-1 bg-black/40 border border-white/20 p-0.5 rounded-none">
+              <button
+                type="button"
+                onClick={prevSlide}
+                className="size-7 rounded-none flex items-center justify-center text-white/80 hover:text-white hover:bg-white/20 transition-all cursor-pointer"
+                aria-label="Previous slide"
+              >
+                <ChevronLeft className="size-4" />
+              </button>
+
+              <button
+                type="button"
+                onClick={() => setIsPlaying(!isPlaying)}
+                className="size-7 rounded-none flex items-center justify-center text-white/70 hover:text-white hover:bg-white/20 transition-all cursor-pointer"
+                aria-label={isPlaying ? "Pause auto-advance" : "Resume auto-advance"}
+                title={isPlaying ? "Pause" : "Play"}
+              >
+                {isPlaying ? <Pause className="size-3" /> : <Play className="size-3" />}
+              </button>
+
+              <button
+                type="button"
+                onClick={nextSlide}
+                className="size-7 rounded-none flex items-center justify-center text-white/80 hover:text-white hover:bg-white/20 transition-all cursor-pointer"
+                aria-label="Next slide"
+              >
+                <ChevronRight className="size-4" />
+              </button>
+            </div>
           </div>
         </div>
 

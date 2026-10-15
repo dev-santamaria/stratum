@@ -6,253 +6,363 @@ import { Footer } from "@/components/landing/footer";
 import { MobilePwaBar } from "@/components/navigation/mobile-pwa-bar";
 import {
   ArrowRight,
-  CheckCircle2,
-  Cpu,
-  Globe2,
-  Handshake,
-  Layers,
-  Network,
-  Shield,
   ShieldCheck,
+  Users2,
+  Zap,
+  Compass,
+  Globe2,
+  Phone,
+  Target,
   Sparkles,
   TrendingUp,
-  Users2,
-  Building2,
-  MapPin,
-  Lock,
-  Compass,
-  FileCheck,
-  Clock,
-  Search,
 } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "About Us — Stratum Research Ltd | Market Intelligence & Intermediation",
   description:
-    "Learn about Stratum Research Ltd, a market intelligence, strategic research and business intermediation firm helping companies understand markets, identify opportunities and execute growth strategies across Africa and other emerging markets.",
+    "Learn about Stratum Research Ltd: our mission, vision, core values, and pan-African market intelligence and business intermediation capabilities.",
 };
 
 export default function AboutPage() {
   return (
-    <div className="flex flex-col min-h-screen bg-background text-foreground antialiased selection:bg-primary selection:text-primary-foreground">
+    <div className="flex flex-col min-h-screen bg-background text-foreground antialiased selection:bg-primary selection:text-primary-foreground pb-16 sm:pb-0">
+      {/* 1. Global Navigation Bar */}
       <Navbar />
 
-      {/* Hero Header */}
-      <section className="relative pt-10 pb-12 sm:pt-14 sm:pb-16 border-b border-border/70 bg-background">
-        <div className="mx-auto w-full max-w-[1536px] px-4 sm:px-6 lg:px-8 xl:px-10 space-y-6">
+      {/* 2. Page Hero Header: Minimal, Inter Typography, Sharp Edges */}
+      <section className="py-12 sm:py-16 border-b border-border/80 bg-slate-50 dark:bg-card/40">
+        <div className="mx-auto w-full max-w-[1536px] px-4 sm:px-6 lg:px-8 xl:px-10">
           <div className="max-w-4xl space-y-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md border border-border/70 bg-card text-xs font-mono font-semibold text-muted-foreground shadow-2xs">
-              <span className="text-primary font-bold">ABOUT STRATUM RESEARCH LTD</span>
-              <span className="text-border">•</span>
-              <span className="text-foreground">NAIROBI, KENYA HEADQUARTERS</span>
+            <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-none border border-border/80 bg-background text-[11px] font-mono font-semibold text-primary shadow-2xs">
+              <Globe2 className="size-3 text-primary shrink-0" />
+              <span>ABOUT STRATUM RESEARCH LTD &bull; NAIROBI ADVISORY DESK</span>
             </div>
 
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold font-serif text-foreground tracking-tight leading-[1.15]">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-medium text-foreground tracking-tight leading-tight">
               Market Intelligence, Strategic Research &amp; Business Intermediation
             </h1>
 
-            <p className="text-xs sm:text-sm lg:text-base text-muted-foreground leading-relaxed max-w-3xl font-normal">
-              Stratum Research Ltd is a market intelligence, strategic research and business intermediation firm that helps companies understand markets, identify opportunities and execute growth strategies across Africa and other emerging markets.
-            </p>
-            <p className="text-xs sm:text-sm lg:text-base text-muted-foreground leading-relaxed max-w-3xl font-normal">
-              As an emerging market-entry and research partner, we bridge first-hand consumer feedback, rigorous field investigations, and strategic B2B connections to turn informed decisions into actionable business possibilities.
+            <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed max-w-3xl font-normal">
+              Stratum Research Ltd is a market intelligence and business intermediation firm helping companies understand markets, identify opportunities, and execute growth strategies across Africa and emerging corridors.
             </p>
 
-            <div className="flex flex-wrap items-center gap-3 pt-2">
+            <div className="pt-2 flex flex-wrap items-center gap-3">
               <Link
-                href="/services"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-primary text-primary-foreground font-bold text-xs uppercase tracking-wider shadow-sm hover:bg-primary/90 transition-all cursor-pointer"
+                href="/contact?cta=COMMISSION_RESEARCH"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-none bg-primary text-primary-foreground font-semibold text-xs uppercase tracking-wider hover:bg-primary/90 transition-all shadow-xs"
               >
-                <span>Explore Our 6 Services</span>
+                <span>COMMISSION A STUDY</span>
                 <ArrowRight className="size-3.5" />
               </Link>
               <Link
-                href="/contact"
-                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg border border-border/80 bg-card hover:bg-muted text-foreground text-xs font-semibold transition-all"
+                href="/services"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-none border border-border/80 bg-card hover:bg-muted text-foreground text-xs font-semibold uppercase tracking-wider transition-all shadow-2xs"
               >
-                <span>Discuss an Opportunity</span>
+                <span>OUR 6 SERVICES</span>
+              </Link>
+              <Link
+                href="/portfolio"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-none border border-border/80 bg-card hover:bg-muted text-foreground text-xs font-semibold uppercase tracking-wider transition-all shadow-2xs"
+              >
+                <span>PORTFOLIO</span>
               </Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Institutional Philosophy & Foundations */}
-      <section className="py-12 sm:py-16 border-b border-border/70 bg-muted/15">
+      {/* 3. OUR MISSION & OUR VISION (Tall WordPress-Style Sharp-Edged Colored Cards) */}
+      <section className="py-14 sm:py-20 border-b border-border/80 bg-background">
         <div className="mx-auto w-full max-w-[1536px] px-4 sm:px-6 lg:px-8 xl:px-10 space-y-8">
-          <div className="max-w-3xl space-y-1.5">
-            <span className="text-[11px] font-mono font-bold tracking-wider text-primary uppercase">
+          
+          <div className="max-w-2xl space-y-1.5">
+            <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-primary">
+              INSTITUTIONAL FOUNDATION
+            </span>
+            <h2 className="text-xl sm:text-2xl font-semibold text-foreground tracking-tight">
+              Our Mission &amp; Our Vision
+            </h2>
+            <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
+              Guiding our commercial advisory, data telemetry, and cross-continental intermediation:
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
+            
+            {/* Mission Card: Midnight Navy (#002B49) */}
+            <div className="bg-[#002B49] text-white border border-[#003A63] rounded-none p-7 sm:p-9 flex flex-col justify-between space-y-6 shadow-sm min-h-[300px] hover:border-sky-400/50 transition-colors">
+              <div className="space-y-4">
+                <div className="flex items-center justify-between border-b border-white/15 pb-4">
+                  <span className="font-mono text-xs font-bold tracking-wider text-sky-200">
+                    PURPOSE &bull; 01
+                  </span>
+                  <div className="size-9 rounded-none bg-white/15 border border-white/20 flex items-center justify-center text-white">
+                    <Target className="size-4.5 text-sky-200" />
+                  </div>
+                </div>
+
+                <div className="space-y-1.5">
+                  <span className="text-[10px] font-mono tracking-wider uppercase text-sky-200/80 block">
+                    HOW WE DRIVE IMPACT
+                  </span>
+                  <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-white leading-snug">
+                    Our Mission
+                  </h3>
+                </div>
+
+                <p className="text-xs sm:text-sm leading-relaxed text-slate-200 font-normal">
+                  We are bridging investment gaps for high-impact entrepreneurs through real time insights, market intelligence and cross-continental investment intermediation.
+                </p>
+              </div>
+
+              <div className="pt-3 border-t border-white/15 flex items-center gap-2 text-[11px] font-mono text-sky-200/90">
+                <span className="size-1.5 rounded-none bg-sky-300" />
+                <span>Real-Time Insights &bull; Market Intelligence &bull; Investment Intermediation</span>
+              </div>
+            </div>
+
+            {/* Vision Card: Rich Forest Emerald (#167D3C) */}
+            <div className="bg-[#167D3C] text-white border border-[#1B9447] rounded-none p-7 sm:p-9 flex flex-col justify-between space-y-6 shadow-sm min-h-[300px] hover:border-emerald-300/50 transition-colors">
+              <div className="space-y-4">
+                <div className="flex items-center justify-between border-b border-white/15 pb-4">
+                  <span className="font-mono text-xs font-bold tracking-wider text-emerald-100">
+                    HORIZON &bull; 02
+                  </span>
+                  <div className="size-9 rounded-none bg-white/15 border border-white/20 flex items-center justify-center text-white">
+                    <Sparkles className="size-4.5 text-emerald-100" />
+                  </div>
+                </div>
+
+                <div className="space-y-1.5">
+                  <span className="text-[10px] font-mono tracking-wider uppercase text-emerald-200/80 block">
+                    CENTRE OF EXCELLENCE
+                  </span>
+                  <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-white leading-snug">
+                    Our Vision
+                  </h3>
+                </div>
+
+                <p className="text-xs sm:text-sm leading-relaxed text-slate-100 font-normal">
+                  Our vision is to be a global centre of excellence that empowers brands to build systems that solve high-value problems through data-driven insights and market trend analysis.
+                </p>
+              </div>
+
+              <div className="pt-3 border-t border-white/15 flex items-center gap-2 text-[11px] font-mono text-emerald-100/90">
+                <span className="size-1.5 rounded-none bg-emerald-300" />
+                <span>Global Excellence &bull; Scalable Systems &bull; High-Value Problem Solving</span>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      {/* 4. OUR CORE VALUES (Sharp WordPress-Style Tall Cards: Navy, Emerald, Sapphire) */}
+      <section className="py-14 sm:py-20 border-b border-border/80 bg-slate-50 dark:bg-card/40">
+        <div className="mx-auto w-full max-w-[1536px] px-4 sm:px-6 lg:px-8 xl:px-10 space-y-10">
+          
+          <div className="max-w-2xl space-y-1.5">
+            <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-primary">
+              OPERATING PILLARS
+            </span>
+            <h2 className="text-xl sm:text-2xl font-semibold text-foreground tracking-tight">
+              Our Core Values
+            </h2>
+            <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
+              The core principles defining our service delivery, client partnerships, and data integrity:
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6">
+            
+            {/* Value 1: INTEGRITY */}
+            <div className="p-7 sm:p-8 rounded-none border border-border/80 bg-card space-y-5 flex flex-col justify-between shadow-2xs hover:border-[#002B49] dark:hover:border-sky-400 transition-colors min-h-[320px]">
+              <div className="space-y-4">
+                <div className="flex items-center justify-between border-b border-border/60 pb-3">
+                  <div className="size-10 rounded-none bg-[#002B49] text-white flex items-center justify-center">
+                    <ShieldCheck className="size-5 text-sky-300" />
+                  </div>
+                  <span className="font-mono text-xs font-bold text-primary">VALUE 01</span>
+                </div>
+
+                <div className="space-y-1">
+                  <span className="text-[10px] font-mono uppercase tracking-wider text-muted-foreground block">
+                    FOUNDATIONAL PILLAR
+                  </span>
+                  <h3 className="text-lg font-bold text-foreground tracking-wide uppercase">
+                    INTEGRITY
+                  </h3>
+                </div>
+
+                <p className="text-xs text-muted-foreground leading-relaxed font-normal">
+                  At Stratum, we value impactful results and client satisfaction. This is why integrity is a core pillar of our operations. We believe that to deliver desirable results for our clients, both honesty and consistency have to be part of the service delivery process.
+                </p>
+              </div>
+
+              <div className="pt-3 border-t border-border/50 text-[11px] font-mono font-semibold text-primary flex items-center gap-1.5 uppercase tracking-wider">
+                <span className="size-1.5 rounded-none bg-primary" />
+                <span>Honesty &bull; Consistency &bull; Accountability</span>
+              </div>
+            </div>
+
+            {/* Value 2: CLIENT CENTERED APPROACH */}
+            <div className="p-7 sm:p-8 rounded-none border border-border/80 bg-card space-y-5 flex flex-col justify-between shadow-2xs hover:border-[#167D3C] dark:hover:border-emerald-400 transition-colors min-h-[320px]">
+              <div className="space-y-4">
+                <div className="flex items-center justify-between border-b border-border/60 pb-3">
+                  <div className="size-10 rounded-none bg-[#167D3C] text-white flex items-center justify-center">
+                    <Users2 className="size-5 text-emerald-200" />
+                  </div>
+                  <span className="font-mono text-xs font-bold text-emerald-600 dark:text-emerald-400">VALUE 02</span>
+                </div>
+
+                <div className="space-y-1">
+                  <span className="text-[10px] font-mono uppercase tracking-wider text-muted-foreground block">
+                    BESPOKE SOLUTIONS
+                  </span>
+                  <h3 className="text-lg font-bold text-foreground tracking-wide uppercase">
+                    CLIENT CENTERED APPROACH
+                  </h3>
+                </div>
+
+                <p className="text-xs text-muted-foreground leading-relaxed font-normal">
+                  At Stratum, we believe in giving our clients value for their money. This is why we offer bespoke services, depending on a client&apos;s business needs, market gaps and desired objectives.
+                </p>
+              </div>
+
+              <div className="pt-3 border-t border-border/50 text-[11px] font-mono font-semibold text-emerald-600 dark:text-emerald-400 flex items-center gap-1.5 uppercase tracking-wider">
+                <span className="size-1.5 rounded-none bg-emerald-600 dark:bg-emerald-400" />
+                <span>Bespoke Scoping &bull; Maximum ROI</span>
+              </div>
+            </div>
+
+            {/* Value 3: RAPID ADAPTATION */}
+            <div className="p-7 sm:p-8 rounded-none border border-border/80 bg-card space-y-5 flex flex-col justify-between shadow-2xs hover:border-[#004B87] dark:hover:border-cyan-400 transition-colors min-h-[320px]">
+              <div className="space-y-4">
+                <div className="flex items-center justify-between border-b border-border/60 pb-3">
+                  <div className="size-10 rounded-none bg-[#004B87] text-white flex items-center justify-center">
+                    <Zap className="size-5 text-cyan-200" />
+                  </div>
+                  <span className="font-mono text-xs font-bold text-[#004B87] dark:text-sky-400">VALUE 03</span>
+                </div>
+
+                <div className="space-y-1">
+                  <span className="text-[10px] font-mono uppercase tracking-wider text-muted-foreground block">
+                    EVOLVING INTELLIGENCE
+                  </span>
+                  <h3 className="text-lg font-bold text-foreground tracking-wide uppercase">
+                    RAPID ADAPTATION
+                  </h3>
+                </div>
+
+                <p className="text-xs text-muted-foreground leading-relaxed font-normal">
+                  As a data-dependent service provider, Stratum believes that consumer data points, market trends, digital infrastructure and analysis models are rapidly evolving. This is why we make regular adjustments in our systems to ensure accuracy in predicting market trends and consumer behaviours.
+                </p>
+              </div>
+
+              <div className="pt-3 border-t border-border/50 text-[11px] font-mono font-semibold text-[#004B87] dark:text-sky-400 flex items-center gap-1.5 uppercase tracking-wider">
+                <span className="size-1.5 rounded-none bg-[#004B87] dark:bg-sky-400" />
+                <span>Predictive Accuracy &bull; Continuous Agility</span>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      {/* 5. WHY STRATUM WAS FOUNDED: BRIEF INSTITUTIONAL THESIS (Clean & Minimal) */}
+      <section className="py-12 sm:py-16 border-b border-border/80 bg-background">
+        <div className="mx-auto w-full max-w-[1536px] px-4 sm:px-6 lg:px-8 xl:px-10 space-y-8">
+          <div className="max-w-2xl space-y-1.5">
+            <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-primary">
               OUR FOUNDING THESIS
             </span>
-            <h2 className="text-xl sm:text-2xl font-bold text-foreground tracking-tight">
-              Why Stratum Was Founded
+            <h2 className="text-xl sm:text-2xl font-semibold text-foreground tracking-tight">
+              Solving the Frontier Data Gap
             </h2>
             <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-              In frontier and emerging economies, standardized desk data fails to reflect the commercial reality on the ground.
+              Standardized desk data misses where authentic African retail commerce transacts:
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="p-6 rounded-2xl border border-border/80 bg-card space-y-3">
-              <Compass className="size-6 text-primary" />
-              <h3 className="text-base font-bold text-foreground">
-                1. The Informal Trade Blindspot
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5">
+            <div className="p-6 rounded-none border border-border/80 bg-card space-y-3 shadow-2xs">
+              <div className="size-9 rounded-none bg-primary/10 flex items-center justify-center text-primary">
+                <Compass className="size-4.5" />
+              </div>
+              <h3 className="text-sm font-bold text-foreground uppercase tracking-wide">
+                1. The Informal Trade Reality
               </h3>
               <p className="text-xs text-muted-foreground leading-relaxed">
-                Between 70% and 85% of retail commerce across sub-Saharan Africa flows through unmapped neighborhood kiosks, open-air markets, and dukas. Traditional agencies concentrate on modern supermarkets, miscalculating addressable market demand.
+                Over 80% of retail transactions flow through open-air markets and neighborhood dukas. We conduct first-hand fieldwork where real commerce transacts.
               </p>
             </div>
 
-            <div className="p-6 rounded-2xl border border-border/80 bg-card space-y-3">
-              <TrendingUp className="size-6 text-emerald-500" />
-              <h3 className="text-base font-bold text-foreground">
-                2. The Insight-Execution Divide
+            <div className="p-6 rounded-none border border-border/80 bg-card space-y-3 shadow-2xs">
+              <div className="size-9 rounded-none bg-emerald-500/10 flex items-center justify-center text-emerald-600 dark:text-emerald-400">
+                <TrendingUp className="size-4.5" />
+              </div>
+              <h3 className="text-sm font-bold text-foreground uppercase tracking-wide">
+                2. Execution-Oriented Insights
               </h3>
               <p className="text-xs text-muted-foreground leading-relaxed">
-                Companies do not need more static 100-page slide decks. They need to know which distributor holds working capital, which packaging size fits the consumer&apos;s daily budget, and how to verify factory floor capabilities before wiring funds.
+                Beyond static decks, we identify which distributors have working capital, verify warehouse capabilities, and match verified partners.
               </p>
             </div>
 
-            <div className="p-6 rounded-2xl border border-border/80 bg-card space-y-3">
-              <Handshake className="size-6 text-purple-500" />
-              <h3 className="text-base font-bold text-foreground">
-                3. The South-South Opportunity
+            <div className="p-6 rounded-none border border-border/80 bg-card space-y-3 shadow-2xs">
+              <div className="size-9 rounded-none bg-amber-500/10 flex items-center justify-center text-amber-600 dark:text-amber-400">
+                <Globe2 className="size-4.5" />
+              </div>
+              <h3 className="text-sm font-bold text-foreground uppercase tracking-wide">
+                3. Cross-Continental Corridors
               </h3>
               <p className="text-xs text-muted-foreground leading-relaxed">
-                Commercial trade flows between Africa, China, and India are accelerating rapidly under AfCFTA protocols. Stratum establishes dedicated bilateral sourcing and diligence desks to eliminate multi-tier brokerage markups and counterfeit risks.
+                Facilitating trade and investment corridors across Africa, Asia, and global markets under AfCFTA protocols to eliminate multi-tier markups.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Multidisciplinary Team Experience */}
-      <section className="py-12 sm:py-16 border-b border-border/70 bg-background">
-        <div className="mx-auto w-full max-w-[1536px] px-4 sm:px-6 lg:px-8 xl:px-10 space-y-8">
-          <div className="max-w-3xl space-y-1.5">
-            <span className="text-[11px] font-mono font-bold tracking-wider text-primary uppercase">
-              EXPERIENCE OF THE TEAM
+      {/* 6. CORPORATE CTA BANNER: Sleek Midnight Navy */}
+      <section className="py-14 sm:py-18 bg-[#002B49] text-white border-b border-border/80">
+        <div className="mx-auto w-full max-w-[1536px] px-4 sm:px-6 lg:px-8 xl:px-10">
+          <div className="max-w-4xl mx-auto text-center space-y-5">
+            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-none bg-white/10 border border-white/20 text-[10px] font-mono font-semibold text-emerald-300 uppercase tracking-wider">
+              ENGAGE STRATUM RESEARCH LTD
             </span>
-            <h2 className="text-xl sm:text-2xl font-bold text-foreground tracking-tight">
-              Demonstrated Multidisciplinary Expertise
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight text-white leading-tight">
+              Ready to Gather Ground Truth &amp; Execute Growth?
             </h2>
-            <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-              As an emerging firm, Stratum demonstrates capability through the rich collective experience of our core team and sector advisory council.
+            <p className="text-xs sm:text-sm text-slate-200/90 leading-relaxed max-w-2xl mx-auto font-normal">
+              Whether you need rapid opinion polling, distributor due diligence, retail outlet audits, or applied AI models, our Nairobi desk is ready to support your commercial mandate.
             </p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            <div className="p-5 rounded-2xl border border-border/80 bg-card space-y-2.5">
-              <Users2 className="size-5 text-primary" />
-              <h4 className="text-sm font-bold text-foreground">Field Anthropologists &amp; IDI Leads</h4>
-              <p className="text-xs text-muted-foreground leading-relaxed">
-                Native dialect practitioners who conduct in-depth interviews (IDIs) and consumer intercepts to uncover authentic purchasing motivations.
-              </p>
-            </div>
-
-            <div className="p-5 rounded-2xl border border-border/80 bg-card space-y-2.5">
-              <Cpu className="size-5 text-emerald-500" />
-              <h4 className="text-sm font-bold text-foreground">Econometricians &amp; Data Modelers</h4>
-              <p className="text-xs text-muted-foreground leading-relaxed">
-                Statisticians specializing in subnational price elasticity curves, household basket modeling, and high-confidence sampling design (95% CI).
-              </p>
-            </div>
-
-            <div className="p-5 rounded-2xl border border-border/80 bg-card space-y-2.5">
-              <Building2 className="size-5 text-amber-500" />
-              <h4 className="text-sm font-bold text-foreground">FMCG Route-to-Market Directors</h4>
-              <p className="text-xs text-muted-foreground leading-relaxed">
-                Commercial operators with years of hands-on experience navigating Tier-1 wholesale channels, van distribution, and retail stockout cycles.
-              </p>
-            </div>
-
-            <div className="p-5 rounded-2xl border border-border/80 bg-card space-y-2.5">
-              <Lock className="size-5 text-purple-500" />
-              <h4 className="text-sm font-bold text-foreground">Trade Intermediation &amp; Legal Counsel</h4>
-              <p className="text-xs text-muted-foreground leading-relaxed">
-                Specialists in cross-border trade structuring, AfCFTA tariff compliance, factory audits, and milestone-based escrow contracts.
-              </p>
+            <div className="pt-2 flex flex-wrap items-center justify-center gap-3">
+              <Link
+                href="/contact?cta=COMMISSION_RESEARCH"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-none bg-emerald-500 hover:bg-emerald-600 text-white font-semibold text-xs uppercase tracking-wider transition-all shadow-md"
+              >
+                <span>COMMISSION A STUDY</span>
+                <ArrowRight className="size-3.5" />
+              </Link>
+              <a
+                href="tel:+254721154382"
+                className="inline-flex items-center gap-2 px-5 py-3 rounded-none border border-white/30 bg-white/10 hover:bg-white/20 text-white font-semibold text-xs uppercase tracking-wider transition-all backdrop-blur-md"
+              >
+                <Phone className="size-3 text-emerald-400" />
+                <span>CALL NAIROBI HQ</span>
+              </a>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Governance & Standards */}
-      <section className="py-12 sm:py-16 border-b border-border/70 bg-muted/15">
-        <div className="mx-auto w-full max-w-[1536px] px-4 sm:px-6 lg:px-8 xl:px-10 space-y-6">
-          <div className="max-w-3xl space-y-1.5">
-            <span className="text-[11px] font-mono font-bold tracking-wider text-primary uppercase">
-              ETHICAL &amp; DATA GOVERNANCE
-            </span>
-            <h2 className="text-xl sm:text-2xl font-bold text-foreground tracking-tight">
-              Research Standards &amp; Client Confidentiality
-            </h2>
-            <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-              We govern every research scope under rigorous scientific and legal safeguards.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-            <div className="p-4 rounded-xl border border-border/80 bg-card space-y-1.5">
-              <div className="flex items-center gap-2 text-foreground font-bold text-xs">
-                <ShieldCheck className="size-4 text-emerald-500" />
-                <span>ESOMAR Guidelines Alignment</span>
-              </div>
-              <p className="text-xs text-muted-foreground leading-relaxed">
-                All fieldwork surveys, double-blind questionnaires, and enumerator training align with the ICC/ESOMAR International Code on Market and Social Research.
-              </p>
-            </div>
-
-            <div className="p-4 rounded-xl border border-border/80 bg-card space-y-1.5">
-              <div className="flex items-center gap-2 text-foreground font-bold text-xs">
-                <Lock className="size-4 text-primary" />
-                <span>Binding Mutual NDAs</span>
-              </div>
-              <p className="text-xs text-muted-foreground leading-relaxed">
-                All client scoping sessions, product formulations, target pricing, and deal rooms operate under legally enforceable non-disclosure agreements.
-              </p>
-            </div>
-
-            <div className="p-4 rounded-xl border border-border/80 bg-card space-y-1.5">
-              <div className="flex items-center gap-2 text-foreground font-bold text-xs">
-                <Building2 className="size-4 text-blue-500" />
-                <span>KDPA &amp; GDPR Privacy Protocols</span>
-              </div>
-              <p className="text-xs text-muted-foreground leading-relaxed">
-                Respondent privacy and biometric data adhere strictly to the Kenya Data Protection Act (KDPA 2019) and international data privacy principles.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Action CTA */}
-      <section className="py-14 sm:py-18 bg-card">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center space-y-4">
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight">
-            Connect With Stratum Research Ltd
-          </h2>
-          <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-            Headquartered in Nairobi, Kenya, we assist regional brands, international investors, and expanding enterprises in navigating complex and emerging markets.
-          </p>
-          <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
-            <Link
-              href="/contact?cta=COMMISSION_RESEARCH"
-              className="px-6 py-3 rounded-lg bg-primary text-primary-foreground font-bold text-xs uppercase tracking-wider hover:bg-primary/90 transition-all cursor-pointer shadow-xs"
-            >
-              <span>Commission a Research Study</span>
-            </Link>
-            <Link
-              href="/services"
-              className="px-5 py-3 rounded-lg border border-border/80 bg-background hover:bg-muted text-foreground font-semibold text-xs transition-all"
-            >
-              <span>Explore Our 6 Services</span>
-            </Link>
-          </div>
-        </div>
-      </section>
-
+      {/* Global Footer */}
       <Footer />
+
+      {/* Mobile PWA Bottom Bar */}
       <MobilePwaBar />
     </div>
   );

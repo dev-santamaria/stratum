@@ -20,9 +20,6 @@ import {
   Package,
   Building,
   CheckCircle2,
-  Globe2,
-  BarChart3,
-  ShieldCheck,
 } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -225,33 +222,33 @@ export default function IndustriesPage() {
       <section className="relative pt-10 pb-12 sm:pt-14 sm:pb-16 border-b border-border/80 bg-background">
         <div className="mx-auto w-full max-w-[1536px] px-4 sm:px-6 lg:px-8 xl:px-10 space-y-6">
           <div className="max-w-4xl space-y-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md border border-border/80 bg-muted/40 text-xs font-mono font-semibold text-muted-foreground shadow-2xs">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-none border border-border/80 bg-muted/40 text-xs font-mono font-semibold text-muted-foreground shadow-2xs">
               <span className="text-primary font-bold">SECTOR INTELLIGENCE</span>
               <span className="text-border">•</span>
               <span className="text-foreground">MARKET INTELLIGENCE ACROSS DIVERSE SECTORS</span>
             </div>
 
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold font-serif text-foreground tracking-tight leading-[1.15]">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-medium text-foreground tracking-tight leading-[1.2]">
               Market Intelligence Across Diverse Sectors
             </h1>
 
-            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed max-w-3xl font-normal">
+            <p className="text-xs sm:text-sm lg:text-base text-muted-foreground leading-relaxed max-w-3xl font-normal">
               Our work spans multiple industries and commercial sectors, providing clients with market intelligence tailored to their specific business environment. We capture both macro supply dynamics and localized consumer purchasing habits.
             </p>
 
             <div className="flex flex-wrap items-center gap-3.5 pt-2">
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground font-bold text-xs uppercase tracking-wider shadow-sm hover:bg-primary/90 transition-all cursor-pointer"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-none bg-primary text-primary-foreground font-bold text-xs uppercase tracking-wider shadow-sm hover:bg-primary/90 transition-all cursor-pointer"
               >
-                <span>Discuss Your Industry Mandate</span>
+                <span>DISCUSS YOUR INDUSTRY MANDATE</span>
                 <ArrowRight className="size-3.5" />
               </Link>
               <Link
                 href="/services"
-                className="inline-flex items-center gap-2 px-5 py-3 rounded-lg border border-border/80 bg-card hover:bg-muted text-foreground text-xs font-semibold transition-all"
+                className="inline-flex items-center gap-2 px-5 py-3 rounded-none border border-border/80 bg-card hover:bg-muted text-foreground text-xs font-semibold uppercase tracking-wider transition-all"
               >
-                <span>Inspect 6 Core Services</span>
+                <span>INSPECT 6 CORE SERVICES</span>
               </Link>
             </div>
           </div>
@@ -259,13 +256,13 @@ export default function IndustriesPage() {
       </section>
 
       {/* 2. INDUSTRIES MATRIX */}
-      <section className="py-14 sm:py-20 border-b border-border/80 bg-muted/15">
-        <div className="mx-auto w-full max-w-[1536px] px-4 sm:px-6 lg:px-8 xl:px-10 space-y-10">
+      <section className="py-12 sm:py-16 border-b border-border/80 bg-muted/15">
+        <div className="mx-auto w-full max-w-[1536px] px-4 sm:px-6 lg:px-8 xl:px-10 space-y-8">
           <div className="max-w-3xl space-y-2">
             <span className="text-xs font-mono font-bold tracking-wider text-primary uppercase">
               13+ SPECIALIZED SECTOR PRACTICES
             </span>
-            <h2 className="text-2xl sm:text-3xl font-bold font-serif text-foreground tracking-tight">
+            <h2 className="text-2xl sm:text-3xl font-medium text-foreground tracking-tight">
               Sector Expertise Grounded in Emerging Market Dynamics
             </h2>
             <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
@@ -280,11 +277,11 @@ export default function IndustriesPage() {
                 <div
                   key={ind.id}
                   id={ind.id}
-                  className="p-6 rounded-2xl border border-border/80 bg-card hover:border-primary/50 hover:-translate-y-1 hover:shadow-md transition-all duration-200 flex flex-col justify-between space-y-5 group"
+                  className="p-6 rounded-none border border-border/80 bg-card hover:border-primary/50 transition-all duration-200 flex flex-col justify-between space-y-5 group shadow-2xs"
                 >
                   <div className="space-y-3">
                     <div className="flex items-center justify-between">
-                      <div className="size-9 rounded-xl bg-primary/10 text-primary flex items-center justify-center group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+                      <div className="size-9 rounded-none bg-primary/10 text-primary flex items-center justify-center group-hover:bg-primary group-hover:text-primary-foreground transition-colors border border-primary/20">
                         <Icon className="size-4.5" />
                       </div>
                       <span className="text-[10px] font-mono font-bold text-muted-foreground uppercase tracking-wider">
@@ -322,9 +319,9 @@ export default function IndustriesPage() {
                   <div className="pt-3 border-t border-border/60">
                     <Link
                       href={`/contact?industry=${ind.id}`}
-                      className="font-bold text-xs text-primary group-hover:underline flex items-center gap-1.5"
+                      className="font-bold text-xs uppercase tracking-wider text-primary group-hover:underline flex items-center gap-1.5"
                     >
-                      <span>Commission Study in {ind.name}</span>
+                      <span>COMMISSION STUDY IN {ind.name}</span>
                       <ArrowRight className="size-3 transition-transform group-hover:translate-x-1" />
                     </Link>
                   </div>
@@ -335,25 +332,31 @@ export default function IndustriesPage() {
         </div>
       </section>
 
-      {/* 3. CTA STRIP */}
-      <section className="py-14 sm:py-18 bg-card border-b border-border/80">
-        <div className="mx-auto w-full max-w-[1536px] px-4 sm:px-6 lg:px-8 xl:px-10 text-center space-y-6 max-w-4xl">
-          <span className="text-xs font-mono font-bold tracking-widest text-primary uppercase">
-            TAILORED INDUSTRY RESEARCH
+      {/* 3. SIGNATURE CORPORATE CTA BANNER */}
+      <section className="py-12 sm:py-16 bg-[#002B49] text-white rounded-none border-b border-border/80">
+        <div className="mx-auto w-full max-w-[1536px] px-4 sm:px-6 lg:px-8 xl:px-10 text-center space-y-4 max-w-4xl">
+          <span className="text-xs font-mono font-bold tracking-widest text-[#48cae4] uppercase">
+            TAILORED INDUSTRY INTELLIGENCE
           </span>
-          <h2 className="text-2xl sm:text-3xl font-bold font-serif text-foreground tracking-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-medium tracking-tight text-white">
             Do You Need Intelligence in a Specialized Commercial Sector?
           </h2>
-          <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed max-w-2xl mx-auto">
+          <p className="text-xs sm:text-sm text-slate-300 max-w-2xl mx-auto leading-relaxed">
             Our multidisciplinary practice leads and field researchers design tailored survey instruments, regulatory scans, and B2B partner vetting for your exact sector challenge.
           </p>
-          <div className="pt-2">
+          <div className="pt-2 flex flex-wrap items-center justify-center gap-3">
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-lg bg-primary text-primary-foreground font-bold text-xs uppercase tracking-wider shadow-sm hover:bg-primary/90 transition-all cursor-pointer"
+              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-none bg-white text-[#002B49] font-bold text-xs uppercase tracking-wider hover:bg-slate-100 transition-all cursor-pointer"
             >
-              <span>Talk to Stratum Industry Desk</span>
+              <span>TALK TO STRATUM INDUSTRY DESK</span>
               <ArrowRight className="size-3.5" />
+            </Link>
+            <Link
+              href="/services"
+              className="inline-flex items-center gap-2 px-5 py-3.5 rounded-none border border-white/30 text-white hover:bg-white/10 text-xs font-bold uppercase tracking-wider transition-all"
+            >
+              <span>VIEW 6 CORE SERVICE LINES</span>
             </Link>
           </div>
         </div>

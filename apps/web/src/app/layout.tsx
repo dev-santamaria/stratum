@@ -1,6 +1,14 @@
 import type { Metadata, Viewport } from "next";
+import { Inter } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+  weight: ["300", "400", "500", "600", "700"],
+});
 
 const satoshi = localFont({
   src: [
@@ -77,7 +85,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${satoshi.variable} h-full scroll-smooth antialiased`}
+      className={`${inter.variable} ${satoshi.variable} h-full scroll-smooth antialiased`}
       suppressHydrationWarning
     >
       <head />

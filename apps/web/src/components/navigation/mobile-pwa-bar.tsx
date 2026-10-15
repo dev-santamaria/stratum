@@ -16,9 +16,15 @@ export function MobilePwaBar() {
       isActive: pathname === "/",
     },
     {
+      label: "Portfolio",
+      href: "/portfolio",
+      icon: Layers,
+      isActive: pathname === "/portfolio",
+    },
+    {
       label: "Services",
       href: "/services",
-      icon: Layers,
+      icon: TrendingUp,
       isActive: pathname === "/services",
     },
     {
@@ -28,14 +34,8 @@ export function MobilePwaBar() {
       isActive: pathname === "/research-briefs",
     },
     {
-      label: "Insights",
-      href: "/insights",
-      icon: TrendingUp,
-      isActive: pathname === "/insights",
-    },
-    {
-      label: "Talk",
-      href: "/contact",
+      label: "Study",
+      href: "/contact?cta=COMMISSION_RESEARCH",
       icon: Mail,
       isActive: pathname === "/contact",
       highlight: true,
@@ -55,7 +55,7 @@ export function MobilePwaBar() {
               <Link
                 key={item.label}
                 href={item.href}
-                className="flex flex-col items-center justify-center px-3 py-1 rounded-xl bg-primary text-primary-foreground font-bold text-[10px] shadow-sm active:scale-95 transition-transform"
+                className="flex flex-col items-center justify-center px-3 py-1 rounded-none bg-primary text-primary-foreground font-semibold text-[10px] shadow-xs active:scale-95 transition-transform"
               >
                 <Icon className="size-4 mb-0.5" />
                 <span>{item.label}</span>
@@ -67,7 +67,7 @@ export function MobilePwaBar() {
             <Link
               key={item.label}
               href={item.href}
-              className={`flex flex-col items-center justify-center px-2 py-1 rounded-lg text-[10px] transition-colors ${
+              className={`flex flex-col items-center justify-center px-2 py-1 rounded-none text-[10px] transition-colors ${
                 item.isActive
                   ? "text-primary font-bold"
                   : "text-muted-foreground hover:text-foreground"
