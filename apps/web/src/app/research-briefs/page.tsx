@@ -9,14 +9,8 @@ import {
   ArrowRight,
   Compass,
   ShieldCheck,
-  FileText,
   CheckCircle2,
   Lock,
-  Building2,
-  Clock,
-  Sparkles,
-  Phone,
-  Workflow,
 } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -34,11 +28,6 @@ export default function ResearchBriefsPage() {
       <section className="py-12 sm:py-16 border-b border-border/80 stratum-grid-bg bg-background">
         <div className="mx-auto w-full max-w-[1536px] px-4 sm:px-6 lg:px-8 xl:px-10">
           <div className="max-w-4xl space-y-4">
-            <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-none border border-border/80 bg-background text-[11px] font-mono font-semibold text-primary shadow-2xs">
-              <Workflow className="size-3 text-primary shrink-0" />
-              <span>METHODOLOGICAL DEMONSTRATION &bull; NAIROBI ADVISORY DESK</span>
-            </div>
-
             <h1 className="text-2xl sm:text-3xl md:text-4xl font-medium text-foreground tracking-tight leading-tight">
               Sample Research Briefs &amp; Scoping Blueprints
             </h1>
@@ -85,7 +74,7 @@ export default function ResearchBriefsPage() {
                 href="/services"
                 className="inline-flex items-center gap-2 px-5 py-2.5 rounded-none border border-border/80 bg-card hover:bg-muted text-foreground text-xs font-semibold uppercase tracking-wider transition-all shadow-2xs"
               >
-                <span>OUR 6 SERVICES</span>
+                <span>ALL SERVICES</span>
               </Link>
             </div>
           </div>
@@ -104,10 +93,6 @@ export default function ResearchBriefsPage() {
         <div className="mx-auto w-full max-w-[1536px] px-4 sm:px-6 lg:px-8 xl:px-10">
           <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8">
             <div className="max-w-3xl space-y-2">
-              <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-none bg-white/10 border border-white/20 text-[10px] font-mono text-white/90">
-                <Sparkles className="size-3 text-sky-300" />
-                <span>CONFIDENTIAL INTAKE &bull; NAIROBI OPERATIONS DESK</span>
-              </div>
               <h2 className="text-xl sm:text-2xl md:text-3xl font-medium tracking-tight text-white">
                 Ready to Commission a Statistically Grounded Field Study?
               </h2>
@@ -125,17 +110,10 @@ export default function ResearchBriefsPage() {
                 <ArrowRight className="size-3.5" />
               </Link>
               <Link
-                href="/contact"
-                className="inline-flex items-center gap-2 px-5 py-3 rounded-none border border-white/30 bg-transparent text-white font-semibold text-xs uppercase tracking-wider hover:bg-white/10 transition-colors"
-              >
-                <Phone className="size-3.5" />
-                <span>CALL NAIROBI HQ</span>
-              </Link>
-              <Link
                 href="/how-we-work"
                 className="inline-flex items-center gap-2 px-5 py-3 rounded-none border border-white/30 bg-transparent text-white font-semibold text-xs uppercase tracking-wider hover:bg-white/10 transition-colors"
               >
-                <span>HOW WE WORK (5 STAGES)</span>
+                <span>HOW WE WORK</span>
               </Link>
             </div>
           </div>

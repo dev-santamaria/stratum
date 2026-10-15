@@ -7,8 +7,6 @@ import {
   ArrowRight,
   ChevronLeft,
   ChevronRight,
-  Pause,
-  Play,
 } from "lucide-react";
 
 interface HeroSlide {
@@ -249,41 +247,26 @@ export function HeroCarousel() {
             <span className="font-semibold text-white/90 uppercase tracking-wider">STRATUM PAN-AFRICAN INTELLIGENCE</span>
           </div>
 
-          {/* Minimal Controls & Slide Counter */}
-          <div className="flex items-center gap-3">
-            <span className="font-mono text-xs font-bold text-white tracking-widest">
-              0{currentSlide + 1} <span className="text-white/40">/</span> 0{HERO_SLIDES.length}
-            </span>
-
-            <div className="flex items-center gap-1 bg-black/40 border border-white/20 p-0.5 rounded-none">
-              <button
-                type="button"
-                onClick={prevSlide}
-                className="size-7 rounded-none flex items-center justify-center text-white/80 hover:text-white hover:bg-white/20 transition-all cursor-pointer"
-                aria-label="Previous slide"
-              >
-                <ChevronLeft className="size-4" />
-              </button>
-
-              <button
-                type="button"
-                onClick={() => setIsPlaying(!isPlaying)}
-                className="size-7 rounded-none flex items-center justify-center text-white/70 hover:text-white hover:bg-white/20 transition-all cursor-pointer"
-                aria-label={isPlaying ? "Pause auto-advance" : "Resume auto-advance"}
-                title={isPlaying ? "Pause" : "Play"}
-              >
-                {isPlaying ? <Pause className="size-3" /> : <Play className="size-3" />}
-              </button>
-
-              <button
-                type="button"
-                onClick={nextSlide}
-                className="size-7 rounded-none flex items-center justify-center text-white/80 hover:text-white hover:bg-white/20 transition-all cursor-pointer"
-                aria-label="Next slide"
-              >
-                <ChevronRight className="size-4" />
-              </button>
-            </div>
+          {/* Modern Navigation Arrows */}
+          <div className="flex items-center gap-2">
+            <button
+              type="button"
+              onClick={prevSlide}
+              className="size-9 rounded-none border border-white/20 bg-black/40 hover:bg-white/20 hover:border-white/50 text-white flex items-center justify-center transition-all cursor-pointer shadow-xs active:scale-95"
+              aria-label="Previous slide"
+              title="Previous slide"
+            >
+              <ChevronLeft className="size-5" />
+            </button>
+            <button
+              type="button"
+              onClick={nextSlide}
+              className="size-9 rounded-none border border-white/20 bg-black/40 hover:bg-white/20 hover:border-white/50 text-white flex items-center justify-center transition-all cursor-pointer shadow-xs active:scale-95"
+              aria-label="Next slide"
+              title="Next slide"
+            >
+              <ChevronRight className="size-5" />
+            </button>
           </div>
         </div>
 

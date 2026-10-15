@@ -29,7 +29,6 @@ import {
   MapPin,
   Network,
   Users2,
-  Phone,
   Vote,
   Cpu,
 } from "lucide-react";
@@ -69,16 +68,8 @@ export function Navbar() {
 
           <div className="flex items-center gap-5 text-[11px] font-mono">
             <a
-              href="tel:+254721154382"
-              className="hover:text-primary transition-colors flex items-center gap-1 text-foreground font-medium"
-            >
-              <Phone className="size-3 text-emerald-600 dark:text-emerald-400" />
-              <span>NAIROBI HQ: +254 721 154382</span>
-            </a>
-            <span className="text-border hidden sm:inline">•</span>
-            <a
               href="mailto:info@stratumresearchltd.com"
-              className="hover:text-primary transition-colors flex items-center gap-1 hidden sm:flex text-foreground font-medium"
+              className="hover:text-primary transition-colors flex items-center gap-1.5 text-foreground font-medium"
             >
               <Mail className="size-3 text-primary" />
               <span>info@stratumresearchltd.com</span>
@@ -449,20 +440,12 @@ export function Navbar() {
       {/* Mobile Drawer (Clean, Structured in CAPS with Subheaders) */}
       {mobileMenuOpen && (
         <div className="lg:hidden border-t border-border bg-card p-4 space-y-4 animate-in slide-in-from-top-2 max-h-[85vh] overflow-y-auto">
-          {/* Mobile Hotline strip */}
-          <div className="p-2.5 rounded-none bg-muted/60 text-xs font-mono flex flex-col gap-1">
-            <div className="flex items-center justify-between">
-              <span className="text-primary font-bold">NAIROBI HQ:</span>
-              <a href="tel:+254721154382" className="text-foreground font-bold hover:underline">
-                +254 721 154382
-              </a>
-            </div>
-            <div className="flex items-center justify-between text-[11px] text-muted-foreground">
-              <span>OFFICIAL INQUIRIES:</span>
-              <a href="mailto:info@stratumresearchltd.com" className="text-primary hover:underline">
-                info@stratumresearchltd.com
-              </a>
-            </div>
+          {/* Mobile Inquiries strip */}
+          <div className="p-2.5 rounded-none bg-muted/60 text-xs font-mono flex items-center justify-between">
+            <span className="text-muted-foreground text-[11px]">OFFICIAL INQUIRIES:</span>
+            <a href="mailto:info@stratumresearchltd.com" className="text-primary hover:underline font-semibold text-xs">
+              info@stratumresearchltd.com
+            </a>
           </div>
 
           <nav className="flex flex-col space-y-3">

@@ -99,11 +99,7 @@ export function InfographicTable() {
         
         {/* Header Block: Clean, Authoritative WordPress Style */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-border/80 pb-6">
-          <div className="space-y-2.5 max-w-2xl">
-            <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-none border border-border/80 bg-muted/50 text-[11px] font-mono font-semibold text-primary">
-              <span className="size-1.5 rounded-none bg-primary" />
-              <span>CORE PORTFOLIO INFOGRAPHIC</span>
-            </div>
+          <div className="space-y-2 max-w-2xl">
             <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-foreground">
               Four Core Strategic Offerings
             </h2>
@@ -121,22 +117,19 @@ export function InfographicTable() {
           </Link>
         </div>
 
-        {/* 4-Pillar Infographic Table: Sharp Edges, Tall Cards, Coloured Backgrounds */}
+        {/* 4-Pillar Infographic Table: Sharp Edges, Clean Cards, Coloured Backgrounds */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
           {PILLARS.map((pillar) => {
             const Icon = pillar.icon;
             return (
               <div
                 key={pillar.id}
-                className={`${pillar.bgClass} border ${pillar.borderClass} rounded-none p-6 sm:p-7 flex flex-col justify-between space-y-6 shadow-sm transition-all duration-200 group hover:-translate-y-1 hover:shadow-md min-h-[440px]`}
+                className={`${pillar.bgClass} border ${pillar.borderClass} rounded-none p-6 sm:p-7 flex flex-col justify-between space-y-6 shadow-sm transition-all duration-200 group hover:-translate-y-1 hover:shadow-md min-h-[380px]`}
               >
                 {/* Top Section */}
                 <div className="space-y-4">
-                  {/* Number & Icon Strip */}
+                  {/* Icon Strip */}
                   <div className="flex items-center justify-between border-b border-white/15 pb-4">
-                    <span className="font-mono text-sm font-bold tracking-wider opacity-90">
-                      {pillar.number}
-                    </span>
                     <div className="size-9 rounded-none bg-white/15 border border-white/20 flex items-center justify-center text-white group-hover:scale-105 transition-transform">
                       <Icon className="size-4.5" />
                     </div>
@@ -160,17 +153,8 @@ export function InfographicTable() {
                   </p>
                 </div>
 
-                {/* Bottom Section: Highlights & CTA */}
-                <div className="space-y-4 pt-3 border-t border-white/15">
-                  <div className="space-y-1.5">
-                    {pillar.highlights.map((h, idx) => (
-                      <div key={idx} className="flex items-center gap-2 text-[11px] text-white/80 font-mono">
-                        <span className="size-1 rounded-none bg-white/80 shrink-0" />
-                        <span className="truncate">{h}</span>
-                      </div>
-                    ))}
-                  </div>
-
+                {/* Bottom Section: CTA */}
+                <div className="pt-3 border-t border-white/15">
                   <Link
                     href={pillar.ctaHref}
                     className="inline-flex items-center justify-between w-full p-2.5 rounded-none bg-white/10 hover:bg-white/20 border border-white/20 text-xs font-semibold text-white transition-all group/btn"

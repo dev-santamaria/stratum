@@ -112,11 +112,7 @@ export function ServicesSlider() {
         
         {/* Header Strip with Integrated Controls & Purposeful Button Placement */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 border-b border-white/20 pb-6">
-          <div className="space-y-2.5 max-w-2xl">
-            <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-none bg-white/15 border border-white/25 text-xs font-mono font-semibold text-white tracking-wider">
-              <span>OUR CORE CAPABILITIES</span>
-            </div>
-
+          <div className="space-y-2 max-w-2xl">
             <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-white leading-tight">
               Six Integrated Service Lines
             </h2>
@@ -136,7 +132,7 @@ export function ServicesSlider() {
               <ArrowRight className="size-3.5" />
             </Link>
 
-            {/* Thin Elegant Slider Navigation Arrows */}
+            {/* Modern Slider Navigation Arrows */}
             <div className="flex items-center gap-1.5 bg-black/15 border border-white/25 rounded-none p-1">
               <button
                 type="button"
@@ -147,10 +143,6 @@ export function ServicesSlider() {
               >
                 <ChevronLeft className="size-4.5 stroke-[1.5]" />
               </button>
-
-              <span className="font-mono text-xs font-bold text-white px-2 select-none">
-                {SERVICES_DATA[startIndex].number} / 0{SERVICES_DATA.length}
-              </span>
 
               <button
                 type="button"
@@ -165,30 +157,24 @@ export function ServicesSlider() {
           </div>
         </div>
 
-        {/* Dynamic 3-Card Carousel Display: Sharp WordPress Cards */}
+        {/* Dynamic 3-Card Carousel Display: Clean, Simple Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 transition-all duration-300">
           {visibleCards.map((service) => {
             const Icon = service.icon;
             return (
               <div
                 key={service.number}
-                className="p-6 sm:p-7 rounded-none bg-[#0F5A2A] border border-white/20 hover:border-white/40 hover:bg-[#0D5226] transition-all space-y-5 flex flex-col justify-between group shadow-sm min-h-[380px]"
+                className="p-6 sm:p-7 rounded-none bg-[#0F5A2A] border border-white/20 hover:border-white/40 hover:bg-[#0D5226] transition-all space-y-5 flex flex-col justify-between group shadow-sm min-h-[320px]"
               >
                 <div className="space-y-4">
-                  {/* Top Bar: Number + Icon */}
+                  {/* Top Bar: Icon */}
                   <div className="flex items-center justify-between">
-                    <span className="font-mono text-xs font-bold px-2.5 py-1 rounded-none border bg-white/15 border-white/30 text-white">
-                      LINE {service.number}
-                    </span>
                     <div className="size-9 rounded-none bg-white/15 flex items-center justify-center text-white group-hover:scale-105 transition-transform">
                       <Icon className="size-4.5 text-emerald-100" />
                     </div>
                   </div>
 
                   <div>
-                    <span className="text-[10px] font-mono tracking-wider text-emerald-200/80 uppercase block mb-1">
-                      {service.subtitle}
-                    </span>
                     <h3 className="text-lg font-bold text-white group-hover:text-emerald-100 transition-colors leading-snug">
                       {service.title}
                     </h3>
@@ -197,16 +183,6 @@ export function ServicesSlider() {
                   <p className="text-xs text-white/90 leading-relaxed font-normal">
                     {service.description}
                   </p>
-
-                  {/* Bullet Highlights */}
-                  <div className="space-y-1.5 pt-2 border-t border-white/15">
-                    {service.deliverables.map((item, i) => (
-                      <div key={i} className="flex items-center gap-2 text-xs text-white/85">
-                        <span className="size-1 rounded-none bg-emerald-200" />
-                        <span>{item}</span>
-                      </div>
-                    ))}
-                  </div>
                 </div>
 
                 {/* Dedicated View More Button with Arrow */}

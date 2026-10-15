@@ -74,10 +74,10 @@ export const SAMPLE_BRIEFS: SampleBrief[] = [
   {
     id: "brief-fmcg-elasticity",
     code: "STR-FMCG-2026-01",
-    badge: "BRIEF 01",
+    badge: "CONSUMER FMCG & RETAIL",
     briefNumber: "01",
     sectorTag: "CONSUMER FMCG & RETAIL",
-    serviceCategory: "01 Research & 02 Intelligence",
+    serviceCategory: "Primary Research & Market Intelligence",
     serviceNumber: "01 & 02",
     ctaParam: "COMMISSION_RESEARCH",
     title: "Subnational FMCG Informal Retail Distribution & Single-Coin Price Elasticity",
@@ -159,10 +159,10 @@ export const SAMPLE_BRIEFS: SampleBrief[] = [
   {
     id: "brief-pharma-coldchain",
     code: "STR-PHR-2026-02",
-    badge: "BRIEF 02",
+    badge: "HEALTHCARE & PHARMACEUTICALS",
     briefNumber: "02",
     sectorTag: "HEALTHCARE & PHARMACEUTICALS",
-    serviceCategory: "04 Intermediation & 05 Market Access",
+    serviceCategory: "Commercial Intermediation & Market Access",
     serviceNumber: "04 & 05",
     ctaParam: "SOURCE_PRODUCTS",
     title: "India-to-Africa Pharmaceutical Sourcing & Cold-Chain Distribution Integrity",
@@ -244,10 +244,10 @@ export const SAMPLE_BRIEFS: SampleBrief[] = [
   {
     id: "brief-opportunity-solar",
     code: "STR-SOL-2026-03",
-    badge: "BRIEF 03",
+    badge: "ENERGY & AGRI INFRASTRUCTURE",
     briefNumber: "03",
     sectorTag: "ENERGY & AGRI INFRASTRUCTURE",
-    serviceCategory: "03 Opportunity & 04 Intermediation",
+    serviceCategory: "Opportunity Screening & Intermediation",
     serviceNumber: "03 & 04",
     ctaParam: "VALIDATE_OPPORTUNITY",
     title: "Commercial Opportunity Screening: Decentralized Solar & Cold Storage Infrastructure",
@@ -404,24 +404,15 @@ function SampleResearchBriefsContent() {
                 <div className="space-y-3">
                   {/* Top Bar in Card */}
                   <div className="flex items-center justify-between text-[11px] font-mono">
-                    <div className="flex items-center gap-2">
-                      <span
-                        className={`font-bold px-2 py-0.5 rounded-none uppercase ${
-                          isSelected
-                            ? "bg-primary text-primary-foreground"
-                            : "bg-muted text-muted-foreground group-hover:text-foreground"
-                        }`}
-                      >
-                        {brief.badge}
-                      </span>
-                      <span className="text-muted-foreground font-semibold uppercase">
-                        {brief.briefNumber === "01"
-                          ? "FMCG Trade"
-                          : brief.briefNumber === "02"
-                            ? "Pharma Sourcing"
-                            : "Clean Energy"}
-                      </span>
-                    </div>
+                    <span
+                      className={`font-bold px-2 py-0.5 rounded-none uppercase text-[10px] tracking-wider ${
+                        isSelected
+                          ? "bg-primary text-primary-foreground"
+                          : "bg-muted text-muted-foreground group-hover:text-foreground"
+                      }`}
+                    >
+                      {brief.sectorTag}
+                    </span>
 
                     {isSelected ? (
                       <span className="inline-flex items-center gap-1 text-[10px] font-bold text-primary bg-primary/10 px-2 py-0.5 rounded-none uppercase">
@@ -510,11 +501,6 @@ function SampleResearchBriefsContent() {
             <div className="lg:col-span-7 space-y-6">
               {/* Brief Title & Tagline */}
               <div className="space-y-2">
-                <div className="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-none bg-primary/10 text-primary font-mono text-[11px] font-bold uppercase tracking-wider">
-                  <span>{selectedBrief.badge} SPECIFICATION DOSSIER</span>
-                  <span>•</span>
-                  <span>CONFIDENTIAL BLUEPRINT</span>
-                </div>
                 <h2 className="text-xl sm:text-2xl font-medium text-foreground tracking-tight leading-snug">
                   {selectedBrief.title}
                 </h2>
@@ -638,8 +624,7 @@ function SampleResearchBriefsContent() {
                     >
                       <div className="space-y-1.5">
                         <div className="flex items-center justify-between text-[10px] font-mono">
-                          <span className="font-bold text-primary">[{deliv.num}]</span>
-                          <span className="text-muted-foreground font-semibold uppercase">{deliv.format}</span>
+                          <span className="text-primary font-semibold uppercase tracking-wider">{deliv.format}</span>
                         </div>
                         <h5 className="text-xs font-bold text-foreground leading-snug">
                           {deliv.title}
@@ -767,7 +752,7 @@ function SampleResearchBriefsContent() {
                     href="/services"
                     className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-none border border-border/80 bg-card hover:bg-muted text-foreground font-bold text-xs uppercase tracking-wider transition-all cursor-pointer"
                   >
-                    <span>EXPLORE OUR 6 SERVICES</span>
+                    <span>EXPLORE ALL SERVICES</span>
                   </Link>
                 </div>
               </div>
@@ -804,10 +789,6 @@ function SampleResearchBriefsContent() {
           ======================================================== */}
       <div className="pt-4 space-y-4">
         <div className="space-y-1">
-          <div className="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-none bg-primary/10 text-primary font-mono text-[11px] font-bold tracking-wider uppercase">
-            <Compass className="size-3" />
-            METHODOLOGICAL STANDARDS
-          </div>
           <h3 className="text-xl sm:text-2xl font-medium text-foreground tracking-tight">
             Why Stratum Field Architectures Deliver Decision-Grade Data
           </h3>
@@ -817,52 +798,60 @@ function SampleResearchBriefsContent() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-2">
-          <div className="p-5 rounded-none border border-border/80 bg-card space-y-2 hover:border-primary/50 transition-all">
-            <div className="size-8 rounded-none bg-primary/10 text-primary flex items-center justify-center font-mono font-bold text-xs border border-primary/20">
-              01
+          <div className="p-5 rounded-none border border-border/80 bg-card space-y-3 hover:border-primary/50 transition-all flex flex-col justify-between">
+            <div className="space-y-2">
+              <div className="size-8 rounded-none bg-primary/10 text-primary flex items-center justify-center border border-primary/20">
+                <ShieldCheck className="size-4" />
+              </div>
+              <h4 className="text-xs sm:text-sm font-bold text-foreground">
+                Double-Blind Enumeration
+              </h4>
+              <p className="text-xs text-muted-foreground leading-relaxed">
+                Field enumerators operate under strict double-blind protocols without prior knowledge of the sponsoring brand, while respondents remain uncoached. This rigorous isolation eliminates observer interference, leading questions, and social desirability bias from all subnational survey datasets.
+              </p>
             </div>
-            <h4 className="text-xs sm:text-sm font-bold text-foreground">
-              Double-Blind Enumeration
-            </h4>
-            <p className="text-xs text-muted-foreground leading-relaxed">
-              Field enumerators do not know the corporate sponsor, and respondents are not coached, totally eliminating observer and courtesy bias.
-            </p>
           </div>
 
-          <div className="p-5 rounded-none border border-border/80 bg-card space-y-2 hover:border-primary/50 transition-all">
-            <div className="size-8 rounded-none bg-primary/10 text-primary flex items-center justify-center font-mono font-bold text-xs border border-primary/20">
-              02
+          <div className="p-5 rounded-none border border-border/80 bg-card space-y-3 hover:border-primary/50 transition-all flex flex-col justify-between">
+            <div className="space-y-2">
+              <div className="size-8 rounded-none bg-primary/10 text-primary flex items-center justify-center border border-primary/20">
+                <MapPin className="size-4" />
+              </div>
+              <h4 className="text-xs sm:text-sm font-bold text-foreground">
+                GPS Geofencing &amp; Timestamps
+              </h4>
+              <p className="text-xs text-muted-foreground leading-relaxed">
+                Every retail audit, warehouse inspection, and agricultural kiosk interview is cryptographically stamped with high-precision GPS geofences and acoustic timestamps. This verifiable telemetry guarantees physical ground presence and completely prevents desk-manufactured responses.
+              </p>
             </div>
-            <h4 className="text-xs sm:text-sm font-bold text-foreground">
-              GPS Geofencing &amp; Timestamps
-            </h4>
-            <p className="text-xs text-muted-foreground leading-relaxed">
-              Every retail audit, factory visit, and farm survey is geocoded and acoustic-timestamped, preventing desk-manufactured responses.
-            </p>
           </div>
 
-          <div className="p-5 rounded-none border border-border/80 bg-card space-y-2 hover:border-primary/50 transition-all">
-            <div className="size-8 rounded-none bg-primary/10 text-primary flex items-center justify-center font-mono font-bold text-xs border border-primary/20">
-              03
+          <div className="p-5 rounded-none border border-border/80 bg-card space-y-3 hover:border-primary/50 transition-all flex flex-col justify-between">
+            <div className="space-y-2">
+              <div className="size-8 rounded-none bg-primary/10 text-primary flex items-center justify-center border border-primary/20">
+                <BarChart3 className="size-4" />
+              </div>
+              <h4 className="text-xs sm:text-sm font-bold text-foreground">
+                Statistical 95% Confidence Interval
+              </h4>
+              <p className="text-xs text-muted-foreground leading-relaxed">
+                All field architectures are calibrated to a mathematical 95% confidence interval with tight margins of error (±1.8% to ±2.4%). Stratification across subnational wholesale nodes, commercial corridors, and peri-urban settlements ensures defensible boardroom investment models.
+              </p>
             </div>
-            <h4 className="text-xs sm:text-sm font-bold text-foreground">
-              Statistical 95% Confidence Interval
-            </h4>
-            <p className="text-xs text-muted-foreground leading-relaxed">
-              Sample sizes are mathematically calculated with narrow margins of error (±1.8% to ±2.4%) for boardroom investment defensibility.
-            </p>
           </div>
 
-          <div className="p-5 rounded-none border border-border/80 bg-card space-y-2 hover:border-primary/50 transition-all">
-            <div className="size-8 rounded-none bg-primary/10 text-primary flex items-center justify-center font-mono font-bold text-xs border border-primary/20">
-              04
+          <div className="p-5 rounded-none border border-border/80 bg-card space-y-3 hover:border-primary/50 transition-all flex flex-col justify-between">
+            <div className="space-y-2">
+              <div className="size-8 rounded-none bg-primary/10 text-primary flex items-center justify-center border border-primary/20">
+                <Users className="size-4" />
+              </div>
+              <h4 className="text-xs sm:text-sm font-bold text-foreground">
+                Vernacular Trade Dialects
+              </h4>
+              <p className="text-xs text-muted-foreground leading-relaxed">
+                Field sweeps are executed in Swahili and specific subnational trade vernaculars by native local researchers who understand regional credit customs, informal duka trade terms, and neighborhood merchant purchase velocity.
+              </p>
             </div>
-            <h4 className="text-xs sm:text-sm font-bold text-foreground">
-              Vernacular Trade Dialects
-            </h4>
-            <p className="text-xs text-muted-foreground leading-relaxed">
-              Conducted in Swahili and regional trade vernaculars by native enumerators who understand informal settlement credit cultures.
-            </p>
           </div>
         </div>
       </div>
@@ -885,7 +874,7 @@ function SampleResearchBriefsContent() {
             <div className="space-y-2 border-b border-border/60 pb-5">
               <div className="flex items-center gap-2">
                 <span className="text-[11px] font-mono font-bold text-primary uppercase">
-                  STRATUM OFFICIAL SPECIFICATION MEMO &bull; {selectedBrief.badge}
+                  STRATUM OFFICIAL SPECIFICATION MEMO
                 </span>
                 <span className="text-border">•</span>
                 <span className="text-[10px] font-mono text-muted-foreground uppercase">

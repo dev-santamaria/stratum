@@ -33,11 +33,6 @@ export default function AboutPage() {
       <section className="py-12 sm:py-16 border-b border-border/80 bg-slate-50 dark:bg-card/40">
         <div className="mx-auto w-full max-w-[1536px] px-4 sm:px-6 lg:px-8 xl:px-10">
           <div className="max-w-4xl space-y-4">
-            <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-none border border-border/80 bg-background text-[11px] font-mono font-semibold text-primary shadow-2xs">
-              <Globe2 className="size-3 text-primary shrink-0" />
-              <span>ABOUT STRATUM RESEARCH LTD &bull; NAIROBI ADVISORY DESK</span>
-            </div>
-
             <h1 className="text-2xl sm:text-3xl md:text-4xl font-medium text-foreground tracking-tight leading-tight">
               Market Intelligence, Strategic Research &amp; Business Intermediation
             </h1>
@@ -71,14 +66,11 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* 3. OUR MISSION & OUR VISION (Tall WordPress-Style Sharp-Edged Colored Cards) */}
+      {/* 3. OUR MISSION & OUR VISION (Clean Sharp-Edged Colored Cards) */}
       <section className="py-14 sm:py-20 border-b border-border/80 bg-background">
         <div className="mx-auto w-full max-w-[1536px] px-4 sm:px-6 lg:px-8 xl:px-10 space-y-8">
           
           <div className="max-w-2xl space-y-1.5">
-            <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-primary">
-              INSTITUTIONAL FOUNDATION
-            </span>
             <h2 className="text-xl sm:text-2xl font-semibold text-foreground tracking-tight">
               Our Mission &amp; Our Vision
             </h2>
@@ -90,12 +82,9 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
             
             {/* Mission Card: Midnight Navy (#002B49) */}
-            <div className="bg-[#002B49] text-white border border-[#003A63] rounded-none p-7 sm:p-9 flex flex-col justify-between space-y-6 shadow-sm min-h-[300px] hover:border-sky-400/50 transition-colors">
+            <div className="bg-[#002B49] text-white border border-[#003A63] rounded-none p-7 sm:p-9 flex flex-col justify-between space-y-6 shadow-sm min-h-[250px] hover:border-sky-400/50 transition-colors">
               <div className="space-y-4">
-                <div className="flex items-center justify-between border-b border-white/15 pb-4">
-                  <span className="font-mono text-xs font-bold tracking-wider text-sky-200">
-                    PURPOSE &bull; 01
-                  </span>
+                <div className="flex items-center justify-start border-b border-white/15 pb-4">
                   <div className="size-9 rounded-none bg-white/15 border border-white/20 flex items-center justify-center text-white">
                     <Target className="size-4.5 text-sky-200" />
                   </div>
@@ -114,20 +103,12 @@ export default function AboutPage() {
                   We are bridging investment gaps for high-impact entrepreneurs through real time insights, market intelligence and cross-continental investment intermediation.
                 </p>
               </div>
-
-              <div className="pt-3 border-t border-white/15 flex items-center gap-2 text-[11px] font-mono text-sky-200/90">
-                <span className="size-1.5 rounded-none bg-sky-300" />
-                <span>Real-Time Insights &bull; Market Intelligence &bull; Investment Intermediation</span>
-              </div>
             </div>
 
             {/* Vision Card: Rich Forest Emerald (#167D3C) */}
-            <div className="bg-[#167D3C] text-white border border-[#1B9447] rounded-none p-7 sm:p-9 flex flex-col justify-between space-y-6 shadow-sm min-h-[300px] hover:border-emerald-300/50 transition-colors">
+            <div className="bg-[#167D3C] text-white border border-[#1B9447] rounded-none p-7 sm:p-9 flex flex-col justify-between space-y-6 shadow-sm min-h-[250px] hover:border-emerald-300/50 transition-colors">
               <div className="space-y-4">
-                <div className="flex items-center justify-between border-b border-white/15 pb-4">
-                  <span className="font-mono text-xs font-bold tracking-wider text-emerald-100">
-                    HORIZON &bull; 02
-                  </span>
+                <div className="flex items-center justify-start border-b border-white/15 pb-4">
                   <div className="size-9 rounded-none bg-white/15 border border-white/20 flex items-center justify-center text-white">
                     <Sparkles className="size-4.5 text-emerald-100" />
                   </div>
@@ -146,11 +127,6 @@ export default function AboutPage() {
                   Our vision is to be a global centre of excellence that empowers brands to build systems that solve high-value problems through data-driven insights and market trend analysis.
                 </p>
               </div>
-
-              <div className="pt-3 border-t border-white/15 flex items-center gap-2 text-[11px] font-mono text-emerald-100/90">
-                <span className="size-1.5 rounded-none bg-emerald-300" />
-                <span>Global Excellence &bull; Scalable Systems &bull; High-Value Problem Solving</span>
-              </div>
             </div>
 
           </div>
@@ -158,14 +134,11 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* 4. OUR CORE VALUES (Sharp WordPress-Style Tall Cards: Navy, Emerald, Sapphire) */}
+      {/* 4. OUR CORE VALUES (Clean Cards: Navy, Emerald, Sapphire) */}
       <section className="py-14 sm:py-20 border-b border-border/80 bg-slate-50 dark:bg-card/40">
         <div className="mx-auto w-full max-w-[1536px] px-4 sm:px-6 lg:px-8 xl:px-10 space-y-10">
           
           <div className="max-w-2xl space-y-1.5">
-            <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-primary">
-              OPERATING PILLARS
-            </span>
             <h2 className="text-xl sm:text-2xl font-semibold text-foreground tracking-tight">
               Our Core Values
             </h2>
@@ -177,13 +150,12 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6">
             
             {/* Value 1: INTEGRITY */}
-            <div className="p-7 sm:p-8 rounded-none border border-border/80 bg-card space-y-5 flex flex-col justify-between shadow-2xs hover:border-[#002B49] dark:hover:border-sky-400 transition-colors min-h-[320px]">
+            <div className="p-7 sm:p-8 rounded-none border border-border/80 bg-card space-y-5 flex flex-col justify-between shadow-2xs hover:border-[#002B49] dark:hover:border-sky-400 transition-colors min-h-[260px]">
               <div className="space-y-4">
-                <div className="flex items-center justify-between border-b border-border/60 pb-3">
+                <div className="flex items-center justify-start border-b border-border/60 pb-3">
                   <div className="size-10 rounded-none bg-[#002B49] text-white flex items-center justify-center">
                     <ShieldCheck className="size-5 text-sky-300" />
                   </div>
-                  <span className="font-mono text-xs font-bold text-primary">VALUE 01</span>
                 </div>
 
                 <div className="space-y-1">
@@ -199,21 +171,15 @@ export default function AboutPage() {
                   At Stratum, we value impactful results and client satisfaction. This is why integrity is a core pillar of our operations. We believe that to deliver desirable results for our clients, both honesty and consistency have to be part of the service delivery process.
                 </p>
               </div>
-
-              <div className="pt-3 border-t border-border/50 text-[11px] font-mono font-semibold text-primary flex items-center gap-1.5 uppercase tracking-wider">
-                <span className="size-1.5 rounded-none bg-primary" />
-                <span>Honesty &bull; Consistency &bull; Accountability</span>
-              </div>
             </div>
 
             {/* Value 2: CLIENT CENTERED APPROACH */}
-            <div className="p-7 sm:p-8 rounded-none border border-border/80 bg-card space-y-5 flex flex-col justify-between shadow-2xs hover:border-[#167D3C] dark:hover:border-emerald-400 transition-colors min-h-[320px]">
+            <div className="p-7 sm:p-8 rounded-none border border-border/80 bg-card space-y-5 flex flex-col justify-between shadow-2xs hover:border-[#167D3C] dark:hover:border-emerald-400 transition-colors min-h-[260px]">
               <div className="space-y-4">
-                <div className="flex items-center justify-between border-b border-border/60 pb-3">
+                <div className="flex items-center justify-start border-b border-border/60 pb-3">
                   <div className="size-10 rounded-none bg-[#167D3C] text-white flex items-center justify-center">
                     <Users2 className="size-5 text-emerald-200" />
                   </div>
-                  <span className="font-mono text-xs font-bold text-emerald-600 dark:text-emerald-400">VALUE 02</span>
                 </div>
 
                 <div className="space-y-1">
@@ -229,21 +195,15 @@ export default function AboutPage() {
                   At Stratum, we believe in giving our clients value for their money. This is why we offer bespoke services, depending on a client&apos;s business needs, market gaps and desired objectives.
                 </p>
               </div>
-
-              <div className="pt-3 border-t border-border/50 text-[11px] font-mono font-semibold text-emerald-600 dark:text-emerald-400 flex items-center gap-1.5 uppercase tracking-wider">
-                <span className="size-1.5 rounded-none bg-emerald-600 dark:bg-emerald-400" />
-                <span>Bespoke Scoping &bull; Maximum ROI</span>
-              </div>
             </div>
 
             {/* Value 3: RAPID ADAPTATION */}
-            <div className="p-7 sm:p-8 rounded-none border border-border/80 bg-card space-y-5 flex flex-col justify-between shadow-2xs hover:border-[#004B87] dark:hover:border-cyan-400 transition-colors min-h-[320px]">
+            <div className="p-7 sm:p-8 rounded-none border border-border/80 bg-card space-y-5 flex flex-col justify-between shadow-2xs hover:border-[#004B87] dark:hover:border-cyan-400 transition-colors min-h-[260px]">
               <div className="space-y-4">
-                <div className="flex items-center justify-between border-b border-border/60 pb-3">
+                <div className="flex items-center justify-start border-b border-border/60 pb-3">
                   <div className="size-10 rounded-none bg-[#004B87] text-white flex items-center justify-center">
                     <Zap className="size-5 text-cyan-200" />
                   </div>
-                  <span className="font-mono text-xs font-bold text-[#004B87] dark:text-sky-400">VALUE 03</span>
                 </div>
 
                 <div className="space-y-1">
@@ -259,11 +219,6 @@ export default function AboutPage() {
                   As a data-dependent service provider, Stratum believes that consumer data points, market trends, digital infrastructure and analysis models are rapidly evolving. This is why we make regular adjustments in our systems to ensure accuracy in predicting market trends and consumer behaviours.
                 </p>
               </div>
-
-              <div className="pt-3 border-t border-border/50 text-[11px] font-mono font-semibold text-[#004B87] dark:text-sky-400 flex items-center gap-1.5 uppercase tracking-wider">
-                <span className="size-1.5 rounded-none bg-[#004B87] dark:bg-sky-400" />
-                <span>Predictive Accuracy &bull; Continuous Agility</span>
-              </div>
             </div>
 
           </div>
@@ -275,9 +230,6 @@ export default function AboutPage() {
       <section className="py-12 sm:py-16 border-b border-border/80 bg-background">
         <div className="mx-auto w-full max-w-[1536px] px-4 sm:px-6 lg:px-8 xl:px-10 space-y-8">
           <div className="max-w-2xl space-y-1.5">
-            <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-primary">
-              OUR FOUNDING THESIS
-            </span>
             <h2 className="text-xl sm:text-2xl font-semibold text-foreground tracking-tight">
               Solving the Frontier Data Gap
             </h2>
@@ -330,9 +282,6 @@ export default function AboutPage() {
       <section className="py-14 sm:py-18 bg-[#002B49] text-white border-b border-border/80">
         <div className="mx-auto w-full max-w-[1536px] px-4 sm:px-6 lg:px-8 xl:px-10">
           <div className="max-w-4xl mx-auto text-center space-y-5">
-            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-none bg-white/10 border border-white/20 text-[10px] font-mono font-semibold text-emerald-300 uppercase tracking-wider">
-              ENGAGE STRATUM RESEARCH LTD
-            </span>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight text-white leading-tight">
               Ready to Gather Ground Truth &amp; Execute Growth?
             </h2>

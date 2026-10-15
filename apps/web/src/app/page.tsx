@@ -8,7 +8,6 @@ import { ServicesSlider } from "@/components/landing/services-slider";
 import { InfographicTable } from "@/components/landing/infographic-table";
 import {
   ArrowRight,
-  Globe2,
   ShoppingBag,
   Landmark,
   Cpu,
@@ -42,11 +41,6 @@ export default function Home() {
             
             {/* Left 7 Cols: Concise Proposition */}
             <div className="lg:col-span-7 space-y-3.5">
-              <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-none border border-border/80 bg-background text-[11px] font-mono font-semibold text-primary shadow-2xs">
-                <Globe2 className="size-3 text-primary shrink-0" />
-                <span>STRATUM RESEARCH LTD &bull; NAIROBI ADVISORY DESK</span>
-              </div>
-
               <h2 className="text-xl sm:text-2xl lg:text-3xl font-medium text-foreground tracking-tight leading-snug">
                 Empirical Intelligence That Moves Business Forward
               </h2>
@@ -112,9 +106,6 @@ export default function Home() {
           
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 max-w-4xl">
             <div className="space-y-1.5">
-              <div className="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-none border border-border/80 bg-muted/40 text-[10px] font-mono font-semibold text-primary uppercase">
-                <span>SECTORS WE COVER</span>
-              </div>
               <h2 className="text-xl sm:text-2xl font-semibold text-foreground tracking-tight">
                 Specialized Practice Across 13+ Industries
               </h2>
@@ -164,9 +155,6 @@ export default function Home() {
       <section className="py-14 sm:py-18 bg-[#002B49] text-white border-b border-border/80">
         <div className="mx-auto w-full max-w-[1536px] px-4 sm:px-6 lg:px-8 xl:px-10">
           <div className="max-w-4xl mx-auto text-center space-y-5">
-            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-none bg-white/10 border border-white/20 text-[10px] font-mono font-semibold text-emerald-300 uppercase tracking-wider">
-              ENGAGE STRATUM RESEARCH LTD
-            </span>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight text-white leading-tight">
               Ready to Gather Ground Truth &amp; Execute Growth?
             </h2>

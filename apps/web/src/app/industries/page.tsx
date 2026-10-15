@@ -19,7 +19,6 @@ import {
   Tv,
   Package,
   Building,
-  CheckCircle2,
 } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -28,188 +27,118 @@ export const metadata: Metadata = {
     "Stratum provides specialized market research and intelligence across Consumer & Retail, Financial Services, Technology, Agriculture, Healthcare, Energy, and more.",
 };
 
-const INDUSTRIES_CATALOG = [
+interface IndustryItem {
+  id: string;
+  name: string;
+  icon: React.ElementType;
+  headline: string;
+  description: string;
+}
+
+const INDUSTRIES_CATALOG: IndustryItem[] = [
   {
     id: "consumer-retail",
     name: "Consumer & Retail",
     icon: ShoppingBag,
-    kicker: "INFORMAL & MODERN TRADE",
-    headline: "Uncovering the 80%+ Retail Flow in Traditional Trade",
+    headline: "Uncovering Retail Flows across Informal and Modern Trade",
     description:
-      "From neighborhood dukas and kiosks to modern shopping centers, we capture true off-shelf velocity, out-of-stock frequency, retail margins, and consumer brand loyalty.",
-    methodologies: [
-      "GPS spatial kiosk censuses and shelf-share tracking",
-      "Coin-point price elasticity curves and SKU volume audits",
-      "Wholesaler discount and rebate structure mapping",
-    ],
+      "From neighborhood dukas and open-air kiosks to modern retail chains, we capture ground-truth off-shelf velocity, stockout frequencies, and brand loyalty across traditional trade. Through GPS-geofenced kiosk censuses, single-coin price elasticity calibration, and wholesaler rebate mapping, we provide clear visibility into where informal consumer retail volume actually moves.",
   },
   {
     id: "financial-services",
     name: "Financial Services & Fintech",
     icon: Landmark,
-    kicker: "BANKING & DIGITAL PAYMENTS",
     headline: "Mobile Money Adoption, Micro-Credit & Merchant Acceptance",
     description:
-      "Tracking the transition between physical cash and mobile money, merchant interchange fees, micro-lending default behaviours, and agency banking network penetration.",
-    methodologies: [
-      "Merchant POS and mobile money acceptance diagnostics",
-      "SME cashflow volatility and credit appetite studies",
-      "Regulatory compliance & payment interoperability mapping",
-    ],
+      "We evaluate the operational transition between physical currency and digital rails across informal retail corridors. Our studies benchmark merchant mobile money acceptance, interchange friction points, SME cashflow volatility, and agency banking network penetration to guide digital financial product design and regulatory compliance.",
   },
   {
     id: "technology",
     name: "Technology & Digital Platforms",
     icon: Cpu,
-    kicker: "B2B SAAS & PLATFORM ECOSYSTEMS",
-    headline: "Tech Adoption, Last-Mile Logistics & Digital Commerce",
+    headline: "Platform Adoption, Last-Mile Logistics & B2B SaaS Willingness-to-Pay",
     description:
-      "Evaluating tech platform adoption, software willingness-to-pay, B2B marketplace friction points, and digital consumer acquisition costs across frontier markets.",
-    methodologies: [
-      "B2B software buyer journeys and decision-maker interviews",
-      "Last-mile delivery route optimization benchmarks",
-      "App usability trials and bandwidth-constrained performance tests",
-    ],
+      "We analyze technology adoption thresholds, digital platform unit economics, and software willingness-to-pay across frontier enterprise environments. Through structured decision-maker interviews, last-mile delivery route audits, and bandwidth-constrained app usability testing, we de-risk market expansion for B2B marketplaces and software platforms.",
   },
   {
     id: "agriculture-food",
     name: "Agriculture & Food Systems",
     icon: Sprout,
-    kicker: "SMALLHOLDER AGRI & COLD-CHAINS",
     headline: "Value Chain Mapping, Post-Harvest Cold Storage & Off-Grid Agri",
     description:
-      "Investigating farm-gate pricing, aggregator monopolies, post-harvest losses, cooperative willingness-to-pay for solar refrigeration, and input distribution networks.",
-    methodologies: [
-      "Rural cooperative surveys and smallholder yield diagnostics",
-      "Cold-chain refrigerated transport margin modeling",
-      "Export quality certification and bilateral trade gateway audits",
-    ],
+      "We investigate farm-gate price realization, aggregator margin structures, post-harvest losses, and agricultural input distribution corridors. By auditing rural farmer cooperatives, modeling cold-chain refrigerated logistics economics, and evaluating export trade certification gateways, we connect agricultural potential with commercial scale.",
   },
   {
     id: "healthcare",
     name: "Healthcare & Life Sciences",
     icon: Stethoscope,
-    kicker: "PHARMACEUTICALS & CLINICAL ACCESS",
     headline: "Medicine Availability, Counterfeit Audits & Clinic Procurement",
     description:
-      "Assessing over-the-counter pharmaceutical stockout rates, active pharmaceutical ingredient (API) sourcing from Asia, community clinic procurement, and patient healthcare expenditure.",
-    methodologies: [
-      "Pharmacy prescription audits and OTC brand substitution sweeps",
-      "Direct Asian pharmaceutical manufacturing plant inspections",
-      "Subnational disease burden and healthcare affordability studies",
-    ],
+      "We monitor pharmaceutical supply chain integrity, community clinic procurement, and patient out-of-pocket healthcare expenditures. Through prescription audits, OTC brand substitution sweeps, and direct factory inspections of API manufacturers in Asian production corridors, we ensure pharmaceutical access and distribution compliance.",
   },
   {
     id: "manufacturing",
     name: "Manufacturing & Industrial Goods",
     icon: Factory,
-    kicker: "IMPORT SUBSTITUTION & FACTORY FLOORS",
-    headline: "Plant Capacity Verification, Raw Material Sourcing & AfCFTA",
+    headline: "Plant Capacity Verification, Raw Material Sourcing & AfCFTA Readiness",
     description:
-      "Conducting on-site factory capacity audits, raw material input cost tracking, industrial energy consumption benchmarks, and regional export readiness under AfCFTA rules.",
-    methodologies: [
-      "Physical manufacturing line inspections and QA verification",
-      "Cross-border tariff classification and freight logistics audits",
-      "Industrial equipment procurement and co-packer due diligence",
-    ],
+      "We assess manufacturing capacity utilization, raw material input inflation, industrial energy benchmarks, and regional trade readiness under AfCFTA guidelines. Our teams conduct on-site physical production line audits, tariff classification reviews, and co-packer due diligence to support industrial expansion and import substitution.",
   },
   {
     id: "energy",
     name: "Energy, Renewables & Utilities",
     icon: Zap,
-    kicker: "DECENTRALIZED POWER & MINI-GRIDS",
     headline: "Commercial Solar Feasibility, Off-Grid Demand & Utility Tariffs",
     description:
-      "Analyzing commercial and industrial (C&I) solar adoption, microgrid payment collection rates, generator fuel costs, and municipal power grid reliability across industrial belts.",
-    methodologies: [
-      "Industrial energy audit and diesel-replacement ROI modeling",
-      "Off-grid household willingness-to-pay for PAYG solar systems",
-      "Mini-grid regulatory tariff approval roadmaps",
-    ],
+      "We analyze commercial and industrial (C&I) solar economics, municipal grid reliability, and decentralized mini-grid viability across productive trade zones. By modeling diesel-replacement ROI, evaluating household willingness-to-pay for PAYG solar systems, and reviewing regulatory tariff structures, we support sustainable energy capital commitments.",
   },
   {
     id: "telecommunications",
     name: "Telecommunications & Connectivity",
     icon: PhoneCall,
-    kicker: "INFRASTRUCTURE & BROADBAND ACCESS",
     headline: "Fiber Feasibility, Tower Economics & Data Basket Affordability",
     description:
-      "Evaluating subnational data bundle purchasing power, device financing penetration, fiber-to-the-home viability, and mobile network operator market share shifts.",
-    methodologies: [
-      "Consumer airtime and mobile data basket allocation audits",
-      "Telecom tower site lease and power cost diagnostics",
-      "Spectrum policy and subnational coverage verification",
-    ],
+      "We evaluate subnational telecommunications spending, smart device financing adoption, fiber-to-the-home viability, and mobile network operator market share dynamics. We analyze consumer airtime wallet share, audit cell tower operating costs, and verify empirical field coverage to inform infrastructure investments.",
   },
   {
     id: "mobility-transport",
     name: "Mobility, Logistics & Transport",
     icon: Truck,
-    kicker: "FLEET ECONOMICS & TRADE CORRIDORS",
-    headline: "Corridor Freight Rates, EV 2-Wheeler Fleet Trials & Border Transit",
+    headline: "Corridor Freight Rates, EV Fleet Trials & Border Transit Efficiency",
     description:
-      "Tracking maritime port dwell times, cross-border trucking tariffs, informal matatu/boda-boda fuel economics, and electric vehicle battery-swapping station utilization.",
-    methodologies: [
-      "Transit corridor toll, weighbridge, and dwell time audits",
-      "Commercial EV fleet total-cost-of-ownership (TCO) benchmarks",
-      "Freight forwarder and customs clearing agent due diligence",
-    ],
+      "We track cross-border logistics friction, port container dwell times, trucking freight tariffs, and urban mobility economics across regional transit corridors. Through total-cost-of-ownership (TCO) benchmarks for commercial EV fleets and customs forwarder due diligence, we provide actionable clarity on freight efficiency.",
   },
   {
     id: "hospitality-tourism",
     name: "Hospitality & Tourism",
     icon: Hotel,
-    kicker: "BUSINESS TRAVEL & ECO-TOURISM",
-    headline: "Occupancy Trends, Guest Sentiment & Regional Conference Demand",
+    headline: "Corporate Lodging Trends, Guest Sentiment & Regional Conference Demand",
     description:
-      "Measuring corporate lodging demand, regional conference bookings, leisure travel expenditure, and international tourist satisfaction metrics across primary tourist corridors.",
-    methodologies: [
-      "Hotel RevPAR benchmarking and corporate corporate rate tracking",
-      "Guest experience Net Promoter Score surveys",
-      "Aviation route connectivity and regional passenger flow analysis",
-    ],
+      "We measure corporate lodging demand, regional conference bookings, leisure expenditure, and guest satisfaction metrics across prime destination hubs. By benchmarking hotel RevPAR performance, tracking corporate negotiated rates, and analyzing regional aviation connectivity, we support hospitality investment and asset management.",
   },
   {
     id: "media-entertainment",
     name: "Media & Entertainment",
     icon: Tv,
-    kicker: "CONTENT & DIGITAL STREAMING",
     headline: "Audience Measurement, Local Language Audio & Creator Economics",
     description:
-      "Quantifying radio and vernacular television listenership, mobile streaming subscription rates, local influencer conversion impact, and entertainment expenditure.",
-    methodologies: [
-      "Daypart radio and TV audience diary panels",
-      "Mobile streaming data consumption and subscription churn tracking",
-      "Vernacular ad-recall and media effectiveness studies",
-    ],
+      "We quantify vernacular broadcast listenership, television viewership patterns, mobile streaming subscription churn, and creator marketing conversion impact. Using daypart audience diary panels and localized ad-recall studies, we help media brands optimize content programming and advertising spend.",
   },
   {
     id: "consumer-products",
     name: "Consumer Products & Personal Care",
     icon: Package,
-    kicker: "BEAUTY, HYGIENE & PACKAGING",
-    headline: "Sachet Formats, Hair & Skin Formulation Fit & Daily Household Spend",
+    headline: "Sachet Formats, Formulation Fit & Household Daily Expenditure",
     description:
-      "Examining personal care usage rituals, sachet vs bulk purchase preferences, natural ingredient demands, and distributor inventory turnover for beauty and hygiene products.",
-    methodologies: [
-      "Household bathroom and pantry inventory audits",
-      "Sensory touch, lather, and fragrance consumer testing",
-      "Packaging leak-resistance and shelf-life simulation trials",
-    ],
+      "We examine daily personal care rituals, sachet format price thresholds, natural ingredient preferences, and distributor inventory turns across FMCG corridors. Our teams conduct in-home pantry audits, consumer sensory fragrance trials, and packaging durability testing to ensure market formulation fit.",
   },
   {
     id: "real-estate",
     name: "Real Estate & Construction",
     icon: Building,
-    kicker: "URBAN INFRASTRUCTURE & HOUSING",
     headline: "Affordable Housing Demand, Building Material Costs & Commercial Land",
     description:
-      "Auditing cement and steel wholesale price movements, rental yield profiles, residential buyer mortgage qualification rates, and commercial warehouse vacancy levels.",
-    methodologies: [
-      "Building material hardware store census and contractor interviews",
-      "Urban master-plan zoning and infrastructure readiness reviews",
-      "Middle-income household mortgage and rent-to-own willingness studies",
-    ],
+      "We track wholesale building material pricing, residential rental yield profiles, mortgage qualification barriers, and commercial industrial vacancy rates. Through hardware retail censuses, contractor interviews, and urban zoning reviews, we provide developers and financiers with empirical property intelligence.",
   },
 ];
 
@@ -222,12 +151,6 @@ export default function IndustriesPage() {
       <section className="relative pt-10 pb-12 sm:pt-14 sm:pb-16 border-b border-border/80 bg-background">
         <div className="mx-auto w-full max-w-[1536px] px-4 sm:px-6 lg:px-8 xl:px-10 space-y-6">
           <div className="max-w-4xl space-y-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-none border border-border/80 bg-muted/40 text-xs font-mono font-semibold text-muted-foreground shadow-2xs">
-              <span className="text-primary font-bold">SECTOR INTELLIGENCE</span>
-              <span className="text-border">•</span>
-              <span className="text-foreground">MARKET INTELLIGENCE ACROSS DIVERSE SECTORS</span>
-            </div>
-
             <h1 className="text-2xl sm:text-3xl md:text-4xl font-medium text-foreground tracking-tight leading-[1.2]">
               Market Intelligence Across Diverse Sectors
             </h1>
@@ -259,9 +182,6 @@ export default function IndustriesPage() {
       <section className="py-12 sm:py-16 border-b border-border/80 bg-muted/15">
         <div className="mx-auto w-full max-w-[1536px] px-4 sm:px-6 lg:px-8 xl:px-10 space-y-8">
           <div className="max-w-3xl space-y-2">
-            <span className="text-xs font-mono font-bold tracking-wider text-primary uppercase">
-              13+ SPECIALIZED SECTOR PRACTICES
-            </span>
             <h2 className="text-2xl sm:text-3xl font-medium text-foreground tracking-tight">
               Sector Expertise Grounded in Emerging Market Dynamics
             </h2>
@@ -277,16 +197,13 @@ export default function IndustriesPage() {
                 <div
                   key={ind.id}
                   id={ind.id}
-                  className="p-6 rounded-none border border-border/80 bg-card hover:border-primary/50 transition-all duration-200 flex flex-col justify-between space-y-5 group shadow-2xs"
+                  className="p-6 rounded-none border border-border/80 bg-card hover:border-primary/50 transition-all duration-200 flex flex-col justify-between space-y-5 group shadow-2xs min-h-[320px]"
                 >
                   <div className="space-y-3">
-                    <div className="flex items-center justify-between">
+                    <div className="flex items-center justify-between border-b border-border/60 pb-3">
                       <div className="size-9 rounded-none bg-primary/10 text-primary flex items-center justify-center group-hover:bg-primary group-hover:text-primary-foreground transition-colors border border-primary/20">
                         <Icon className="size-4.5" />
                       </div>
-                      <span className="text-[10px] font-mono font-bold text-muted-foreground uppercase tracking-wider">
-                        {ind.kicker}
-                      </span>
                     </div>
 
                     <h3 className="text-lg font-bold text-foreground group-hover:text-primary transition-colors">
@@ -300,20 +217,6 @@ export default function IndustriesPage() {
                     <p className="text-xs text-muted-foreground leading-relaxed">
                       {ind.description}
                     </p>
-
-                    <div className="pt-2 border-t border-border/60 space-y-1.5">
-                      <div className="text-[11px] font-mono font-bold text-foreground uppercase tracking-wide">
-                        Core Methodologies:
-                      </div>
-                      <ul className="space-y-1 text-xs text-muted-foreground">
-                        {ind.methodologies.map((m, mIdx) => (
-                          <li key={mIdx} className="flex items-start gap-2">
-                            <CheckCircle2 className="size-3 text-emerald-600 dark:text-emerald-400 mt-0.5 shrink-0" />
-                            <span className="text-[11px] leading-snug">{m}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
                   </div>
 
                   <div className="pt-3 border-t border-border/60">
@@ -335,9 +238,6 @@ export default function IndustriesPage() {
       {/* 3. SIGNATURE CORPORATE CTA BANNER */}
       <section className="py-12 sm:py-16 bg-[#002B49] text-white rounded-none border-b border-border/80">
         <div className="mx-auto w-full max-w-[1536px] px-4 sm:px-6 lg:px-8 xl:px-10 text-center space-y-4 max-w-4xl">
-          <span className="text-xs font-mono font-bold tracking-widest text-[#48cae4] uppercase">
-            TAILORED INDUSTRY INTELLIGENCE
-          </span>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-medium tracking-tight text-white">
             Do You Need Intelligence in a Specialized Commercial Sector?
           </h2>

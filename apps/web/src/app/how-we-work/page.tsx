@@ -6,25 +6,17 @@ import { Footer } from "@/components/landing/footer";
 import { MobilePwaBar } from "@/components/navigation/mobile-pwa-bar";
 import {
   ArrowRight,
-  CheckCircle2,
   Clock,
   FileCheck,
   Globe2,
-  Lock,
   MapPin,
-  Phone,
   ShieldCheck,
-  Sparkles,
-  Users2,
-  Workflow,
-  Building2,
-  Layers,
-  BarChart3,
   TrendingUp,
   Database,
-  Cpu,
   Search,
-  FileText,
+  Building2,
+  Layers,
+  Users2,
 } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -34,8 +26,6 @@ export const metadata: Metadata = {
 };
 
 interface StageItem {
-  step: string;
-  kicker: string;
   name: string;
   tagline: string;
   description: string;
@@ -43,116 +33,68 @@ interface StageItem {
   borderClass: string;
   accentBadgeClass: string;
   icon: React.ElementType;
-  sla: string;
-  highlights: string[];
-  deliverable: string;
   ctaLabel: string;
   ctaHref: string;
 }
 
 const STAGES: StageItem[] = [
   {
-    step: "01",
-    kicker: "STAGE 01 // SCOPING & PROTOCOL",
-    name: "FRAME & DEFINE",
-    tagline: "Isolate Strategic Objectives, Hypothesis Architecture & Bilateral NDA",
+    name: "Frame & Define",
+    tagline: "Strategic Scoping, Hypothesis Architecture & Governance",
     description:
-      "Collaborative scoping briefing, subnational geographic scaffolding, statistical sample power calibration (95% CI), and mutual bilateral NDA execution.",
+      "Every research engagement initiates with a collaborative executive scoping session to deconstruct organizational goals into rigorous empirical hypotheses. We calibrate statistical sample power (95% CI, ±1.8% MoE), establish subnational geographic sampling frames, and execute bilateral non-disclosure agreements within 48 to 72 hours—producing a comprehensive Engagement Charter and Statistical Blueprint.",
     bgClass: "bg-[#002B49] text-white",
     borderClass: "border-[#003A63] hover:border-sky-400/60",
     accentBadgeClass: "bg-white/10 text-sky-200 border-white/20",
     icon: Search,
-    sla: "Completed in 48–72 Hours",
-    highlights: [
-      "Executive Scoping Intake & Goal Decomposition",
-      "Sample Power & Margin Calibration (95% CI, ±1.8% MoE)",
-      "Bilateral Mutual Non-Disclosure Agreement (NDA)",
-    ],
-    deliverable: "Engagement Charter & Statistical Sampling Blueprint",
     ctaLabel: "COMMISSION STAGE 01",
     ctaHref: "/contact?cta=COMMISSION_RESEARCH&stage=01",
   },
   {
-    step: "02",
-    kicker: "STAGE 02 // PRIMARY FIELDWORK",
-    name: "GROUND FIELDWORK",
-    tagline: "Deploy Double-Blind Enumerator Sweeps, Kiosk Audits & Dialect Intercepts",
+    name: "Ground Fieldwork",
+    tagline: "Double-Blind Enumerator Sweeps & Trade Censuses",
     description:
-      "Coordinated enumerator sweeps across informal retail dukas, open-air wholesale corridors, and consumer households with zero client brand observer bias.",
+      "Our field teams deploy coordinated enumerator sweeps across informal retail dukas, wholesale trade corridors, and consumer households over a 10 to 21-day window. Operating under strict double-blind protocols with zero brand observer bias, we conduct vernacular dialect intercepts and 100% GPS-geofenced kiosk shelf audits to produce audit-grade empirical datasets.",
     bgClass: "bg-[#167D3C] text-white",
     borderClass: "border-[#1B9447] hover:border-emerald-300/60",
     accentBadgeClass: "bg-white/10 text-emerald-100 border-white/20",
     icon: Users2,
-    sla: "Turnaround: 10–21 Business Days",
-    highlights: [
-      "Double-Blind Enumerator Allocation (Zero Brand Bias)",
-      "Face-to-Face Vernacular Intercepts (Swahili & Local Dialects)",
-      "100% GPS-Geofenced Retail POS & Kiosk Shelf Audits",
-    ],
-    deliverable: "Audit-Grade Primary Dataset & GPS Registry",
     ctaLabel: "INQUIRE ON FIELDWORK",
     ctaHref: "/contact?cta=COMMISSION_RESEARCH&stage=02",
   },
   {
-    step: "03",
-    kicker: "STAGE 03 // DATA SYNTHESIS",
-    name: "ANALYSE & MODEL",
-    tagline: "Clean, Normalize & Model Field Data into Decision-Grade Telemetry",
+    name: "Analyse & Model",
+    tagline: "Data Normalization, Price Elasticity & Econometric Modeling",
     description:
-      "Removing informal trade distortion, calibrating price elasticity curves at single-coin increments, and triangulating reported sales against wholesale distributor invoices.",
+      "Raw field datasets undergo rigorous statistical outlier scrubbing and informal trade normalization within 5 to 7 business days. We model price sensitivity curves down to single-coin increments, triangulate distributor invoices against reported off-take, and decompose multi-tier margin structures into an actionable Econometric Demand Model and Volume Matrix.",
     bgClass: "bg-[#004B87] text-white",
     borderClass: "border-[#0060AD] hover:border-cyan-300/60",
     accentBadgeClass: "bg-white/10 text-cyan-100 border-white/20",
     icon: Database,
-    sla: "Synthesis Window: 5–7 Business Days",
-    highlights: [
-      "Primary Data Cleaning & Statistical Outlier Scrubbing",
-      "Single-Coin Price Elasticity & Willingness-to-Pay Curves",
-      "Multi-Tier Value Chain Margin & Markup Decomposition",
-    ],
-    deliverable: "Econometric Demand Model & Volume Matrix",
     ctaLabel: "VIEW ANALYTICS SCOPE",
     ctaHref: "/contact?cta=COMMISSION_RESEARCH&stage=03",
   },
   {
-    step: "04",
-    kicker: "STAGE 04 // EXECUTIVE ADVISORY",
-    name: "STRATEGIC INTERPRET",
-    tagline: "Translate Analytical Findings into Boardroom Route-to-Market Blueprints",
+    name: "Strategic Interpret",
+    tagline: "Route-to-Market Blueprints & Executive Advisory",
     description:
-      "Senior sector directors evaluate competitor blind spots, route-to-market vulnerabilities, import tariff structures, and working capital constraints for executive decision-makers.",
+      "Senior research directors synthesize analytical findings into clear boardroom strategy within 3 to 5 business days. We evaluate competitor whitespaces, channel vulnerabilities, regulatory structures, and working capital requirements, delivering an Executive Intelligence Memo and comprehensive Go-to-Market Blueprint for leadership teams.",
     bgClass: "bg-[#1E293B] text-white",
     borderClass: "border-[#334155] hover:border-indigo-400/60",
     accentBadgeClass: "bg-white/10 text-indigo-200 border-white/20",
     icon: TrendingUp,
-    sla: "Strategy Briefing: 3–5 Business Days",
-    highlights: [
-      "Commercial Route-to-Market (RTM) Blueprinting",
-      "Competitor Whitespace & Vulnerability Diagnostics",
-      "Working Capital, FX & Regulatory De-Risking",
-    ],
-    deliverable: "Executive Intelligence Memo & Go-to-Market Blueprint",
     ctaLabel: "REQUEST ADVISORY BRIEF",
     ctaHref: "/contact?cta=COMMISSION_RESEARCH&stage=04",
   },
   {
-    step: "05",
-    kicker: "STAGE 05 // COMMERCIAL EXECUTION",
-    name: "CONNECT & ACTIVATE",
-    tagline: "Facilitate Commercial Introductions, Partner Screening & Transaction Milestones",
+    name: "Connect & Activate",
+    tagline: "Distributor Matchmaking, Site Audits & Transaction Structuring",
     description:
-      "Connecting clients with pre-vetted regional distributors, audited factory suppliers, or co-investment partners under bilateral NDAs to bridge the final commercial mile.",
+      "Stratum bridges research into commercial realization by introducing clients to pre-screened regional distributors, audited manufacturers, and investment partners. We conduct on-site physical audits of warehouses and logistics fleets, formulate bilateral partnership structures, and deliver complete Counterpart Due Diligence Dossiers.",
     bgClass: "bg-[#0A3D62] text-white",
     borderClass: "border-[#0E5284] hover:border-sky-300/60",
     accentBadgeClass: "bg-white/10 text-sky-100 border-white/20",
     icon: Globe2,
-    sla: "Intake Review: < 48 Hours",
-    highlights: [
-      "Bilateral Commercial Counterpart Matchmaking",
-      "Tier-1 Distributor Warehouse & Fleet Physical Audits",
-      "Commercial Agreement Structuring & Milestone Escrow",
-    ],
-    deliverable: "Counterpart Due Diligence Dossier & Term Sheet",
     ctaLabel: "ACCESS DEAL ROOM",
     ctaHref: "/contact?cta=COMMISSION_RESEARCH&stage=05",
   },
@@ -207,28 +149,28 @@ const SLA_TIERS = [
 
 const AUDIT_TIERS = [
   {
-    tier: "TIER 01",
+    icon: MapPin,
     label: "SPATIAL CHECK",
     title: "GPS Spatial Geofencing",
     description:
       "Programmatic geofencing verifies that field enumerators conduct interviews strictly inside registered commercial cluster boundaries. Off-premise entries trigger immediate quarantine.",
   },
   {
-    tier: "TIER 02",
+    icon: Users2,
     label: "CADENCE CHECK",
     title: "Vernacular Dialect Audits",
     description:
       "Qualitative interviews require consent-based audio cadence verification. Field leads audit interview duration and authentic language cadence in Swahili and regional trade dialects.",
   },
   {
-    tier: "TIER 03",
+    icon: FileCheck,
     label: "15% RE-CONTACT",
     title: "Supervisor Re-Contact Audits",
     description:
       "Independent field supervisors re-contact a randomized 15% sub-sample of respondents by phone and in-person visit to verify recorded SKU pricing and ensure zero fabrication.",
   },
   {
-    tier: "TIER 04",
+    icon: ShieldCheck,
     label: "DIRECTOR SEAL",
     title: "Research Director Sign-Off",
     description:
@@ -246,11 +188,6 @@ export default function HowWeWorkPage() {
       <section className="py-12 sm:py-16 border-b border-border/80 bg-slate-50 dark:bg-card/40">
         <div className="mx-auto w-full max-w-[1536px] px-4 sm:px-6 lg:px-8 xl:px-10">
           <div className="max-w-4xl space-y-4">
-            <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-none border border-border/80 bg-background text-[11px] font-mono font-semibold text-primary shadow-2xs">
-              <Workflow className="size-3 text-primary shrink-0" />
-              <span>OPERATIONAL METHODOLOGY &bull; NAIROBI ADVISORY DESK</span>
-            </div>
-
             <h1 className="text-2xl sm:text-3xl md:text-4xl font-medium text-foreground tracking-tight leading-tight">
               From Questions to Intelligence. From Intelligence to Opportunity.
             </h1>
@@ -328,13 +265,10 @@ export default function HowWeWorkPage() {
         </div>
       </section>
 
-      {/* 4. THE 5 SEQUENTIAL STAGES: Tall WordPress-Style Sharp-Edged Colored Cards */}
+      {/* 4. THE 5 SEQUENTIAL STAGES: Informational Colored Cards */}
       <section id="five-stages" className="py-14 sm:py-20 border-b border-border/80 bg-background scroll-mt-20">
         <div className="mx-auto w-full max-w-[1536px] px-4 sm:px-6 lg:px-8 xl:px-10 space-y-10">
           <div className="max-w-3xl space-y-1.5">
-            <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-primary">
-              FIVE SEQUENTIAL STAGES // OPERATIONAL WORKSTREAM
-            </span>
             <h2 className="text-xl sm:text-2xl font-semibold text-foreground tracking-tight">
               Our 5-Stage Research &amp; Commercialization Process
             </h2>
@@ -349,16 +283,13 @@ export default function HowWeWorkPage() {
               const Icon = s.icon;
               return (
                 <div
-                  key={s.step}
-                  className={`${s.bgClass} border ${s.borderClass} rounded-none p-6 sm:p-7 flex flex-col justify-between space-y-6 shadow-sm transition-all duration-200 group hover:-translate-y-1 hover:shadow-md min-h-[460px]`}
+                  key={s.name}
+                  className={`${s.bgClass} border ${s.borderClass} rounded-none p-6 sm:p-7 flex flex-col justify-between space-y-6 shadow-sm transition-all duration-200 group hover:-translate-y-1 hover:shadow-md min-h-[340px]`}
                 >
                   {/* Top Section */}
                   <div className="space-y-4">
-                    {/* Step + Icon Strip */}
+                    {/* Icon Strip */}
                     <div className="flex items-center justify-between border-b border-white/15 pb-4">
-                      <span className="font-mono text-xs font-bold tracking-wider opacity-90">
-                        {s.kicker}
-                      </span>
                       <div className="size-9 rounded-none bg-white/15 border border-white/20 flex items-center justify-center text-white group-hover:scale-105 transition-transform">
                         <Icon className="size-4.5" />
                       </div>
@@ -374,42 +305,14 @@ export default function HowWeWorkPage() {
                       </p>
                     </div>
 
-                    {/* Brief Description */}
-                    <p className="text-xs sm:text-sm text-white/90 leading-relaxed font-normal">
+                    {/* Informational Description */}
+                    <p className="text-xs sm:text-[13px] text-white/90 leading-relaxed font-normal">
                       {s.description}
                     </p>
-
-                    {/* SLA Badge */}
-                    <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-none border border-white/20 bg-white/10 text-[10px] font-mono text-white/90">
-                      <Clock className="size-3 text-white/80 shrink-0" />
-                      <span>{s.sla}</span>
-                    </div>
-
-                    {/* 3 Key Highlights */}
-                    <div className="space-y-2 pt-2 border-t border-white/10">
-                      <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-white/70 block">
-                        KEY GROUND ACTIVITIES:
-                      </span>
-                      {s.highlights.map((hl) => (
-                        <div key={hl} className="flex items-start gap-2 text-xs text-white/90">
-                          <CheckCircle2 className="size-3.5 text-white/80 shrink-0 mt-0.5" />
-                          <span className="leading-snug">{hl}</span>
-                        </div>
-                      ))}
-                    </div>
                   </div>
 
-                  {/* Bottom Deliverable & Action Button */}
-                  <div className="pt-4 border-t border-white/15 space-y-3">
-                    <div className="space-y-0.5">
-                      <span className="text-[10px] font-mono uppercase tracking-wider text-white/70 block">
-                        PRIMARY DELIVERABLE:
-                      </span>
-                      <span className="text-xs font-medium text-white block">
-                        {s.deliverable}
-                      </span>
-                    </div>
-
+                  {/* Bottom Action Button */}
+                  <div className="pt-4 border-t border-white/15">
                     <Link
                       href={s.ctaHref}
                       className="inline-flex items-center justify-between w-full px-4 py-2.5 rounded-none bg-white text-[#002B49] font-semibold text-xs uppercase tracking-wider hover:bg-slate-100 transition-colors shadow-xs"
@@ -422,13 +325,10 @@ export default function HowWeWorkPage() {
               );
             })}
 
-            {/* Quick 6th Card: Nairobi Command Overview */}
-            <div className="bg-[#1E293B] text-white border border-[#334155] hover:border-slate-400/60 rounded-none p-6 sm:p-7 flex flex-col justify-between space-y-6 shadow-sm min-h-[460px]">
+            {/* Quick 6th Card: Central Command Overview */}
+            <div className="bg-[#1E293B] text-white border border-[#334155] hover:border-slate-400/60 rounded-none p-6 sm:p-7 flex flex-col justify-between space-y-6 shadow-sm min-h-[340px]">
               <div className="space-y-4">
                 <div className="flex items-center justify-between border-b border-white/15 pb-4">
-                  <span className="font-mono text-xs font-bold tracking-wider opacity-90">
-                    CENTRAL COMMAND // GOVERNANCE
-                  </span>
                   <div className="size-9 rounded-none bg-white/15 border border-white/20 flex items-center justify-center text-white">
                     <Building2 className="size-4.5" />
                   </div>
@@ -436,42 +336,24 @@ export default function HowWeWorkPage() {
 
                 <div className="space-y-1.5">
                   <h3 className="text-lg sm:text-xl font-medium tracking-tight text-white">
-                    Nairobi Operations Desk
+                    Central Advisory Command
                   </h3>
                   <p className="text-[11px] font-mono text-white/80 uppercase tracking-wider">
-                    Delta Corner Tower, Westlands, Nairobi
+                    Nairobi Advisory Desk &bull; Institutional Governance
                   </p>
                 </div>
 
-                <p className="text-xs sm:text-sm text-white/90 leading-relaxed font-normal">
-                  All 5 stages are orchestrated through our central Nairobi advisory desk. Direct senior research director governance ensures continuous oversight, compliance with ESOMAR guidelines, and bilateral NDA enforcement.
+                <p className="text-xs sm:text-[13px] text-white/90 leading-relaxed font-normal">
+                  All five operational stages are centrally governed through our Nairobi advisory desk. Direct senior research director leadership ensures continuous oversight, compliance with international ESOMAR guidelines, and binding bilateral non-disclosure agreement enforcement from initial scoping through final commercial activation.
                 </p>
-
-                <div className="space-y-2 pt-2 border-t border-white/10">
-                  <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-white/70 block">
-                    OPERATIONAL PROTOCOLS:
-                  </span>
-                  <div className="flex items-start gap-2 text-xs text-white/90">
-                    <ShieldCheck className="size-3.5 text-white/80 shrink-0 mt-0.5" />
-                    <span>Binding Bilateral Non-Disclosure Agreements</span>
-                  </div>
-                  <div className="flex items-start gap-2 text-xs text-white/90">
-                    <CheckCircle2 className="size-3.5 text-white/80 shrink-0 mt-0.5" />
-                    <span>KDPA &amp; ESOMAR Compliance Standard</span>
-                  </div>
-                  <div className="flex items-start gap-2 text-xs text-white/90">
-                    <Clock className="size-3.5 text-white/80 shrink-0 mt-0.5" />
-                    <span>Dedicated Research Director Assigned</span>
-                  </div>
-                </div>
               </div>
 
-              <div className="pt-4 border-t border-white/15 space-y-3">
+              <div className="pt-4 border-t border-white/15">
                 <Link
                   href="/contact?cta=COMMISSION_RESEARCH"
                   className="inline-flex items-center justify-between w-full px-4 py-2.5 rounded-none bg-white text-[#002B49] font-semibold text-xs uppercase tracking-wider hover:bg-slate-100 transition-colors shadow-xs"
                 >
-                  <span>TALK TO NAIROBI HQ</span>
+                  <span>TALK TO NAIROBI ADVISORY</span>
                   <ArrowRight className="size-3.5" />
                 </Link>
               </div>
@@ -484,9 +366,6 @@ export default function HowWeWorkPage() {
       <section className="py-14 sm:py-20 border-b border-border/80 bg-slate-50 dark:bg-card/40">
         <div className="mx-auto w-full max-w-[1536px] px-4 sm:px-6 lg:px-8 xl:px-10 space-y-8">
           <div className="max-w-3xl space-y-1.5">
-            <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-primary">
-              DATA INTEGRITY &amp; GOVERNANCE
-            </span>
             <h2 className="text-xl sm:text-2xl font-semibold text-foreground tracking-tight">
               Four-Tier Verification &amp; Anti-Bias Protocol
             </h2>
@@ -496,29 +375,32 @@ export default function HowWeWorkPage() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {AUDIT_TIERS.map((tier) => (
-              <div
-                key={tier.tier}
-                className="p-5 rounded-none border border-border/80 bg-card space-y-3 shadow-2xs hover:border-primary/50 transition-colors"
-              >
-                <div className="flex items-center justify-between border-b border-border/60 pb-2.5">
-                  <span className="text-[10px] font-mono font-bold text-primary px-2 py-0.5 rounded-none bg-primary/10 border border-primary/20">
-                    {tier.tier}
-                  </span>
-                  <span className="text-[10px] font-mono text-muted-foreground uppercase">
-                    {tier.label}
-                  </span>
+            {AUDIT_TIERS.map((tier) => {
+              const Icon = tier.icon;
+              return (
+                <div
+                  key={tier.title}
+                  className="p-5 rounded-none border border-border/80 bg-card space-y-3 shadow-2xs hover:border-primary/50 transition-colors"
+                >
+                  <div className="flex items-center justify-between border-b border-border/60 pb-2.5">
+                    <div className="size-8 rounded-none bg-primary/10 flex items-center justify-center text-primary">
+                      <Icon className="size-4" />
+                    </div>
+                    <span className="text-[10px] font-mono text-muted-foreground uppercase tracking-wider">
+                      {tier.label}
+                    </span>
+                  </div>
+                  <div className="space-y-1.5">
+                    <h4 className="text-sm font-semibold text-foreground">
+                      {tier.title}
+                    </h4>
+                    <p className="text-xs text-muted-foreground leading-relaxed">
+                      {tier.description}
+                    </p>
+                  </div>
                 </div>
-                <div className="space-y-1.5">
-                  <h4 className="text-sm font-semibold text-foreground">
-                    {tier.title}
-                  </h4>
-                  <p className="text-xs text-muted-foreground leading-relaxed">
-                    {tier.description}
-                  </p>
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
@@ -527,9 +409,6 @@ export default function HowWeWorkPage() {
       <section className="py-14 sm:py-20 border-b border-border/80 bg-background">
         <div className="mx-auto w-full max-w-[1536px] px-4 sm:px-6 lg:px-8 xl:px-10 space-y-8">
           <div className="max-w-3xl space-y-1.5">
-            <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-primary">
-              COMMERCIAL ENGAGEMENT PACKAGES
-            </span>
             <h2 className="text-xl sm:text-2xl font-semibold text-foreground tracking-tight">
               Realistic Project Timelines &amp; Scopes
             </h2>
@@ -621,7 +500,7 @@ export default function HowWeWorkPage() {
               <div>
                 <h4 className="font-semibold text-xs text-foreground uppercase">Central Operations Command</h4>
                 <p className="text-muted-foreground text-[11px] leading-snug">
-                  Delta Corner Tower, Westlands, Nairobi, orchestrating field teams and trade partnerships across East Africa.
+                  Orchestrating field teams and trade partnerships across East Africa from our Nairobi headquarters.
                 </p>
               </div>
             </div>
@@ -634,10 +513,6 @@ export default function HowWeWorkPage() {
         <div className="mx-auto w-full max-w-[1536px] px-4 sm:px-6 lg:px-8 xl:px-10">
           <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8">
             <div className="max-w-3xl space-y-2">
-              <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-none bg-white/10 border border-white/20 text-[10px] font-mono text-white/90">
-                <Sparkles className="size-3 text-sky-300" />
-                <span>NAIROBI ADVISORY &bull; COMMERCIAL ENGAGEMENT DESK</span>
-              </div>
               <h2 className="text-xl sm:text-2xl md:text-3xl font-medium tracking-tight text-white">
                 Ready to Commission Ground Fieldwork or Strategic Advisory?
               </h2>
@@ -658,8 +533,7 @@ export default function HowWeWorkPage() {
                 href="/contact"
                 className="inline-flex items-center gap-2 px-5 py-3 rounded-none border border-white/30 bg-transparent text-white font-semibold text-xs uppercase tracking-wider hover:bg-white/10 transition-colors"
               >
-                <Phone className="size-3.5" />
-                <span>CALL NAIROBI HQ</span>
+                <span>CONTACT ADVISORY DESK</span>
               </Link>
               <Link
                 href="/services"

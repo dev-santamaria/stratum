@@ -11,18 +11,10 @@ import {
   Sparkles,
   BookOpen,
   ArrowRight,
-  Globe2,
-  Calendar,
-  Layers,
-  BarChart3,
   ShieldCheck,
   CheckCircle2,
-  Clock,
   Compass,
   Building2,
-  Lock,
-  Phone,
-  Workflow,
 } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -33,8 +25,6 @@ export const metadata: Metadata = {
 
 interface InsightCategory {
   id: string;
-  number: string;
-  kicker: string;
   title: string;
   description: string;
   bgClass: string;
@@ -43,140 +33,56 @@ interface InsightCategory {
   icon: React.ElementType;
   ctaHref: string;
   ctaLabel: string;
-  items: {
-    title: string;
-    category: string;
-    date: string;
-    region: string;
-    readTime: string;
-    samplePower: string;
-  }[];
 }
 
 const INSIGHT_CATEGORIES: InsightCategory[] = [
   {
     id: "reports",
-    number: "01",
-    kicker: "BENCHMARK STUDIES",
     title: "Primary Research Reports",
-    description: "In-depth category censuses, subnational distribution audits, and sector feasibility studies.",
+    description:
+      "Comprehensive subnational distribution audits, retail outlet censuses, and empirical category benchmarks across East African trade corridors. Every report is synthesized from thousands of GPS-geocoded physical outlet audits, evaluating single-coin cash elasticity, shelf velocity, and consumer trade dynamics without reliance on desk-based extrapolations.",
     bgClass: "bg-[#002B49] text-white",
     borderClass: "border-[#003A63] hover:border-sky-400/60",
     accentBadgeClass: "bg-white/10 text-sky-200 border-white/20",
     icon: FileText,
     ctaHref: "/reports",
     ctaLabel: "EXPLORE ALL REPORTS",
-    items: [
-      {
-        title: "The 84% Reality: Mapping Informal Kiosk Retail Volume & Single-Coin Price Elasticity",
-        category: "Consumer & Retail",
-        date: "Q3 2026",
-        region: "East Africa (Nairobi, Kiambu & Machakos Corridors)",
-        readTime: "18 min read",
-        samplePower: "n = 3,600 GPS-Audited Outlets",
-      },
-      {
-        title: "Cross-Border Commercial Sourcing: Direct Production Verification Between Asia & East Africa Gateways",
-        category: "B2B Trade & Logistics",
-        date: "Q3 2026",
-        region: "Mombasa Corridor & Indian Ocean Maritime Gates",
-        readTime: "22 min read",
-        samplePower: "24 Verified Manufacturing Plants",
-      },
-    ],
   },
   {
     id: "market-insights",
-    number: "02",
-    kicker: "FIELD TELEMETRY",
     title: "Subnational Market Telemetry",
-    description: "Empirical field findings on merchant velocity, unit economics, regulatory shifts, and distributor markups.",
+    description:
+      "Empirical micro-economic field telemetry capturing high-frequency merchant velocity, informal distributor markups, and regulatory policy impacts across municipal hubs. Designed for immediate commercial strategy, our telemetry tracks real-time consumer resistance thresholds, working capital constraints, and decentralized supply chain dynamics.",
     bgClass: "bg-[#167D3C] text-white",
     borderClass: "border-[#1B9447] hover:border-emerald-300/60",
     accentBadgeClass: "bg-white/10 text-emerald-100 border-white/20",
     icon: TrendingUp,
     ctaHref: "/reports#telemetry-studio",
     ctaLabel: "ACCESS TELEMETRY",
-    items: [
-      {
-        title: "Price Elasticity Thresholds: Consumer Resistance Curves for Fast-Moving Beverages at Coin Denominations",
-        category: "FMCG Telemetry",
-        date: "September 2026",
-        region: "Nairobi Commercial Districts & Peri-Urban Hubs",
-        readTime: "8 min read",
-        samplePower: "n = 1,200 Retail Dukas",
-      },
-      {
-        title: "Decentralized Agricultural Cold-Chain: Post-Harvest Spoilage Rates and Cooperative Willingness-to-Pay",
-        category: "Clean Energy & Agri",
-        date: "August 2026",
-        region: "Rift Valley & Lake Victoria Horticultural Corridors",
-        readTime: "11 min read",
-        samplePower: "n = 570 Agri Enterprises",
-      },
-    ],
   },
   {
     id: "consumer-pulse",
-    number: "03",
-    kicker: "DIRECT CONSUMER FEED",
     title: "Consumer Pulse & Taste Testing",
-    description: "Direct consumer intercepts, mobile basket pacing logs, and vernacular blind sensory evaluations.",
+    description:
+      "Direct consumer intercept logs, mobile household basket pacing, and double-blind vernacular sensory taste tests. We evaluate actual cash expenditure shifts, brand substitution velocity under food inflation, and regional dialect packaging resonance to inform product positioning and formulation decisions across peri-urban demographics.",
     bgClass: "bg-[#004B87] text-white",
     borderClass: "border-[#0060AD] hover:border-cyan-300/60",
     accentBadgeClass: "bg-white/10 text-cyan-100 border-white/20",
     icon: Sparkles,
     ctaHref: "/services#research",
     ctaLabel: "EXPLORE SENSORY TESTING",
-    items: [
-      {
-        title: "Household Basket Adjustments Under Food Inflation: Weekly Field Intercepts & Brand Substitution Pacing",
-        category: "Consumer Behavior",
-        date: "Bi-Weekly Panel",
-        region: "East Africa Urban & Informal Settlements",
-        readTime: "7 min read",
-        samplePower: "n = 2,400 Household Heads",
-      },
-      {
-        title: "Vernacular Packaging vs. Standard English Branding: Measuring 2.4x Trial Velocity in Native Dialects",
-        category: "Product Testing",
-        date: "July 2026",
-        region: "Kenya Urban & Peri-Urban Trade Belts",
-        readTime: "9 min read",
-        samplePower: "Double-Blind Sensory Intercepts",
-      },
-    ],
   },
   {
     id: "perspectives",
-    number: "04",
-    kicker: "METHODOLOGICAL PAPERS",
     title: "Stratum Perspectives & Methodologies",
-    description: "Methodological papers, field dispatch notes, and executive guidance from our Nairobi research leads.",
+    description:
+      "Strategic executive memos, methodological whitepapers, and operational dispatches from our Nairobi research directorship. We examine why traditional scraping models fail in cash-first developing markets, outline double-blind fieldwork governance standards, and share frameworks for structuring bilateral cross-border trade transactions.",
     bgClass: "bg-[#1E293B] text-white",
     borderClass: "border-[#334155] hover:border-indigo-400/60",
     accentBadgeClass: "bg-white/10 text-indigo-200 border-white/20",
     icon: BookOpen,
     ctaHref: "/blogs",
     ctaLabel: "READ EDITORIAL ESSAYS",
-    items: [
-      {
-        title: "Why Desk-Based Scraping Fails in Developing Markets: The Necessity of GPS-Geofenced Human Fieldwork",
-        category: "Research Methodology",
-        date: "June 2026",
-        region: "Sub-Saharan Emerging Markets",
-        readTime: "14 min read",
-        samplePower: "ESOMAR Double-Blind Standard",
-      },
-      {
-        title: "From Empirical Research to Signed Contracts: Structuring B2B Deal Rooms Under Bilateral Mutual NDAs",
-        category: "Commercial Intermediation",
-        date: "May 2026",
-        region: "Central Operations Desk • Nairobi HQ",
-        readTime: "12 min read",
-        samplePower: "Bilateral Legal Architecture",
-      },
-    ],
   },
 ];
 
@@ -189,11 +95,6 @@ export default function InsightsPage() {
       <section className="py-12 sm:py-16 border-b border-border/80 bg-slate-50 dark:bg-card/40">
         <div className="mx-auto w-full max-w-[1536px] px-4 sm:px-6 lg:px-8 xl:px-10">
           <div className="max-w-4xl space-y-4">
-            <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-none border border-border/80 bg-background text-[11px] font-mono font-semibold text-primary shadow-2xs">
-              <Workflow className="size-3 text-primary shrink-0" />
-              <span>STRATUM INSIGHTS &bull; NAIROBI ADVISORY DESK</span>
-            </div>
-
             <h1 className="text-2xl sm:text-3xl md:text-4xl font-medium text-foreground tracking-tight leading-tight">
               Market Insights, Empirical Telemetry &amp; Research Briefs
             </h1>
@@ -282,9 +183,6 @@ export default function InsightsPage() {
       <section className="py-14 sm:py-20 border-b border-border/80 bg-background">
         <div className="mx-auto w-full max-w-[1536px] px-4 sm:px-6 lg:px-8 xl:px-10 space-y-10">
           <div className="max-w-3xl space-y-1.5">
-            <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-primary">
-              FOUR CORE INTELLIGENCE STREAMS
-            </span>
             <h2 className="text-xl sm:text-2xl font-semibold text-foreground tracking-tight">
               Featured Research Categories &amp; Telemetry
             </h2>
@@ -300,40 +198,24 @@ export default function InsightsPage() {
               return (
                 <div
                   key={cat.id}
-                  className={`${cat.bgClass} border ${cat.borderClass} rounded-none p-6 sm:p-7 flex flex-col justify-between space-y-6 shadow-sm transition-all duration-200 group hover:-translate-y-1 hover:shadow-md min-h-[480px]`}
+                  className={`${cat.bgClass} border ${cat.borderClass} rounded-none p-6 sm:p-7 flex flex-col justify-between space-y-6 shadow-sm transition-all duration-200 group hover:-translate-y-1 hover:shadow-md`}
                 >
                   <div className="space-y-4">
-                    {/* Number + Icon Strip */}
-                    <div className="flex items-center justify-between border-b border-white/15 pb-4">
-                      <span className="font-mono text-xs font-bold tracking-wider opacity-90">
-                        {cat.kicker}
-                      </span>
+                    {/* Icon Strip */}
+                    <div className="border-b border-white/15 pb-4 flex items-center justify-between">
                       <div className="size-9 rounded-none bg-white/15 border border-white/20 flex items-center justify-center text-white group-hover:scale-105 transition-transform">
                         <Icon className="size-4.5" />
                       </div>
                     </div>
 
-                    {/* Title + Description */}
-                    <div className="space-y-1.5">
+                    {/* Title + Enriched Description */}
+                    <div className="space-y-2">
                       <h3 className="text-lg sm:text-xl font-medium tracking-tight text-white">
                         {cat.title}
                       </h3>
-                      <p className="text-xs text-white/90 leading-relaxed font-normal">
+                      <p className="text-xs sm:text-[13px] text-white/90 leading-relaxed font-normal">
                         {cat.description}
                       </p>
-                    </div>
-
-                    {/* Sample Items List */}
-                    <div className="space-y-2.5 pt-2 border-t border-white/10">
-                      <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-white/70 block">
-                        BENCHMARK TOPICS:
-                      </span>
-                      {cat.items.map((item) => (
-                        <div key={item.title} className="space-y-0.5 text-xs text-white/90">
-                          <div className="font-medium leading-snug line-clamp-2">{item.title}</div>
-                          <div className="text-[10px] font-mono text-white/70">{item.samplePower}</div>
-                        </div>
-                      ))}
                     </div>
                   </div>
 
@@ -359,10 +241,6 @@ export default function InsightsPage() {
         <div className="mx-auto w-full max-w-[1536px] px-4 sm:px-6 lg:px-8 xl:px-10 space-y-6">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3 border-b border-border/60 pb-3">
             <div className="space-y-1">
-              <div className="inline-flex items-center gap-2 px-2 py-0.5 rounded-none bg-primary/10 text-primary font-mono text-[10px] font-bold uppercase tracking-wider">
-                <BarChart3 className="size-3" />
-                <span>INTERACTIVE FIELD STUDIO</span>
-              </div>
               <h2 className="text-xl sm:text-2xl font-semibold text-foreground tracking-tight">
                 Empirical Survey Datasets &amp; Cross-Sectional Telemetry
               </h2>
@@ -386,10 +264,6 @@ export default function InsightsPage() {
         <div className="mx-auto w-full max-w-[1536px] px-4 sm:px-6 lg:px-8 xl:px-10">
           <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8">
             <div className="max-w-3xl space-y-2">
-              <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-none bg-white/10 border border-white/20 text-[10px] font-mono text-white/90">
-                <Sparkles className="size-3 text-sky-300" />
-                <span>NAIROBI ADVISORY &bull; COMMISSIONING DESK</span>
-              </div>
               <h2 className="text-xl sm:text-2xl md:text-3xl font-medium tracking-tight text-white">
                 Commission a Bespoke Market Study or Scoping Memo
               </h2>
@@ -407,17 +281,10 @@ export default function InsightsPage() {
                 <ArrowRight className="size-3.5" />
               </Link>
               <Link
-                href="/contact"
-                className="inline-flex items-center gap-2 px-5 py-3 rounded-none border border-white/30 bg-transparent text-white font-semibold text-xs uppercase tracking-wider hover:bg-white/10 transition-colors"
-              >
-                <Phone className="size-3.5" />
-                <span>CALL NAIROBI HQ</span>
-              </Link>
-              <Link
                 href="/services"
                 className="inline-flex items-center gap-2 px-5 py-3 rounded-none border border-white/30 bg-transparent text-white font-semibold text-xs uppercase tracking-wider hover:bg-white/10 transition-colors"
               >
-                <span>EXPLORE OUR 6 SERVICES</span>
+                <span>EXPLORE ALL SERVICES</span>
               </Link>
             </div>
           </div>
